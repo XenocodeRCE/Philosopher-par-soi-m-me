@@ -1,0 +1,683 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Zhuangzi et Nāgārjuna : extraits choisis</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-80f9-9cc9-e75097ca25f4" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1581196418535-feb2fb51fa3b?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 22.040000000000003%"/><h1 class="page-title"><strong>Zhuangzi</strong> et <strong>Nāgārjuna</strong> : extraits choisis</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d8b2280-a891-80d7-adc2-e4c3b60cec1f" class="">Zhuangzi (IVe siècle av. J.-C.) et Nāgārjuna (IIe siècle apr. J.-C.) comptent parmi les penseurs les plus profonds et les plus originaux des traditions philosophiques chinoise et indienne. Bien que séparés par plusieurs siècles et issus de contextes culturels différents, tous deux partagent une approche radicale qui remet en question nos certitudes ordinaires et nos attachements conceptuels. Zhuangzi, figure majeure du taoïsme philosophique, développe dans son œuvre éponyme une vision de la spontanéité naturelle (ziran) et une critique mordante des distinctions rigides et des préférences subjectives qui entravent notre harmonie avec le Dao. À travers anecdotes, paraboles et dialogues souvent teintés d&#x27;humour et de paradoxes, il invite à une libération des perspectives figées pour embrasser la transformation perpétuelle du monde. Nāgārjuna, fondateur de l&#x27;école Mādhyamika du bouddhisme Mahāyāna, expose dans ses écrits, notamment dans les <em>Stances du Milieu par excellence</em> (Mūlamadhyamakakārikā), la doctrine de la vacuité (śūnyatā) et la méthode dialectique qui déconstruit systématiquement toutes les positions dogmatiques. Par sa célèbre théorie des deux vérités et sa critique des &quot;vues erronées&quot;, il propose une voie médiane qui ne s&#x27;attache ni à l&#x27;existence ni à la non-existence. Ces deux penseurs, véritables maîtres du déconditionnement intellectuel, nous invitent à un éveil qui transcende les limitations de la pensée conceptuelle ordinaire.</p><blockquote id="1d8b2280-a891-8004-a0ad-d3977cb7d70b" class=""><em>« Quand le petit entendement entre dans l&#x27;océan du grand entendement, il n&#x27;y a plus de limites. » — Zhuangzi</em></blockquote><h3 id="1d8b2280-a891-80f8-b4fb-d36fecf6a5cb" class=""><strong>Contexte historique et philosophique</strong></h3><p id="1d8b2280-a891-8012-b64c-c20ed0c440f9" class=""><strong>Zhuangzi</strong> (Tchouang-tseu, ~369-286 av. J.-C.) vécut pendant la période des Royaumes combattants, époque de troubles politiques et d&#x27;effervescence intellectuelle en Chine antique. Dans ce contexte marqué par la désintégration de l&#x27;ordre féodal et les luttes entre différentes écoles de pensée (confucianisme, moïsme, légisme), Zhuangzi développa une philosophie qui rejetait les certitudes dogmatiques et les ambitions politiques des autres courants. Successeur spirituel de Laozi (Lao-Tseu), il approfondit la pensée taoïste en lui donnant une dimension plus personnelle et existentielle. Le texte qui porte son nom, le <em>Zhuangzi</em>, est composé de 33 chapitres dont les &quot;chapitres intérieurs&quot; (1-7) sont généralement considérés comme son œuvre authentique, les autres étant attribués à ses disciples.</p><p id="1d8b2280-a891-80fb-b39d-d55943d2ee8b" class=""><strong>Nāgārjuna</strong> vécut en Inde probablement entre le milieu du IIe et le début du IIIe siècle, dans un contexte où le bouddhisme Mahāyāna (Grand Véhicule) commençait à se développer. À cette époque, le bouddhisme était divisé en multiples écoles ayant des interprétations divergentes des enseignements du Bouddha. Certaines écoles (comme les Sarvāstivādin) avaient élaboré des systèmes philosophiques complexes postulant l&#x27;existence réelle des phénomènes (dharma). En réaction, Nāgārjuna fonda l&#x27;école Mādhyamika (Voie du Milieu) qui, s&#x27;appuyant sur les sūtras de la Perfection de Sagesse (Prajñāpāramitā), développa une critique radicale de toute position métaphysique. Sa méthode dialectique visait à montrer que toute thèse substantialiste conduit à des contradictions insurmontables, et que la réalité ultime est &quot;vacuité&quot; (śūnyatā) - non pas néant, mais absence de nature propre (svabhāva) de tous les phénomènes.</p><p id="1d8b2280-a891-80ea-90a7-c7d590f31ce0" class=""><strong>Les concepts clés chez Zhuangzi</strong></p><ul id="1d8b2280-a891-80a0-8c22-f56081ad49bc" class="bulleted-list"><li style="list-style-type:disc"><strong>Dao</strong> (道) : la Voie, principe cosmique qui sous-tend tous les changements et transformations</li></ul><ul id="1d8b2280-a891-8069-ab0a-e29730e15272" class="bulleted-list"><li style="list-style-type:disc"><strong>Ziran</strong> (自然) : spontanéité naturelle, ce qui est &quot;ainsi par soi-même&quot;</li></ul><ul id="1d8b2280-a891-80c0-bd84-e42143d99ce5" class="bulleted-list"><li style="list-style-type:disc"><strong>Wuwei</strong> (無為) : non-agir, action qui suit le cours naturel des choses sans interférence de l&#x27;ego</li></ul><ul id="1d8b2280-a891-808d-8a62-ce15b9d82808" class="bulleted-list"><li style="list-style-type:disc"><strong>Qi</strong> (氣) : souffle vital, énergie qui anime tous les êtres</li></ul><ul id="1d8b2280-a891-80b7-9619-d9fc8e821b8d" class="bulleted-list"><li style="list-style-type:disc"><strong>Xiaoyao you</strong> (逍遙遊) : &quot;libre randonnée&quot;, état de liberté absolue</li></ul><ul id="1d8b2280-a891-80a4-9893-f96e915f47c7" class="bulleted-list"><li style="list-style-type:disc"><strong>Qiwu lun</strong> (齊物論) : &quot;Discours sur l&#x27;égalité des choses&quot;, relativité des perspectives</li></ul><ul id="1d8b2280-a891-8022-86c8-e65cc9851e29" class="bulleted-list"><li style="list-style-type:disc"><strong>Hundun</strong> (混沌) : chaos primordial, indifférenciation originelle</li></ul><ul id="1d8b2280-a891-806d-976b-c2a3b6a5c13b" class="bulleted-list"><li style="list-style-type:disc"><strong>Ming</strong> (命) : destin, lot attribué par le ciel à chaque être</li></ul><p id="1d8b2280-a891-8054-b54f-d0a51f7f0ccd" class=""><strong>Les concepts clés chez Nāgārjuna</strong></p><ul id="1d8b2280-a891-80d4-8f6c-dc2f9bf569d8" class="bulleted-list"><li style="list-style-type:disc"><strong>Śūnyatā</strong> (शून्यता) : vacuité, absence de nature propre de tous les phénomènes</li></ul><ul id="1d8b2280-a891-8021-9c43-f0fc52558b37" class="bulleted-list"><li style="list-style-type:disc"><strong>Pratītyasamutpāda</strong> (प्रतीत्यसमुत्पाद) : coproduction conditionnée, origine dépendante</li></ul><ul id="1d8b2280-a891-80d4-a3d3-fb32df8a83b1" class="bulleted-list"><li style="list-style-type:disc"><strong>Svabhāva</strong> (स्वभाव) : nature propre, existence intrinsèque (niée par Nāgārjuna)</li></ul><ul id="1d8b2280-a891-8066-b12c-f6bba10ea3ce" class="bulleted-list"><li style="list-style-type:disc"><strong>Catuṣkoṭi</strong> (चतुष्कोटि) : tétralemme, logique à quatre branches</li></ul><ul id="1d8b2280-a891-8000-a9ad-fb1da81f2e9e" class="bulleted-list"><li style="list-style-type:disc"><strong>Saṃvṛti-satya</strong> (संवृति सत्य) : vérité conventionnelle, relatives aux apparences</li></ul><ul id="1d8b2280-a891-8099-bf98-f5f99f8fde97" class="bulleted-list"><li style="list-style-type:disc"><strong>Paramārtha-satya</strong> (परमार्थ सत्य) : vérité ultime, relative à la réalité</li></ul><ul id="1d8b2280-a891-800e-92e5-ead8bd5eec06" class="bulleted-list"><li style="list-style-type:disc"><strong>Niḥsvabhāva</strong> (निःस्वभाव) : absence de nature propre</li></ul><ul id="1d8b2280-a891-80cc-8f5c-d5b3eb0131ff" class="bulleted-list"><li style="list-style-type:disc"><strong>Madhyamā pratipad</strong> (मध्यमा प्रतिपद्) : voie du milieu, ni existence ni non-existence</li></ul><h2 id="1d8b2280-a891-8074-bc31-fc7d081008c4" class="">Zhuangzi : La liberté et la relativité des perspectives</h2><p id="1d8b2280-a891-806f-abd7-eb3b0551dbb6" class=""><strong>Zhuangzi, Chapitre I : &quot;Randonnée en toute liberté&quot;</strong></p><p id="1d8b2280-a891-80f4-97a6-dd201c4f3faf" class="">Au nord de l&#x27;océan sombre, il y a un poisson nommé Kun ; le Kun est si grand que personne ne sait combien de milliers de li il mesure. Il se métamorphose en un oiseau nommé Peng ; le dos du Peng est si vaste que personne ne sait combien de milliers de li il s&#x27;étend. Quand il déploie ses ailes et s&#x27;envole, ses ailes sont comme des nuages suspendus au ciel. Quand l&#x27;océan s&#x27;agite, cet oiseau se prépare à se rendre à l&#x27;océan méridional, le lac du ciel.</p><p id="1d8b2280-a891-808a-a9b4-fbafc4106776" class="">Un homme de Qi qui lisait des récits de merveilles raconta cette histoire : &quot;Quand le Peng se rend au lac du ciel, l&#x27;eau est agitée sur trois mille li. Il s&#x27;élève en spirale sur un tourbillon jusqu&#x27;à une hauteur de quatre-vingt-dix mille li, porté par le vent de six mois, il s&#x27;en va.&quot; Des vapeurs errantes, des poussières volantes, des êtres vivants soufflés par le vent les uns contre les autres, le ciel bleu pur : est-ce sa vraie couleur naturelle, ou résulte-t-elle d&#x27;une distance infinie sans fin ? Quand le Peng regarde vers le bas, c&#x27;est aussi ce qu&#x27;il voit.</p><p id="1d8b2280-a891-8023-8b9f-d9493e6e54e3" class="">Si l&#x27;eau n&#x27;est pas assez profonde, elle n&#x27;a pas la force de porter un grand bateau. Versez une tasse d&#x27;eau dans un trou sur le sol : une graine de moutarde y fera office de bateau, mais si vous y mettez une coupe, elle touchera le fond, car l&#x27;eau est peu profonde et le bateau est grand. Si le vent n&#x27;est pas assez fort, il n&#x27;aura pas la puissance de porter de grandes ailes. C&#x27;est pourquoi le Peng doit s&#x27;élever à quatre-vingt-dix mille li pour avoir sous lui un vent qui le portera. C&#x27;est alors seulement qu&#x27;il peut poser ses ailes sur le vent, porter le ciel bleu sur son dos, et rien ne peut l&#x27;entraver dans sa course vers le sud.</p><p id="1d8b2280-a891-80f8-8a3d-f260a20d1b29" class="">Une cigale et une petite colombe riaient de lui, disant : &quot;Quand nous nous élançons de toutes nos forces, nous arrivons parfois jusqu&#x27;à l&#x27;orme ou au santal, et parfois nous n&#x27;y arrivons pas et nous retombons par terre. À quoi bon s&#x27;élever à quatre-vingt-dix mille li pour se rendre au sud ?&quot; Si vous allez dans les faubourgs, vous prenez de quoi manger pour trois repas et vous rentrez le ventre plein. Si vous vous rendez à cent li, vous devez faire vos préparatifs pour la nuit. Si vous vous rendez à mille li, vous devez faire des provisions pour trois mois. Que savent ces deux petites créatures ?</p><p id="1d8b2280-a891-80c6-a1c7-e3e62bdd53cb" class="">La connaissance limitée ne vaut pas la connaissance étendue, et le temps court ne vaut pas le temps long. Comment le savons-nous ? Le champignon qui ne vit qu&#x27;un matin ne connaît pas l&#x27;alternance du jour et de la nuit ; la cigale d&#x27;été ne connaît pas le printemps et l&#x27;automne. Ce sont des vies brèves. Au sud de Chu vit un minglingzi qui considère cinq cents ans comme un printemps et cinq cents ans comme un automne. Dans la haute antiquité vivait un grand pin qui considérait huit mille ans comme un printemps et huit mille ans comme un automne. Pourtant, Pengzu est aujourd&#x27;hui célèbre pour sa longévité : n&#x27;est-ce pas pitoyable que les gens l&#x27;imitent ?</p><p id="1d8b2280-a891-80b1-92eb-e47fe9b6877b" class=""><em>子綦曰：「天地之間，物各有所主，而莫不相應也。」</em></p><p id="1d8b2280-a891-80ac-b620-c5653ef489fe" class=""><strong>Commentaire</strong></p><p id="1d8b2280-a891-8040-b60b-ed283b63590a" class="">Ce passage d&#x27;ouverture du <em>Zhuangzi</em> présente, à travers l&#x27;image saisissante de l&#x27;énorme poisson Kun qui se transforme en l&#x27;oiseau gigantesque Peng, plusieurs thèmes fondamentaux de la pensée taoïste : la transformation perpétuelle, la relativité des perspectives et la liberté absolue.</p><p id="1d8b2280-a891-801d-a0c1-e95dc148ac36" class="">L&#x27;image du Peng qui s&#x27;élève à des hauteurs vertigineuses illustre la capacité à transcender les limitations ordinaires. Son vol nécessite des conditions particulières - un vent puissant, une grande altitude - qui ne sont pas à la portée des petits oiseaux comme la cigale et la colombe. Ces derniers, incapables de concevoir une telle échelle d&#x27;existence, rient de ce qui leur paraît absurde. Zhuangzi utilise ce contraste pour souligner la relativité des perspectives : chaque créature perçoit et juge le monde selon ses propres capacités et son contexte limité.</p><p id="1d8b2280-a891-807a-9119-dab9b2a3fb17" class="">Le texte développe ensuite cette idée à travers une réflexion sur les échelles temporelles. Du champignon éphémère qui ne vit qu&#x27;un jour jusqu&#x27;au pin millénaire, chaque être vit dans sa propre temporalité qui conditionne sa perception du monde. Même Pengzu, célèbre pour sa longévité exceptionnelle (800 ans selon la légende), apparaît comme éphémère face à ces échelles cosmiques.</p><p id="1d8b2280-a891-8038-8b12-c891ad5596fc" class="">Au-delà de cette relativité des perspectives, Zhuangzi suggère qu&#x27;il existe des degrés de compréhension : &quot;La connaissance limitée ne vaut pas la connaissance étendue, et le temps court ne vaut pas le temps long.&quot; Il ne s&#x27;agit pas simplement de dire que toutes les perspectives se valent, mais d&#x27;inviter le lecteur à élargir sa perspective pour atteindre une vision plus vaste, plus proche de celle du Dao. Le vol du Peng symbolise cette libération des contraintes ordinaires, cette &quot;randonnée en toute liberté&quot; (xiaoyao you) qui donne son titre au chapitre.</p><p id="1d8b2280-a891-803e-8288-c4513c3cc71f" class="">La métaphore du grand bateau qui nécessite des eaux profondes illustre également un principe fondamental du taoïsme : l&#x27;adéquation entre les êtres et leur environnement, l&#x27;harmonie naturelle qui fait que chaque chose trouve sa place propre. Cette vision organique du monde comme réseau d&#x27;interdépendances s&#x27;oppose à la volonté humaine de forcer les choses contre leur nature.</p><p id="1d8b2280-a891-8064-b2b2-dcf171d6fc62" class="">On retrouve ici l&#x27;humour caractéristique de Zhuangzi, qui utilise des images fantasques et des paradoxes pour ébranler nos certitudes habituelles. Le gigantisme improbable du Kun/Peng, l&#x27;incompréhension comique des petits oiseaux devant son projet, et même la mention d&#x27;êtres à la longévité fabuleuse créent un décalage qui invite le lecteur à questionner ses propres limitations cognitives et à s&#x27;ouvrir à une vision plus vaste du monde et de ses possibilités.</p><p id="1d8b2280-a891-80a1-8d20-d081bc4e9744" class=""><strong>Zhuangzi, Chapitre II : &quot;L&#x27;égalité des choses&quot;</strong></p><p id="1d8b2280-a891-80b2-bd55-d4ea3ae62244" class="">Ziqi de Nanguo était assis, accoudé à une table basse. Il levait les yeux au ciel et respirait doucement. Il semblait avoir perdu conscience de lui-même. Yancheng Ziyou, qui se tenait près de lui pour le servir, demanda : &quot;Qu&#x27;y a-t-il ? Comment un corps peut-il devenir comme un arbre desséché et l&#x27;esprit comme des cendres éteintes ? L&#x27;homme accoudé à la table n&#x27;est plus celui qui était là auparavant.&quot;</p><p id="1d8b2280-a891-8006-9a74-fa28cb47411c" class="">Ziqi dit : &quot;Quelle bonne question, Yan ! À l&#x27;instant, j&#x27;avais perdu mon moi. As-tu compris cela ? Tu as entendu la musique des hommes, mais non la musique de la terre ; tu as entendu la musique de la terre, mais non la musique du ciel.&quot;</p><p id="1d8b2280-a891-8032-9aef-e0ad8e926b45" class="">Ziyou dit : &quot;Oserai-je vous demander ce que cela signifie ?&quot;</p><p id="1d8b2280-a891-80fb-b26f-ca41c6c5dfcd" class="">Ziqi répondit : &quot;Le grand souffle de l&#x27;univers, on l&#x27;appelle vent. Parfois, il est immobile ; mais quand il se lève, toutes les ouvertures résonnent avec véhémence. N&#x27;as-tu pas entendu ses rugissements prolongés ? Les replis des montagnes, les cavités des grands arbres de cent circonférences : ce sont comme des narines, comme des bouches, comme des oreilles, comme des socles, comme des gobelets, comme des mortiers, comme des fosses et des mares. Le vent qui y souffle fait entendre des bruits : sifflements, grondements, hurlements, rugissements, éclats, pleurs. Les uns appellent, les autres répondent ; l&#x27;air est petit, l&#x27;harmonie grande ; l&#x27;air tombe, et tous les souffles se taisent. N&#x27;as-tu pas assisté à cette agitation qui annonce le calme ?&quot;</p><p id="1d8b2280-a891-805d-85c8-e6e218d60c16" class="">Ziyou dit : &quot;Par la musique des hommes, vous voulez dire les sons des flûtes et des instruments à cordes ; par la musique de la terre, vous voulez dire les sons du vent dans les diverses ouvertures ; par la musique du ciel, que voulez-vous dire ?&quot;</p><p id="1d8b2280-a891-8045-94a4-eb40e5358501" class="">Ziqi répondit : &quot;Les dix mille êtres, différant par leur forme, émettent des sons divers. Qui les fait parler ainsi ? Qui leur donne une voix ? Est-ce une grande intelligence qui les fait ainsi, ou se contentent-ils d&#x27;être ce qu&#x27;ils sont naturellement ?&quot;</p><p id="1d8b2280-a891-806b-bf77-ee3669067b5f" class="">[...] Le Dao n&#x27;a ni commencement ni fin. Les choses naissent et meurent, sans qu&#x27;on puisse se fier à leur accomplissement. Tantôt il y a vide, tantôt il y a plénitude ; elles ne prennent pas de forme permanente. Le passé n&#x27;est pas différent du présent. Comment, alors, s&#x27;attrister des limitations inhérentes aux choses ?</p><p id="1d8b2280-a891-80c6-98b0-d764a33d61c2" class="">Si une perspective est considérée comme la perspective, qui détermine quelle perspective est juste ? Si une chose est considérée comme juste, qui dit qu&#x27;elle est juste ? Plutôt que d&#x27;attendre que quelqu&#x27;un d&#x27;autre confirme ma propre perspective, pourquoi ne pas adopter la perspective d&#x27;un autre ? [...]</p><p id="1d8b2280-a891-80b7-9922-ee4edfb69af7" class="">Il y a &quot;juste&quot; : il y a &quot;faux&quot;. Il y a &quot;acceptable&quot; : il y a &quot;inacceptable&quot;. Il y a &quot;disputé&quot; : il y a &quot;indisputé&quot;. Quel est l&#x27;état ? &quot;Juste&quot; est juste ? &quot;Faux&quot; est faux ? S&#x27;il y avait vraiment un juste et un faux objectifs, il n&#x27;y aurait pas besoin de disputes. S&#x27;il n&#x27;y a pas de juste et de faux objectifs, pourquoi l&#x27;un et l&#x27;autre s&#x27;affirment-ils comme juste et dénoncent-ils l&#x27;autre comme faux ?</p><p id="1d8b2280-a891-803e-963e-e9bcd3545cb4" class="">Si la droite et la gauche, les &quot;pour&quot; et les &quot;contre&quot; ne peuvent pas se convaincre mutuellement, utilisons alors la lumière naturelle. Chaque chose est à la fois &quot;cela&quot; et &quot;ceci&quot;. Si l&#x27;on part de &quot;ceci&quot;, on ne peut plus voir la chose ; mais si l&#x27;on part du savoir, on la voit. C&#x27;est pourquoi on dit : &quot;cela&quot; sort de &quot;ceci&quot;, et &quot;ceci&quot; s&#x27;explique par &quot;cela&quot;. Voilà la théorie selon laquelle &quot;cela&quot; et &quot;ceci&quot; naissent simultanément.</p><p id="1d8b2280-a891-80bb-a329-f3e90628bf88" class=""><em>莊子曰：「天下莫大於秋毫之末，而太山為小；莫壽於殤子，而彭祖為夭。」</em></p><p id="1d8b2280-a891-8028-bd0c-cde67515a5ab" class=""><strong>Commentaire</strong></p><p id="1d8b2280-a891-8003-a184-def8918895a1" class="">Ce passage du chapitre II du <em>Zhuangzi</em>, connu sous le titre &quot;Qiwu lun&quot; (L&#x27;égalité des choses), développe la critique radicale que fait Zhuangzi des distinctions rigides et des jugements absolus. À travers la conversation entre Ziqi et son disciple Ziyou, il expose plusieurs idées fondamentales de sa pensée.</p><p id="1d8b2280-a891-8028-8d25-cbcd8a9cb7eb" class="">L&#x27;état mystérieux de Ziqi au début du texte - &quot;comme un arbre desséché&quot;, ayant &quot;perdu son moi&quot; - évoque l&#x27;expérience taoïste de dépassement du soi ordinaire et d&#x27;union avec le Dao. Cette perte du moi individuel permet d&#x27;accéder à une perception plus vaste, symbolisée par les trois niveaux de &quot;musique&quot; : celle des hommes (limitée aux instruments), celle de la terre (les sons naturels) et celle du ciel (l&#x27;harmonie cosmique). Cette hiérarchie des niveaux de perception fait écho à la hiérarchie des perspectives évoquée dans le passage sur le Peng.</p><p id="1d8b2280-a891-800d-b106-c95978e85a22" class="">La métaphore du vent qui fait résonner différemment les diverses ouvertures illustre l&#x27;unité sous-jacente aux manifestations multiples. Le &quot;grand souffle&quot; (da qi) est unique, mais il produit dix mille sons différents selon les &quot;ouvertures&quot; qu&#x27;il traverse. De même, le Dao est un, mais se manifeste dans la multiplicité des êtres. La question &quot;Qui les fait parler ainsi ?&quot; interroge l&#x27;origine de cette diversité : est-elle due à une intelligence ordonnatrice extérieure (perspective téléologique) ou est-elle simplement le déploiement spontané de la nature des choses (ziran) ?</p><p id="1d8b2280-a891-80d0-845e-cfbaaabc02be" class="">La suite du texte aborde directement la question de la relativité des perspectives et des jugements. Zhuangzi remet en question l&#x27;existence de critères absolus pour déterminer ce qui est &quot;juste&quot; ou &quot;faux&quot;. Dans sa vision, les oppositions binaires résultent de perspectives limitées. Sa célèbre formule &quot;ceci&quot; (shi) et &quot;cela&quot; (bi) suggère que chaque chose peut être vue comme &quot;ceci&quot; de mon point de vue et &quot;cela&quot; du point de vue d&#x27;autrui. Ces perspectives ne sont pas simplement contradictoires mais complémentaires, naissant &quot;simultanément&quot; dans l&#x27;acte même de distinction.</p><p id="1d8b2280-a891-8090-93be-fde046c7b388" class="">Cette critique du langage et des distinctions conceptuelles vise à libérer l&#x27;esprit des attachements qui l&#x27;empêchent de percevoir l&#x27;unité fondamentale du Dao. Zhuangzi ne prône pas un relativisme nihiliste où toutes les positions se vaudraient, mais plutôt un dépassement des perspectives limitées vers une vision plus inclusive, celle de la &quot;lumière naturelle&quot; (ming) qui permet de voir les choses dans leur interdépendance.</p><p id="1d8b2280-a891-8082-ada1-d11c0606d6da" class="">On retrouve dans ce texte le style caractéristique de Zhuangzi, mêlant dialogue philosophique, images poétiques et paradoxes déstabilisateurs. Sa pensée procède non par affirmations dogmatiques mais par déstabilisation constante des certitudes, invitant le lecteur à une expérience de décentrement qui est déjà, en elle-même, une forme de libération.</p><p id="1d8b2280-a891-804c-8dc0-f4e4b6212c45" class=""><strong>Zhuangzi, Chapitre XVII : &quot;La crue d&#x27;automne&quot;</strong></p><p id="1d8b2280-a891-80ca-b0ec-d68ce58e0347" class="">Zhuangzi pêchait sur la rivière Pu. Le roi de Chu envoya deux hauts fonctionnaires lui porter ce message : &quot;Je souhaite vous confier l&#x27;administration de mon royaume.&quot;</p><p id="1d8b2280-a891-80a6-b6eb-ccbfe9eb80b4" class="">Zhuangzi garda sa ligne à la main et, sans se retourner, dit : &quot;J&#x27;ai entendu dire qu&#x27;il y a à Chu une tortue sacrée, morte depuis trois mille ans. Le roi la garde précieusement, enveloppée dans des étoffes, enfermée dans un coffret au fond de son temple ancestral. Cette tortue, préférerait-elle être morte avec ses os vénérés, ou être vivante et traîner sa queue dans la boue ?&quot;</p><p id="1d8b2280-a891-801d-a25c-dcc623b26b25" class="">&quot;Elle préférerait être vivante et traîner sa queue dans la boue&quot;, répondirent les deux fonctionnaires.</p><p id="1d8b2280-a891-80d3-8c9f-c6fdfad37aa6" class="">Zhuangzi dit : &quot;Partez ! Je préfère traîner ma queue dans la boue.&quot;</p><p id="1d8b2280-a891-80bc-a40a-d079df069bd4" class=""><em>莊子釣於濮水，楚王使大夫二人往先焉，曰：「願以境內累矣！」</em></p><p id="1d8b2280-a891-8076-a93e-fdb7ec77a70e" class=""><strong>Commentaire</strong></p><p id="1d8b2280-a891-80a5-b3b5-c6cc8d6a1a13" class="">Cette célèbre anecdote illustre parfaitement l&#x27;attitude de détachement et de liberté prônée par Zhuangzi face aux honneurs et aux positions de pouvoir. L&#x27;offre du roi de Chu de confier l&#x27;administration de son royaume au philosophe représente ce que la plupart des gens considéreraient comme une grande opportunité - prestige, influence, richesse. La réponse de Zhuangzi, sous forme de parabole, révèle une tout autre échelle de valeurs.</p><p id="1d8b2280-a891-80c8-9b8a-f4d17591a476" class="">La comparaison avec la tortue sacrée est particulièrement significative. Dans la culture chinoise ancienne, les carapaces de tortue étaient utilisées pour la divination, et une très vieille tortue aurait été considérée comme particulièrement précieuse pour cette fonction. Mais cette vénération a un prix : la mort et l&#x27;enfermement. La tortue est &quot;précieusement gardée&quot;, mais elle est morte. À l&#x27;opposé, une tortue vivante mais sans prestige &quot;traîne sa queue dans la boue&quot; - image peu glorieuse mais qui représente la liberté naturelle de l&#x27;animal.</p><p id="1d8b2280-a891-80ef-8ec3-f36f91eedcf1" class="">La réponse des fonctionnaires est révélatrice : même eux reconnaissent intuitivement que la vie dans la liberté, fût-elle humble, vaut mieux que la mort dans la vénération. La conclusion de Zhuangzi - &quot;Je préfère traîner ma queue dans la boue&quot; - affirme sa préférence pour une vie libre, même modeste et sans prestige, plutôt que pour les honneurs qui l&#x27;enchaîneraient aux obligations de la cour.</p><p id="1d8b2280-a891-8082-b447-cc74a3d46aea" class="">Cette anecdote condense plusieurs thèmes chers à Zhuangzi : le rejet des valeurs conventionnelles (richesse, pouvoir, réputation), la préférence pour la vie naturelle et libre, la méfiance envers les positions sociales qui contraignent l&#x27;individu. Elle illustre parfaitement le concept taoïste de wuwei - non pas l&#x27;inaction, mais l&#x27;action qui préserve notre nature authentique et évite les complications artificielles.</p><p id="1d8b2280-a891-80cb-a693-c7a3c9370c2f" class="">On y retrouve aussi l&#x27;humour caractéristique de Zhuangzi, qui utilise des images concrètes et parfois triviales (une tortue qui &quot;traîne sa queue dans la boue&quot;) pour exprimer des vérités profondes. Cette approche terre-à-terre contraste délibérément avec la solennité habituelle des discours philosophiques et politiques.</p><p id="1d8b2280-a891-80f1-a533-cd233dca153c" class="">Il est significatif que Zhuangzi soit présenté comme pêchant - activité simple, en contact avec la nature, qui évoque un mode de vie autosuffisant et détaché des compétitions sociales. Sa réponse sans même se retourner souligne encore son détachement face aux proposition du pouvoir.</p><p id="1d8b2280-a891-80db-9d52-eda80a5f8392" class="">Cette parabole a inspiré de nombreux lettrés chinois qui, à diverses époques, ont choisi de se retirer du service de l&#x27;État pour préserver leur intégrité personnelle, créant ainsi une tradition de &quot;l&#x27;ermite&quot; qui refuse les compromissions du pouvoir au nom d&#x27;idéaux plus élevés.</p><p id="1d8b2280-a891-80ee-8c32-fde8a62f40a8" class="">DaoTransformationRelativitéLibertéPerspectiveNon-agir</p><h2 id="1d8b2280-a891-808b-a5ac-fc3b862f52b9" class="">Nāgārjuna : La voie du milieu et la vacuité</h2><p id="1d8b2280-a891-8095-8979-df8cb35a961c" class=""><strong>Mūlamadhyamakakārikā, Chapitre XXIV : &quot;L&#x27;examen des Quatre Nobles Vérités&quot;</strong></p><p id="1d8b2280-a891-80c5-a05f-e48d8a5fdc54" class="">8. L&#x27;enseignement des bouddhas s&#x27;appuie sur deux vérités : la vérité relative au monde ordinaire et la vérité au sens ultime.</p><p id="1d8b2280-a891-80aa-aace-d46d9240d331" class="">9. Ceux qui ne comprennent pas la distinction entre ces deux vérités ne comprennent pas la profonde réalité dans l&#x27;enseignement du Bouddha.</p><p id="1d8b2280-a891-806f-92b7-cf401e8f1902" class="">10. Sans s&#x27;appuyer sur la vérité conventionnelle, l&#x27;ultime ne peut être enseigné. Sans atteindre l&#x27;ultime, le nirvāṇa ne peut être atteint.</p><p id="1d8b2280-a891-80ea-bc34-c0e9d8919a2c" class="">11. La vacuité mal comprise détruit les lents d&#x27;esprit, comme un serpent mal saisi ou une formule magique mal appliquée.</p><p id="1d8b2280-a891-804a-b459-fbd9f3bfcf42" class="">12. Pour cette raison, l&#x27;esprit du Sage hésita à enseigner le Dharma, car il savait qu&#x27;il serait difficile pour les êtres aux vues limitées de comprendre cette vérité profonde.</p><p id="1d8b2280-a891-8036-a9c9-e0209b74199e" class="">13. Vous pensez que je soulève des objections quand je parle de vacuité, mais il n&#x27;en est rien. La vacuité, c&#x27;est la production conditionnée ; c&#x27;est ce que nous appelons la Voie du Milieu.</p><p id="1d8b2280-a891-80f6-bbfc-f6932912f2d3" class="">14. Puisqu&#x27;il n&#x27;existe aucun phénomène qui ne soit produit de manière conditionnée, il n&#x27;existe aucun phénomène qui ne soit vide.</p><p id="1d8b2280-a891-807c-b107-de800c6e5582" class="">15. Si tout n&#x27;était pas vide, il n&#x27;y aurait ni production ni destruction. Et les Quatre Nobles Vérités elles-mêmes seraient inexistantes.</p><p id="1d8b2280-a891-801e-bae1-ed5922830ecc" class="">16. Si tout n&#x27;était pas produit de manière conditionnée, comment la souffrance pourrait-elle exister ? L&#x27;impermanent est dit souffrance, et cela n&#x27;existerait pas s&#x27;il y avait une nature propre.</p><p id="1d8b2280-a891-808f-acaa-d30432c8ade1" class="">17. Si tout avait une nature propre, comment l&#x27;origine de la souffrance pourrait-elle se produire ? Celui qui contredit la vacuité contredit la production conditionnée.</p><p id="1d8b2280-a891-80ab-8c67-f86e0bf79cbd" class="">18. Si tout avait une nature propre, comment la cessation de la souffrance pourrait-elle se produire ? Une nature propre persiste, ne s&#x27;éteint pas.</p><p id="1d8b2280-a891-80b6-b988-ffe9fd9d89f3" class="">19. Si tout avait une nature propre, comment le chemin pourrait-il être pratiqué ? Si une nature propre était déjà présente, la pratique serait inutile.</p><p id="1d8b2280-a891-8063-8711-eea1ccfe5641" class="">20. Si les deux vérités, cessation et origine, n&#x27;existaient pas, la cessation de la souffrance n&#x27;existerait pas. Comment alors atteindre la cessation par le chemin ?</p><p id="1d8b2280-a891-80c9-b80a-e44d6a7cce77" class=""><em>द्वे सत्ये समुपाश्रित्य बुद्धानां धर्मदेशना।लोकसंवृतिसत्यं च सत्यं च परमार्थतः॥</em></p><p id="1d8b2280-a891-80bb-b892-ea3fb7856208" class=""><strong>Commentaire</strong></p><p id="1d8b2280-a891-8033-ab2d-dd723f36c8e9" class="">Ce passage du chapitre XXIV des <em>Mūlamadhyamakakārikā</em> (Stances du Milieu par excellence) constitue l&#x27;une des expositions les plus importantes de la doctrine des deux vérités, pilier de la philosophie de Nāgārjuna. Face aux critiques qui l&#x27;accusent de nihilisme et de nier les fondements mêmes du bouddhisme (les Quatre Nobles Vérités), Nāgārjuna clarifie sa position en distinguant deux niveaux de réalité.</p><p id="1d8b2280-a891-8039-bec1-eaf8f09758bf" class="">Nāgārjuna établit d&#x27;abord (stances 8-10) la distinction entre la &quot;vérité relative au monde ordinaire&quot; (saṃvṛti-satya) et la &quot;vérité au sens ultime&quot; (paramārtha-satya). La première correspond au niveau conventionnel où les phénomènes apparaissent comme existants et distincts ; la seconde, au niveau ultime où tous les phénomènes sont reconnus comme vides de nature propre. Ces deux vérités ne sont pas contradictoires mais complémentaires : sans la vérité conventionnelle, l&#x27;ultime ne pourrait être enseigné (car tout enseignement s&#x27;appuie sur le langage et les concepts, qui relèvent du conventionnel) ; sans atteindre la compréhension de l&#x27;ultime, la libération (nirvāṇa) reste impossible.</p><p id="1d8b2280-a891-8015-832e-c22dab33a912" class="">Nāgārjuna avertit ensuite (stances 11-12) des dangers d&#x27;une mauvaise compréhension de la vacuité, qui peut &quot;détruire les lents d&#x27;esprit&quot; s&#x27;ils l&#x27;interprètent comme simple nihilisme. Cette mise en garde explique l&#x27;hésitation initiale du Bouddha à enseigner après son Éveil, car il savait la difficulté pour les êtres ordinaires de comprendre une vérité si subtile, qui transcende les catégories habituelles de pensée.</p><p id="1d8b2280-a891-80f7-a5b1-de39a288191f" class="">La stance 13 constitue le cœur du passage, où Nāgārjuna identifie explicitement la vacuité (śūnyatā) à la production conditionnée (pratītyasamutpāda), c&#x27;est-à-dire à l&#x27;origine dépendante de tous les phénomènes. Cette identité est ce que Nāgārjuna appelle la &quot;Voie du Milieu&quot; (madhyamā pratipad) : une position qui évite les extrêmes de l&#x27;éternalisme (affirmant l&#x27;existence permanente des choses) et du nihilisme (niant toute existence). La vacuité n&#x27;est donc pas le néant, mais la reconnaissance que rien n&#x27;existe de façon indépendante et autonome.</p><p id="1d8b2280-a891-80e3-bac6-f539e2bbe4d3" class="">Dans les stances suivantes (14-19), Nāgārjuna montre que, loin de contredire les Quatre Nobles Vérités (souffrance, origine de la souffrance, cessation de la souffrance, chemin vers la cessation), la doctrine de la vacuité est en fait nécessaire pour les rendre intelligibles. Si les phénomènes avaient une nature propre (svabhāva), ils seraient immuables, et ni la production de la souffrance ni sa cessation ne seraient possibles. La pratique même du chemin spirituel serait vaine si les êtres possédaient une nature intrinsèque définitive.</p><p id="1d8b2280-a891-8053-9ca0-c6a067798047" class="">Ce passage illustre parfaitement la méthode dialectique de Nāgārjuna, qui ne propose pas une nouvelle position métaphysique positive, mais déconstruit les positions dogmatiques pour révéler leur incohérence interne. Sa &quot;Voie du Milieu&quot; n&#x27;est pas un compromis entre des positions extrêmes, mais leur dépassement radical par la reconnaissance de leur vacuité commune.</p><p id="1d8b2280-a891-8020-8d7e-eec405d3f9da" class=""><strong>Mūlamadhyamakakārikā, Chapitre XXV : &quot;L&#x27;examen du nirvāṇa&quot;</strong></p><p id="1d8b2280-a891-80d9-b7f9-e155ca90b3f4" class="">1. Si tout est vide, il n&#x27;y a ni production ni destruction. Par l&#x27;abandon ou la cessation de quoi le nirvāṇa serait-il atteint ?</p><p id="1d8b2280-a891-8000-895c-f2e875be3ba5" class="">2. Si tout est non vide, il n&#x27;y a ni production ni destruction. Par l&#x27;abandon ou la cessation de quoi le nirvāṇa serait-il atteint ?</p><p id="1d8b2280-a891-8086-a7b6-d5c341bd4d01" class="">3. Le nirvāṇa n&#x27;est ni abandonné, ni obtenu, ni anéanti, ni éternel, ni cessé, ni produit.</p><p id="1d8b2280-a891-804b-ab2e-eea543a36883" class="">4. Le nirvāṇa n&#x27;est pas un être, car il aurait les caractéristiques de la vieillesse et de la mort. Il n&#x27;existe pas d&#x27;être qui soit sans vieillesse et sans mort.</p><p id="1d8b2280-a891-8010-b04b-ee2b6fa94cee" class="">5. Si le nirvāṇa était un être, il serait conditionné. Un être inconditionné n&#x27;existe nulle part.</p><p id="1d8b2280-a891-801d-916b-f4d948695a96" class="">6. Si le nirvāṇa était un être, comment ne serait-il pas dépendant ? Car il n&#x27;existe pas d&#x27;être qui ne soit dépendant.</p><p id="1d8b2280-a891-80ff-9f54-fa73752536e8" class="">7. Si le nirvāṇa n&#x27;est pas un être, comment pourrait-il être un non-être ? Là où il n&#x27;y a pas d&#x27;être, il ne peut y avoir de non-être.</p><p id="1d8b2280-a891-80c4-8bc6-caa79e6d3cff" class="">8. Si le nirvāṇa était un non-être, comment ne serait-il pas dépendant ? Ce qui n&#x27;est pas un non-être dépendant n&#x27;existe pas.</p><p id="1d8b2280-a891-80f1-8b5f-c1a075b1c79f" class="">9. Ce qui vient et va est dépendant ou conditionné. Le nirvāṇa n&#x27;est ni dépendant ni conditionné, donc il n&#x27;y a ni venue ni départ.</p><p id="1d8b2280-a891-80d3-83df-e8c66fe9cf7f" class="">10. S&#x27;il n&#x27;y a ni existence ni non-existence, ni les deux ensemble, comment pourrait-on élaborer des théories ?</p><p id="1d8b2280-a891-80e1-ace0-e5d66e4b922f" class="">11. Le nirvāṇa est non-éliminable, non-réalisable, non-détruit, non-permanent, non-cessé, non-produit.</p><p id="1d8b2280-a891-809f-bda8-d06138951814" class="">12. Quand le Bouddha n&#x27;est ni existant ni non-existant, qui pourrait imaginer qu&#x27;il est éternel ou non-éternel, les deux ou ni l&#x27;un ni l&#x27;autre ?</p><p id="1d8b2280-a891-8078-aae3-f41850fc3600" class="">13. Pour celui qui incline vers la saisie, il y a affirmation ou négation. Pour celui dont l&#x27;esprit est apaisé, il n&#x27;y a ni affirmation ni négation.</p><p id="1d8b2280-a891-80f0-af0c-fbc5ed2a28c9" class=""><em>सर्वमस्तीति वै शाश्वतं नास्तीत्युच्छेददर्शनम्।तस्मादस्तित्वनास्तित्वे नाश्रियेत विचक्षणः॥</em></p><p id="1d8b2280-a891-8094-8e50-e5c2bf28c019" class=""><strong>Commentaire</strong></p><p id="1d8b2280-a891-80a6-bd9a-cfb40cda160d" class="">Dans ce passage du chapitre XXV, Nāgārjuna applique sa méthode dialectique de la vacuité au concept même de nirvāṇa - l&#x27;Éveil ou la libération, but ultime de la pratique bouddhique. Ce faisant, il pousse sa déconstruction jusqu&#x27;aux limites de ce qui peut être pensé et exprimé.</p><p id="1d8b2280-a891-80e4-8d7b-f819d7ca3425" class="">Les deux premières stances établissent un dilemme : ni la vision de la vacuité universelle ni celle de la non-vacuité universelle ne permettent de comprendre l&#x27;obtention du nirvāṇa. Si tout est vide (sans existence intrinsèque), il n&#x27;y a rien à abandonner ni à atteindre ; si tout est non-vide (doté d&#x27;existence intrinsèque), l&#x27;impermanence et la transformation nécessaires à la libération seraient impossibles. Ce paradoxe apparent sert à introduire une approche qui transcende les catégories habituelles de la pensée.</p><p id="1d8b2280-a891-803d-960b-c2e18431e1f4" class="">Nāgārjuna procède ensuite (stances 3-9) à l&#x27;application systématique de sa méthode du tétralemme (catuṣkoṭi) au nirvāṇa. Cette approche logique à quatre branches examine une proposition selon quatre possibilités : est-ce que X est ? Est-ce que X n&#x27;est pas ? Est-ce que X est et n&#x27;est pas ? Est-ce que X ni n&#x27;est ni n&#x27;est pas ? Nāgārjuna montre que le nirvāṇa ne peut être considéré ni comme un &quot;être&quot; (bhāva), ni comme un &quot;non-être&quot; (abhāva), ni comme les deux à la fois, ni comme aucun des deux.</p><p id="1d8b2280-a891-80ba-a80d-cdcea2261a74" class="">Si le nirvāṇa était un &quot;être&quot;, il serait soumis aux caractéristiques de tous les êtres conditionnés : impermanence, vieillesse, mort, dépendance (stances 4-6). Cela contredit la nature même du nirvāṇa comme libération des conditions et de la souffrance. Mais s&#x27;il était un &quot;non-être&quot; (stances 7-8), il serait défini négativement par rapport à l&#x27;être, donc toujours dépendant conceptuellement. Les catégories d&#x27;être et de non-être s&#x27;avèrent donc inadéquates pour penser le nirvāṇa.</p><p id="1d8b2280-a891-8070-a800-d4f66f8dbe17" class="">La stance 9 souligne que le nirvāṇa transcende le mouvement et le changement qui caractérisent les phénomènes conditionnés (saṃsāra). Cette distinction entre nirvāṇa et saṃsāra est cependant elle-même remise en question ailleurs par Nāgārjuna, qui affirme que &quot;le nirvāṇa ne diffère en rien du saṃsāra&quot; (stance XXV, 19, non citée ici) - affirmation paradoxale qui souligne l&#x27;identité ultime des deux dans la perspective de la vacuité.</p><p id="1d8b2280-a891-8020-b5c7-da5508fa4c14" class="">Les stances 10-13 concluent en soulignant l&#x27;impossibilité d&#x27;élaborer des théories définitives sur le nirvāṇa et le Bouddha lui-même. La véritable sagesse consiste non à adhérer à des vues dogmatiques (qu&#x27;elles soient affirmatives ou négatives), mais à apaiser l&#x27;esprit et à abandonner toute &quot;saisie&quot; conceptuelle (stance 13). Cette conclusion rejoint l&#x27;enseignement pragmatique du Bouddha, qui comparait ses enseignements à un radeau : utile pour traverser la rivière, mais à abandonner une fois l&#x27;autre rive atteinte.</p><p id="1d8b2280-a891-8009-a5e7-dbd4b4d21c8d" class="">Ce passage illustre parfaitement l&#x27;approche &quot;thérapeutique&quot; de Nāgārjuna, qui vise moins à établir une position philosophique définitive qu&#x27;à libérer l&#x27;esprit des attachements conceptuels qui causent la souffrance. La vacuité (śūnyatā) apparaît ainsi non comme une doctrine à laquelle s&#x27;attacher, mais comme un antidote aux attachements doctrinaux eux-mêmes.</p><p id="1d8b2280-a891-80af-b85e-f61184e5ad51" class=""><strong>Mūlamadhyamakakārikā, Chapitre I : &quot;L&#x27;examen des conditions&quot;</strong></p><p id="1d8b2280-a891-8096-8844-d484de738164" class="">1. Jamais, nulle part, aucun étant n&#x27;est apparu de lui-même, d&#x27;un autre, des deux à la fois, ou sans cause.</p><p id="1d8b2280-a891-80c6-9f6d-f2256faf859c" class="">2. Il y a quatre conditions : la cause efficiente, l&#x27;objet, la condition immédiatement antécédente, et la condition déterminante. Il n&#x27;existe pas de cinquième condition.</p><p id="1d8b2280-a891-80ee-865c-c88921ced3fe" class="">3. L&#x27;être propre des choses ne se trouve ni dans leurs conditions ni dans leur ensemble.</p><p id="1d8b2280-a891-8074-b186-d91d353be9d8" class="">4. L&#x27;activité des conditions n&#x27;existe pas sans effet. Mais sans leur activité, il n&#x27;y a pas d&#x27;effet.</p><p id="1d8b2280-a891-802f-98f1-e829827792b4" class="">5. Ces conditions, si elles sont vides d&#x27;effets, comment pourraient-elles être des conditions ? Et si elles ne sont pas vides, comment pourraient-elles être des conditions ?</p><p id="1d8b2280-a891-80c6-bd25-fd9d8575bc7d" class="">6. Pour une chose qui n&#x27;existe pas, il n&#x27;y a pas de cause. Sans cause, comment pourrait-il y avoir un effet ? Sans effet, comment pourrait-il y avoir des conditions ?</p><p id="1d8b2280-a891-8003-8623-f878fe2d9710" class="">7. Ni les choses existantes ni les choses non-existantes n&#x27;ont de conditions. Si une chose n&#x27;existe pas, de quoi serait-elle la condition ? Et si elle existe déjà, à quoi servirait une condition ?</p><p id="1d8b2280-a891-809a-9c29-c2222dfacf53" class="">8. Jamais, nulle part, aucun étant n&#x27;apparaît comme existant en lui-même, produit par soi ou par un autre, par les deux, ou sans cause.</p><p id="1d8b2280-a891-80da-bf8e-e246917a88c6" class=""><em>न स्वतो नापि परतो न द्वाभ्यां नाप्यहेतुतः।उत्पन्ना जातु विद्यन्ते भावाः क्वचन केचन॥</em></p><p id="1d8b2280-a891-80a7-b0e3-d68732842dab" class=""><strong>Commentaire</strong></p><p id="1d8b2280-a891-805b-9c40-dfb86c72ec6b" class="">Ce passage inaugural des <em>Mūlamadhyamakakārikā</em> pose d&#x27;emblée le cadre de la critique radicale que Nāgārjuna adresse aux conceptions substantialistes des phénomènes. En examinant la notion de causalité, il s&#x27;attaque à l&#x27;un des concepts fondamentaux de toute philosophie, bouddhiste ou non.</p><p id="1d8b2280-a891-80a9-a4d5-dc88b42b1391" class="">La première stance énonce une thèse négative qui structure tout le traité : aucun phénomène n&#x27;apparaît selon les quatre possibilités logiques envisageables (de lui-même, d&#x27;un autre, des deux, ou sans cause). Cette tétralemme (catuṣkoṭi) négatif établit que la production des phénomènes échappe à toute conceptualisation définitive. Cette stance peut sembler nihiliste, mais elle vise en réalité à préparer l&#x27;esprit à comprendre la vacuité comme origine dépendante, au-delà des catégories de pensée ordinaires.</p><p id="1d8b2280-a891-80c1-9906-e569bbb44038" class="">Nāgārjuna reconnaît ensuite (stance 2) les quatre types de conditions distinguées par l&#x27;Abhidharma bouddhique : la cause efficiente (hetu-pratyaya), l&#x27;objet ou support (ālambana-pratyaya), la condition immédiatement antécédente (samanantara-pratyaya), et la condition déterminante (adhipati-pratyaya). Mais cette reconnaissance prélude à une critique systématique.</p><p id="1d8b2280-a891-807e-a52f-f1efddc60e50" class="">Dans la stance 3, il affirme que l&#x27;être propre ou la nature intrinsèque (svabhāva) des choses ne se trouve ni dans les conditions individuelles ni dans leur ensemble. Cette affirmation contredit la vision substantialiste selon laquelle les causes contiendraient déjà, d&#x27;une certaine façon, leurs effets.</p><p id="1d8b2280-a891-801f-bf5f-e8b42f2e9156" class="">Les stances 4 et 5 développent un dilemme concernant les conditions : si elles sont dépourvues d&#x27;effets, elles ne sont pas vraiment des conditions (puisqu&#x27;une condition se définit par sa relation à un effet) ; mais si elles contiennent déjà leurs effets, elles ne sont pas non plus des conditions (puisque l&#x27;effet existerait déjà). Ce dilemme montre l&#x27;impossibilité de penser la relation causale en termes d&#x27;identité ou de différence absolue.</p><p id="1d8b2280-a891-8042-8ba5-ce7e058ad5de" class="">Les stances 6 et 7 poursuivent la critique en montrant que ni les choses existantes ni les non-existantes ne peuvent avoir de conditions. Une chose non-existante ne peut pas avoir de cause (car le néant n&#x27;a pas besoin d&#x27;explication), et une chose déjà existante n&#x27;a pas besoin de cause (puisqu&#x27;elle existe déjà). Ce dilemme révèle la difficulté de penser le changement et la production dans le cadre d&#x27;une ontologie substantialiste.</p><p id="1d8b2280-a891-80e6-9f42-e9ec36783e76" class="">La stance 8, qui reprend presque mot pour mot la première, conclut le chapitre en réaffirmant l&#x27;impossibilité de comprendre la production des phénomènes selon les catégories habituelles de la pensée. Cette circularité délibérée souligne le caractère radical de la critique de Nāgārjuna, qui vise à ébranler les fondements mêmes de notre compréhension ordinaire du monde.</p><p id="1d8b2280-a891-8023-b42a-e76523c3758e" class="">Ce passage illustre la méthode caractéristique de Nāgārjuna, le prasaṅga ou réduction à l&#x27;absurde : plutôt que de proposer une théorie positive alternative, il montre que toutes les positions métaphysiques sur la causalité mènent à des contradictions. Cette approche apophatique (qui procède par négation) ne vise pas au nihilisme, mais à libérer l&#x27;esprit des constructions conceptuelles qui obscurcissent sa compréhension de la réalité telle qu&#x27;elle est (tathatā).</p><p id="1d8b2280-a891-8073-b47e-dfa8f2fa3174" class="">VacuitéDeux véritésOrigine dépendanteVoie du MilieuNirvāṇaCausalité</p><h2 id="1d8b2280-a891-80b1-b0bc-d58352b0d4f9" class="">Convergences et différences entre Zhuangzi et Nāgārjuna</h2><p id="1d8b2280-a891-80f3-90a8-cc0caddf6ae0" class=""><strong>Convergences</strong></p><p id="1d8b2280-a891-807d-a550-ed0a2f847ec7" class=""><strong>Critique des limitations du langage et des concepts</strong> : Zhuangzi et Nāgārjuna partagent une profonde méfiance envers le langage ordinaire et les distinctions conceptuelles rigides. Zhuangzi affirme que &quot;le Dao dont on peut parler n&#x27;est pas le Dao constant&quot; et illustre constamment les pièges des catégories linguistiques. Nāgārjuna, de son côté, montre les contradictions inhérentes aux concepts fondamentaux comme la causalité ou l&#x27;identité. Tous deux considèrent que l&#x27;attachement aux mots et aux concepts est un obstacle majeur à la compréhension authentique.</p><p id="1d8b2280-a891-80f4-b207-db082287f1fd" class=""><strong>Relativité des perspectives</strong> : La théorie du &quot;Discours sur l&#x27;égalité des choses&quot; (Qiwu lun) de Zhuangzi et la doctrine des deux vérités de Nāgārjuna reflètent une conscience aiguë de la relativité des perspectives. Zhuangzi montre que ce qui est &quot;ceci&quot; de mon point de vue peut être &quot;cela&quot; d&#x27;un autre point de vue, et qu&#x27;aucune perspective limitée ne peut prétendre à l&#x27;absolu. De même, Nāgārjuna distingue la vérité conventionnelle (saṃvṛti-satya) et la vérité ultime (paramārtha-satya), reconnaissant la validité pratique des distinctions ordinaires tout en révélant leur vacuité fondamentale.</p><p id="1d8b2280-a891-808e-b5f9-c74b204ac7cb" class=""><strong>Dépassement des oppositions binaires</strong> : Les deux penseurs cherchent à transcender les dichotomies habituelles de la pensée. Zhuangzi critique les oppositions de type &quot;bon/mauvais&quot;, &quot;beau/laid&quot;, qui résultent de préférences subjectives et empêchent de percevoir l&#x27;unité sous-jacente. Nāgārjuna, avec sa &quot;Voie du Milieu&quot; (madhyamā pratipad), évite tant l&#x27;affirmation de l&#x27;existence que celle de la non-existence, dépassant cette opposition sans tomber dans un compromis facile.</p><p id="1d8b2280-a891-808c-b163-ccaa710b4673" class=""><strong>Vision non-substantialiste</strong> : Zhuangzi et Nāgārjuna rejettent la conception d&#x27;êtres dotés d&#x27;une essence fixe et permanente. Pour Zhuangzi, tout est en constante transformation, comme l&#x27;illustre sa célèbre image d&#x27;un homme qui rêve être un papillon puis se réveille en se demandant s&#x27;il n&#x27;est pas un papillon qui rêve être un homme. Pour Nāgārjuna, tous les phénomènes sont vides (śūnya) de nature propre (svabhāva) et n&#x27;existent que de façon interdépendante.</p><p id="1d8b2280-a891-8051-bdbe-d97f49ff002b" class=""><strong>Approche thérapeutique</strong> : Plutôt que de construire des systèmes métaphysiques positifs, les deux philosophes adoptent une approche &quot;thérapeutique&quot; qui vise à libérer l&#x27;esprit de ses attachements et de ses vues erronées. Leurs méthodes - paraboles paradoxales chez Zhuangzi, dialectique rigoureuse chez Nāgārjuna - sont des moyens habiles (upāya) pour déconditionner l&#x27;esprit et lui permettre de s&#x27;ouvrir à une perception plus directe de la réalité.</p><p id="1d8b2280-a891-8060-8cfc-f65e87bc08bd" class=""><strong>Différences</strong></p><p id="1d8b2280-a891-80bb-94c0-caaf81da90d9" class=""><strong>Contextes et objectifs</strong> : Malgré ces convergences, Zhuangzi et Nāgārjuna s&#x27;inscrivent dans des traditions religieuses et philosophiques distinctes, avec des préoccupations différentes. Zhuangzi s&#x27;inscrit dans le taoïsme chinois, avec son accent sur l&#x27;harmonie avec la nature et la spontanéité. Son but est la liberté personnelle et l&#x27;accord avec le Dao. Nāgārjuna s&#x27;inscrit dans le bouddhisme Mahāyāna, avec sa sotériologie centrée sur la libération de la souffrance pour tous les êtres. Son but est l&#x27;Éveil et la compassion universelle.</p><p id="1d8b2280-a891-805c-b80c-c5b10dc86489" class=""><strong>Méthodes argumentatives</strong> : Leurs styles intellectuels diffèrent considérablement. Zhuangzi privilégie un discours narratif fait d&#x27;anecdotes, de paraboles et de dialogues imaginaires, souvent teintés d&#x27;humour et de paradoxes. Sa critique des limites de la raison passe par une forme littéraire qui fait appel à l&#x27;intuition et à l&#x27;imagination. Nāgārjuna, en revanche, adopte une approche plus analytique et dialectique, utilisant une argumentation logique rigoureuse (prasaṅga) pour réduire à l&#x27;absurde les positions adverses. Sa critique de la rationalité s&#x27;effectue au moyen de la rationalité elle-même, poussée jusqu&#x27;à ses limites.</p><p id="1d8b2280-a891-80e6-80bd-c3b1f78055fd" class=""><strong>Conception de la nature</strong> : Zhuangzi développe une vision positive de la nature comme manifestation du Dao, et invite à s&#x27;harmoniser avec les processus naturels par le non-agir (wuwei). Cette valorisation de la spontanéité naturelle (ziran) constitue un idéal positif qui informe son éthique. Nāgārjuna, conformément à la vision bouddhique, considère que les phénomènes naturels, comme tous les phénomènes conditionnés, participent du saṃsāra et sont caractérisés par l&#x27;impermanence et la souffrance. La vacuité qu&#x27;il révèle n&#x27;est pas tant un principe cosmique positif qu&#x27;une absence de caractéristiques inhérentes.</p><p id="1d8b2280-a891-80e5-9791-d62b99ae2197" class=""><strong>Rapport au corps et à l&#x27;individualité</strong> : Zhuangzi montre une certaine valorisation du corps et de la vie individuelle, conçus comme parties intégrantes du flux du Dao. Son idéal de &quot;nourrir le principe vital&quot; (yangsheng) et sa critique des mutilations rituelles reflètent cette attention au corps vivant. Nāgārjuna, fidèle à l&#x27;anātman (non-soi) bouddhique, soumet l&#x27;individualité et le corps à la même critique que tous les phénomènes : ils sont vides de nature propre et leur saisie comme entités substantielles est source de souffrance.</p><p id="1d8b2280-a891-80ae-b88f-f5705d45ab53" class=""><strong>Implications pratiques</strong> : Ces différences théoriques se traduisent par des orientations pratiques distinctes. L&#x27;idéal taoïste de Zhuangzi tend vers une vie simple, en harmonie avec la nature, détachée des conventions sociales et des ambitions politiques - comme l&#x27;illustre son refus d&#x27;être ministre. L&#x27;idéal bouddhiste de Nāgārjuna, tout en partageant ce détachement, s&#x27;oriente davantage vers la méditation systématique, la compassion active et le service de tous les êtres souffrants à travers la voie du bodhisattva.</p><h3 id="1d8b2280-a891-809e-ac44-c140f30ff43f" class=""><strong>Pertinence contemporaine</strong></h3><p id="1d8b2280-a891-8084-b440-cd8b9855b40d" class="">Bien que séparés de nous par des millénaires, Zhuangzi et Nāgārjuna offrent des perspectives étonnamment pertinentes pour notre monde contemporain, caractérisé par des crises multiples - écologique, sociale, existentielle - et par une remise en question des paradigmes de pensée traditionnels.</p><p id="1d8b2280-a891-8032-8294-eb3a394cfca2" class="">La critique que ces deux penseurs adressent aux limitations du langage et des catégories conceptuelles rigides résonne particulièrement à notre époque post-moderne, où la &quot;déconstruction&quot; des discours hégémoniques et la reconnaissance de la pluralité des perspectives sont devenues centrales. Leur sensibilité à la relativité des points de vue anticipe les débats contemporains sur l&#x27;éthique interculturelle et le dialogue entre civilisations.</p><p id="1d8b2280-a891-8036-a615-d70a4325f4bc" class="">L&#x27;approche non-substantialiste qu&#x27;ils partagent offre également des ressources précieuses face à la crise écologique actuelle. En remettant en question la conception d&#x27;êtres isolés dotés d&#x27;essences fixes, ils invitent à reconnaître l&#x27;interdépendance fondamentale de tous les phénomènes - ce que l&#x27;écologie contemporaine confirme à travers la notion d&#x27;écosystèmes et de réseaux complexes. La vision de Zhuangzi d&#x27;une harmonie avec les processus naturels et la compréhension par Nāgārjuna de la coproduction conditionnée peuvent inspirer une éthique environnementale qui dépasse l&#x27;anthropocentrisme et reconnaît notre appartenance au tissu de la vie.</p><p id="1d8b2280-a891-8082-acc3-c0a5b677a1fe" class="">En psychologie et en psychothérapie, leurs approches &quot;déconstructives&quot; anticipent certains aspects des thérapies contemporaines. La critique des attachements conceptuels chez Nāgārjuna trouve des échos dans les thérapies cognitives qui visent à identifier et dépasser les schémas de pensée rigides. L&#x27;acceptation taoïste du changement et l&#x27;humour de Zhuangzi face aux prétentions humaines résonnent avec les approches d&#x27;acceptation et d&#x27;engagement (ACT) et la thérapie narrative.</p><p id="1d8b2280-a891-80cd-9a92-de09a3f9d4d7" class="">Dans le domaine politique, leur critique des dogmatismes et leur valorisation de perspectives multiples peuvent nourrir une réflexion sur les conditions d&#x27;un dialogue authentique dans nos sociétés pluralistes. Le détachement de Zhuangzi face aux honneurs et au pouvoir, illustré par l&#x27;anecdote de la tortue, offre un contrepoint salutaire à la valorisation contemporaine du succès matériel et de la reconnaissance sociale.</p><p id="1d8b2280-a891-8028-9e73-d8737d57bb3e" class="">Enfin, au niveau existentiel, ces deux penseurs de l&#x27;Extrême-Orient nous invitent à une forme de sagesse qui accueille le changement, reconnaît la relativité de nos constructions mentales et cherche une liberté qui ne dépend pas des circonstances extérieures. Face à l&#x27;anxiété généralisée de notre époque et à la quête de sens qui caractérise les sociétés post-traditionnelles, leurs voies de déconditionnement intellectuel et spirituel offrent des ressources inestimables pour une existence plus lucide et plus sereine.</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

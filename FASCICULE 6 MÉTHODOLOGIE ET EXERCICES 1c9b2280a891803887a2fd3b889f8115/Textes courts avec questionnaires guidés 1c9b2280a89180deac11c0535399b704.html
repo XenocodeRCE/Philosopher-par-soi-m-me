@@ -1,0 +1,704 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Textes courts avec questionnaires guidés</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-80de-ac11-c0535399b704" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1603703479763-01d0ce416b56?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><h1 class="page-title">Textes courts avec questionnaires guidés</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d4b2280-a891-8087-8a9c-da61fa92cd9d" class=""><em>Cette première série d&#x27;exercices vise à vous familiariser avec les étapes initiales de l&#x27;explication de texte. Pour chaque extrait court, un questionnaire vous guide pas à pas pour identifier les éléments essentiels : le thème, la question, la thèse de l&#x27;auteur, la structure simple et les mots importants. Prenez le temps de répondre précisément à chaque question au brouillon.</em></p><p id="1d4b2280-a891-8031-8f53-cf710d36f8e3" class="">
+</p><h1 id="1d4b2280-a891-80b6-9fa4-ce23dc3c8010" class=""><strong>Texte 1 : Épictète</strong></h1><blockquote id="1d4b2280-a891-8028-84b9-c1aae16c2e4c" class=""><em>Ne demande pas que ce qui arrive arrive comme tu désires, mais désire que les choses arrivent comme elles arrivent, et tu couleras des jours heureux. - Épictète, Manuel, VIII</em><strong><br/><br/></strong></blockquote><h2 id="1d4b2280-a891-8046-85c3-f8780c81ab46" class=""><strong>Questionnaire guidé :</strong><br/><br/></h2><ol type="1" id="1d4b2280-a891-802e-ba84-c3b0e22fcf13" class="numbered-list" start="1"><li>Quel est le <strong>thème</strong> général abordé dans cette phrase (le sujet principal) ?</li></ol><ol type="1" id="1d4b2280-a891-802e-b6d7-ea08f7ec0546" class="numbered-list" start="2"><li>À quelle <strong>question</strong> sur la manière de vivre ou d&#x27;atteindre le bonheur Épictète semble-t-il répondre ici ?</li></ol><ol type="1" id="1d4b2280-a891-80d9-8e59-f234583a6d29" class="numbered-list" start="3"><li>Quelle est la <strong>réponse (thèse)</strong> d&#x27;Épictète ? Quel conseil donne-t-il ?</li></ol><ol type="1" id="1d4b2280-a891-80b4-ae1c-ca31951de9a7" class="numbered-list" start="4"><li>Comment cette phrase est-elle <strong>structurée</strong> ? Repérez-vous une opposition ou une comparaison ? Quels mots marquent cette structure (&quot;Ne demande pas que...&quot;, &quot;mais désire que...&quot;) ?</li></ol><ol type="1" id="1d4b2280-a891-8052-b57d-ef5658422fe9" class="numbered-list" start="5"><li>5. Quels sont les <strong>mots importants</strong> et quel sens précis ont-ils ici (&quot;désirer&quot;, &quot;arriver&quot;, &quot;jours heureux&quot;) ?</li></ol><p id="1d4b2280-a891-8073-87f0-cb7823f552d5" class="">
+</p><h1 id="1d4b2280-a891-80a2-9e7d-f2afe3baef80" class=""><strong>Texte 2 : Alain</strong></h1><blockquote id="1d4b2280-a891-8012-a8f2-fbff02cd73a8" class=""><em>Le premier trait de la joie, c&#x27;est ce sentiment de puissance. L&#x27;homme joyeux se sent fort ; il se sent roi. Et remarquez que la joie ne mesure point ses forces ; elle ne suppute point les résistances et les obstacles ; elle ignore la mesure. C&#x27;est un état de folie, si l&#x27;on veut ; mais c&#x27;est justement par cette espèce de folie que l&#x27;homme est supérieur aux choses et maître de la fortune. - Alain, Propos sur le bonheur, IV</em></blockquote><h2 id="1d4b2280-a891-80e3-8b9d-e862327ee5e6" class=""><strong>Questionnaire guidé :</strong></h2><ol type="1" id="1d4b2280-a891-8091-8754-c47b234f7b66" class="numbered-list" start="1"><li>Quel est le <strong>thème</strong> de ce court passage ?</li></ol><ol type="1" id="1d4b2280-a891-8010-9ec3-e7898e43e503" class="numbered-list" start="2"><li>Quelle <strong>caractéristique essentielle</strong> de la joie Alain met-il en avant ? (C&#x27;est sa thèse ici).</li></ol><ol type="1" id="1d4b2280-a891-80bb-8b20-c596c6b392a5" class="numbered-list" start="3"><li>Comment <strong>développe-t-il</strong> cette idée ? Repérez les différentes affirmations qui expliquent ce &quot;sentiment de puissance&quot;.</li></ol><ol type="1" id="1d4b2280-a891-8058-9181-f6ff8169dc87" class="numbered-list" start="4"><li>Alain utilise une comparaison ou une qualification surprenante (&quot;état de folie&quot;). Quel est le <strong>but</strong> de cette expression ? Que veut-il souligner par là ?</li></ol><ol type="1" id="1d4b2280-a891-8065-8dc6-fa614402ba90" class="numbered-list" start="5"><li>Quel est l&#x27;<strong>enjeu</strong> de cette analyse ? Qu&#x27;est-ce que cette &quot;folie&quot; joyeuse apporte à l&#x27;homme, selon Alain ?</li></ol><p id="1d4b2280-a891-809d-abd7-ea5da2698fd5" class="">
+</p><p id="1d4b2280-a891-80fe-913e-cc482dd460b7" class="">
+</p><h1 id="1d4b2280-a891-80ca-b400-e7d6d30b118b" class=""><strong>Texte 3 : Descartes</strong></h1><blockquote id="1d4b2280-a891-8012-a397-c2e6e17db075" class=""><em>Ainsi, à cause que nos sens nous trompent quelquefois, je voulus supposer qu&#x27;il n&#x27;y avait aucune chose qui fût telle qu&#x27;ils nous la font imaginer. Et pource qu&#x27;il y a des hommes qui se méprennent en raisonnant, même touchant les plus simples matières de géométrie, et y font des paralogismes¹, jugeant que j&#x27;étais sujet à faillir autant qu&#x27;aucun autre, je rejetai comme fausses toutes les raisons que j&#x27;avais prises auparavant pour démonstrations. - Descartes, Discours de la méthode, Quatrième partie<br/>¹ Paralogisme : raisonnement faux.<br/></em></blockquote><h2 id="1d4b2280-a891-8064-9021-f1e1e4f3c259" class=""><strong>Questionnaire guidé :</strong></h2><p id="1d4b2280-a891-8035-99f3-d08b023275af" class="">
+</p><ol type="1" id="1d4b2280-a891-80b1-aeae-d10cd79d96d0" class="numbered-list" start="1"><li>Quel est le <strong>thème</strong> abordé par Descartes dans cet extrait ? De quoi doute-t-il ?</li></ol><ol type="1" id="1d4b2280-a891-807b-b4b1-edc9c0b65462" class="numbered-list" start="2"><li>Descartes présente ici une <strong>démarche</strong>. Quelle est l&#x27;action principale qu&#x27;il décide d&#x27;entreprendre (&quot;je voulus supposer...&quot;, &quot;je rejetai...&quot;) ?</li></ol><ol type="1" id="1d4b2280-a891-80ad-ab4f-d6ccb9ecc2ac" class="numbered-list" start="3"><li>Quelles sont les <strong>deux raisons (arguments)</strong> principales qui le poussent à prendre cette décision ?</li></ol><ol type="1" id="1d4b2280-a891-807e-bad9-ce6f616bb57b" class="numbered-list" start="4"><li>Comment ces deux raisons sont-elles introduites dans le texte (quels mots de liaison : &quot;à cause que...&quot;, &quot;Et pource que...&quot;) ? Quelle est la <strong>structure</strong> de son raisonnement ici ?</li></ol><ol type="1" id="1d4b2280-a891-802b-937a-f21136a37d10" class="numbered-list" start="5"><li>Quelle est la <strong>conclusion</strong> de cette démarche de doute radicale dans cet extrait ?</li></ol><p id="1d4b2280-a891-80cc-b8a3-f2feb6332ece" class="">
+</p><h1 id="1d4b2280-a891-801f-bd72-cab232762d49" class=""><strong>Texte 4 : Kant</strong></h1><blockquote id="1d4b2280-a891-8080-87e0-d9b3d92e006a" class=""><em>Agis uniquement d&#x27;après la maxime¹ qui fait que tu peux vouloir en même temps qu&#x27;elle devienne une loi universelle. - Kant, Fondements de la métaphysique des mœurs<br/>¹ Maxime : règle personnelle que l&#x27;on se donne pour guider son action.<br/></em></blockquote><h2 id="1d4b2280-a891-802f-809b-f048c22320fc" class=""><strong>Questionnaire guidé :</strong></h2><p id="1d4b2280-a891-803e-b37f-d1597e6969dd" class="">
+</p><ol type="1" id="1d4b2280-a891-805e-ba49-d80ed05c47f0" class="numbered-list" start="1"><li>Quel est le <strong>thème</strong> de cette phrase ? De quel domaine de la philosophie relève-t-elle (morale, connaissance...) ?</li></ol><ol type="1" id="1d4b2280-a891-8020-a482-e2c01b52e071" class="numbered-list" start="2"><li>Quel est le <strong>type de phrase</strong> utilisé par Kant (une affirmation, une question, un ordre...) ? Que cherche-t-il à formuler ?</li></ol><ol type="1" id="1d4b2280-a891-8083-a0f6-fe562a7774bf" class="numbered-list" start="3"><li>Quelle est la <strong>règle (thèse)</strong> que Kant énonce ici pour guider l&#x27;action morale ?</li></ol><ol type="1" id="1d4b2280-a891-80e2-afa4-e8f45dc5210d" class="numbered-list" start="4"><li>Expliquez les termes clés : qu&#x27;est-ce qu&#x27;une &quot;maxime&quot; ? Que signifie vouloir qu&#x27;elle devienne une &quot;loi universelle&quot; ?</li></ol><ol type="1" id="1d4b2280-a891-802b-b720-c0c88b7ac982" class="numbered-list" start="5"><li>Quelle est la <strong>difficulté</strong> ou l&#x27;<strong>exigence</strong> contenue dans cette règle ?</li></ol><p id="1d4b2280-a891-809a-97a8-e3875b4d9656" class="">
+</p><p id="1d4b2280-a891-8099-8ff2-e1cce8cab64a" class="">
+</p><h1 id="1d4b2280-a891-8057-9823-c68a2adf57c2" class=""><strong>Texte 5 : Nietzsche</strong></h1><blockquote id="1d4b2280-a891-80c1-9f73-ef8bfd2cee77" class=""><em>Qu&#x27;est-ce donc que la vérité ? Une multitude mouvante de métaphores, de métonymies, d&#x27;anthropomorphismes, bref, une somme de relations humaines qui ont été poétiquement et rhétoriquement haussées, transposées, ornées, et qui, après un long usage, semblent à un peuple fermes, canoniques et contraignantes : les vérités sont des illusions dont on a oublié qu&#x27;elles le sont [...]. - Nietzsche, Le Livre du philosophe (fragment posthume)</em></blockquote><h2 id="1d4b2280-a891-808d-a8b0-ddd8e5ee4b92" class=""><strong>Questionnaire guidé :</strong></h2><p id="1d4b2280-a891-80de-8ec9-e5b56cd6b5cb" class="">
+</p><ol type="1" id="1d4b2280-a891-8088-a877-dade51bfc7ec" class="numbered-list" start="1"><li>Quel est le <strong>thème</strong> de cet extrait ? Quelle notion fondamentale Nietzsche interroge-t-il ?</li></ol><ol type="1" id="1d4b2280-a891-8027-82b2-c5bf46b93e78" class="numbered-list" start="2"><li>Quelle est la <strong>question</strong> initiale posée par l&#x27;auteur ?</li></ol><ol type="1" id="1d4b2280-a891-8073-9479-d2c587668abd" class="numbered-list" start="3"><li>Comment Nietzsche <strong>définit-il (thèse)</strong> la vérité dans la première partie de sa réponse ? Quels types de termes utilise-t-il (logiques, poétiques, sociaux...) ?</li></ol><ol type="1" id="1d4b2280-a891-80c9-bd7a-ee097de392d0" class="numbered-list" start="4"><li>Quelle est l&#x27;<strong>idée provocatrice</strong> développée dans la seconde partie de la phrase (&quot;les vérités sont des illusions...&quot;) ?</li></ol><ol type="1" id="1d4b2280-a891-8022-99c2-f0b84f53e2eb" class="numbered-list" start="5"><li>Quelle est la <strong>relation</strong> entre la première et la seconde partie de la définition ? Comment passe-t-on des &quot;métaphores&quot; aux &quot;illusions oubliées&quot; ?</li></ol><p id="1d4b2280-a891-80b5-b37f-e741fca5d5ae" class="">
+</p><p id="1d4b2280-a891-80ef-80dd-c6e02a813664" class="">
+</p><h1 id="1d4b2280-a891-807a-a2de-f43546ce38e5" class=""><strong>Texte 6 : Épicure</strong></h1><blockquote id="1d4b2280-a891-80e0-ab94-c0f74b20ad7e" class=""><em>Quand donc nous disons que le plaisir est le but de la vie, nous ne parlons pas des plaisirs des débauchés ni de ceux qui consistent dans les jouissances matérielles [...]. Mais nous entendons par plaisir l&#x27;absence de douleur dans le corps et de trouble dans l&#x27;âme. Car ce ne sont pas les beuveries et les festins continuels [...] qui engendrent une vie heureuse, mais la raison vigilante, qui recherche minutieusement les motifs de ce qu&#x27;il faut choisir et de ce qu&#x27;il faut éviter [...]. - Épicure, Lettre à Ménécée</em></blockquote><h2 id="1d4b2280-a891-80a9-9d8d-eaa516bddf87" class=""><strong>Questionnaire guidé :</strong></h2><ol type="1" id="1d4b2280-a891-80df-a945-ccd41ea2bf30" class="numbered-list" start="1"><li>Quel est le <strong>thème</strong> central de cet extrait ?</li></ol><ol type="1" id="1d4b2280-a891-8087-88dd-cbd71c4b077c" class="numbered-list" start="2"><li>Quelle est la <strong>thèse</strong> principale d&#x27;Épicure concernant le but de la vie ?</li></ol><ol type="1" id="1d4b2280-a891-802b-914f-e507786f6a1e" class="numbered-list" start="3"><li>Pour éviter une mauvaise interprétation de sa thèse, quelle <strong>distinction</strong> Épicure fait-il immédiatement ? Quels types de plaisirs rejette-t-il ?</li></ol><ol type="1" id="1d4b2280-a891-805a-b89a-f320387375a1" class="numbered-list" start="4"><li>Comment définit-il positivement le <strong>plaisir</strong> qu&#x27;il recherche ?</li></ol><ol type="1" id="1d4b2280-a891-8046-b026-f0ccac768849" class="numbered-list" start="5"><li>Quel est le <strong>moyen</strong> préconisé par Épicure pour atteindre ce véritable plaisir et une vie heureuse ?</li></ol><p id="1d4b2280-a891-8069-9ee6-e25d1ce2a64b" class="">
+</p><p id="1d4b2280-a891-8028-aeae-de51bcb342fb" class="">
+</p><h1 id="1d4b2280-a891-80bd-a542-d672ec5fba21" class=""><strong>Texte 7 : Sartre</strong></h1><blockquote id="1d4b2280-a891-80d1-99c3-d0cfe598e268" class=""><em>L&#x27;homme n&#x27;est rien d&#x27;autre que ce qu&#x27;il se fait. Tel est le premier principe de l&#x27;existentialisme. C&#x27;est aussi ce qu&#x27;on appelle la subjectivité [...]. Mais que voulons-nous dire par là, sinon que l&#x27;homme a une plus grande dignité que la pierre ou que la table ? Car nous voulons dire que l&#x27;homme existe d&#x27;abord, c&#x27;est-à-dire que l&#x27;homme est d&#x27;abord ce qui se jette vers un avenir, et ce qui est conscient de se projeter dans l&#x27;avenir. - Sartre, L&#x27;existentialisme est un humanisme</em></blockquote><h2 id="1d4b2280-a891-8050-8917-c34c4aac9b10" class=""><strong>Questionnaire guidé :</strong></h2><ol type="1" id="1d4b2280-a891-808d-8ccb-cccc2c0e97ba" class="numbered-list" start="1"><li>Quel est le <strong>thème</strong> de ce passage ? Quelle doctrine philosophique Sartre présente-t-il ?</li></ol><ol type="1" id="1d4b2280-a891-805c-88ac-f8a93165b426" class="numbered-list" start="2"><li>Quelle est la <strong>thèse</strong> principale énoncée dans la première phrase (&quot;L&#x27;homme n&#x27;est rien d&#x27;autre...&quot;) ? Comment l&#x27;appelle-t-on aussi ?</li></ol><ol type="1" id="1d4b2280-a891-80d5-a3ac-d44946f00c02" class="numbered-list" start="3"><li>Comment Sartre <strong>justifie-t-il</strong> ou <strong>explique-t-il</strong> cette thèse dans la suite du texte ? Quelle est la différence fondamentale entre l&#x27;homme et un objet (&quot;la pierre ou la table&quot;) ?</li></ol><ol type="1" id="1d4b2280-a891-80f1-a185-fb2e4453fa3e" class="numbered-list" start="4"><li>Quels sont les <strong>concepts clés</strong> utilisés (&quot;se fait&quot;, &quot;subjectivité&quot;, &quot;existe d&#x27;abord&quot;, &quot;se jette vers un avenir&quot;, &quot;conscient&quot;) ?</li></ol><ol type="1" id="1d4b2280-a891-8058-97f2-e1ef3becb5d3" class="numbered-list" start="5"><li>Quel est l&#x27;<strong>enjeu</strong> de cette thèse pour la conception de l&#x27;homme ? Quelle idée de la &quot;dignité&quot; humaine cela implique-t-il ?</li></ol><p id="1d4b2280-a891-8077-9e48-caedaa5f6a09" class="">
+</p><p id="1d4b2280-a891-8053-af4e-e0d1cd0dbe31" class="">
+</p><h1 id="1d4b2280-a891-80f7-b929-d97918ecd7e8" class=""><strong>Texte 8 : Pascal</strong></h1><blockquote id="1d4b2280-a891-8057-a252-ddec7f837861" class=""><em>Le cœur a ses raisons que la raison ne connaît point ; on le sait en mille choses. Je dis que le cœur aime l&#x27;Être universel naturellement et soi-même naturellement, selon qu&#x27;il s&#x27;y adonne ; et il se durcit contre l&#x27;un ou l&#x27;autre, à son choix. Vous avez rejeté l&#x27;un et conservé l&#x27;autre : est-ce par raison que vous vous aimez ? - Pascal, Pensées, Brunschvicg 277</em></blockquote><h2 id="1d4b2280-a891-8091-b0e9-f75b82973d20" class=""><strong>Questionnaire guidé :</strong><br/><br/></h2><ol type="1" id="1d4b2280-a891-8018-bc0e-c188adaf4446" class="numbered-list" start="1"><li>Quel est le <strong>thème</strong> principal ? Quelle opposition centrale structure la première phrase ?</li></ol><ol type="1" id="1d4b2280-a891-8025-b55f-c4e5eb7f65e7" class="numbered-list" start="2"><li>Quelle est la <strong>thèse</strong> de Pascal sur la manière dont nous connaissons ou ressentons certaines choses ?</li></ol><ol type="1" id="1d4b2280-a891-8046-bd8b-fb10047f7237" class="numbered-list" start="3"><li>Quels sont les deux &quot;objets&quot; d&#x27;amour naturels du &quot;cœur&quot; selon Pascal ?</li></ol><ol type="1" id="1d4b2280-a891-8089-84ca-f244906ba287" class="numbered-list" start="4"><li>Quelle est l&#x27;idée développée ensuite sur le &quot;choix&quot; et le &quot;durcissement&quot; ? Que cela suggère-t-il sur la volonté ou la liberté ?</li></ol><ol type="1" id="1d4b2280-a891-80cb-aa9d-fbd2be46ec71" class="numbered-list" start="5"><li>Quel est le <strong>but</strong> de la question finale ? Que cherche-t-elle à montrer au lecteur (&quot;vous&quot;) ?</li></ol><p id="1d4b2280-a891-80db-b0d9-c7567a614775" class="">
+</p><h1 id="1d4b2280-a891-80f6-b9ab-c4e9d86685b4" class=""><strong>Texte 9 : Bergson</strong></h1><blockquote id="1d4b2280-a891-807a-a88b-d8574983a805" class=""><em>Qu&#x27;est-ce que l&#x27;artiste ? C&#x27;est un homme qui voit mieux que les autres car il regarde la réalité nue et sans voiles. Voir avec des yeux de peintre, c&#x27;est voir mieux que le commun des mortels. Lorsque nous regardons un objet, d&#x27;habitude, nous ne le voyons pas ; nous nous bornons à reconnaître, nous nous mettons en rapport avec lui par Geste automatique, nous nous contentons d&#x27;en prendre une connaissance utilitaire. - Bergson, La pensée et le mouvant (adapté)</em></blockquote><h2 id="1d4b2280-a891-808e-aae3-f0d27b6f8c61" class=""><strong>Questionnaire guidé :</strong></h2><p id="1d4b2280-a891-8083-9adf-d425fa7483dd" class="">
+</p><ol type="1" id="1d4b2280-a891-8031-8ef1-ce1e256b8199" class="numbered-list" start="1"><li>Quel est le <strong>thème</strong> de cet extrait ? Quelle figure est au centre de l&#x27;analyse ?</li></ol><ol type="1" id="1d4b2280-a891-80d0-ab81-d8674535a7aa" class="numbered-list" start="2"><li>Quelle est la <strong>thèse</strong> de Bergson sur la particularité de l&#x27;artiste, notamment du peintre ?</li></ol><ol type="1" id="1d4b2280-a891-8004-94ed-e955c8a40850" class="numbered-list" start="3"><li>Quelle <strong>opposition</strong> Bergson établit-il entre la vision de l&#x27;artiste et la manière de voir &quot;habituelle&quot; ou &quot;commune&quot; ?</li></ol><ol type="1" id="1d4b2280-a891-80f6-94d6-e5ab0489fd8b" class="numbered-list" start="4"><li>Comment caractérise-t-il cette vision habituelle ? Quel est son but principal (&quot;reconnaître&quot;, &quot;connaissance utilitaire&quot;) ?</li></ol><ol type="1" id="1d4b2280-a891-80e5-aa22-ffd2871c5953" class="numbered-list" start="5"><li>Que signifie l&#x27;expression &quot;regarder la réalité nue et sans voiles&quot; dans ce contexte ? Quel est l&#x27;<strong>enjeu</strong> de cette vision artistique ?</li></ol><p id="1d4b2280-a891-80ac-9d7e-fdc559595f7c" class="">
+</p><p id="1d4b2280-a891-80d2-962b-d36991195b98" class="">
+</p><h1 id="1d4b2280-a891-806a-bc01-e8daf1842d13" class=""><strong>Texte 10 : Hannah Arendt</strong></h1><blockquote id="1d4b2280-a891-808f-89cd-f25403b96438" class=""><em>Le pardon est la seule réaction qui ne se borne pas à réagir mais qui agisse de manière nouvelle et inattendue [...]. Pardonner est la clé de l&#x27;action et de la liberté ; seuls ceux qui savent pardonner peuvent être libres. En effet, sans être pardonné, libéré des conséquences de ce que nous avons fait, notre capacité d&#x27;agir serait comme enfermée dans un seul acte dont nous ne pourrions jamais nous relever ; nous resterions pour toujours les victimes de ses conséquences. - Hannah Arendt, Condition de l&#x27;homme moderne (adapté)</em></blockquote><h2 id="1d4b2280-a891-8045-b453-f33a581e8a33" class=""><strong>Questionnaire guidé :</strong></h2><ol type="1" id="1d4b2280-a891-80c8-bb96-cfe8652755a2" class="numbered-list" start="1"><li>Quel est le <strong>thème</strong> principal de ce passage ?</li></ol><ol type="1" id="1d4b2280-a891-80ce-8e60-f8a5ed6dbf94" class="numbered-list" start="2"><li>Quelle est la <strong>thèse</strong> de Arendt sur la nature et l&#x27;importance du pardon ? Comment le qualifie-t-elle par rapport aux autres réactions ?</li></ol><ol type="1" id="1d4b2280-a891-803d-8ad6-c6a9e7c311ac" class="numbered-list" start="3"><li>Quel est le <strong>lien</strong> établi par Arendt entre le pardon, l&#x27;action et la liberté ?</li></ol><ol type="1" id="1d4b2280-a891-80ff-9381-ed2f865a0a23" class="numbered-list" start="4"><li>Comment <strong>explique-t-elle</strong> ce lien ? Que se passerait-il &quot;sans être pardonné&quot; ?</li></ol><ol type="1" id="1d4b2280-a891-805d-b1b1-f2cc93856059" class="numbered-list" start="5"><li>Quel est l&#x27;<strong>enjeu</strong> de cette analyse ? Que nous apprend-elle sur la condition humaine et la possibilité d&#x27;agir librement dans le temps ?</li></ol><p id="1d4b2280-a891-80fd-a30a-caca6c64a0e5" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d4b2280-a891-80fa-9e4f-e44e79eb8b7e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h3 id="1d4b2280-a891-8009-b43b-e41f037bf33f" class=""><strong>Conseils pour ces exercices :</strong></h3><p id="1d4b2280-a891-80aa-9a33-d936b8ccc2a8" class="">L&#x27;objectif est de vous entraîner à &quot;lire philosophiquement&quot;. Ne cherchez pas immédiatement la réponse parfaite, mais habituez-vous à vous poser ces questions systématiquement face à un texte. Notez vos réponses au brouillon, même si elles vous semblent simples. C&#x27;est en décomposant ainsi la pensée de l&#x27;auteur que vous pourrez ensuite construire une explication structurée et pertinente.</p></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

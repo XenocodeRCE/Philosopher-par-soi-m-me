@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Textes complets à expliquer</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-803d-a6e5-d9282591ee17" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1543769657-fcf1236421bc?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><h1 class="page-title">Textes complets à expliquer</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d5b2280-a891-808c-adaf-e9c8ccc1730b" class=""><em>Vous voici arrivés à l&#x27;étape finale de l&#x27;entraînement progressif. Les exercices suivants vous proposent des textes philosophiques d&#x27;une longueur et d&#x27;une difficulté similaires à ceux du Baccalauréat. L&#x27;objectif est maintenant de réaliser une explication de texte complète et entièrement rédigée, en appliquant de manière autonome toutes les étapes de la méthodologie vue précédemment.</em></p><h1 id="1d5b2280-a891-80ff-ad3d-f0586dbc88f2" class=""><strong>Texte 1 : Kant - Le devoir</strong></h1><blockquote id="1d5b2280-a891-8048-90d4-e18b7097ff47" class="">Le devoir ! mot grand et sublime, toi qui n&#x27;as rien d&#x27;agréable ni de flatteur et commandes la soumission, bien que, pour émouvoir la volonté, tu ne menaces de rien qui puisse exciter une aversion naturelle dans l&#x27;âme et la terrifier, mais que tu te bornes à poser une loi qui trouve d&#x27;elle-même accès dans l&#x27;âme et qui pourtant obtient pour elle-même, malgré nous, la vénération (sinon toujours l&#x27;obéissance), loi devant laquelle se taisent toutes les inclinations¹, quoiqu&#x27;elles travaillent sourdement contre elle : quelle origine est digne de toi ? Où trouver la racine de ta noble tige, qui dédaigne fièrement toute parenté avec les inclinations, racine dont il faut faire dériver, comme de son origine, la condition indispensable de la valeur que les hommes peuvent se donner eux-mêmes ?Ce ne peut être rien de moins que ce qui élève l&#x27;homme au-dessus de lui-même (comme partie du monde sensible), ce qui le lie à un ordre de choses que l&#x27;entendement² seul peut concevoir [...]. Ce n&#x27;est autre chose que la personnalité, c&#x27;est-à-dire la liberté et l&#x27;indépendance à l&#x27;égard du mécanisme de la nature entière [...].<br/><br/>Kant, Critique de la raison pratique<br/>¹ Inclinations : penchants naturels, désirs sensibles. <br/>² Entendement : faculté de connaître par concepts.<br/></blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d5b2280-a891-80b9-984d-ec12a8291ffc"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><h2 id="1d5b2280-a891-80d6-8e7e-e74a5fb4d68c" class=""><strong>Consigne : Rédigez une explication complète de ce texte.</strong></h2><p id="1d5b2280-a891-804e-834b-f57e8aeb082b" class=""><strong>• Votre introduction devra présenter le texte, son thème (la morale, le devoir), la question (l&#x27;origine et la nature du devoir), la thèse de Kant (le devoir émane de la liberté et de la raison, non des inclinations sensibles) et la structure du texte (apostrophe au devoir, question sur son origine, réponse).<br/>• Votre développement devra suivre la progression du texte, en expliquant précisément:<br/>    ◦ La manière dont Kant caractérise le devoir (sublime, non agréable, loi...).<br/>    ◦ Le sens de la question sur son &quot;origine&quot; et sa &quot;noble tige&quot;.<br/>    ◦ La réponse de Kant : le lien entre devoir, liberté (personnalité) et indépendance face à la nature sensible.<br/>• Votre conclusion devra faire le bilan de l&#x27;analyse et souligner l&#x27;intérêt philosophique du texte (par exemple, la fondation d&#x27;une morale non basée sur l&#x27;intérêt ou le plaisir).<br/></strong></p></div></figure><p id="1d5b2280-a891-80ca-a0c1-e4485a1137e9" class="">
+</p><p id="1d5b2280-a891-80ad-9072-dd2d417403a4" class="">
+</p><h1 id="1d5b2280-a891-80c4-9856-e9a11d1e8019" class=""><strong>Texte 2 : Platon - L&#x27;opinion et le savoir</strong></h1><blockquote id="1d5b2280-a891-806a-be0c-df4739a3bb3a" class="">SOCRATE : Ceux qui ont une opinion droite¹ ne sont pas de moins bons guides, pour nous diriger vers ce qui est, que ceux qui possèdent le savoir. [...] C&#x27;est pourquoi l&#x27;opinion vraie n&#x27;est pas un moins bon guide que la science pour la rectitude de l&#x27;action [...].MÉNON : Sauf sur un point, Socrate : celui qui a la science réussira toujours, tandis que celui qui a une opinion vraie tantôt réussira, tantôt ne réussira pas.SOCRATE : Comment dis-tu ? Celui qui a une opinion vraie, ne réussira-t-il pas toujours, aussi longtemps qu&#x27;il opinera vrai ?MÉNON : Cela me paraît forcé. Aussi je m&#x27;étonne, Socrate, si les choses sont ainsi, que jamais la science ne soit beaucoup plus estimée que l&#x27;opinion droite, et je me demande pourquoi on les distingue.SOCRATE : Sais-tu pourquoi tu t&#x27;étonnes, ou veux-tu que je te le dise ? [...] C&#x27;est que tu n&#x27;as pas fait attention aux statues de Dédale². [...] Les opinions vraies, elles aussi, tant qu&#x27;elles demeurent, sont une belle chose et produisent toutes sortes de biens. Mais elles ne consentent pas à demeurer longtemps, et elles s&#x27;échappent de l&#x27;âme de l&#x27;homme : aussi ne sont-elles pas d&#x27;un grand prix, tant qu&#x27;on ne les a pas reliées par un raisonnement qui en donne la cause [aitias logismô]. [...] Une fois liées, d&#x27;abord elles deviennent sciences, et ensuite elles demeurent stables. Voilà pourquoi la science est plus précieuse que l&#x27;opinion droite ; et c&#x27;est par le lien qu&#x27;elle diffère de l&#x27;opinion droite.Platon, Ménon, 97b-98a¹ Opinion droite : opinion qui se trouve être vraie, mais sans justification solide. ² Statues de Dédale : œuvres d&#x27;art légendaires si réalistes qu&#x27;elles semblaient pouvoir s&#x27;enfuir si on ne les attachait pas.</blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d5b2280-a891-803d-b05e-ce2be91b662c"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><h2 id="1d5b2280-a891-8066-86d0-e342281d2df1" class=""><strong>Consigne : Rédigez une explication complète de ce dialogue.</strong></h2><p id="1d5b2280-a891-80e2-849c-c6ddb51bec1d" class=""><strong><br/>• Votre introduction devra présenter le dialogue, son thème (la différence entre opinion vraie et savoir/science), la question posée par Ménon (pourquoi la science est-elle plus estimée ?), la thèse de Socrate (la science est plus stable car liée par un raisonnement causal) et la structure de l&#x27;échange.<br/>• Votre développement devra suivre le dialogue pas à pas :<br/>    ◦ Expliquez l&#x27;accord initial sur l&#x27;utilité pratique de l&#x27;opinion vraie.<br/>    ◦ Analysez l&#x27;objection de Ménon sur la réussite et la réponse de Socrate.<br/>    ◦ Expliquez la question de Ménon sur la valeur respective des deux et la réponse de Socrate utilisant l&#x27;analogie des statues de Dédale.<br/>    ◦ Analysez précisément la différence finale établie par Socrate : la nature du &quot;lien&quot; (raisonnement causal) qui transforme l&#x27;opinion vraie en science et lui donne sa stabilité.<br/>• Votre conclusion devra résumer la distinction établie et souligner son importance philosophique (par exemple, pour la théorie de la connaissance ou l&#x27;éducation).<br/></strong></p></div></figure><h1 id="1d5b2280-a891-8082-9522-c17a857f91b6" class=""><strong>Texte 3 : Bergson - L&#x27;intelligence et l&#x27;intuition</strong></h1><blockquote id="1d5b2280-a891-8096-8d5b-c9875c3dee8a" class="">Notre intelligence, telle qu&#x27;elle sort des mains de la nature, a pour objet principal le solide inorganisé. [...] L&#x27;intelligence ne se représente clairement que le discontinu. [...] De la mobilité vraie, elle n&#x27;aperçoit que des points de vue immobiles et extérieurs. Elle ne peut reconstituer le mouvement qu&#x27;avec de l&#x27;immobile. [...] L&#x27;intelligence est caractérisée par une incompréhension naturelle de la vie. [...] Mais à côté de l&#x27;intelligence, il y a l&#x27;intuition. Celle-ci porte sur la vie même. [...] L&#x27;intuition est cette espèce de sympathie intellectuelle par laquelle on se transporte à l&#x27;intérieur d&#x27;un objet pour coïncider avec ce qu&#x27;il a d&#x27;unique et par conséquent d&#x27;inexprimable. L&#x27;analyse, au contraire, est l&#x27;opération qui ramène l&#x27;objet à des éléments déjà connus, c&#x27;est-à-dire communs à cet objet et à d&#x27;autres.Bergson, La Pensée et le Mouvant (adapté)</blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d5b2280-a891-809e-9ebe-c6a4453a7c9f"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><h2 id="1d5b2280-a891-80c6-9ad6-de4601c0bf73" class=""><strong>Consigne : Rédigez une explication complète de ce texte.<br/><br/></strong></h2><p id="1d5b2280-a891-8085-8b2f-ec2a42f49e73" class=""><strong>• Votre introduction devra présenter le texte, son thème (les modes de connaissance : intelligence et intuition), la question (comment connaître le réel, notamment le vivant et le mouvant ?), la thèse de Bergson (l&#x27;intelligence est limitée au solide et au discontinu, tandis que l&#x27;intuition saisit la vie et la mobilité de l&#x27;intérieur) et la structure (caractérisation de l&#x27;intelligence, introduction et définition de l&#x27;intuition par opposition à l&#x27;analyse).<br/>• Votre développement devra expliquer :<br/>    ◦ La critique bergsonienne de l&#x27;intelligence : sa nature, son objet (le solide), ses limites (discontinu, immobile, incompréhension de la vie).<br/>    ◦ La présentation de l&#x27;intuition comme une faculté distincte : son objet (la vie), sa méthode (&quot;sympathie intellectuelle&quot;, se transporter à l&#x27;intérieur).<br/>    ◦ L&#x27;opposition finale entre intuition (saisie de l&#x27;unique) et analyse (réduction au commun).<br/>• Votre conclusion devra résumer la distinction entre les deux facultés et souligner l&#x27;enjeu de cette pensée (par exemple, la possibilité d&#x27;une connaissance non réductrice du vivant, de la durée, de la conscience).<br/></strong></p></div></figure><h1 id="1d5b2280-a891-807b-8a76-ee8339deea46" class=""><strong>Texte 4 : Tocqueville - Égalité et Liberté</strong></h1><blockquote id="1d5b2280-a891-80c6-881c-c7eb78c0d3e4" class="">Je pense que les peuples démocratiques ont un goût naturel pour la liberté ; livrés à eux-mêmes, ils la cherchent, ils l&#x27;aiment, et ils ne voient qu&#x27;avec douleur qu&#x27;on les en écarte. Mais ils ont pour l&#x27;égalité une passion ardente, insatiable, éternelle, invincible ; ils veulent l&#x27;égalité dans la liberté, et, s&#x27;ils ne peuvent l&#x27;obtenir, ils la veulent encore dans l&#x27;esclavage. Ils souffriront la pauvreté, l&#x27;asservissement, la barbarie, mais ils ne souffriront pas l&#x27;aristocratie¹.Ceci est vrai dans tous les temps, et surtout dans le nôtre. Tous les hommes et tous les pouvoirs qui voudront lutter contre cette puissance irrésistible seront renversés et détruits par elle. De nos jours, la liberté ne peut s&#x27;établir sans son appui, et le despotisme lui-même ne saurait régner sans elle.Tocqueville, De la démocratie en Amérique, Vol. II¹ Aristocratie : ici, au sens large, toute forme d&#x27;inégalité de condition ou de privilège héréditaire.</blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d5b2280-a891-8037-b850-fec1b08c3b16"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><h2 id="1d5b2280-a891-80a1-a04f-d77b7ef2bbcd" class=""><strong>Consigne : Rédigez une explication complète de ce texte.</strong></h2><p id="1d5b2280-a891-804c-8fb1-f99f1e653e87" class=""><strong><br/>• Votre introduction devra présenter le texte, son thème (le rapport entre égalité et liberté dans les démocraties), la question (quelle est la passion dominante des peuples démocratiques et ses conséquences ?), la thèse de Tocqueville (la passion pour l&#x27;égalité l&#x27;emporte sur le goût de la liberté, au point de préférer l&#x27;égalité dans l&#x27;esclavage à l&#x27;inégalité) et la structure (distinction des deux passions, affirmation de la primauté de l&#x27;égalité, conséquences politiques).<br/>• Votre développement devra expliquer :<br/>    ◦ La distinction faite par Tocqueville entre le &quot;goût naturel pour la liberté&quot; et la &quot;passion ardente&quot; pour l&#x27;égalité.<br/>    ◦ L&#x27;affirmation de la préférence absolue pour l&#x27;égalité, même au détriment de la liberté (&quot;ils la veulent encore dans l&#x27;esclavage&quot;).<br/>    ◦ L&#x27;analyse de la puissance &quot;irrésistible&quot; de cette passion pour l&#x27;égalité et ses conséquences politiques (même le despotisme doit en tenir compte).<br/>• Votre conclusion devra résumer la thèse de Tocqueville et souligner l&#x27;enjeu de son analyse (par exemple, le risque potentiel que la passion égalitaire étouffe la liberté dans les sociétés démocratiques).<br/></strong></p></div></figure><h1 id="1d5b2280-a891-8034-b25b-fcb8792871a9" class=""><strong>Texte 5 : Freud - Le malaise dans la civilisation</strong></h1><blockquote id="1d5b2280-a891-8087-92f4-fb1bff16bd9c" class="">Le penchant à l&#x27;agression est une disposition instinctive primitive et autonome de l&#x27;être humain [...]. La civilisation¹ doit tout mettre en œuvre pour limiter l&#x27;agressivité humaine et pour réduire ses manifestations à l&#x27;aide de réactions psychiques d&#x27;ordre éthique. De là provient la restriction de la vie sexuelle et de là aussi cet idéal imposé d&#x27;aimer son prochain comme soi-même, idéal dont la justification véritable est précisément que rien n&#x27;est plus contraire à la nature humaine primitive. Malgré tous les efforts, cette entreprise de la civilisation ne donne jusqu&#x27;à présent que de piètres résultats. Elle croit avoir assez gagné quand elle réussit à abaisser le degré de satisfaction sexuelle [...]. Les hommes civilisés ont fait ici l&#x27;échange d&#x27;une part de possibilités de bonheur contre une part de sécurité.Freud, Malaise dans la civilisation (adapté)¹ Civilisation : ici, processus par lequel la société régule les pulsions individuelles.</blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d5b2280-a891-800e-9002-de68c0ea0542"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><h2 id="1d5b2280-a891-800a-a3bf-e8da73a4199b" class=""><strong>Consigne : Rédigez une explication complète de ce texte.</strong></h2><p id="1d5b2280-a891-80b2-a095-e70c0cae2070" class=""><strong><br/>• Votre introduction devra présenter le texte, son thème (le conflit entre les pulsions humaines et les exigences de la civilisation), la question (comment la civilisation gère-t-elle l&#x27;agressivité humaine et à quel prix ?), la thèse de Freud (la civilisation réprime l&#x27;agressivité et la sexualité par des idéaux éthiques, entraînant une perte de bonheur au profit de la sécurité) et la structure (affirmation de l&#x27;agressivité innée, rôle de la civilisation, exemple de la restriction sexuelle et de l&#x27;amour du prochain, bilan mitigé et &quot;échange&quot;).<br/>• Votre développement devra expliquer :<br/>    ◦ L&#x27;affirmation du caractère instinctif et primitif de l&#x27;agressivité.<br/>    ◦ Le rôle de la civilisation comme instance de répression et de contrôle (via l&#x27;éthique).<br/>    ◦ L&#x27;analyse de l&#x27;idéal d&#x27;amour du prochain comme étant &quot;contre-nature&quot; selon Freud.<br/>    ◦ Le bilan que Freud tire de l&#x27;action civilisatrice (résultats &quot;piètres&quot;) et l&#x27;idée d&#x27;un &quot;échange&quot; nécessaire entre bonheur et sécurité.<br/>• Votre conclusion devra résumer la thèse freudienne sur le &quot;malaise&quot; inhérent à la civilisation et souligner l&#x27;enjeu de cette analyse (par exemple, une vision tragique du rapport entre individu et société, ou une remise en cause des idéaux moraux).<br/></strong></p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d5b2280-a891-807e-b080-cbb86fdd6c69"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h3 id="1d5b2280-a891-8061-96a5-ca51354addfa" class=""><strong>Conseils pour ces exercices :</strong></h3><p id="1d5b2280-a891-804b-972b-de360274cc21" class="">Prenez le temps nécessaire pour le travail au brouillon (analyse approfondie du texte, élaboration du plan détaillé de votre explication). C&#x27;est la clé de la réussite. Une fois votre plan établi, rédigez l&#x27;explication en veillant à la clarté, à la précision et à la fluidité de votre style. N&#x27;hésitez pas à utiliser la grille d&#x27;auto-évaluation (Exercice 15, Partie 3 des exercices de rédaction) pour relire votre travail.</p><p id="1d5b2280-a891-8045-9634-da6a170582c2" class="">Ces exercices sont conçus pour vous mettre en situation d&#x27;examen. Essayez de les réaliser dans un temps limité (environ 4 heures) pour vous habituer aux contraintes réelles.</p></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

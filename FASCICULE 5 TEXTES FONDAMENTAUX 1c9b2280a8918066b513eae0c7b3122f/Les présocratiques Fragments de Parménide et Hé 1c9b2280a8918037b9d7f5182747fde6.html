@@ -1,0 +1,683 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Les présocratiques : Fragments de Parménide et Héraclite</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-8037-b9d7-f5182747fde6" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1634477916020-14f7ad6ca9a9?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 36.809999999999995%"/><h1 class="page-title"><strong>Les présocratiques</strong> : Fragments de Parménide et Héraclite</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d6b2280-a891-80aa-b7af-e08f2baa49fa" class="">Les philosophes présocratiques, actifs entre le VIᵉ et le Vᵉ siècle avant J.-C., sont les premiers penseurs occidentaux à s&#x27;interroger sur la nature de la réalité au-delà des explications mythologiques. Parménide d&#x27;Élée et Héraclite d&#x27;Éphèse représentent deux approches fondamentalement opposées de la réalité : l&#x27;un défend l&#x27;immutabilité de l&#x27;Être, l&#x27;autre le changement perpétuel. Leurs pensées ne nous sont parvenues qu&#x27;à travers des fragments, souvent cités par des philosophes ultérieurs, ce qui rend leur interprétation parfois difficile mais d&#x27;autant plus stimulante.</p><h1 id="1d6b2280-a891-800c-b2d9-dfeb06e99823" class=""><strong>Contexte historique et philosophique</strong></h1><p id="1d6b2280-a891-803c-bbd7-ccc99b1229ab" class="">Au VIᵉ siècle av. J.-C., la pensée grecque commence à s&#x27;émanciper des explications mythologiques du monde. Les premiers philosophes, qu&#x27;on appellera plus tard les &quot;présocratiques&quot; (car antérieurs à Socrate), cherchent à expliquer la nature (phúsis) par la raison (lógos). En Ionie, Thalès, Anaximandre et Anaximène s&#x27;interrogent sur le principe fondamental (arkhê) de toutes choses. C&#x27;est dans ce contexte qu&#x27;émergent Héraclite d&#x27;Éphèse (vers 535-475 av. J.-C.) et Parménide d&#x27;Élée (vers 515-440 av. J.-C.), dont les conceptions radicalement opposées de la réalité influenceront toute la philosophie ultérieure.</p><h2 id="1d6b2280-a891-803f-b10f-d1c67e62608b" class="">Parménide d&#x27;Élée</h2><p id="1d6b2280-a891-8096-805a-f0a2a1be2b19" class="">Parménide, né à Élée (colonie grecque d&#x27;Italie du Sud) vers 515 av. J.-C., est l&#x27;auteur d&#x27;un poème philosophique intitulé <em>De la nature</em>, dont il ne nous reste que des fragments. Dans ce poème, Parménide raconte un voyage mystique au cours duquel une déesse lui révèle la vérité sur l&#x27;Être et la voie de l&#x27;opinion. Sa pensée, fondée sur le principe d&#x27;identité, établit que &quot;l&#x27;être est, le non-être n&#x27;est pas&quot;, ce qui le conduit à affirmer l&#x27;immutabilité et l&#x27;unité de l&#x27;Être contre l&#x27;apparence du changement.</p><h3 id="1d6b2280-a891-8009-ae87-f1143cd76044" class="">Fragments sur l&#x27;Être et le non-être</h3><blockquote id="1d6b2280-a891-8093-aacb-d9f76626c8d6" class=""><em>&quot;Eh bien, je vais parler ; toi, écoute et retiens ma parole qui seule chemine sur les voies à penser : l&#x27;une, que EST est, et que n&#x27;est pas ne pas être, c&#x27;est le chemin de la persuasion, car il suit la vérité ; l&#x27;autre, que N&#x27;EST PAS est, et qu&#x27;est nécessaire ne pas être, cette voie, je te le dis, est un sentier impraticable ; car tu ne pourrais ni connaître le non-être (c&#x27;est une chose impossible) ni l&#x27;exprimer.&quot;<br/><br/><br/></em>Fragment B2, traduction J.-P. Dumont</blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8058-8485-f14c8aa50a55"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d6b2280-a891-806c-8c3c-cf514a5681cd" class=""><strong>Commentaire</strong></p><p id="1d6b2280-a891-802a-a18b-e8101544203e" class="">Dans ce fragment fondamental, Parménide énonce les deux seules voies de recherche possibles : celle de l&#x27;être et celle du non-être. La première est présentée comme la seule praticable, car elle correspond à la vérité. La seconde est déclarée impossible à suivre, car on ne peut ni penser ni dire le non-être. Ce principe est à la base de la logique parménidienne : un objet de pensée et de discours doit nécessairement être quelque chose. C&#x27;est le premier énoncé explicite du principe d&#x27;identité dans l&#x27;histoire de la philosophie occidentale.</p></div></figure><blockquote id="1d6b2280-a891-802e-8e7a-d1d7e7e2d3af" class=""><em>&quot;C&#x27;est une même chose que penser et être.&quot; <br/><br/><br/></em>Fragment B3, traduction J.-P. Dumont</blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-80ae-a6e2-d7b53069872c"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d6b2280-a891-80e8-a20b-ea2fdd56ae42" class=""><strong>Commentaire</strong></p><p id="1d6b2280-a891-8098-b25c-f78c5deac72b" class="">Ce fragment lapidaire établit une identité fondamentale entre la pensée et l&#x27;être. Pour Parménide, ce qui peut être pensé doit nécessairement exister, car la pensée doit toujours avoir un objet réel. Inversement, ce qui est possède une intelligibilité qui le rend accessible à la pensée. Cette thèse aura une influence considérable sur toute la métaphysique occidentale, de Platon à Hegel, en passant par Descartes.</p></div></figure><blockquote id="1d6b2280-a891-80fd-8408-e2a052aa24f9" class=""><em>&quot;Observe cependant comment les choses absentes sont fermement présentes à la pensée ; car celle-ci ne séparera pas l&#x27;être de son union avec l&#x27;être, soit qu&#x27;il se disperse partout et de toutes manières dans le cosmos, soit qu&#x27;il se rassemble.&quot;<br/><br/><br/></em>Fragment B4, traduction J.-P. Dumont</blockquote><blockquote id="1d6b2280-a891-809c-ad10-de72017830c4" class=""><em>&quot;L&#x27;être est inengendré et impérissable, il forme un tout unique, immobile et sans fin. Il n&#x27;a pas été et ne sera pas : il est maintenant, tout entier, un, continu. Quelle genèse lui chercheras-tu ? Comment, par quelle voie se serait-il accru ? Je ne te laisserai ni dire ni penser qu&#x27;il vient du non-être, car le non-être ne peut se dire ni se penser. [...] Comment l&#x27;être pourrait-il exister dans le futur ? Comment pourrait-il naître ? S&#x27;il est né, il n&#x27;est pas, et il n&#x27;est pas non plus s&#x27;il doit être un jour. Ainsi la génération est éteinte et le trépas ignoré.&quot;<br/><br/><br/></em>Fragment B8 (extrait), traduction J.-P. Dumont</blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-808b-8fbd-d2f0e92eadb6"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d6b2280-a891-80ab-a5de-e56fce6fe4d0" class=""><strong>Commentaire</strong></p><p id="1d6b2280-a891-801d-b033-de0431881ed7" class="">Ce passage du célèbre fragment B8 expose les caractéristiques fondamentales de l&#x27;Être selon Parménide : éternité, unité, continuité, immobilité. Parménide y développe sa conception radicale selon laquelle tout changement, toute génération et corruption sont impossibles, car ils impliqueraient le passage du non-être à l&#x27;être ou inversement. Or, le non-être n&#x27;étant pas, rien ne peut en provenir, et l&#x27;être ne peut devenir non-être. Cette négation du devenir place Parménide aux antipodes d&#x27;Héraclite, pour qui tout est en perpétuel changement.</p></div></figure><h2 id="1d6b2280-a891-80c0-9d52-dad07902fcb0" class="">Héraclite d&#x27;Éphèse</h2><p id="1d6b2280-a891-80c8-bf6b-c78133b9d4b3" class="">Héraclite, né à Éphèse (cité grecque d&#x27;Asie Mineure) vers 535 av. J.-C., est connu pour son style obscur qui lui valut le surnom de &quot;l&#x27;Obscur&quot;. Sa pensée nous est parvenue sous forme d&#x27;aphorismes énigmatiques, réunis plus tard sous le titre <em>De la nature</em>. Contrairement à Parménide, Héraclite fait du changement perpétuel (panta rhei, &quot;tout s&#x27;écoule&quot;) le principe fondamental de la réalité, tout en maintenant que ce flux est régi par une loi immuable, le logos.</p><h3 id="1d6b2280-a891-80c3-be3e-fa3a2f7667c7" class="">Fragments sur le flux et le logos</h3><blockquote id="1d6b2280-a891-807b-b5dc-f442a8aa0e5f" class=""><em>&quot;On ne peut pas se baigner deux fois dans le même fleuve.&quot;<br/><br/><br/></em>Fragment B91, traduction J.-P. Dumont</blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-80dc-afc0-fd9b69916cc7"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d6b2280-a891-8023-9bbd-e421eb8846cd" class=""><strong>Commentaire</strong></p><p id="1d6b2280-a891-803e-86ff-e4fc0a39f448" class="">Cette célèbre formule résume la conception héraclitéenne du monde comme flux perpétuel. Non seulement les eaux du fleuve sont différentes d&#x27;un instant à l&#x27;autre, mais celui qui s&#x27;y baigne change également. Rien ne demeure identique à soi-même, tout est en perpétuel devenir. Cette vision s&#x27;oppose frontalement à la permanence de l&#x27;Être parménidien et souligne le caractère illusoire de toute stabilité apparente.</p></div></figure><blockquote id="1d6b2280-a891-8031-93d5-d8917d89fb08" class=""><em>&quot;Le soleil est chaque jour nouveau.&quot;<br/><br/></em>Fragment B6, traduction J.-P. Dumont</blockquote><blockquote id="1d6b2280-a891-80ba-ad0c-d933aca1df75" class=""><em>&quot;Cette raison [logos] qui est toujours, les hommes sont incapables de la comprendre, aussi bien avant de l&#x27;entendre qu&#x27;après l&#x27;avoir entendue. En effet, bien que toutes choses se produisent selon cette raison, ils semblent sans expérience, s&#x27;essayant à des paroles et à des actes comme ceux que j&#x27;expose, distinguant chaque chose selon sa nature et expliquant comment elle est. Mais ce que font les hommes pendant la veille leur échappe, tout comme ils oublient ce qu&#x27;ils font pendant leur sommeil.&quot;<br/><br/><br/></em>Fragment B1, traduction J.-P. Dumont</blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8087-a309-f62c7e06ebfc"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d6b2280-a891-80b4-93ed-fd339c9a95c6" class=""><strong>Commentaire</strong></p><p id="1d6b2280-a891-80e6-8cea-d1ee60500599" class="">Dans ce fragment inaugural de son œuvre, Héraclite introduit le concept de logos, terme polysémique qui désigne à la fois la raison, la parole et la loi universelle. Ce logos est &quot;toujours&quot;, permanent, et c&#x27;est selon lui que &quot;toutes choses se produisent&quot;. Paradoxalement, alors qu&#x27;Héraclite est le penseur du changement, il affirme l&#x27;existence d&#x27;un principe stable qui régit ce flux. La plupart des hommes, cependant, vivent sans comprendre ce logos, comme des dormeurs inconscients de la réalité qui les entoure.</p></div></figure><blockquote id="1d6b2280-a891-8024-a5c7-f90b22f517bd" class=""><em>&quot;La guerre est père de toutes choses, de toutes roi ; aux uns elle révèle des dieux, aux autres des hommes ; des uns elle fait des esclaves, des autres des hommes libres.&quot;<br/><br/><br/></em>Fragment B53, traduction J.-P. Dumont</blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-808d-8a77-c67f2e9a5869"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d6b2280-a891-80ec-af04-fdcd87031c7d" class=""><strong>Commentaire</strong></p><p id="1d6b2280-a891-8032-8147-eb710b75b581" class="">Héraclite voit dans le conflit (polemos, la guerre) le principe générateur de toute réalité. Ce n&#x27;est pas la simple destruction qu&#x27;il célèbre, mais la tension féconde des contraires. Pour lui, l&#x27;harmonie naît des oppositions, et toute existence résulte d&#x27;un équilibre dynamique entre forces antagonistes. Cette conception a influencé de nombreux philosophes, notamment Hegel avec sa dialectique, et préfigure certaines théories scientifiques modernes sur les systèmes dynamiques.</p></div></figure><blockquote id="1d6b2280-a891-80f5-8d07-f6b1e5b08756" class=""><em>&quot;Ce qui s&#x27;oppose coopère, et de ce qui diverge procède la plus belle harmonie : toutes choses s&#x27;engendrent par la discorde.&quot;<br/><br/><br/></em>Fragment B8, traduction J.-P. Dumont</blockquote><blockquote id="1d6b2280-a891-806e-9ee6-f501a285ece8" class=""><em>&quot;Joignez ce qui est complet et ce qui ne l&#x27;est pas, ce qui concorde et ce qui discorde, ce qui est en harmonie et ce qui est en désaccord, et de toutes choses une, et d&#x27;une, toutes choses.&quot;<br/><br/><br/></em>Fragment B10, traduction J.-P. Dumont</blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-807b-a78f-ccde039d41a0"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d6b2280-a891-8089-86a7-fad194a7c911" class=""><strong>Commentaire</strong></p><p id="1d6b2280-a891-80e7-9e44-f5b463a56bf0" class="">Ces fragments illustrent l&#x27;idée centrale d&#x27;Héraclite selon laquelle l&#x27;unité du monde repose sur la tension des contraires. Il ne s&#x27;agit pas de nier les oppositions, mais de comprendre qu&#x27;elles sont complémentaires et forment ensemble une harmonie. L&#x27;un devient multiple et le multiple devient un dans un mouvement perpétuel. Cette conception annonce la dialectique moderne et influence profondément la pensée occidentale, de Hegel à Nietzsche.</p></div></figure><figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-805e-8647-d3a43a9ed387"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h1 id="1d6b2280-a891-8029-864e-e0cf5c4f19af" class=""><strong>Pertinence contemporaine</strong></h1><p id="1d6b2280-a891-80df-86eb-fe4ea3f74733" class="">L&#x27;opposition entre Parménide et Héraclite pose une question philosophique fondamentale qui reste d&#x27;actualité : le réel est-il essentiellement stable ou en perpétuel changement ? Cette question traverse non seulement la métaphysique, mais aussi la physique moderne (avec les tensions entre les lois de conservation et les théories du chaos) et les sciences humaines (débats entre structuralisme et historicisme). De plus, leurs approches préfigurent deux attitudes philosophiques durables : la recherche parménidienne d&#x27;un fondement stable de la connaissance (que l&#x27;on retrouve chez Descartes ou Husserl) et l&#x27;acceptation héraclitéenne du devenir (présente chez Nietzsche ou Bergson). Leurs fragments, par leur densité et leur profondeur, continuent d&#x27;inspirer la réflexion contemporaine sur l&#x27;être, le temps et le changement.</p></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

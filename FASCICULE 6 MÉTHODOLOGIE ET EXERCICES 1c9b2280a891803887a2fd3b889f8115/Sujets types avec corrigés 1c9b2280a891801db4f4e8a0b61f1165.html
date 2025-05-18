@@ -1,0 +1,686 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Sujets types avec corrigés</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-801d-b4f4-e8a0b61f1165" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1534644107580-3a4dbd494a95?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 59.42000000000001%"/><h1 class="page-title"><strong>Sujets types avec corrigés</strong></h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d6b2280-a891-800b-8848-e11bcdfd4c7b" class=""><em>Cette section vous propose trois sujets types, un de chaque catégorie, accompagnés de corrigés détaillés. Ces exemples vous permettront de voir comment appliquer concrètement les méthodes et conseils donnés précédemment. Vous y trouverez des commentaires méthodologiques qui vous guideront pas à pas.</em></p><h1 id="1d6b2280-a891-80f8-b578-dff79f1aa593" class=""><strong>Les trois types de sujets proposés</strong></h1><p id="1d6b2280-a891-8070-b048-cd66ef038a7d" class="">Nous vous présentons ici un modèle de chaque type de sujet que vous pourriez rencontrer à l&#x27;épreuve du baccalauréat :</p><ul id="1d6b2280-a891-8050-a1d0-d3cdcd52328e" class="bulleted-list"><li style="list-style-type:disc"><strong>Dissertation sur notion</strong> : sujet centré sur une notion du programme, formulé sous forme de question.</li></ul><ul id="1d6b2280-a891-80d4-8b3a-dc5591fd0403" class="bulleted-list"><li style="list-style-type:disc"><strong>Dissertation sur citation</strong> : analyse et discussion d&#x27;une citation d&#x27;un philosophe.</li></ul><ul id="1d6b2280-a891-80f6-8901-f203dfe13cd9" class="bulleted-list"><li style="list-style-type:disc"><strong>Explication de texte</strong> : analyse approfondie d&#x27;un extrait d&#x27;œuvre philosophique.</li></ul><p id="1d6b2280-a891-80b1-865f-c21dfd2d88a1" class="">Pour chaque sujet, vous trouverez un corrigé complet qui peut être affiché ou masqué selon vos besoins.</p><h1 id="1d6b2280-a891-8087-9c6d-f51eea01e6bf" class=""><strong>SUJET 1 - Dissertation sur notion</strong></h1><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-80a1-a821-f9de7a8fbc9f"><div style="font-size:1.5em"><span class="icon">❓</span></div><div style="width:100%"><p id="1d6b2280-a891-800d-ab40-df2986b0f2be" class=""><strong>La conscience de soi suffit-elle à me connaître moi-même ?</strong></p></div></figure><h2 id="1d6b2280-a891-806e-b507-e825b9829dc0" class=""><strong>Analyse du sujet</strong></h2><p id="1d6b2280-a891-80ce-ab9a-d261e58ad2a9" class="">Ce sujet porte sur les notions de &quot;conscience&quot; et du &quot;soi&quot;, liées au thème du programme &quot;Le sujet&quot;. Il interroge les limites de l&#x27;introspection et de la connaissance de soi.</p><p id="1d6b2280-a891-80d6-8a3e-d10d1d4fd288" class="">Termes à définir : &quot;conscience de soi&quot; (réflexivité, capacité à se prendre soi-même pour objet), &quot;connaître&quot; (avoir un savoir certain), &quot;moi-même&quot; (identité personnelle).</p><p id="1d6b2280-a891-8087-8a87-c86702de552c" class="">La question &quot;suffit-elle&quot; nous invite à évaluer si la conscience réflexive est une condition non seulement nécessaire mais aussi suffisante pour se connaître.</p><h2 id="1d6b2280-a891-801e-93e7-de12d16e2d9b" class=""><strong>Introduction</strong></h2><p id="1d6b2280-a891-8027-851d-deae618d570a" class="">&quot;Connais-toi toi-même&quot;. Cette maxime inscrite au fronton du temple de Delphes traverse l&#x27;histoire de la philosophie et résonne encore aujourd&#x27;hui comme une injonction fondamentale. Se connaître soi-même apparaît comme une quête essentielle, tant pour mener une vie philosophique que pour donner sens à notre existence. La question qui se pose alors est celle des moyens dont nous disposons pour accéder à cette connaissance. La conscience de soi, cette capacité réflexive que possède l&#x27;esprit humain de se prendre lui-même pour objet, semble constituer la voie royale vers la connaissance de soi. En effet, qui mieux que moi-même peut avoir accès à mes pensées, mes désirs, mes intentions ? Cette transparence à soi-même paraît garantir un accès privilégié à ma propre réalité. Pourtant, l&#x27;expérience commune témoigne de la difficulté que nous éprouvons à nous comprendre pleinement. Combien de fois nous surprenons-nous de nos propres réactions ? Combien de fois les autres semblent-ils nous connaître mieux que nous-mêmes ? Il convient donc de s&#x27;interroger : la conscience de soi suffit-elle à me connaître moi-même ? En d&#x27;autres termes, le fait de pouvoir réfléchir sur moi-même me garantit-il un accès complet et véridique à ce que je suis ? Nous examinerons d&#x27;abord les raisons qui font de la conscience réflexive un moyen privilégié de connaissance de soi, avant d&#x27;en souligner les limites et les obstacles. Nous verrons enfin que la connaissance de soi implique nécessairement un détour par l&#x27;altérité et un travail d&#x27;interprétation qui dépasse la simple introspection.</p><h2 id="1d6b2280-a891-80b1-af23-d51b25775b5b" class=""><strong>Plan détaillé</strong></h2><p id="1d6b2280-a891-8078-b3ff-cce7069f768f" class=""><strong>I. La conscience réflexive comme voie privilégiée vers la connaissance de soi</strong><div class="indented"><p id="1d6b2280-a891-8059-84df-d8dbe2f53dab" class="">A. L&#x27;accès immédiat à ses propres états mentaux<div class="indented"><ul id="1d6b2280-a891-808d-abbe-d7ea6fa52de1" class="bulleted-list"><li style="list-style-type:disc">La transparence de la conscience à elle-même (Descartes)</li></ul><ul id="1d6b2280-a891-80b3-a608-ccfa3f889758" class="bulleted-list"><li style="list-style-type:disc">Le privilège de la première personne : l&#x27;accès direct à mes pensées, émotions, sensations<p id="1d6b2280-a891-8077-ab6e-c677b646ae07" class=""><strong>Référence</strong> : Descartes, <em>Méditations métaphysiques</em> : &quot;Je suis une chose qui pense, c&#x27;est-à-dire qui doute, qui affirme, qui nie, qui connaît peu de choses, qui en ignore beaucoup, qui aime, qui hait, qui veut, qui ne veut pas, qui imagine aussi, et qui sent.&quot;</p></li></ul></div></p><p id="1d6b2280-a891-805a-8859-e27af2e032df" class="">B. La connaissance de soi par l&#x27;examen de conscience<div class="indented"><ul id="1d6b2280-a891-80ab-a5d3-feecf33cf2ed" class="bulleted-list"><li style="list-style-type:disc">La tradition stoïcienne et l&#x27;examen de conscience</li></ul><ul id="1d6b2280-a891-80eb-9a19-c9d083bd23d3" class="bulleted-list"><li style="list-style-type:disc">L&#x27;introspection comme méthode philosophique<p id="1d6b2280-a891-8091-b2a1-fff507723112" class=""><strong>Référence</strong> : Marc-Aurèle, <em>Pensées pour moi-même</em> : &quot;Rentre en toi-même sans cesse, et renouvelle-toi.&quot;</p></li></ul></div></p><p id="1d6b2280-a891-8049-8e9f-f2ac7c0cbda8" class="">C. L&#x27;expérience du cogito cartésien comme fondement certain<div class="indented"><ul id="1d6b2280-a891-8098-98b1-e34b108436ba" class="bulleted-list"><li style="list-style-type:disc">Le doute méthodique menant à la certitude du cogito</li></ul><ul id="1d6b2280-a891-801f-b91b-e863ba67ff2f" class="bulleted-list"><li style="list-style-type:disc">L&#x27;évidence du &quot;je pense donc je suis&quot; comme connaissance première et indubitable<p id="1d6b2280-a891-807c-823a-edc933d2961b" class=""><strong>Référence</strong> : Descartes, <em>Discours de la méthode</em> : &quot;Je pense, donc je suis.&quot;</p></li></ul></div></p></div></p><p id="1d6b2280-a891-80dd-b63c-f45dc227069f" class=""><strong>II. Les limites et obstacles de la conscience de soi</strong><div class="indented"><p id="1d6b2280-a891-80c3-a64b-cbf367671ec0" class="">A. L&#x27;opacité de la conscience : l&#x27;inconscient freudien<div class="indented"><ul id="1d6b2280-a891-8003-a231-f76775cabbba" class="bulleted-list"><li style="list-style-type:disc">La découverte de l&#x27;inconscient comme remise en cause de la transparence à soi</li></ul><ul id="1d6b2280-a891-809b-8eda-f5af9111db6e" class="bulleted-list"><li style="list-style-type:disc">Les mécanismes de défense qui faussent la perception de soi<p id="1d6b2280-a891-8033-9355-da72d759a972" class=""><strong>Référence</strong> : Freud, <em>Introduction à la psychanalyse</em> : &quot;Le moi n&#x27;est pas maître dans sa propre maison.&quot;</p></li></ul></div></p><p id="1d6b2280-a891-8025-b9cb-eac7ed64c102" class="">B. Les illusions et pièges de l&#x27;introspection<div class="indented"><ul id="1d6b2280-a891-80e2-93fc-fdd48d729196" class="bulleted-list"><li style="list-style-type:disc">La mauvaise foi selon Sartre</li></ul><ul id="1d6b2280-a891-80a6-a47a-fa9eb527fab3" class="bulleted-list"><li style="list-style-type:disc">L&#x27;amour-propre et les ruses de l&#x27;ego (La Rochefoucauld)<p id="1d6b2280-a891-8073-9ece-d648a289a711" class=""><strong>Référence</strong> : La Rochefoucauld, <em>Maximes</em> : &quot;L&#x27;amour-propre est le plus grand de tous les flatteurs.&quot;</p></li></ul></div></p><p id="1d6b2280-a891-8005-816d-ce48c4602163" class="">C. La dimension sociale et culturelle du moi<div class="indented"><ul id="1d6b2280-a891-80d9-8ee7-f0af9510fd68" class="bulleted-list"><li style="list-style-type:disc">L&#x27;influence des déterminismes sociaux sur notre identité (Bourdieu)</li></ul><ul id="1d6b2280-a891-80ff-90ab-f4dc091d3f84" class="bulleted-list"><li style="list-style-type:disc">Le moi comme produit d&#x27;une construction culturelle et historique<p id="1d6b2280-a891-803a-b8cb-d5d617ab2364" class=""><strong>Référence</strong> : Nietzsche, <em>Par-delà bien et mal</em> : &quot;Le &#x27;moi&#x27; est devenu une fable, une fiction, un jeu de mots.&quot;</p></li></ul></div></p></div></p><p id="1d6b2280-a891-80bc-8f73-f7b8d9941247" class=""><strong>III. Vers une connaissance de soi médiatisée</strong><div class="indented"><p id="1d6b2280-a891-80fa-af57-d9b448736c13" class="">A. Le détour par l&#x27;altérité : se connaître à travers le regard d&#x27;autrui<div class="indented"><ul id="1d6b2280-a891-8055-bbe2-f951fd3a1417" class="bulleted-list"><li style="list-style-type:disc">La conscience de soi à travers le rapport à l&#x27;autre (Hegel)</li></ul><ul id="1d6b2280-a891-8011-a505-f29ccefee745" class="bulleted-list"><li style="list-style-type:disc">La découverte de soi dans la relation intersubjective<p id="1d6b2280-a891-80fb-b77f-f29f938b316d" class=""><strong>Référence</strong> : Sartre, <em>L&#x27;Être et le Néant</em> : &quot;Je suis vu, donc je suis.&quot;</p></li></ul></div></p><p id="1d6b2280-a891-807d-8e0a-c25be6406881" class="">B. L&#x27;herméneutique du soi : s&#x27;interpréter à travers ses actes et ses œuvres<div class="indented"><ul id="1d6b2280-a891-80bc-9f93-f16ccd40fc05" class="bulleted-list"><li style="list-style-type:disc">La connaissance indirecte de soi par l&#x27;interprétation (Ricœur)</li></ul><ul id="1d6b2280-a891-80b1-a9f0-e148e5140f44" class="bulleted-list"><li style="list-style-type:disc">Se connaître à travers le détour des symboles, des récits, de la culture<p id="1d6b2280-a891-803a-af09-e520f95604f4" class=""><strong>Référence</strong> : Ricœur, <em>Soi-même comme un autre</em> : &quot;Le plus court chemin de soi à soi passe par autrui.&quot;</p></li></ul></div></p><p id="1d6b2280-a891-803c-936c-c909573a6baf" class="">C. La connaissance de soi comme tâche éthique et pratique<div class="indented"><ul id="1d6b2280-a891-8077-b07b-ebb7c83ccac1" class="bulleted-list"><li style="list-style-type:disc">Se connaître dans l&#x27;action et les épreuves (Montaigne)</li></ul><ul id="1d6b2280-a891-8021-9eae-c0e504694021" class="bulleted-list"><li style="list-style-type:disc">La connaissance de soi comme processus jamais achevé<p id="1d6b2280-a891-80fe-b9fc-dc1ecd0a28e3" class=""><strong>Référence</strong> : Foucault, <em>Le Souci de soi</em> : &quot;Le souci de soi est une pratique sociale, un art de l&#x27;existence.&quot;</p></li></ul></div></p></div></p><h2 id="1d6b2280-a891-8013-93d5-d2dcc4a7fe5a" class=""><strong>Conclusion</strong></h2><p id="1d6b2280-a891-80eb-9d0e-f27bac2d14c3" class="">Au terme de cette réflexion, il apparaît que la conscience de soi, bien qu&#x27;essentielle, ne suffit pas à une connaissance complète de soi-même. Si elle constitue un point de départ incontournable en nous donnant un accès privilégié à nos états mentaux, elle se heurte néanmoins à de nombreux obstacles : l&#x27;inconscient qui échappe à notre saisie immédiate, les illusions et pièges de l&#x27;introspection, ainsi que les déterminismes sociaux et culturels qui façonnent notre identité à notre insu. La connaissance authentique de soi implique dès lors un dépassement de la simple introspection pour emprunter des voies indirectes : le détour par autrui dont le regard nous révèle à nous-mêmes, l&#x27;interprétation de nos actions et de nos œuvres, et enfin un travail éthique continu sur soi-même. Plus qu&#x27;un état définitif, la connaissance de soi se révèle être une tâche infinie, un processus toujours en cours qui requiert une vigilance constante. En ce sens, le &quot;connais-toi toi-même&quot; delphique n&#x27;est pas tant un objectif à atteindre qu&#x27;un chemin à parcourir, une invitation à ne jamais cesser de s&#x27;interroger sur ce que nous sommes et ce que nous pouvons devenir.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-800f-ab9d-e8595f82f0f9"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h2 id="1d6b2280-a891-8088-8c73-e451f3e647de" class=""><strong>Points méthodologiques</strong></h2><ul id="1d6b2280-a891-80c3-ae5a-dde30fcb41dc" class="bulleted-list"><li style="list-style-type:disc">L&#x27;introduction pose clairement les enjeux du sujet en partant d&#x27;une référence culturelle connue (maxime de Delphes).</li></ul><ul id="1d6b2280-a891-80ad-be69-e64371a97ca6" class="bulleted-list"><li style="list-style-type:disc">Les notions clés (conscience de soi, connaissance de soi) sont définies précisément.</li></ul><ul id="1d6b2280-a891-80e8-8af6-df7e3aae3749" class="bulleted-list"><li style="list-style-type:disc">La problématique est explicite et découle naturellement de l&#x27;analyse des termes du sujet.</li></ul><ul id="1d6b2280-a891-807e-96b3-e0087cb1d7c1" class="bulleted-list"><li style="list-style-type:disc">Le plan suit une progression dialectique : thèse (I), antithèse (II), dépassement (III).</li></ul><ul id="1d6b2280-a891-805b-aef4-ebc846dc3a54" class="bulleted-list"><li style="list-style-type:disc">Chaque partie mobilise des références philosophiques variées et pertinentes.</li></ul><ul id="1d6b2280-a891-80a5-8b73-c7214dc5f148" class="bulleted-list"><li style="list-style-type:disc">La conclusion répond clairement à la question posée et ouvre sur une dimension éthique.</li></ul></div></figure><p id="1d6b2280-a891-80fa-8d78-ecde563a41dd" class="">
+</p><h1 id="1d6b2280-a891-807b-ac56-ca086ee62fdb" class=""><strong>SUJET 2 - Dissertation sur citation</strong></h1><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-80f2-934a-fec2e625e630"><div style="font-size:1.5em"><span class="icon">❓</span></div><div style="width:100%"><p id="1d6b2280-a891-8011-80ec-cf75bf52f224" class=""><strong>« L&#x27;art n&#x27;a pas pour mission d&#x27;imiter la nature, mais de l&#x27;exprimer. » <br/><br/>- Honoré de Balzac, <br/></strong><em><strong>Le Chef-d&#x27;œuvre inconnu</strong></em></p></div></figure><h2 id="1d6b2280-a891-8013-ab76-e6144d4b2b7b" class=""><strong>Analyse de la citation</strong></h2><p id="1d6b2280-a891-80ef-8696-d146e93dd9a2" class="">Cette citation de Balzac oppose deux conceptions de l&#x27;art : l&#x27;art comme imitation (mimèsis) et l&#x27;art comme expression. Elle s&#x27;inscrit dans une réflexion sur la nature et la finalité de l&#x27;art.</p><p id="1d6b2280-a891-8013-a70c-f5432ba4d956" class="">Termes à définir : &quot;art&quot; (création humaine, production esthétique), &quot;mission&quot; (finalité, fonction), &quot;imiter&quot; (reproduire fidèlement), &quot;nature&quot; (le monde sensible, la réalité), &quot;exprimer&quot; (manifester, révéler, traduire).</p><p id="1d6b2280-a891-80a0-ac5f-d534ca5d1f24" class="">La problématique portera sur cette opposition entre imitation et expression dans l&#x27;art, en questionnant ce que signifie &quot;exprimer la nature&quot; plutôt que l&#x27;imiter.</p><h2 id="1d6b2280-a891-803c-9404-ccfee499c005" class=""><strong>Introduction</strong></h2><p id="1d6b2280-a891-80d8-ac14-df4c54ec3a22" class="">Depuis l&#x27;Antiquité, la question de la relation entre l&#x27;art et la nature n&#x27;a cessé d&#x27;occuper philosophes et artistes. La conception platonicienne de l&#x27;art comme imitation (mimèsis) a longtemps dominé la pensée esthétique occidentale, faisant de l&#x27;artiste celui qui reproduit les apparences du monde sensible. Dans cette perspective, la valeur de l&#x27;œuvre se mesurerait à sa fidélité au modèle naturel. Cependant, dans son ouvrage <em>Le Chef-d&#x27;œuvre inconnu</em>, Balzac affirme que &quot;l&#x27;art n&#x27;a pas pour mission d&#x27;imiter la nature, mais de l&#x27;exprimer.&quot; Cette formule, dans sa concision, opère un renversement significatif de la conception traditionnelle de l&#x27;art. Elle suggère que la véritable fonction de l&#x27;art ne réside pas dans la reproduction fidèle du monde visible, mais dans une forme d&#x27;expression qui transcende la simple imitation. Que signifie alors &quot;exprimer&quot; la nature plutôt que l&#x27;&quot;imiter&quot; ? En quoi cette distinction modifie-t-elle notre compréhension de l&#x27;activité artistique et de sa relation au réel ? Pour éclairer cette question, nous examinerons d&#x27;abord les limites de la conception de l&#x27;art comme imitation de la nature. Nous analyserons ensuite ce que peut signifier l&#x27;expression de la nature dans l&#x27;art, avant de nous demander si l&#x27;opposition entre imitation et expression est aussi radicale que le suggère Balzac.</p><h2 id="1d6b2280-a891-8048-8c9f-df1c509ec1dc" class=""><strong>Plan détaillé</strong></h2><p id="1d6b2280-a891-8000-8a3e-fd7e141cbcb5" class=""><strong>I. Les limites de l&#x27;art comme imitation de la nature</strong><div class="indented"><p id="1d6b2280-a891-80bf-873f-d4e41b73c0c3" class="">A. La tradition mimétique et ses fondements<div class="indented"><ul id="1d6b2280-a891-8010-933c-d9570319278d" class="bulleted-list"><li style="list-style-type:disc">La théorie platonicienne de l&#x27;imitation : l&#x27;art comme copie de copie</li></ul><ul id="1d6b2280-a891-80ce-ac16-c6f91251ba49" class="bulleted-list"><li style="list-style-type:disc">La valorisation aristotélicienne de la mimèsis comme connaissance</li></ul><p id="1d6b2280-a891-80a2-9332-f17cad665fe6" class=""><strong>Référence</strong> : Platon, <em>La République</em>, Livre X : Platon critique l&#x27;art comme &quot;imitation éloignée de trois degrés de la nature essentielle&quot;.</p></div></p><p id="1d6b2280-a891-8067-aeba-ca69f1bb1536" class="">B. Les insuffisances de l&#x27;imitation comme finalité de l&#x27;art<div class="indented"><ul id="1d6b2280-a891-800a-8c20-e04ea6c96467" class="bulleted-list"><li style="list-style-type:disc">L&#x27;avènement de la photographie et la crise de la représentation</li></ul><ul id="1d6b2280-a891-80f2-8e56-d78bacb806d6" class="bulleted-list"><li style="list-style-type:disc">L&#x27;impossibilité d&#x27;une imitation parfaite de la nature</li></ul><p id="1d6b2280-a891-80b1-b541-fbbe935e6530" class=""><strong>Référence</strong> : Oscar Wilde, <em>Le Déclin du mensonge</em> : &quot;L&#x27;Art ne nous révèle pas les secrets de la Nature. L&#x27;Art nous révèle les secrets de l&#x27;Art.&quot;</p></div></p><p id="1d6b2280-a891-80fd-9899-d25a71d650db" class="">C. La réduction de l&#x27;art à une technique<div class="indented"><ul id="1d6b2280-a891-800e-85b3-e1d1646708fd" class="bulleted-list"><li style="list-style-type:disc">L&#x27;imitation comme virtuosité technique sans profondeur</li></ul><ul id="1d6b2280-a891-809a-8488-f2b7d063b7ac" class="bulleted-list"><li style="list-style-type:disc">L&#x27;absence de la dimension créatrice et subjective de l&#x27;artiste</li></ul><p id="1d6b2280-a891-8039-828b-e648b37aa22c" class=""><strong>Référence</strong> : Hegel, <em>Esthétique</em> : &quot;Si l&#x27;imitation constitue le but de l&#x27;art, cela ne peut produire que de l&#x27;habileté technique, non des œuvres d&#x27;art.&quot;</p></div></p></div></p><p id="1d6b2280-a891-804f-a753-ffb54b1a4357" class=""><strong>II. L&#x27;art comme expression de la nature</strong><div class="indented"><p id="1d6b2280-a891-80ef-bfd7-d0f8e0461c33" class="">A. Exprimer : dévoiler l&#x27;invisible de la nature<div class="indented"><ul id="1d6b2280-a891-80c7-b63f-ec45bd613483" class="bulleted-list"><li style="list-style-type:disc">L&#x27;art comme révélation des forces cachées et des structures invisibles</li></ul><ul id="1d6b2280-a891-808a-aa00-fac006f28843" class="bulleted-list"><li style="list-style-type:disc">La capacité de l&#x27;art à saisir l&#x27;essence au-delà des apparences</li></ul><p id="1d6b2280-a891-807d-9899-e73eaaa1b229" class=""><strong>Référence</strong> : Cézanne : &quot;L&#x27;art est une harmonie parallèle à la nature.&quot; Il ne s&#x27;agit pas d&#x27;imiter mais de construire selon les mêmes principes que la nature.</p></div></p><p id="1d6b2280-a891-80a6-bd2e-ff0932c8164d" class="">B. L&#x27;expression comme interprétation subjective<div class="indented"><ul id="1d6b2280-a891-8016-9623-ca07fa2e24d1" class="bulleted-list"><li style="list-style-type:disc">La médiation de la sensibilité et de l&#x27;imagination de l&#x27;artiste</li></ul><ul id="1d6b2280-a891-803b-aa6b-f3412b9593a9" class="bulleted-list"><li style="list-style-type:disc">L&#x27;art comme dialogue entre intériorité et extériorité</li></ul><p id="1d6b2280-a891-8097-870c-d33e1c084ebf" class=""><strong>Référence</strong> : Kandinsky, <em>Du Spirituel dans l&#x27;art</em> : &quot;L&#x27;artiste doit avoir quelque chose à dire, car sa tâche n&#x27;est pas de dominer la forme, mais d&#x27;adapter cette forme au contenu.&quot;</p></div></p><p id="1d6b2280-a891-802f-8006-e478d5cdfe82" class="">C. L&#x27;expression comme création d&#x27;une nouvelle réalité<div class="indented"><ul id="1d6b2280-a891-8019-82a2-c6ee527bb7d3" class="bulleted-list"><li style="list-style-type:disc">L&#x27;art comme augmentation de l&#x27;être (Bergson)</li></ul><ul id="1d6b2280-a891-8069-8106-d61c005daf3a" class="bulleted-list"><li style="list-style-type:disc">La transfiguration du réel et la création de mondes possibles</li></ul><p id="1d6b2280-a891-80fc-97c9-deaf93e18ebc" class=""><strong>Référence</strong> : Nietzsche, <em>La Naissance de la tragédie</em> : &quot;C&#x27;est seulement comme phénomène esthétique que l&#x27;existence et le monde sont éternellement justifiés.&quot;</p></div></p></div></p><p id="1d6b2280-a891-80a7-b80a-f4143b20aa94" class=""><strong>III. Dépasser l&#x27;opposition entre imitation et expression</strong><div class="indented"><p id="1d6b2280-a891-80b4-9639-c3bd7fdb6391" class="">A. Une dialectique nécessaire entre imitation et expression<div class="indented"><ul id="1d6b2280-a891-809b-86c4-e1a11f51dec1" class="bulleted-list"><li style="list-style-type:disc">Toute expression s&#x27;appuie sur une forme de mimèsis</li></ul><ul id="1d6b2280-a891-8080-8303-e18bb0307c07" class="bulleted-list"><li style="list-style-type:disc">L&#x27;imitation créatrice qui transforme son modèle</li></ul><p id="1d6b2280-a891-8003-84ae-e1b428908b23" class=""><strong>Référence</strong> : Paul Ricœur, <em>Temps et récit</em> : &quot;La mimèsis n&#x27;est pas une simple imitation au sens de copie, mais une reconfiguration créatrice.&quot;</p></div></p><p id="1d6b2280-a891-80ee-bb0b-f98f49a957e3" class="">B. La pluralité des missions de l&#x27;art<div class="indented"><ul id="1d6b2280-a891-8059-83ee-dc3202cba702" class="bulleted-list"><li style="list-style-type:disc">La diversité des pratiques artistiques et de leurs rapports à la nature</li></ul><ul id="1d6b2280-a891-8093-92c9-f6c9fa3e15de" class="bulleted-list"><li style="list-style-type:disc">L&#x27;art comme jeu complexe entre représentation, expression et construction</li></ul><p id="1d6b2280-a891-80a4-af04-c161a867272e" class=""><strong>Référence</strong> : Goodman, <em>Langages de l&#x27;art</em> : &quot;L&#x27;art ne copie pas le monde visible mais en construit de nouveaux.&quot;</p></div></p><p id="1d6b2280-a891-80bc-89af-dcdebb48b5d9" class="">C. Vers une conception contemporaine : ni imitation, ni expression mais présentation<div class="indented"><ul id="1d6b2280-a891-809a-9677-cec1a2aa0778" class="bulleted-list"><li style="list-style-type:disc">L&#x27;art contemporain et la sortie des paradigmes traditionnels</li></ul><ul id="1d6b2280-a891-8091-afdb-ef215702799d" class="bulleted-list"><li style="list-style-type:disc">L&#x27;œuvre comme événement qui fait monde</li></ul><p id="1d6b2280-a891-805d-992c-c28f5fba23d4" class=""><strong>Référence</strong> : Merleau-Ponty, <em>L&#x27;Œil et l&#x27;Esprit</em> : &quot;L&#x27;art n&#x27;est ni imitation, ni fabrication selon les vœux de l&#x27;instinct ou du bon goût. Il est opération d&#x27;expression.&quot;</p></div></p></div></p><h2 id="1d6b2280-a891-8092-8cd3-ec5549e81705" class=""><strong>Conclusion</strong></h2><p id="1d6b2280-a891-80c0-844b-cd7d0cb4cb71" class="">L&#x27;affirmation de Balzac selon laquelle &quot;l&#x27;art n&#x27;a pas pour mission d&#x27;imiter la nature, mais de l&#x27;exprimer&quot; nous a permis de reconsidérer la relation complexe qu&#x27;entretient l&#x27;art avec la nature. Si la tradition mimétique, héritée de Platon et d&#x27;Aristote, a longtemps défini l&#x27;art comme imitation du monde sensible, nous avons vu que cette conception se heurte à plusieurs limites : elle réduit l&#x27;art à une technique de reproduction, néglige la dimension créatrice de l&#x27;activité artistique et devient obsolète face à l&#x27;évolution des pratiques artistiques, notamment avec l&#x27;avènement de la photographie. L&#x27;art comme expression de la nature offre une alternative féconde : il ne s&#x27;agit plus de reproduire les apparences mais de dévoiler l&#x27;invisible, d&#x27;interpréter subjectivement le réel et de créer de nouvelles formes qui augmentent notre expérience du monde. Cependant, l&#x27;opposition entre imitation et expression n&#x27;est peut-être pas aussi tranchée que le suggère Balzac. Une conception plus nuancée reconnaît leur complémentarité dialectique : toute expression artistique s&#x27;appuie nécessairement sur une forme de mimèsis, et l&#x27;imitation véritable implique toujours une part d&#x27;expression créatrice. Au-delà de cette dualité, l&#x27;art contemporain nous invite à penser de nouveaux rapports au réel, où l&#x27;œuvre ne se définit plus par sa relation à la nature mais comme événement autonome qui fait monde. C&#x27;est peut-être dans cette perspective que l&#x27;art accomplit pleinement sa &quot;mission&quot; : non pas reproduire le monde tel qu&#x27;il est, ni même l&#x27;exprimer tel que l&#x27;artiste le perçoit, mais créer de nouvelles possibilités d&#x27;existence et de sens.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8016-bfce-ec43d1b064e2"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><h2 id="1d6b2280-a891-80e8-b7b1-dfdaf46aaf33" class=""><strong>Points méthodologiques</strong></h2><ul id="1d6b2280-a891-80c6-afac-e2e6e9630713" class="bulleted-list"><li style="list-style-type:disc">L&#x27;introduction contextualise la citation en rappelant la tradition mimétique depuis Platon.</li></ul><ul id="1d6b2280-a891-807f-8593-fbcb9370c18a" class="bulleted-list"><li style="list-style-type:disc">L&#x27;analyse des termes clés de la citation est approfondie (imiter/exprimer/nature/mission).</li></ul><ul id="1d6b2280-a891-80d5-91b2-d8088f83fded" class="bulleted-list"><li style="list-style-type:disc">Le plan adopte une structure dialectique qui permet de dépasser l&#x27;opposition initiale.</li></ul><ul id="1d6b2280-a891-80f2-925b-d5ddf4c21f79" class="bulleted-list"><li style="list-style-type:disc">Les références philosophiques sont variées et couvrent différentes époques, montrant l&#x27;évolution des conceptions de l&#x27;art.</li></ul><ul id="1d6b2280-a891-809f-bd68-f35b188a127c" class="bulleted-list"><li style="list-style-type:disc">Des exemples concrets d&#x27;artistes (Cézanne, Kandinsky) sont mobilisés pour illustrer le propos.</li></ul><ul id="1d6b2280-a891-80a0-b8a8-c93152297d83" class="bulleted-list"><li style="list-style-type:disc">La conclusion dépasse la simple opposition binaire pour proposer une vision plus complexe et contemporaine.</li></ul></div></figure><p id="1d6b2280-a891-80c6-95a2-ec4ca360f04f" class="">
+</p><h1 id="1d6b2280-a891-8014-9751-c7c238318dfd" class=""><strong>SUJET 3 - Explication de texte</strong></h1><blockquote id="1d6b2280-a891-801c-a78b-eba7a4e7896e" class=""><em>La liberté morale de l&#x27;homme consiste dans l&#x27;indépendance à l&#x27;égard des passions. Car un homme soumis aux passions n&#x27;est pas maître de lui-même ; au contraire, il est sous la domination d&#x27;un autre, il porte l&#x27;empreinte d&#x27;autrui. En revanche, un homme qui raisonne selon ses propres lois naturelles et qui vit selon les préceptes de sa propre raison est libre, c&#x27;est un homme au plein sens du terme, parce qu&#x27;il n&#x27;est pas le jouet et la victime du hasard, qu&#x27;il ne suit que les lois de sa nature, sans céder au pouvoir des forces extérieures.<br/>Il faut d&#x27;autre part remarquer que l&#x27;homme, partie de l&#x27;univers, possède en tant que tel une certaine liberté parce qu&#x27;il est apte à persévérer dans l&#x27;être jusqu&#x27;à un certain point, et à résister pour son compte aux causes étrangères ; cette liberté appartient à tout individu car moins un être est affecté et plus il est libre. Donc plus la nature d&#x27;un être est forte et plus il est apte à la conservation de son être, plus il participe de la liberté. Si donc un homme a recours à ses forces pour juger d&#x27;une façon réfléchie sur les choses et sur son propre tempérament, s&#x27;il décide dans sa liberté d&#x27;agir uniquement selon ce qui est conforme à sa nature propre, alors une telle personne jouit de la plus haute liberté et son être n&#x27;est soumis à aucune contrainte. <br/><br/>- <br/></em><strong>Spinoza, </strong><em><strong>Traité de la réforme de l&#x27;entendement</strong></em></blockquote><p id="1d6b2280-a891-8045-b1cb-e919e9a8f3dc" class="">
+</p><h2 id="1d6b2280-a891-80f6-bd51-d41935a14cd3" class=""><strong>Analyse préliminaire du texte</strong></h2><p id="1d6b2280-a891-80bb-9e9d-fe9480577ce9" class="">Ce texte de Spinoza traite de la notion de liberté, plus précisément de la liberté morale. Il s&#x27;inscrit dans la perspective rationaliste de Spinoza et développe l&#x27;idée d&#x27;une liberté conçue non comme libre arbitre mais comme autodétermination rationnelle.</p><p id="1d6b2280-a891-809c-93e2-fd8ef9367c8d" class="">Les notions principales : liberté, passions, raison, nature, contrainte, indépendance.</p><p id="1d6b2280-a891-80cc-b754-f05cd7510db1" class="">Structure argumentative : Le texte commence par définir la liberté par opposition à la servitude (dépendance aux passions), puis développe l&#x27;idée d&#x27;une liberté comme puissance d&#x27;agir selon sa propre nature.</p><h2 id="1d6b2280-a891-80bf-be06-fb97d36a9344" class=""><strong>Introduction</strong></h2><p id="1d6b2280-a891-802a-9fc7-f360f35cb6ab" class="">Ce texte extrait du <em>Traité de la réforme de l&#x27;entendement</em> de Spinoza aborde la question fondamentale de la liberté humaine. Philosophe rationaliste du XVIIe siècle, Spinoza développe une conception originale de la liberté qui s&#x27;écarte des définitions traditionnelles. Au lieu de définir la liberté comme libre arbitre ou capacité de choisir indifféremment entre plusieurs possibles, il la conçoit comme indépendance à l&#x27;égard des passions et conformité à sa propre nature rationnelle. Ce faisant, il s&#x27;inscrit dans une longue tradition philosophique qui, depuis les stoïciens, établit un lien entre liberté et maîtrise de soi, tout en proposant une vision particulière liée à son système métaphysique. Dans ce passage, Spinoza nous propose une réflexion en deux temps sur la nature de la liberté morale : il définit d&#x27;abord cette liberté par opposition à l&#x27;asservissement aux passions, puis il approfondit sa conception en l&#x27;articulant à sa théorie du conatus (effort pour persévérer dans l&#x27;être) et au développement de la puissance d&#x27;agir. L&#x27;enjeu est de comprendre comment l&#x27;homme peut accéder à une authentique liberté au sein d&#x27;un univers entièrement déterminé par des lois nécessaires.</p><h2 id="1d6b2280-a891-805e-89dc-ee2173bdddf5" class=""><strong>Explication linéaire</strong></h2><p id="1d6b2280-a891-8012-a830-de178989794a" class=""><strong>1er paragraphe : La liberté comme indépendance à l&#x27;égard des passions</strong><div class="indented"><p id="1d6b2280-a891-80b5-b374-efc495955cdb" class="">Spinoza commence par définir la liberté morale de manière négative, comme &quot;indépendance à l&#x27;égard des passions&quot;. Cette définition s&#x27;inscrit dans la tradition stoïcienne qui voit dans la maîtrise des passions la condition de la liberté véritable. Pour Spinoza, les passions sont des affections qui diminuent notre puissance d&#x27;agir et nous rendent passifs, d&#x27;où leur nom. L&#x27;homme passionné est présenté comme n&#x27;étant &quot;pas maître de lui-même&quot; mais &quot;sous la domination d&#x27;un autre&quot;. Cette formulation est significative : elle suggère que la passion introduit une altérité en nous, nous fait agir selon des causes extérieures et non selon notre propre nature.</p><p id="1d6b2280-a891-808e-858a-da0af23a3928" class="">L&#x27;expression &quot;il porte l&#x27;empreinte d&#x27;autrui&quot; renforce cette idée : l&#x27;homme passionné est modelé de l&#x27;extérieur, comme de la cire qui reçoit passivement une forme. Par contraste, l&#x27;homme libre est celui qui &quot;raisonne selon ses propres lois naturelles&quot; et &quot;vit selon les préceptes de sa propre raison&quot;. Spinoza établit ainsi une équivalence entre liberté et rationalité. Les &quot;lois naturelles&quot; dont il parle ne sont pas des contraintes extérieures mais l&#x27;expression même de notre essence. La raison n&#x27;est pas une faculté surajoutée mais la nature même de l&#x27;homme lorsqu&#x27;il comprend adéquatement les choses.</p><p id="1d6b2280-a891-8004-8485-c346a87e0303" class="">La fin du paragraphe précise les caractéristiques de l&#x27;homme libre : il &quot;n&#x27;est pas le jouet et la victime du hasard&quot; et &quot;ne cède pas au pouvoir des forces extérieures&quot;. Cette définition révèle une dimension essentielle de la pensée spinoziste : la liberté n&#x27;est pas absence de détermination mais autodétermination. L&#x27;homme libre n&#x27;échappe pas aux lois de la nature, mais il agit selon sa propre nature, c&#x27;est-à-dire selon la raison qui lui permet de comprendre la nécessité des choses.<div class="indented"><p id="1d6b2280-a891-80df-9ce1-c71e73d765ec" class=""><strong>Éclairage</strong> : Cette conception de la liberté s&#x27;oppose à celle de Descartes qui voit dans le libre arbitre, c&#x27;est-à-dire dans la capacité de choisir indépendamment de toute détermination, l&#x27;essence de la liberté humaine. Pour Spinoza, une telle conception relève de l&#x27;illusion car elle méconnaît les déterminations réelles qui gouvernent nos actions.</p></div></p></div></p><p id="1d6b2280-a891-8070-a7ca-c02af5a747c7" class=""><strong>2ème paragraphe : La liberté comme puissance d&#x27;agir et persévérance dans l&#x27;être</strong><div class="indented"><p id="1d6b2280-a891-806c-a817-db5a7e350b6d" class="">Dans le second paragraphe, Spinoza approfondit sa conception de la liberté en l&#x27;articulant à sa théorie du conatus, cet effort par lequel chaque chose tend à persévérer dans son être. Il introduit l&#x27;idée d&#x27;une liberté relative et graduelle : &quot;l&#x27;homme, partie de l&#x27;univers, possède en tant que tel une certaine liberté&quot;. Cette formulation est importante car elle suggère que la liberté n&#x27;est pas un état absolu mais une question de degré.</p><p id="1d6b2280-a891-80ca-b9db-eba0be8e919d" class="">Cette liberté est définie comme capacité à &quot;persévérer dans l&#x27;être&quot; et à &quot;résister aux causes étrangères&quot;. Spinoza établit ainsi une relation directe entre liberté et puissance : &quot;moins un être est affecté et plus il est libre&quot; signifie que plus un être est capable de déterminer ses actions par lui-même, moins il subit l&#x27;influence des causes extérieures, plus il est libre. Il en conclut que &quot;plus la nature d&#x27;un être est forte et plus il est apte à la conservation de son être, plus il participe de la liberté&quot;.</p><p id="1d6b2280-a891-80f9-af5e-c85efabfb92c" class="">Le texte se conclut par la description de la liberté la plus haute, celle de l&#x27;homme qui &quot;a recours à ses forces pour juger d&#x27;une façon réfléchie sur les choses et sur son propre tempérament&quot; et qui &quot;décide dans sa liberté d&#x27;agir uniquement selon ce qui est conforme à sa nature propre&quot;. Cette liberté suprême est présentée comme absence de toute contrainte, non parce qu&#x27;elle échappe à la nécessité universelle, mais parce qu&#x27;elle s&#x27;accorde parfaitement avec elle.<div class="indented"><p id="1d6b2280-a891-80db-a718-db0791d79a59" class=""><strong>Éclairage</strong> : Cette conception de la liberté comme puissance d&#x27;agir et non comme libre arbitre sera reprise et développée par Spinoza dans l&#x27;<em>Éthique</em>, notamment dans la proposition 7 de la quatrième partie : &quot;Une affection ne peut être réprimée ni supprimée que par une affection contraire et plus forte que l&#x27;affection à réprimer.&quot;</p></div></p></div></p><h2 id="1d6b2280-a891-80dc-8aa4-dc74f688f667" class=""><strong>Synthèse et mise en perspective</strong></h2><p id="1d6b2280-a891-80b6-95ed-e4251cde4195" class="">À travers ce texte, Spinoza nous propose une conception de la liberté qui rompt avec les définitions traditionnelles. La liberté n&#x27;est pas pour lui une faculté mystérieuse qui nous permettrait d&#x27;échapper aux déterminations de la nature, mais la puissance de suivre notre nature propre, c&#x27;est-à-dire la raison. Cette conception s&#x27;articule autour de plusieurs idées essentielles :</p><ol type="1" id="1d6b2280-a891-804b-9a28-f17aaaf3407a" class="numbered-list" start="1"><li>L&#x27;opposition entre activité et passivité : est libre celui qui agit selon sa propre nature, est serf celui qui subit l&#x27;influence des causes extérieures.</li></ol><ol type="1" id="1d6b2280-a891-8069-ad09-f6e6ad578d74" class="numbered-list" start="2"><li>La liberté comme autodétermination rationnelle : la raison n&#x27;est pas une contrainte mais l&#x27;expression même de notre essence.</li></ol><ol type="1" id="1d6b2280-a891-802e-97a5-d027ce8b3cf2" class="numbered-list" start="3"><li>La liberté comme puissance : plus un être est puissant, plus il est capable de persévérer dans son être, plus il est libre.</li></ol><ol type="1" id="1d6b2280-a891-80e5-be2b-ecf01321559c" class="numbered-list" start="4"><li>La liberté comme connaissance adéquate : comprendre la nécessité des choses nous permet d&#x27;agir en accord avec cette nécessité et de transformer ainsi la contrainte en liberté.</li></ol><p id="1d6b2280-a891-806b-935d-e1145d1d54ab" class="">Cette conception spinoziste de la liberté a exercé une influence considérable sur la philosophie ultérieure. On la retrouve notamment chez Hegel qui, dans sa <em>Phénoménologie de l&#x27;Esprit</em>, définit la liberté comme &quot;la nécessité comprise&quot;, et chez Nietzsche qui lie également liberté et puissance d&#x27;agir. Plus proche de nous, cette conception résonne avec la psychanalyse freudienne qui voit dans la prise de conscience des déterminismes inconscients une voie vers une plus grande liberté.</p><p id="1d6b2280-a891-8084-a3c8-df3de81e776f" class="">La perspective spinoziste ouvre ainsi une voie originale pour penser la liberté, non comme une illusion ou un miracle dans un monde déterminé, mais comme une conquête progressive à travers le développement de notre puissance rationnelle et de notre compréhension du monde. Elle nous invite à chercher la liberté non dans l&#x27;indétermination mais dans la connaissance de ce qui nous détermine et dans l&#x27;accord avec notre nature propre.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-805e-876e-e01530cf19df"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><h2 id="1d6b2280-a891-80f9-8193-c51a73d12e2a" class=""><strong>Points méthodologiques</strong></h2><ul id="1d6b2280-a891-8016-928f-d5bb31b4097f" class="bulleted-list"><li style="list-style-type:disc">L&#x27;introduction situe clairement l&#x27;auteur et sa pensée dans l&#x27;histoire de la philosophie.</li></ul><ul id="1d6b2280-a891-8058-a2a7-f4f862b58ae8" class="bulleted-list"><li style="list-style-type:disc">L&#x27;explication est linéaire, suivant le mouvement argumentatif du texte paragraphe par paragraphe.</li></ul><ul id="1d6b2280-a891-8030-9584-cf712db84fb2" class="bulleted-list"><li style="list-style-type:disc">Chaque notion clé est analysée et mise en relation avec l&#x27;ensemble de la philosophie de Spinoza.</li></ul><ul id="1d6b2280-a891-80cd-92d2-f2cbf55f0f92" class="bulleted-list"><li style="list-style-type:disc">Des éclairages complémentaires situent le texte par rapport à d&#x27;autres philosophes et à d&#x27;autres œuvres de Spinoza.</li></ul><ul id="1d6b2280-a891-80e1-bd34-eaf6f65ba8bd" class="bulleted-list"><li style="list-style-type:disc">La synthèse reprend les idées essentielles du texte et les met en perspective avec la philosophie ultérieure.</li></ul><ul id="1d6b2280-a891-80c4-af76-e56c9412e4db" class="bulleted-list"><li style="list-style-type:disc">L&#x27;explication évite le simple paraphrase en dégageant les enjeux philosophiques du texte.</li></ul></div></figure><h1 id="1d6b2280-a891-80d9-963e-c774f937312d" class=""><strong>Quelques conseils supplémentaires pour aborder les sujets</strong></h1><p id="1d6b2280-a891-8080-9464-c5343988f5df" class="">Les corrigés présentés ci-dessus vous donnent un aperçu de ce qui est attendu pour chaque type de sujet. Voici quelques conseils supplémentaires pour vous aider dans votre préparation :</p><ul id="1d6b2280-a891-803f-82dd-c8085fcd5c08" class="bulleted-list"><li style="list-style-type:disc"><strong>Pour la dissertation sur notion</strong> : Prenez toujours le temps d&#x27;analyser précisément les termes du sujet. Dans notre exemple &quot;La conscience de soi suffit-elle à me connaître moi-même ?&quot;, chaque terme est important, notamment l&#x27;adverbe &quot;suffit-elle&quot; qui oriente toute la problématique.</li></ul><ul id="1d6b2280-a891-8057-a154-eea2f1f0005e" class="bulleted-list"><li style="list-style-type:disc"><strong>Pour la dissertation sur citation</strong> : Ne vous contentez pas de commenter la citation phrase par phrase. Dégagez-en l&#x27;idée centrale et les présupposés. Ici, Balzac oppose deux conceptions de l&#x27;art qu&#x27;il faut interroger.</li></ul><ul id="1d6b2280-a891-8070-8a0e-d42f5daa7bb6" class="bulleted-list"><li style="list-style-type:disc"><strong>Pour l&#x27;explication de texte</strong> : Suivez le mouvement argumentatif du texte tout en le rattachant à la pensée globale de l&#x27;auteur. Dans notre exemple sur Spinoza, il est essentiel de comprendre sa conception particulière de la liberté.</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-807c-b2e7-dffd8c8adc4f"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1d6b2280-a891-8074-81d6-de39f69b06a5" class="">N&#x27;oubliez pas que ce qui est valorisé, quelle que soit l&#x27;épreuve choisie, c&#x27;est votre capacité à penser par vous-même tout en mobilisant des connaissances philosophiques précises et pertinentes.</p></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

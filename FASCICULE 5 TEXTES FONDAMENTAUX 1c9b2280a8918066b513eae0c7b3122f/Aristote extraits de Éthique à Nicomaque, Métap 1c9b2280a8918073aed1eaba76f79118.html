@@ -1,0 +1,694 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Aristote : extraits de Éthique à Nicomaque, Métaphysique, Physique</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-8073-aed1-eaba76f79118" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1507475380673-1246fa72eeea?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 61.6%"/><h1 class="page-title"><strong>Aristote</strong> : extraits de <em>Éthique à Nicomaque</em>, <em>Métaphysique</em>, <em>Physique</em></h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d6b2280-a891-80b0-80b5-d913bdf803a5" class="">Aristote (384-322 av. J.-C.), philosophe grec majeur de l&#x27;Antiquité, fut l&#x27;élève de Platon avant de fonder sa propre école, le Lycée. Son œuvre encyclopédique couvre presque tous les domaines du savoir : logique, physique, biologie, métaphysique, éthique, politique, rhétorique et poétique. Contrairement à Platon qui privilégiait le monde des Idées, Aristote accorde une grande importance à l&#x27;observation empirique et à l&#x27;étude méthodique du monde sensible. Ses textes ont profondément influencé la pensée occidentale et orientale, notamment à travers leur réception au Moyen Âge. Nous présentons ici des extraits de trois œuvres majeures : l&#x27;<em>Éthique à Nicomaque</em> (sa réflexion sur le bonheur et la vie bonne), la <em>Métaphysique</em> (son étude de &quot;l&#x27;être en tant qu&#x27;être&quot;) et la <em>Physique</em> (sa théorie du mouvement et de la nature).</p><h1 id="1d6b2280-a891-80df-9ad2-c33bc6f17694" class=""><strong>Contexte historique et philosophique</strong></h1><p id="1d6b2280-a891-8030-8aec-d42373481c0a" class="">Aristote naît à Stagire (Macédoine) en 384 av. J.-C. Fils d&#x27;un médecin de la cour royale macédonienne, il rejoint l&#x27;Académie de Platon à Athènes à l&#x27;âge de dix-sept ans et y reste pendant vingt ans. Après la mort de Platon (347 av. J.-C.), il quitte Athènes, voyage et devient le précepteur d&#x27;Alexandre le Grand. En 335 av. J.-C., il fonde sa propre école à Athènes, le Lycée ou Péripatos. Ses écrits que nous possédons sont probablement des notes de cours destinées à ses élèves, ce qui explique leur style souvent dense et technique. Sur le plan philosophique, Aristote se distingue de son maître Platon par son empirisme méthodologique et son refus de la théorie des Idées séparées. Pour lui, la forme n&#x27;existe pas indépendamment de la matière (sauf dans le cas du Premier Moteur), et la connaissance commence nécessairement par l&#x27;expérience sensible. Cette approche marque une inflexion décisive dans l&#x27;histoire de la pensée occidentale.</p><p id="1d6b2280-a891-80a2-a2fe-fbc4c78e369c" class="">
+</p><h1 id="1d6b2280-a891-80da-9ea4-cdc20cf6003b" class="">Éthique à Nicomaque</h1><p id="1d6b2280-a891-801e-a880-c8dabbcfbd0e" class="">L&#x27;<em>Éthique à Nicomaque</em>, rédigée vers 340-330 av. J.-C., est l&#x27;un des traités moraux les plus influents de l&#x27;histoire de la philosophie. Aristote y développe sa conception du bonheur (eudaimonia) comme activité de l&#x27;âme conforme à la vertu. Il y analyse la nature des vertus éthiques (courage, tempérance, justice...) et intellectuelles (sagesse, prudence...), et introduit sa célèbre doctrine du juste milieu. Le traité aborde également l&#x27;amitié, le plaisir, et s&#x27;achève sur la contemplation comme forme suprême du bonheur.</p><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8097-9c6a-d87249bfeb09"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1d6b2280-a891-8088-9313-db3b6ac3ff7f" class=""><strong>Le système éthique aristotélicien</strong></p><p id="1d6b2280-a891-806a-a603-c31943348831" class="">L&#x27;éthique d&#x27;Aristote est téléologique (orientée vers une fin) et eudémoniste (centrée sur le bonheur). Elle repose sur plusieurs concepts fondamentaux :</p><ul id="1d6b2280-a891-8071-9a8a-f1b502bb2992" class="bulleted-list"><li style="list-style-type:disc"><strong>Eudaimonia</strong> (bonheur/épanouissement) : la fin suprême de toute action humaine</li></ul><ul id="1d6b2280-a891-80d2-9486-dd8044232795" class="bulleted-list"><li style="list-style-type:disc"><strong>Ergon</strong> (fonction propre) : chaque chose a une fonction qui lui est propre; celle de l&#x27;homme est l&#x27;activité rationnelle</li></ul><ul id="1d6b2280-a891-80ec-bc7a-e99f9cf5c5af" class="bulleted-list"><li style="list-style-type:disc"><strong>Arété</strong> (vertu/excellence) : disposition acquise qui permet d&#x27;accomplir excellemment sa fonction</li></ul><ul id="1d6b2280-a891-8055-8fdf-e4b503becc09" class="bulleted-list"><li style="list-style-type:disc"><strong>Mesotès</strong> (juste milieu) : la vertu comme intermédiaire entre l&#x27;excès et le défaut</li></ul><ul id="1d6b2280-a891-80a8-af97-c39f96541904" class="bulleted-list"><li style="list-style-type:disc"><strong>Phronèsis</strong> (prudence/sagesse pratique) : capacité de discerner la bonne action dans chaque situation particulière</li></ul></div></figure><h2 id="1d6b2280-a891-80cf-81a9-fdbc76da4f85" class="">Le bonheur comme fin suprême</h2><blockquote id="1d6b2280-a891-8097-8844-c2b095d751ac" class=""><em>Tout art et toute investigation, et pareillement toute action et tout choix tendent vers quelque bien, à ce qu&#x27;il semble. Aussi a-t-on déclaré avec raison que le Bien est ce à quoi toutes choses tendent. Mais on observe, en fait, une certaine différence entre les fins : les unes consistent dans des activités, et les autres dans certaines œuvres, distinctes des activités elles-mêmes. Dans les cas où existent certaines fins en dehors des actions, les œuvres sont par nature supérieures aux activités.<br/>Puisqu&#x27;il y a multiplicité d&#x27;actions, d&#x27;arts et de sciences, leurs fins aussi sont multiples : ainsi l&#x27;art médical a pour fin la santé, l&#x27;art de construire des navires le navire, l&#x27;art stratégique la victoire, et l&#x27;art économique la richesse. Mais dans tous les arts de ce genre qui relèvent d&#x27;une unique potentialité [...], les fins des arts architectoniques doivent être préférées à toutes celles des arts subordonnés, puisque c&#x27;est en vue des premières fins qu&#x27;on poursuit les autres. [...]<br/>Si donc il y a, de nos activités, quelque fin que nous souhaitons par elle-même, et les autres seulement à cause d&#x27;elle, et si nous ne choisissons pas indéfiniment une chose en vue d&#x27;une autre (car on procéderait ainsi à l&#x27;infini, de sorte que le désir serait futile et vain), il est clair que cette fin-là ne saurait être que le Bien, et même le Souverain Bien.<br/><br/><br/></em>Aristote, Éthique à Nicomaque, I, 1, 1094a1-22, traduction J. Tricot</blockquote><p id="1d6b2280-a891-80aa-9ca1-f18680ae4e01" class="">
+</p><blockquote id="1d6b2280-a891-8085-a0ae-c8ae27b89816" class=""><em>En ce qui concerne son nom, il y a accord presque complet dans la majorité des hommes : c&#x27;est le bonheur, que les gens ordinaires comme les gens cultivés identifient au bien vivre et au bien agir ; et ils conçoivent le fait d&#x27;être heureux comme identique au fait de vivre bien et de réussir. Mais sur la nature du bonheur, on ne s&#x27;entend plus, et les réponses de la foule ne ressemblent pas à celles des sages. Les uns, en effet, identifient le bonheur à quelque chose d&#x27;apparent et de visible, comme le plaisir, la richesse ou l&#x27;honneur : pour les uns c&#x27;est une chose et pour les autres une autre chose [...].<br/>Revenons à notre point de départ, puisque le Bien que nous cherchons ne peut être, semble-t-il, identifié au bonheur sans quelque examen complémentaire. Une façon de voir, peut-être, est de déterminer la fonction de l&#x27;homme. De même, en effet, que dans le cas d&#x27;un joueur de flûte, d&#x27;un statuaire, ou d&#x27;un artiste quelconque, et en général pour tous ceux qui ont une fonction ou une activité déterminée, c&#x27;est dans la fonction que réside, selon l&#x27;opinion courante, le bien, le &quot;réussi&quot;, on peut penser qu&#x27;il en est ainsi pour l&#x27;homme, s&#x27;il est vrai qu&#x27;il y ait une certaine fonction spéciale à l&#x27;homme.<br/><br/><br/></em>Aristote, Éthique à Nicomaque, I, 4-7, 1095a17-1097b25 (extraits), traduction J. Tricot</blockquote><p id="1d6b2280-a891-8074-8c45-ebe49d54dc2f" class="">
+</p><blockquote id="1d6b2280-a891-8002-9aac-fcd7a5580b8b" class=""><em>Mais dire que le Souverain Bien est le bonheur, c&#x27;est là, sans doute, un point acquis et nous demandons une explication plus claire sur sa nature. Peut-être pourrait-on y arriver si on déterminait la fonction de l&#x27;homme. De même, en effet, que dans le cas d&#x27;un joueur de flûte, d&#x27;un statuaire, ou d&#x27;un artiste quelconque, et en général pour tous ceux qui ont une fonction ou une activité déterminée, c&#x27;est dans la fonction que réside, selon l&#x27;opinion courante, le bien, le &quot;réussi&quot;, on peut penser qu&#x27;il en est ainsi pour l&#x27;homme, s&#x27;il est vrai qu&#x27;il y ait une certaine fonction spéciale à l&#x27;homme. Serait-il possible qu&#x27;un charpentier ou un cordonnier aient une fonction et une activité à exercer, mais que l&#x27;homme n&#x27;en ait aucune et que la nature l&#x27;ait laissé sans œuvre à accomplir ? Ou bien, de même que l&#x27;œil, la main, le pied et en général chaque partie du corps a manifestement une certaine fonction à remplir, ne doit-on pas admettre que l&#x27;homme a, lui aussi, en dehors de toutes ces activités particulières, une fonction déterminée ?<br/>Mais alors en quoi peut-elle consister ? Le simple fait de vivre est, de toute évidence, une chose que l&#x27;homme partage en commun même avec les végétaux ; or ce que nous recherchons, c&#x27;est ce qui est propre à l&#x27;homme. Nous devons donc laisser de côté la vie de nutrition et la vie de croissance. Viendrait ensuite la vie sensitive, mais celle-ci encore apparaît commune avec le cheval, le bœuf et tous les animaux. Reste donc une certaine vie pratique de la partie rationnelle de l&#x27;âme [...]. Or si la fonction de l&#x27;homme est une activité de l&#x27;âme conforme à la raison, ou qui n&#x27;existe pas sans la raison, et si nous disons que cette fonction est génériquement la même dans un individu quelconque et dans un individu de mérite (ainsi, dans un cithariste et dans un bon cithariste, et ceci est vrai, de façon absolue, dans tous les cas), la supériorité due au mérite étant simplement surajoutée à la fonction (ainsi la fonction du cithariste est de jouer de la cithare, et celle du bon cithariste d&#x27;en bien jouer) ; s&#x27;il en est ainsi ; si nous posons que la fonction de l&#x27;homme consiste dans un certain genre de vie, c&#x27;est-à-dire dans une activité de l&#x27;âme et dans des actions accompagnées de raison ; si la fonction d&#x27;un homme vertueux est d&#x27;accomplir cette tâche, et de l&#x27;accomplir bien et avec succès, chaque chose au surplus étant bien accomplie quand elle l&#x27;est selon l&#x27;excellence qui lui est propre : — dans ces conditions, c&#x27;est donc que le bien pour l&#x27;homme consiste dans une activité de l&#x27;âme en accord avec la vertu, et, au cas de pluralité de vertus, en accord avec la plus excellente et la plus parfaite d&#x27;entre elles.<br/>Mais il faut ajouter &quot;et cela dans une vie accomplie jusqu&#x27;à son terme&quot;, car une hirondelle ne fait pas le printemps, ni non plus un seul jour : et ainsi la félicité et le bonheur ne sont pas davantage l&#x27;œuvre d&#x27;une seule journée, ni d&#x27;un bref espace de temps.<br/><br/><br/></em>Aristote, Éthique à Nicomaque, I, 7, 1097b22-1098a20, traduction J. Tricot</blockquote><h2 id="1d6b2280-a891-8012-8e07-fd27a03ff13a" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-80a6-9bbf-dd61bd00166d" class="">Ces extraits du premier livre de l&#x27;<em>Éthique à Nicomaque</em> posent les fondements de la conception aristotélicienne du bonheur. Aristote commence par établir que toute action vise une fin, et que certaines fins sont subordonnées à d&#x27;autres. Cette hiérarchie des fins ne peut se poursuivre à l&#x27;infini, car cela rendrait l&#x27;action impossible. Il doit donc exister une fin ultime, poursuivie pour elle-même et non en vue d&#x27;autre chose : c&#x27;est ce qu&#x27;Aristote appelle le Souverain Bien ou le bonheur (eudaimonia).</p><p id="1d6b2280-a891-804a-bf84-c92ea8fd6d0d" class="">Pour déterminer la nature de ce bonheur, Aristote recourt à l&#x27;argument de la fonction propre (ergon) : chaque chose possède une fonction qui lui est spécifique, et son bien consiste à l&#x27;accomplir excellemment. La fonction propre de l&#x27;homme, ce qui le distingue des autres êtres vivants, est l&#x27;activité rationnelle. Le bonheur humain réside donc dans &quot;une activité de l&#x27;âme en accord avec la vertu&quot;, et plus particulièrement avec la vertu la plus haute.</p><p id="1d6b2280-a891-805d-b045-e220eaedd580" class="">Notons qu&#x27;Aristote précise que le bonheur exige &quot;une vie accomplie jusqu&#x27;à son terme&quot; : une vie heureuse ne se réduit pas à des moments isolés, mais constitue un tout cohérent. Cette conception se distingue des conceptions hédonistes (qui identifient le bonheur au plaisir) et révèle le caractère éthique et intellectuel de l&#x27;eudaimonia aristotélicienne.</p><h2 id="1d6b2280-a891-8065-8542-f5c886fce5dc" class="">La vertu comme juste milieu</h2><blockquote id="1d6b2280-a891-802b-a966-ea915061bec9" class=""><em>Nous avons donc établi que la vertu est une disposition à agir d&#x27;une façon délibérée, consistant en une médiété relative à nous, laquelle est rationnellement déterminée et comme la déterminerait l&#x27;homme prudent. C&#x27;est une médiété entre deux vices, l&#x27;un par excès et l&#x27;autre par défaut ; et c&#x27;est encore une médiété en ce que certains vices sont en défaut, et d&#x27;autres en excès par rapport à ce qui est requis aussi bien dans les passions que dans les actions ; la vertu, elle, découvre et choisit la position moyenne. C&#x27;est pourquoi, dans l&#x27;ordre de la substance et de la définition exprimant la quiddité, la vertu est une médiété, mais dans l&#x27;ordre de l&#x27;excellence et du parfait, c&#x27;est un sommet.<br/>Ce n&#x27;est cependant pas toute action ni toute passion qui admet la médiété. Il y en a, en effet, dont le nom même implique la perversité, par exemple : la malveillance, l&#x27;impudence, l&#x27;envie, et, dans le domaine des actions, l&#x27;adultère, le vol, l&#x27;homicide. Toutes ces actions et toutes ces passions et celles du même genre, impliquent par leur dénomination même qu&#x27;elles sont mauvaises en elles-mêmes, et ce n&#x27;est pas l&#x27;excès ou le défaut qui les rend telles. Par conséquent il n&#x27;est jamais possible d&#x27;agir avec rectitude en ce qui les concerne : d&#x27;être dans l&#x27;erreur toujours est seul possible ; et quand il s&#x27;agit de choses de ce genre, la question du bien ou du non-bien ne se pose pas, par exemple quand on se demande si on doit commettre un adultère avec la femme qu&#x27;il faut, et quand il faut, et comme il faut, mais le simple fait de commettre l&#x27;une quelconque de ces actions constitue une erreur. On pourrait pareillement prétendre qu&#x27;il y a aussi médiété, excès et défaut dans l&#x27;injustice, la lâcheté et la débauche, puisqu&#x27;on aurait alors une médiété dans l&#x27;excès et le défaut, un excès de l&#x27;excès et un défaut du défaut. Mais, de même qu&#x27;il n&#x27;y a ni excès ni défaut de la tempérance et du courage (en raison de ce que la position moyenne est en un sens un extrême), de même aussi pour les actions dont nous parlons, il n&#x27;y a ni médiété, ni excès, ni défaut, mais de quelque façon qu&#x27;on les accomplisse, on commet une faute. Car, en général, il n&#x27;existe ni médiété de l&#x27;excès ou du défaut, ni excès ou défaut de la médiété.<br/><br/><br/></em>Aristote, Éthique à Nicomaque, II, 6, 1106b36-1107a27, traduction J. Tricot</blockquote><p id="1d6b2280-a891-80f0-b77b-cde9ca90d559" class="">
+</p><blockquote id="1d6b2280-a891-80fc-b14c-c2ed1cc118f6" class=""><em>Mais il faut non seulement énoncer cette formule générale, il faut encore l&#x27;appliquer aux cas particuliers. En effet, parmi les considérations relatives aux actions, celles qui restent dans le général sont plus creuses, et celles qui s&#x27;attachent aux cas particuliers sont plus vraies, car les actions ont rapport aux faits individuels, et nos théories doivent être en accord avec eux. Faisons donc ces distinctions d&#x27;après notre tableau.<br/>En ce qui concerne la crainte et l&#x27;audace, le courage est une médiété. [...] L&#x27;homme qui excède dans l&#x27;absence de crainte n&#x27;a pas reçu de nom (beaucoup de vertus et de vices sont, en effet, sans nom), mais celui qui excède dans l&#x27;intrépidité peut être appelé téméraire, et celui qui excède dans la crainte et est en défaut quant à l&#x27;intrépidité est un lâche.<br/>En ce qui concerne les plaisirs et les peines [...], la médiété est la tempérance et le défaut l&#x27;insensibilité ; quant aux personnes qui pèchent par excès, on peut les appeler intempérantes.<br/>En ce qui concerne la façon de donner de l&#x27;argent et d&#x27;en recevoir, la médiété est la libéralité ; l&#x27;excès et le défaut sont respectivement la prodigalité et l&#x27;illibéralité. Dans ces vices, excès et défaut se présentent d&#x27;une façon qui se contrarie : le prodigue excède dans le fait de se dépouiller de son bien et est en défaut dans l&#x27;acquisition, alors que l&#x27;homme illibéral excède dans l&#x27;acquisition et est en défaut dans la façon de se dépouiller.<br/><br/><br/></em>Aristote, Éthique à Nicomaque, II, 7, 1107a28-1107b10, traduction J. Tricot</blockquote><h2 id="1d6b2280-a891-8094-a6bc-e62d189891cf" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-800e-b444-e1a95d6313c2" class="">Dans ces passages, Aristote expose sa célèbre doctrine du juste milieu (mesotès), qui définit la vertu éthique comme une médiété entre deux extrêmes vicieux : l&#x27;excès et le défaut. Cette conception s&#x27;inscrit dans la perspective générale de l&#x27;éthique aristotélicienne, qui valorise l&#x27;équilibre et la modération.</p><p id="1d6b2280-a891-800e-9dda-f7e200656fc5" class="">La vertu comme médiété ne doit pas être comprise comme une simple moyenne arithmétique, mais comme &quot;relative à nous&quot; et &quot;rationnellement déterminée&quot; par l&#x27;homme prudent (phronimos). Elle varie donc selon les personnes, les circonstances et les situations. Par exemple, le courage est une médiété entre la témérité (excès d&#x27;audace) et la lâcheté (excès de crainte).</p><p id="1d6b2280-a891-800e-8bdf-d5ab420defed" class="">Aristote précise toutefois que certaines actions ou passions n&#x27;admettent pas de médiété car elles sont mauvaises en elles-mêmes (homicide, adultère, vol). Cette nuance importante montre que sa théorie du juste milieu n&#x27;est pas un relativisme moral.</p><p id="1d6b2280-a891-80a2-96f6-f3a679ab04e7" class="">Enfin, Aristote insiste sur l&#x27;importance de l&#x27;application concrète de cette théorie aux cas particuliers. Cette insistance sur le particulier est caractéristique de son approche, qui reconnaît que l&#x27;éthique ne peut se réduire à des principes abstraits mais doit toujours tenir compte de la complexité des situations réelles.</p><h1 id="1d6b2280-a891-8001-94c3-c143824fa134" class="">Métaphysique</h1><p id="1d6b2280-a891-8034-be83-c96b886c6873" class="">La <em>Métaphysique</em> est un ensemble de quatorze livres traitant de ce qu&#x27;Aristote appelle la &quot;philosophie première&quot;, c&#x27;est-à-dire l&#x27;étude de &quot;l&#x27;être en tant qu&#x27;être&quot; et de ses attributs essentiels. Aristote y développe sa théorie des quatre causes, sa conception de la substance comme composé de matière et de forme, et sa théologie du Premier Moteur immobile. Cette œuvre fondamentale a profondément influencé la pensée occidentale et a donné naissance au terme même de &quot;métaphysique&quot; (ta meta ta phusika, &quot;ce qui vient après la physique&quot;).</p><h2 id="1d6b2280-a891-8090-abe9-d8fe8d805587" class="">Les quatre causes</h2><blockquote id="1d6b2280-a891-802d-9f71-ddd3a76bf8a5" class=""><em>Il est évident que nous devons acquérir la science des causes premières, puisque nous disons que chacun connaît une chose quand il pense connaître la cause première. Or, les causes se prennent en quatre sens différents. Dans un premier sens, nous disons que la cause est la substance formelle ou quiddité (la raison d&#x27;être d&#x27;une chose se ramène, en fin de compte, à sa définition, et la cause première est la raison d&#x27;être) ; dans un second sens, la cause est la matière ou le substrat ; dans un troisième sens, c&#x27;est le principe du mouvement ; dans un quatrième sens enfin, cause qui s&#x27;oppose à la précédente, c&#x27;est la cause finale ou le bien, car le bien est la fin de toute génération et de tout mouvement.<br/><br/><br/></em>Aristote, Métaphysique, A, 3, 983a24-32, traduction J. Tricot</blockquote><p id="1d6b2280-a891-80ea-9939-c6e5c6acc742" class="">
+</p><blockquote id="1d6b2280-a891-803b-a00d-cca2a8e33251" class=""><em>Nous avons suffisamment traité de ces causes dans notre étude de la Nature. Rappelons cependant quels sont les philosophes qui, avant nous, se sont livrés à l&#x27;examen des êtres et ont philosophé sur la Vérité.<br/>Évidemment, eux aussi reconnaissent certains principes et certaines causes. Notre exposé actuel trouvera donc profit à passer leurs opinions en revue : ou bien nous découvrirons quelque autre genre de cause, ou bien nous accorderons plus de confiance à celles que nous venons d&#x27;énumérer.<br/>La plupart des premiers philosophes ne considérèrent comme principes de toutes choses que les principes qui rentrent dans l&#x27;espèce de la matière. [...] Quant au nombre et à l&#x27;espèce de tels principes, ils ne sont pas tous d&#x27;accord.<br/>Thalès, fondateur de cette sorte de philosophie, dit que c&#x27;est l&#x27;Eau (c&#x27;est pourquoi il déclarait aussi que la Terre flotte sur l&#x27;Eau) [...]. Anaximène et Diogène considèrent l&#x27;Air comme antérieur à l&#x27;Eau, et comme étant, de préférence aux autres corps simples, principe des choses. Hippase de Métaponte et Héraclite d&#x27;Éphèse disent que c&#x27;est le Feu. Empédocle ajoute la Terre comme quatrième élément aux trois précédemment énumérés [...]. Anaxagore de Clazomène, antérieur à Empédocle par l&#x27;âge et postérieur par les œuvres, soutient que les principes sont en nombre infini.<br/><br/><br/></em>Aristote, Métaphysique, A, 3, 983a33-984a15, traduction J. Tricot</blockquote><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-80ec-81b9-e333034b40a5"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1d6b2280-a891-80ce-8681-f139f5bcd2c9" class=""><strong>Les quatre causes aristotéliciennes</strong></p><ul id="1d6b2280-a891-8050-9c67-c0b1c57deffe" class="bulleted-list"><li style="list-style-type:disc"><strong>Cause matérielle</strong> : ce dont une chose est faite (ex : le bronze d&#x27;une statue)</li></ul><ul id="1d6b2280-a891-80e2-947a-ed1de4ac659a" class="bulleted-list"><li style="list-style-type:disc"><strong>Cause formelle</strong> : la forme ou l&#x27;essence qui détermine ce qu&#x27;est une chose (ex : la forme que le sculpteur donne au bronze)</li></ul><ul id="1d6b2280-a891-8025-8bd8-cf6da9b33f6e" class="bulleted-list"><li style="list-style-type:disc"><strong>Cause efficiente</strong> : ce qui produit ou met en mouvement (ex : le sculpteur qui façonne la statue)</li></ul><ul id="1d6b2280-a891-80b1-b037-c4bba4953c72" class="bulleted-list"><li style="list-style-type:disc"><strong>Cause finale</strong> : la fin ou le but pour lequel une chose existe (ex : la beauté ou la commémoration comme but de la statue)</li></ul></div></figure><h2 id="1d6b2280-a891-80cb-8696-db7ead252595" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-80a9-97cd-feac6e9d63e9" class="">Dans ce passage, Aristote présente sa théorie des quatre causes, qui constitue l&#x27;un des piliers de sa métaphysique et de sa physique. Pour Aristote, connaître véritablement une chose, c&#x27;est connaître ses causes. Il distingue quatre types de causes :</p><ol type="1" id="1d6b2280-a891-80fe-be8d-ca93250b6ad8" class="numbered-list" start="1"><li>La cause formelle (eidos) : c&#x27;est l&#x27;essence ou la définition d&#x27;une chose, ce qui fait qu&#x27;elle est ce qu&#x27;elle est.</li></ol><ol type="1" id="1d6b2280-a891-80f9-882c-e041abe17dbf" class="numbered-list" start="2"><li>La cause matérielle (hylè) : c&#x27;est le substrat ou la matière dont une chose est faite.</li></ol><ol type="1" id="1d6b2280-a891-8037-af5c-d7d71cdf5601" class="numbered-list" start="3"><li>La cause efficiente ou motrice (kinoun) : c&#x27;est le principe du mouvement ou du changement, ce qui produit l&#x27;effet.</li></ol><ol type="1" id="1d6b2280-a891-8038-bee0-ded79b8ead4d" class="numbered-list" start="4"><li>La cause finale (telos) : c&#x27;est la fin ou le but en vue duquel une chose existe ou est produite.</li></ol><p id="1d6b2280-a891-80d9-bc05-cb57bb22b621" class="">Aristote illustre ensuite sa théorie par un examen historique des philosophes antérieurs, montrant que chacun d&#x27;eux n&#x27;a saisi qu&#x27;une partie de la vérité en se concentrant principalement sur la cause matérielle. Cette approche historique est caractéristique de la méthode aristotélicienne, qui cherche toujours à situer sa propre pensée par rapport à celle de ses prédécesseurs.</p><p id="1d6b2280-a891-80c7-8a8f-caf0a890d828" class="">La théorie des quatre causes représente une avancée majeure dans la compréhension de la causalité, dépassant la simple cause efficiente pour intégrer la finalité, la forme et la matière. Elle influencera profondément toute la tradition philosophique et scientifique occidentale jusqu&#x27;à la révolution scientifique moderne.</p><h2 id="1d6b2280-a891-8006-884c-fa8e4613b1af" class="">L&#x27;être en tant qu&#x27;être et la substance</h2><blockquote id="1d6b2280-a891-80f9-ac97-e3d32f9e82f1" class=""><em>Il y a une science qui étudie l&#x27;Être en tant qu&#x27;être, et les attributs qui lui appartiennent essentiellement. Cette science n&#x27;est identique à aucune des sciences dites particulières, car aucune de ces autres sciences ne considère en général l&#x27;Être en tant qu&#x27;être, mais, découpant une certaine partie de l&#x27;Être, c&#x27;est de cette partie qu&#x27;elles étudient les attributs : tel est le cas des sciences mathématiques.<br/>Mais puisque nous cherchons les principes premiers et les causes les plus hautes, il est évidemment nécessaire qu&#x27;ils soient, par eux-mêmes, les causes d&#x27;une certaine nature. Si donc ceux qui cherchaient les éléments des êtres cherchaient ces principes premiers, nécessairement aussi les éléments dont ils parlaient n&#x27;étaient pas éléments de l&#x27;être par accident, mais par soi : d&#x27;où il suit qu&#x27;il nous faut, nous aussi, saisir les causes premières de l&#x27;Être en tant qu&#x27;être.<br/><br/><br/></em>Aristote, Métaphysique, Γ, 1, 1003a21-32, traduction J. Tricot</blockquote><p id="1d6b2280-a891-805c-9f4e-eb51a856a13f" class="">
+</p><blockquote id="1d6b2280-a891-8092-bf0a-fda8a26bde81" class=""><em>L&#x27;Être se prend en plusieurs acceptions, mais c&#x27;est toujours relativement à un terme unique, à une seule nature déterminée. Ce n&#x27;est pas une simple homonymie, mais de même qu&#x27;on applique le terme &quot;sain&quot; à tout ce qui se rapporte à la santé, soit en la conservant, soit en la produisant, soit en l&#x27;indiquant, soit en la recevant ; de même que le terme &quot;médical&quot; se rapporte à la médecine [...], de même l&#x27;Être se prend en de multiples acceptions, mais toujours relativement à un principe unique. Certaines choses, en effet, sont dites des êtres parce qu&#x27;elles sont des substances, d&#x27;autres parce qu&#x27;elles sont des affections de la substance, d&#x27;autres parce qu&#x27;elles sont un acheminement vers la substance, ou, au contraire, des corruptions de la substance, ou parce qu&#x27;elles sont des privations, ou des qualités de la substance, ou bien parce qu&#x27;elles sont des causes productrices ou génératrices, soit d&#x27;une substance, soit de ce qui est nommé relativement à une substance, ou enfin parce qu&#x27;elles sont des négations de quelqu&#x27;une de ces mêmes choses ou de la substance elle-même. C&#x27;est même pour cette raison que nous disons du non-être qu&#x27;il est non-être.<br/>De même, donc, qu&#x27;il y a une seule science pour tout ce qui est sain, de même en est-il pour tout le reste. Il appartient, en effet, à une seule science d&#x27;étudier non seulement ce qui se dit selon un seul sens, mais encore ce qui se dit relativement à une seule nature, car ces termes-là se disent aussi, en un certain sens, selon un sens unique. Il est donc évident qu&#x27;il appartient aussi à une seule science d&#x27;étudier les êtres en tant qu&#x27;êtres. Mais toujours la science traite proprement de ce qui est premier, de ce dont dépend tout le reste et en vertu de quoi le reste reçoit sa dénomination. Si donc la substance est ce premier être, c&#x27;est des substances que le philosophe devra saisir les principes et les causes.<br/><br/><br/></em>Aristote, Métaphysique, Γ, 2, 1003a33-1003b19, traduction J. Tricot</blockquote><h2 id="1d6b2280-a891-8095-926e-c7f3509a87a1" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-80b5-8281-f805fca5062f" class="">Ces extraits posent les fondements de ce qu&#x27;Aristote nomme la &quot;philosophie première&quot;, que nous appelons aujourd&#x27;hui métaphysique : la science de &quot;l&#x27;être en tant qu&#x27;être&quot;. Contrairement aux sciences particulières qui étudient un domaine spécifique de l&#x27;être (le mouvement, les nombres, les êtres vivants), la métaphysique étudie l&#x27;être dans sa plus grande généralité.</p><p id="1d6b2280-a891-8097-88fa-d5e59f4607fc" class="">Aristote affronte d&#x27;emblée une difficulté majeure : comment une science unique peut-elle étudier l&#x27;être, alors que celui-ci se dit &quot;en plusieurs acceptions&quot; ? Sa solution est la théorie de l&#x27;unité focale ou de l&#x27;homonymie &quot;pros hen&quot; (relativement à un terme unique) : les différentes acceptions de l&#x27;être se rapportent toutes à un sens premier, qui est la substance (ousia). Par exemple, la qualité, la quantité, la relation sont des êtres parce qu&#x27;elles sont &quot;des affections de la substance&quot;.</p><p id="1d6b2280-a891-8087-bdc2-e4340c1df443" class="">Cette primauté de la substance fait d&#x27;elle l&#x27;objet principal de la métaphysique : comprendre l&#x27;être, c&#x27;est avant tout comprendre la substance. Cette thèse aura une importance capitale dans toute l&#x27;histoire de la métaphysique occidentale, depuis la scolastique médiévale jusqu&#x27;à la critique heideggerienne de &quot;l&#x27;oubli de l&#x27;être&quot; au profit de l&#x27;étant.</p><p id="1d6b2280-a891-80b6-a951-f888f70b16a0" class="">Notons aussi qu&#x27;Aristote légitime l&#x27;étude philosophique du non-être, en tant qu&#x27;il se dit relativement à l&#x27;être (comme sa négation). Cette inclusion du non-être dans l&#x27;étude métaphysique marque un progrès important par rapport à Parménide, qui en excluait radicalement la pensée.</p><h2 id="1d6b2280-a891-80ce-bd1e-c2260be2994d" class="">Le Premier Moteur immobile</h2><blockquote id="1d6b2280-a891-80a1-b106-f7da9b4c21e6" class=""><em>Puisqu&#x27;il y a trois substances, dont deux sont physiques et une immobile, c&#x27;est de cette dernière qu&#x27;il faut parler et montrer qu&#x27;il existe nécessairement une substance éternelle et immobile. En effet, les substances sont les premiers des êtres, et si elles sont toutes périssables, tous les êtres sont périssables. Mais il est impossible que le mouvement naisse ou périsse, car il a toujours existé ; il en est de même du temps, car il ne peut y avoir d&#x27;antérieur et de postérieur s&#x27;il n&#x27;y a pas de temps. Et le mouvement est continu comme le temps : le temps, en effet, est ou bien la même chose que le mouvement, ou bien une affection du mouvement. Or il n&#x27;y a pas de mouvement continu en dehors du mouvement local, et, parmi les mouvements locaux, seul le mouvement circulaire est continu.<br/><br/><br/></em>Aristote, Métaphysique, Λ, 6, 1071b3-11, traduction J. Tricot</blockquote><p id="1d6b2280-a891-80e4-a998-da40e62cc141" class="">
+</p><blockquote id="1d6b2280-a891-804f-8b56-d3f948213723" class=""><em>S&#x27;il y a donc quelque chose qui est capable de mouvoir ou de produire, mais qui n&#x27;est pas actuellement à l&#x27;œuvre, le mouvement ne sera pas nécessairement. Car ce qui possède une puissance peut très bien ne pas l&#x27;exercer. Rien ne sert donc de supposer des substances éternelles, comme font les partisans des Idées, si un principe capable de causer le changement ne leur est pas inhérent. D&#x27;ailleurs les Idées ne suffisent pas, ni aucune autre substance en dehors des Idées, car si ces substances n&#x27;agissent pas, il n&#x27;y aura pas de mouvement. Bien plus, même si elles agissent, cela ne suffit pas, si leur substance est seulement en puissance, car il n&#x27;y aura pas alors de mouvement éternel, puisque ce qui est en puissance peut ne pas être. Il faut donc qu&#x27;il y ait un principe tel que sa substance soit acte même.<br/>En outre, de telles substances doivent être immatérielles, car elles doivent être éternelles, s&#x27;il est vrai que quelque autre chose aussi est éternelle. Elles sont donc acte.<br/><br/><br/></em>Aristote, Métaphysique, Λ, 6, 1071b12-22, traduction J. Tricot</blockquote><p id="1d6b2280-a891-803d-80bf-f3b06b0b0d31" class="">
+</p><blockquote id="1d6b2280-a891-8049-89b7-e10bd98838a5" class=""><em>Or il existe quelque chose qui meut sans être mû, quelque chose d&#x27;éternel, qui est substance et acte. Et voici comment meuvent le désirable et l&#x27;intelligible : ils meuvent sans être mus. Les premiers objets du désirable et de l&#x27;intelligible sont les mêmes. En effet, est objet d&#x27;appétit ce qui paraît beau, et objet premier de la volonté, ce qui est beau. Nous désirons une chose parce qu&#x27;elle nous semble bonne, plutôt qu&#x27;elle ne nous semble bonne parce que nous la désirons : le principe est la pensée. Or l&#x27;intelligence est mue par l&#x27;intelligible, et intelligible par soi est la seconde colonne des contraires, dans laquelle la substance est première, et, dans la substance, ce qui est simple et en acte.<br/>[...]<br/>Que la cause finale puisse appartenir aux êtres immobiles, c&#x27;est ce que montre la distinction suivante. La cause finale peut être double : nous l&#x27;avons dit dans notre traité Sur les différentes acceptions : elle peut être la fin elle-même, ou l&#x27;être pour qui est la fin. Sous ce dernier aspect, la fin peut appartenir aux immobiles, mais non sous le premier. La cause finale meut donc en tant qu&#x27;elle est aimée, et par ce qui est mû, tous les autres êtres se meuvent.<br/><br/><br/></em>Aristote, Métaphysique, Λ, 7, 1072a23-1072b3, traduction J. Tricot</blockquote><h2 id="1d6b2280-a891-80bb-9414-e4a750b802f2" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-8039-bbd9-c96e54fceeef" class="">Ces passages exposent la théologie aristotélicienne, centrée sur le Premier Moteur immobile (proton kinoun akinèton). Aristote part d&#x27;un constat : le mouvement est éternel (ni créé, ni destructible), comme l&#x27;est le temps. Or, tout mouvement suppose un moteur. Puisque le mouvement est éternel, il doit y avoir un moteur éternel.</p><p id="1d6b2280-a891-80ad-b017-d655ecf7fbc4" class="">Mais ce moteur éternel ne peut être lui-même en mouvement, car cela supposerait un autre moteur à l&#x27;infini. Il doit donc être immobile. De plus, il ne peut être &quot;en puissance&quot; de mouvoir (comme un musicien qui peut jouer mais ne joue pas toujours), car alors le mouvement qu&#x27;il cause pourrait s&#x27;interrompre. Il doit donc être acte pur, sans aucune potentialité.</p><p id="1d6b2280-a891-80b1-acc1-e8c0c34593b5" class="">Comment ce Premier Moteur immobile peut-il causer le mouvement sans être lui-même mû ? Aristote répond : il meut comme objet de désir ou d&#x27;amour (hôs erômenon). Tout comme l&#x27;aimé meut l&#x27;amant sans se mouvoir lui-même, le Premier Moteur meut le monde en étant l&#x27;objet ultime vers lequel tend tout mouvement. C&#x27;est donc comme cause finale, et non comme cause efficiente, qu&#x27;il est premier principe.</p><p id="1d6b2280-a891-80a3-b95b-e63eea65701e" class="">Cette conception du Premier Moteur comme intelligence (noûs) qui se pense elle-même constitue l&#x27;apogée de la théologie naturelle d&#x27;Aristote. Elle exercera une influence considérable sur les monothéismes, notamment à travers les synthèses d&#x27;Averroès et de Thomas d&#x27;Aquin, qui y verront une préfiguration rationnelle du Dieu révélé.</p><h1 id="1d6b2280-a891-8029-824d-ffa738f0c9b2" class="">Physique</h1><p id="1d6b2280-a891-8040-a14a-d6dc175a896a" class="">La <em>Physique</em> d&#x27;Aristote est un traité fondamental portant sur l&#x27;étude de la nature (phusis) et du changement. En huit livres, Aristote y développe sa théorie du mouvement, sa conception de l&#x27;espace et du temps, et sa vision téléologique de la nature. Bien que dépassée par la physique moderne, cette œuvre a dominé la pensée scientifique occidentale jusqu&#x27;à la révolution galiléenne et conserve une grande importance philosophique pour sa réflexion sur les concepts de causalité, de finalité et de mouvement.</p><h2 id="1d6b2280-a891-802b-86a0-d914ad1d3560" class="">Nature et changement</h2><blockquote id="1d6b2280-a891-801c-8afd-c9f4e43eda96" class=""><em>Parmi les êtres, les uns sont par nature, les autres par d&#x27;autres causes. Sont par nature les animaux et leurs parties, les plantes et les corps simples, comme terre, feu, air, eau : de ces choses, en effet, et des autres de même sorte, on dit qu&#x27;elles sont par nature. Or tous ces êtres diffèrent manifestement de ceux qui ne sont pas constitués par nature ; chacun des premiers, en effet, a en soi-même un principe de mouvement et de fixité, les uns quant au lieu, les autres quant à l&#x27;accroissement et au décroissement, d&#x27;autres quant à l&#x27;altération. Mais un lit, un manteau et tout autre objet de ce genre, en tant que chacun a droit à cette appellation, c&#x27;est-à-dire dans la mesure où il est un produit de l&#x27;art, ne possèdent aucune impulsion innée au changement ; mais en tant qu&#x27;ils se trouvent être aussi en pierre ou en terre ou en quelque mixte de ces éléments, ils en possèdent une, et dans cette mesure seulement. Ce qui montre que la nature est un principe et une cause de mouvement et de repos pour la chose en laquelle elle réside immédiatement, par essence et non par accident.<br/><br/><br/></em>Aristote, Physique, II, 1, 192b8-23, traduction H. Carteron</blockquote><p id="1d6b2280-a891-80e6-a4dc-e8319e37acda" class="">
+</p><blockquote id="1d6b2280-a891-80b4-8c66-d7af093dc7d8" class=""><em>L&#x27;expression &quot;selon la nature&quot; s&#x27;applique à tout cela et aussi à ce qui appartient à ces êtres par soi, comme pour le feu d&#x27;être porté vers le haut ; cela, en effet, n&#x27;est pas une nature et n&#x27;a pas une nature, mais est par nature et selon la nature.<br/>On a donc dit ce qu&#x27;est le naturel et ce que signifient les expressions &quot;par nature&quot; et &quot;selon la nature&quot;. Quant à essayer de prouver que la nature existe, ce serait ridicule ; il est manifeste, en effet, qu&#x27;il y a beaucoup d&#x27;êtres de ce genre. Or, prouver ce qui est manifeste par ce qui est obscur est le fait de quelqu&#x27;un qui ne peut discerner ce qui est connaissable en soi et ce qui ne l&#x27;est pas. [...]<br/>Il y a des gens qui pensent que la nature et la substance des êtres naturels, c&#x27;est le sujet immédiat et en soi informe de chacun d&#x27;eux, par exemple du lit la nature serait le bois, de la statue le bronze. Un signe en est, dit Antiphon, que si l&#x27;on enfouit un lit et que la putréfaction ait la force de faire pousser un rejeton, ce qui naîtra ne sera pas un lit mais du bois, ce qui montre que la disposition selon l&#x27;art est un accident, tandis que la substance est ce qui demeure en subissant continuellement ces accidents. Et si chacun de ces matériaux est dans le même rapport à l&#x27;égard d&#x27;autre chose (comme le bronze et l&#x27;or à l&#x27;égard de l&#x27;eau, les os et le bois à l&#x27;égard de la terre, et de même pour tout autre corps), cet autre élément serait leur nature et leur substance. C&#x27;est pourquoi les uns disent que la nature des êtres c&#x27;est le feu, d&#x27;autres la terre, d&#x27;autres l&#x27;air, d&#x27;autres l&#x27;eau, d&#x27;autres plusieurs de ces éléments, d&#x27;autres tous.<br/><br/><br/></em>Aristote, Physique, II, 1, 192b33-193a17, traduction H. Carteron</blockquote><h2 id="1d6b2280-a891-8085-b4dc-ca19cbd91e41" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-808b-a891-d0353a5de75e" class="">Dans ce passage inaugural du livre II de la <em>Physique</em>, Aristote définit la nature (phusis) comme &quot;un principe et une cause de mouvement et de repos pour la chose en laquelle elle réside immédiatement, par essence et non par accident.&quot; Cette définition établit une distinction fondamentale entre les êtres naturels, qui possèdent en eux-mêmes le principe de leur mouvement (animaux, plantes, éléments), et les êtres artificiels, qui ne se meuvent que par accident.</p><p id="1d6b2280-a891-80bf-8b5c-ed360e79de22" class="">Aristote discute ensuite la conception matérialiste de la nature, attribuée notamment à Antiphon, selon laquelle la nature d&#x27;une chose serait sa matière première. L&#x27;exemple du lit qui, enfoui, ne produirait pas un autre lit mais du bois, suggère que la matière (bois) est plus &quot;naturelle&quot; que la forme artificielle (lit). Sans rejeter entièrement cette perspective, Aristote la considère comme incomplète, car elle ne rend pas compte de la spécificité des êtres naturels.</p><p id="1d6b2280-a891-80c2-af20-f1887f59eed9" class="">Cette discussion marque une étape décisive dans la constitution de la physique comme science autonome, distincte à la fois des mathématiques (qui étudient des objets abstraits) et de la métaphysique (qui étudie l&#x27;être en tant qu&#x27;être). En définissant la nature comme principe interne de mouvement, Aristote pose les fondements d&#x27;une explication téléologique du changement naturel, qui dominera la pensée occidentale jusqu&#x27;à la révolution scientifique moderne.</p><h2 id="1d6b2280-a891-8082-98fa-d0d851aee8aa" class="">Les quatre causes dans la nature</h2><blockquote id="1d6b2280-a891-80fe-89bb-cb7d47aa9efd" class=""><em>Maintenant que ces distinctions ont été faites, il faut examiner les causes, leur nature et leur nombre. Puisque notre traité a pour but la connaissance et que nous ne pensons connaître une chose que lorsque nous avons saisi le pourquoi (c&#x27;est-à-dire la cause première), il est évident que nous devons le faire pour la génération et la corruption et pour tout changement physique, afin que, connaissant leurs principes, nous puissions essayer d&#x27;y ramener chacun des objets de notre recherche.<br/>Dans un premier sens, on appelle cause ce dont une chose est faite et qui y demeure immanent, par exemple l&#x27;airain est cause de la statue, l&#x27;argent de la coupe, ainsi que les genres de l&#x27;airain et de l&#x27;argent.<br/>Dans un autre sens, c&#x27;est la forme et le modèle, c&#x27;est-à-dire la définition de la quiddité et ses genres (par exemple, pour l&#x27;octave, c&#x27;est le rapport de deux à un, et, en général, le nombre), ainsi que les parties qui entrent dans la définition.<br/>En outre la cause, c&#x27;est ce dont vient le début premier du changement ou du repos ; par exemple, l&#x27;auteur d&#x27;une décision est cause, le père est cause de l&#x27;enfant, et, en général, ce qui fait est cause de ce qui est fait, ce qui produit un changement de ce qui subit le changement.<br/>En outre, la cause se dit au sens de fin ; c&#x27;est le but en vue duquel une chose se fait, par exemple la santé est cause de la promenade. « Pourquoi se promène-t-il ? » disons-nous ; « pour sa santé » et, ayant parlé ainsi, nous pensons avoir donné la cause.<br/>Sont encore causes tous les intermédiaires qui, après l&#x27;impulsion d&#x27;un moteur, sont causes à leur tour du terme final ; par exemple pour la santé, l&#x27;amaigrissement ou la purgation, ou les remèdes ou les instruments ; tous ces moyens en effet visent la fin, mais diffèrent entre eux en ce qu&#x27;ils sont les uns des opérations, les autres des instruments.<br/><br/><br/></em>Aristote, Physique, II, 3, 194b16-195a3, traduction H. Carteron</blockquote><h2 id="1d6b2280-a891-80c5-a27e-dfe18fd5c459" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-8085-b080-c7a2cfef8992" class="">Ce passage expose la théorie des quatre causes appliquée spécifiquement à l&#x27;étude de la nature. Aristote reprend ici, dans un contexte physique, la distinction des causes qu&#x27;il avait établie dans sa <em>Métaphysique</em> :</p><ol type="1" id="1d6b2280-a891-80a3-8068-f9413bc1996b" class="numbered-list" start="1"><li>La cause matérielle : &quot;ce dont une chose est faite et qui y demeure immanent&quot; (l&#x27;airain de la statue)</li></ol><ol type="1" id="1d6b2280-a891-80f7-977f-e807ab77d803" class="numbered-list" start="2"><li>La cause formelle : &quot;la forme et le modèle, c&#x27;est-à-dire la définition de la quiddité&quot; (la forme que prend l&#x27;airain)</li></ol><ol type="1" id="1d6b2280-a891-8090-828b-dbcefda610fc" class="numbered-list" start="3"><li>La cause efficiente ou motrice : &quot;ce dont vient le début premier du changement ou du repos&quot; (le sculpteur)</li></ol><ol type="1" id="1d6b2280-a891-8048-a0a5-fea12e7337c8" class="numbered-list" start="4"><li>La cause finale : &quot;le but en vue duquel une chose se fait&quot; (la beauté visée par la statue)</li></ol><p id="1d6b2280-a891-8045-b10c-cec18148e5db" class="">Aristote précise que la connaissance véritable implique la saisie du &quot;pourquoi&quot;, c&#x27;est-à-dire de la cause première. Dans le domaine naturel, cela signifie comprendre les quatre types de causalité à l&#x27;œuvre dans les phénomènes.</p><p id="1d6b2280-a891-8093-9e51-e4c45424ce77" class="">Il est important de noter l&#x27;inclusion de la cause finale dans l&#x27;explication physique. Pour Aristote, la nature agit en vue d&#x27;une fin, même en l&#x27;absence d&#x27;intention consciente. Cette téléologie naturelle distingue radicalement sa physique de la science moderne, qui tend à exclure les causes finales au profit des seules causes efficientes et matérielles.</p><h2 id="1d6b2280-a891-805f-8140-e0b9bcabd092" class="">Hasard, fortune et finalité</h2><blockquote id="1d6b2280-a891-8033-9bef-c3b4e0824585" class=""><em>Il y a des choses qui se produisent en vue de quelque chose, d&#x27;autres non. Parmi les premières, les unes se font par choix, les autres sans choix, mais toutes sont parmi ce qui se fait en vue de quelque chose. Par suite, il est manifeste que, même parmi les choses qui sont en dehors du nécessaire et du normal, il y en a où peut s&#x27;appliquer la finalité. Or tout ce qui se fait par nature est en vue de quelque fin, ou bien est un événement concomitant de choses qui sont en vue d&#x27;une fin.<br/>[...] L&#x27;absurde ne se produit pas dans les événements naturels ; plutôt y existe-t-il partout régularité et ordre. La formule « non pas en vue de quelque chose » convient aux événements contraires à la nature, non pas à tous les événements naturels. Il y a absurdité quand une chose arrive par accident. Par exemple si, pendant les jours caniculaires, la pluie qui tombe peut être contraire à la nature, car elle ne se produit pas régulièrement à cette saison. Mais s&#x27;il pleut régulièrement à cette époque, ce n&#x27;est ni accidentel ni dû au hasard. De même pour l&#x27;hiver ; sauf quand la pluie est extraordinaire. De sorte que, s&#x27;il est vrai, comme on l&#x27;admet, que les produits de la nature et la nature même existent soit toujours, soit le plus souvent, alors que les produits du hasard ne se produisent ni toujours ni le plus souvent, il est impossible que le hasard ou le spontané soit la cause de ce qui arrive par nature.<br/><br/><br/></em>Aristote, Physique, II, 5-6, 196b17-198a9 (extraits), traduction H. Carteron</blockquote><p id="1d6b2280-a891-800d-b2cf-fcef36292e16" class="">
+</p><blockquote id="1d6b2280-a891-802d-8b65-ed5b90e94a8e" class=""><em>En outre, dans toutes les choses qui se font en vue d&#x27;une fin, il n&#x27;y a rien d&#x27;accidentel ni de fortuit ; dans la nature, c&#x27;est la fin qui est dominante. Que si, contrairement au cours normal des choses, il se produit par accident un événement en apparence final, et que c&#x27;est cet accident qui produit le résultat, il est alors impossible qu&#x27;il y ait finalité, puisque tout ce qui est par hasard est contraire à ce qui est en vue d&#x27;une fin et est impliqué dans ce qui se produit par nature : car les choses qui sont par nature se produisent en vue de quelque chose.<br/>Qu&#x27;il y ait des causes finales dans la nature et que la nature soit cause finale, c&#x27;est ce qui ressort manifestement de ces considérations et d&#x27;autres analogues.<br/><br/><br/></em>Aristote, Physique, II, 8, 199b23-30, traduction H. Carteron</blockquote><h2 id="1d6b2280-a891-80db-b2c1-e2e0668582dc" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-809b-ac43-d10feb651992" class="">Ces passages développent la conception téléologique de la nature chez Aristote. Contre ceux qui attribuent l&#x27;ordre naturel au hasard, Aristote soutient que &quot;tout ce qui se fait par nature est en vue de quelque fin&quot;. La régularité des phénomènes naturels (que ce soit &quot;toujours&quot; ou &quot;le plus souvent&quot;) témoigne de cette finalité intrinsèque.</p><p id="1d6b2280-a891-8003-be11-c160fe3a44b8" class="">Aristote distingue soigneusement la finalité consciente (impliquant choix et délibération) de la finalité naturelle, qui opère sans intention. De même, il oppose ce qui arrive &quot;par nature&quot; à ce qui arrive &quot;par accident&quot; ou &quot;par hasard&quot; : le hasard concerne des événements exceptionnels, alors que la nature produit des effets réguliers.</p><p id="1d6b2280-a891-809b-a657-ca634fb0a8f9" class="">Cette vision téléologique de la nature constitue l&#x27;un des aspects les plus controversés de la physique aristotélicienne. Rejetée par la science moderne au profit d&#x27;explications mécanistes, elle connaît cependant un certain regain d&#x27;intérêt dans des domaines comme la biologie évolutive, où des notions comme celle de &quot;fonction&quot; semblent réintroduire une forme de finalité.</p><p id="1d6b2280-a891-801a-ad7e-ff4f23c33148" class="">Il est important de noter que, pour Aristote, affirmer la finalité naturelle ne revient pas à postuler un dessein intelligent derrière les phénomènes, comme le feront certaines interprétations théologiques ultérieures. La finalité est immanente à la nature elle-même : elle réside dans la tendance de chaque être à réaliser sa forme propre et à accomplir sa fonction spécifique.</p><figure class="block-color-orange callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8045-8ca6-c189026be847"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><h1 id="1d6b2280-a891-8058-9620-cfb9c0c6469d" class=""><strong>Pertinence contemporaine</strong></h1><p id="1d6b2280-a891-80a5-b071-ff914fea450c" class="">Bien que de nombreux aspects de la physique aristotélicienne aient été dépassés par la science moderne, sa pensée demeure d&#x27;une grande pertinence philosophique. Sa théorie des quatre causes continue d&#x27;influencer les débats sur la causalité et la complexité explicative. Sa conception de la substance comme composé de matière et de forme a inspiré certains courants de la philosophie de l&#x27;esprit opposés au réductionnisme matérialiste. Son éthique des vertus connaît un regain d&#x27;intérêt considérable face aux limites perçues des éthiques déontologiques (kantiennes) et conséquentialistes (utilitaristes). Sa conception du bonheur comme activité vertueuse offre une alternative aux visions hédonistes dominantes.</p><p id="1d6b2280-a891-80b5-b065-ef983e5bbddd" class="">Plus fondamentalement, l&#x27;approche aristotélicienne, avec son souci de l&#x27;observation méthodique, sa recherche d&#x27;explications plurielles (les quatre causes) et son équilibre entre empirisme et rationalisme, représente une manière de philosopher qui demeure un modèle de rigueur intellectuelle. Comme l&#x27;a dit le philosophe contemporary Alasdair MacIntyre : &quot;Nous sommes tous des aristotéliciens, même lorsque nous pensons ne pas l&#x27;être.&quot;</p></div></figure><p id="1d6b2280-a891-802b-9427-da287b862ecd" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

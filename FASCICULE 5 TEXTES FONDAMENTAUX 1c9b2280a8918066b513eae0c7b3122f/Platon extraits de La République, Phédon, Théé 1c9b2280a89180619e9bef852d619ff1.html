@@ -1,0 +1,693 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Platon : extraits de La République, Phédon, Théétète</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-8061-9e9b-ef852d619ff1" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1564571781900-a95080a226a6?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 85.1%"/><h1 class="page-title"><strong>Platon</strong> : extraits de <em>La République</em>, <em>Phédon</em>, <em>Théétète</em></h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d6b2280-a891-8034-b2fe-e5c30bf19c97" class="">Platon (428/427-348/347 av. J.-C.) est l&#x27;un des philosophes les plus influents de la tradition occidentale. Disciple de Socrate, il fonde l&#x27;Académie à Athènes et développe une philosophie qui touche à la métaphysique, l&#x27;éthique, la politique et la théorie de la connaissance. Sa pensée nous est parvenue sous forme de dialogues, généralement menés par son maître Socrate. Les trois œuvres dont sont extraits les passages qui suivent comptent parmi ses textes majeurs : <em>La République</em> expose sa conception de la justice et de la cité idéale, <em>Phédon</em> traite de l&#x27;immortalité de l&#x27;âme, et <em>Théétète</em> s&#x27;interroge sur la nature de la connaissance.</p><h1 id="1d6b2280-a891-8060-9162-c03ae71a9773" class=""><strong>Contexte historique et philosophique</strong></h1><p id="1d6b2280-a891-8001-94e0-c8c0581eea77" class="">Platon vit à Athènes au IVe siècle av. J.-C., dans une période de crise politique qui suit la défaite face à Sparte lors de la guerre du Péloponnèse (431-404 av. J.-C.) et la condamnation à mort de Socrate en 399 av. J.-C. Ce contexte troublé influence profondément sa pensée politique et sa vision de la justice. Sur le plan philosophique, Platon hérite de la méthode dialectique de Socrate tout en assimilant l&#x27;héritage des présocratiques. Sa théorie des Idées ou Formes intelligibles, qui postule l&#x27;existence d&#x27;un monde suprasensible où résident les essences parfaites et éternelles dont les objets sensibles ne sont que des copies imparfaites, constitue sa contribution la plus originale et la plus influente à l&#x27;histoire de la philosophie.</p><h1 id="1d6b2280-a891-80d5-91ee-dc98007d373e" class="">La République</h1><p id="1d6b2280-a891-80e8-82cb-e9919abbc2ed" class="">Écrit vers 375 av. J.-C., <em>La République</em> (en grec <em>Politeia</em>, &quot;Constitution&quot;) est le dialogue platonicien le plus connu et le plus ambitieux. Platon y développe sa conception de la justice, de l&#x27;éducation et du gouvernement idéal, tout en exposant sa théorie de la connaissance et sa métaphysique. À travers la bouche de Socrate, il défend l&#x27;idée que la justice consiste en une harmonie entre les différentes parties de l&#x27;âme et de la cité, chacune accomplissant la fonction qui lui est propre.</p><h2 id="1d6b2280-a891-80ae-a315-fdb15d15abc9" class="">L&#x27;allégorie de la caverne</h2><blockquote id="1d6b2280-a891-805b-9d34-d55d76c4d157" class=""><em><strong>SOCRATE</strong></em><em> : Représente-toi de la façon que voici l&#x27;état de notre nature relativement à l&#x27;instruction et à l&#x27;ignorance. Figure-toi des hommes dans une demeure souterraine, en forme de caverne, ayant sur toute sa largeur une entrée ouverte à la lumière ; ces hommes sont là depuis leur enfance, les jambes et le cou enchaînés, de sorte qu&#x27;ils ne peuvent bouger ni voir ailleurs que devant eux, la chaîne les empêchant de tourner la tête ; la lumière leur vient d&#x27;un feu allumé sur une hauteur, au loin derrière eux ; entre le feu et les prisonniers passe une route élevée : imagine que le long de cette route est construit un petit mur, pareil aux cloisons que les montreurs de marionnettes dressent devant eux et au-dessus desquelles ils font voir leurs merveilles.<br/><br/></em><em><strong>GLAUCON</strong></em><em> : Je vois cela.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Figure-toi maintenant le long de ce petit mur des hommes portant des objets de toute sorte, qui dépassent le mur, et des statuettes d&#x27;hommes et d&#x27;animaux, en pierre, en bois et en toute espèce de matière ; naturellement, parmi ces porteurs, les uns parlent et les autres se taisent.<br/><br/></em><em><strong>GLAUCON</strong></em><em> : Voilà un étrange tableau et d&#x27;étranges prisonniers.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Ils nous ressemblent, répondis-je ; penses-tu que dans une telle situation ils n&#x27;aient jamais vu autre chose d&#x27;eux-mêmes et de leurs voisins que les ombres projetées par le feu sur la paroi de la caverne qui leur fait face ?<br/><br/></em><em><strong>GLAUCON</strong></em><em> : Comment cela se pourrait-il, s&#x27;ils sont forcés de rester la tête immobile durant toute leur vie ?<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Et pour les objets qui défilent, n&#x27;en est-il pas de même ?<br/><br/></em><em><strong>GLAUCON</strong></em><em> : Sans contredit.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Si donc ils pouvaient s&#x27;entretenir ensemble, ne penses-tu pas qu&#x27;ils prendraient pour des objets réels les ombres qu&#x27;ils verraient ?<br/><br/></em><em><strong>GLAUCON</strong></em><em> : Il y a nécessité.<br/><br/><br/></em>Platon, La République, Livre VII, 514a-514c, traduction Émile Chambry</blockquote><p id="1d6b2280-a891-8053-a6e4-c4ea35ee5737" class="">
+</p><blockquote id="1d6b2280-a891-803c-8fbc-dcb6412f78d8" class=""><em><strong>SOCRATE</strong></em><em> : Considère maintenant ce qui leur arrivera naturellement si on les délivre de leurs chaînes et qu&#x27;on les guérisse de leur ignorance. Qu&#x27;on détache l&#x27;un de ces prisonniers, qu&#x27;on le force à se dresser immédiatement, à tourner le cou, à marcher, à lever les yeux vers la lumière : en faisant tous ces mouvements il souffrira, et l&#x27;éblouissement l&#x27;empêchera de distinguer ces objets dont tout à l&#x27;heure il voyait les ombres. Que crois-tu donc qu&#x27;il répondra si quelqu&#x27;un lui vient dire qu&#x27;il n&#x27;a vu jusqu&#x27;alors que de vains fantômes, mais qu&#x27;à présent, plus près de la réalité et tourné vers des objets plus réels, il voit plus juste ? Si, enfin, en lui montrant chacune des choses qui passent, on l&#x27;oblige, à force de questions, à dire ce que c&#x27;est ? Ne penses-tu pas qu&#x27;il sera embarrassé, et que les ombres qu&#x27;il voyait tout à l&#x27;heure lui paraîtront plus vraies que les objets qu&#x27;on lui montre maintenant ?<br/><br/></em><em><strong>GLAUCON</strong></em><em> : Beaucoup plus vraies.<br/><br/><br/></em>Platon, La République, Livre VII, 515c-d, traduction Émile Chambry</blockquote><p id="1d6b2280-a891-80a2-88fd-fab78d44c21d" class="">
+</p><blockquote id="1d6b2280-a891-8005-af95-fbd0d6c210b4" class=""><em><strong>SOCRATE</strong></em><em> : Et si on le force à regarder la lumière elle-même, ses yeux n&#x27;en seront-ils pas blessés ? N&#x27;en fuira-t-il pas la vue pour retourner aux choses qu&#x27;il peut regarder, et ne croira-t-il pas que ces dernières sont réellement plus distinctes que celles qu&#x27;on lui montre ?<br/>[...]<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Et si on l&#x27;arrache de sa caverne par force, qu&#x27;on lui fasse gravir la montée rude et escarpée, et qu&#x27;on ne le lâche pas avant de l&#x27;avoir traîné jusqu&#x27;à la lumière du soleil, ne souffrira-t-il pas vivement, et ne se plaindra-t-il pas de ces violences ? Et lorsqu&#x27;il sera parvenu à la lumière, pourra-t-il, les yeux tout éblouis par son éclat, distinguer une seule des choses que maintenant nous appelons vraies ?<br/><br/></em><em><strong>GLAUCON</strong></em><em> : Il ne le pourra pas, du moins dès l&#x27;abord.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Il aura, je pense, besoin d&#x27;habitude pour voir les objets de la région supérieure. D&#x27;abord ce seront les ombres qu&#x27;il distinguera le plus facilement, puis les images des hommes et des autres objets qui se reflètent dans les eaux, ensuite les objets eux-mêmes [...] ; à la fin, ce sera le soleil lui-même, qu&#x27;il pourra contempler, non dans ses images dans les eaux ou en quelque autre endroit, mais tel qu&#x27;il est en lui-même, dans sa propre sphère, qu&#x27;il pourra voir et contempler tel qu&#x27;il est.<br/><br/><br/></em>Platon, La République, Livre VII, 515e-516b, traduction Émile Chambry</blockquote><h2 id="1d6b2280-a891-80b5-807d-e1aef9649608" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-800d-b352-e0fbc34f473e" class="">L&#x27;allégorie de la caverne est probablement le texte le plus célèbre de Platon. Elle illustre sa théorie de la connaissance et sa métaphysique en décrivant le passage progressif de l&#x27;illusion à la vérité, de l&#x27;opinion (doxa) à la science (epistémè). Les prisonniers enchaînés représentent l&#x27;humanité ordinaire, prisonnière des apparences sensibles et des opinions communes. Les ombres qu&#x27;ils prennent pour la réalité symbolisent le monde sensible, qui n&#x27;est qu&#x27;un reflet imparfait du monde intelligible.</p><p id="1d6b2280-a891-80b2-b320-ca3759c3c312" class="">Le processus douloureux de libération et d&#x27;ascension vers la lumière figure l&#x27;éducation philosophique, qui exige effort et dépassement des préjugés. Le soleil, enfin, représente l&#x27;Idée du Bien, principe suprême qui rend possibles à la fois l&#x27;existence et la connaissance de toutes choses, comme le soleil rend possibles la vie et la visibilité des objets.</p><p id="1d6b2280-a891-8002-ac33-f6fc60734aa9" class="">Cette allégorie articule plusieurs dimensions de la pensée platonicienne : la distinction entre monde sensible et monde intelligible, la conception de la connaissance comme conversion du regard de l&#x27;âme, et la difficulté du philosophe revenu dans la caverne à convaincre ses anciens compagnons (ce qui évoque le destin de Socrate).</p><p id="1d6b2280-a891-8003-bcf8-d78deaad74b1" class="">
+</p><h2 id="1d6b2280-a891-801b-96d1-f7036f66d72a" class="">La théorie des Idées et l&#x27;âme tripartite</h2><p id="1d6b2280-a891-8020-8e4f-d79a20517ed3" class="">
+</p><blockquote id="1d6b2280-a891-80e8-abe3-cf89c9ed9eb1" class=""><em><strong>SOCRATE</strong></em><em> : Mais voici une question difficile : est-ce par le même principe ou par trois principes différents que nous apprenons, que nous nous irritons, que nous sommes portés vers les plaisirs relatifs à la nutrition et à la génération, et vers tous les plaisirs de même espèce ? Ou bien, quand nous poursuivons un objet, est-ce l&#x27;âme tout entière qui agit en nous, chaque fois par un principe unique ? Voilà ce qu&#x27;il est difficile de déterminer comme il convient.<br/>[...]<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Posons donc en principe que nous avons dans l&#x27;âme deux parties distinctes : l&#x27;une par laquelle l&#x27;âme raisonne, que nous appellerons le principe rationnel, et l&#x27;autre par laquelle elle aime, a faim et soif et est agitée par les autres désirs, principe déraisonnable et concupiscible, ami de certaines satisfactions et de certains plaisirs.<br/><br/></em><em><strong>GLAUCON</strong></em><em> : Nous avons raison, en effet, de considérer les choses de cette façon.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Voilà donc deux parties de l&#x27;âme bien distinguées ; mais la colère, ce qui fait que nous nous irritons, constitue-t-elle une troisième partie, ou est-elle de même nature que l&#x27;une des deux autres ?<br/>[...]<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Ainsi, dis-je, après bien des difficultés, nous sommes tombés passablement d&#x27;accord que les mêmes parties qu&#x27;il y a dans la cité, il y en a autant dans l&#x27;âme de chaque individu, et que ces parties sont les mêmes.<br/><br/></em><em><strong>GLAUCON</strong></em><em> : En effet.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Dès lors ne sommes-nous pas dans la nécessité absolue de convenir que tel est l&#x27;individu en sagesse, en courage, etc., telle est la cité pour ces mêmes qualités, et que la cause est la même de part et d&#x27;autre ?<br/><br/></em><em><strong>GLAUCON</strong></em><em> : Si, nécessairement.<br/><br/><br/></em>Platon, La République, Livre IV, 436a-441c (extraits), traduction Émile Chambry</blockquote><h2 id="1d6b2280-a891-8019-84bc-d3ca7128836f" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-802c-8ca0-eb2ca9378e2e" class="">Dans ce passage, Platon expose sa conception de l&#x27;âme tripartite, qu&#x27;il compare à la structure de la cité idéale. Selon lui, l&#x27;âme humaine est composée de trois parties : la partie rationnelle (to logistikon), qui recherche la vérité et gouverne par la raison ; la partie irascible ou courageuse (to thumoeides), siège de la colère et des émotions nobles ; et la partie concupiscible ou désirante (to epithumètikon), qui recherche les plaisirs matériels.</p><p id="1d6b2280-a891-8084-80e0-efee4b54dce1" class="">Cette division correspond aux trois classes de la cité idéale : les philosophes-rois (raison), les gardiens (courage) et les producteurs (désir). Pour Platon, la justice tant dans l&#x27;âme que dans la cité consiste en l&#x27;harmonie entre ces trois parties, chacune accomplissant sa fonction propre sous la direction de la raison. Cette conception psychologique sert ainsi de fondement à sa théorie politique et à sa conception de la justice comme harmonie interne.</p><h1 id="1d6b2280-a891-806b-ba29-ebf525c943e4" class="">Phédon</h1><p id="1d6b2280-a891-80dc-9d2f-cf164f14a662" class="">Le <em>Phédon</em> relate les derniers moments de Socrate et ses ultimes discussions philosophiques avant de boire la ciguë. Le dialogue porte principalement sur l&#x27;immortalité de l&#x27;âme, que Socrate s&#x27;efforce de démontrer à ses disciples. Platon y développe plusieurs arguments en faveur de cette thèse, dont la théorie de la réminiscence et la conception de l&#x27;âme comme entité simple et immatérielle apparentée aux Idées éternelles.</p><h2 id="1d6b2280-a891-809b-9e70-f23abcb1c2d5" class="">La théorie de la réminiscence</h2><p id="1d6b2280-a891-803e-b366-d2686e8daec4" class="">
+</p><blockquote id="1d6b2280-a891-80d4-96cd-d542b2f5ed88" class=""><em><strong>SOCRATE</strong></em><em> : Il nous reste donc, Simmias, à examiner ceci, à ce qu&#x27;il semble : si l&#x27;âme existe avant la naissance, il est nécessaire, quand elle arrive à la vie et quand elle naît, qu&#x27;elle naisse de rien d&#x27;autre que de la mort et de l&#x27;état de mort, et alors comment ne serait-il pas nécessaire qu&#x27;elle existe aussi après la mort, puisqu&#x27;elle doit naître de nouveau ? [...] Rappelle-toi que nous apprenons, comme nous l&#x27;affirmons souvent. Or, s&#x27;il est vrai que nous le rappelons, il faut bien que nous l&#x27;ayons appris à un moment antérieur. Mais cela serait impossible si notre âme n&#x27;existait pas quelque part avant de venir, sous cette forme humaine ; si bien que, de cette façon aussi, il semble que l&#x27;âme soit immortelle.<br/><br/></em><em><strong>CÉBÈS</strong></em><em> : Mais, Socrate, quelles preuves as-tu de cela ? Rappelle-les-moi, car je ne m&#x27;en souviens pas très bien maintenant.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : En voici une, la meilleure : les hommes, quand on les interroge, trouvent d&#x27;eux-mêmes les réponses exactes, si les questions sont bien posées. Or, ils ne seraient pas capables de le faire s&#x27;ils ne possédaient en eux-mêmes la science et la droite raison. Ensuite, si on leur présente des figures géométriques ou quelque chose de ce genre, c&#x27;est alors qu&#x27;on démontre de la façon la plus manifeste qu&#x27;il en est bien ainsi.<br/><br/><br/></em>Platon, Phédon, 72e-73b, traduction Monique Dixsaut</blockquote><p id="1d6b2280-a891-8089-aff7-c9332981500c" class="">
+</p><blockquote id="1d6b2280-a891-8062-9a37-f08649513571" class=""><em><strong>SOCRATE</strong></em><em> : Quand quelqu&#x27;un perçoit une chose, soit par la vue, soit par l&#x27;ouïe, soit par un autre sens, et que cette perception lui fait penser à une autre chose qu&#x27;il avait oubliée, avec laquelle la première avait des rapports, soit de ressemblance, soit de dissemblance, ne dirons-nous pas en toute vérité qu&#x27;il s&#x27;est ressouvenu, qu&#x27;il a eu une réminiscence de la chose à laquelle il a pensé ?<br/><br/></em><em><strong>SIMMIAS</strong></em><em> : Assurément.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Par exemple, la connaissance d&#x27;un homme et celle d&#x27;une lyre sont deux choses différentes ?<br/><br/></em><em><strong>SIMMIAS</strong></em><em> : Sans contredit.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Ne sais-tu pas ce qui arrive aux amants, quand ils voient une lyre, un vêtement ou quelque autre objet dont leur bien-aimé se sert d&#x27;ordinaire ? En reconnaissant cette lyre, ils se forment dans l&#x27;esprit l&#x27;image du jeune homme à qui la lyre appartient. Voilà ce qu&#x27;est la réminiscence. De même, en voyant Simmias, on se souvient souvent de Cébès [...] et il y a là une infinité d&#x27;exemples semblables.<br/><br/></em><em><strong>SIMMIAS</strong></em><em> : Oui, par Zeus, une infinité.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : N&#x27;est-ce pas là une espèce de réminiscence ? Mais c&#x27;est surtout quand il s&#x27;agit de choses qu&#x27;on a oubliées à cause du temps ou faute d&#x27;y avoir porté attention.<br/><br/></em><em><strong>SIMMIAS</strong></em><em> : C&#x27;est parfaitement exact.<br/><br/><br/></em>Platon, Phédon, 73c-74a, traduction Monique Dixsaut</blockquote><h2 id="1d6b2280-a891-80af-a217-d3367839fd3b" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-8046-923f-f00cfa075d2e" class="">La théorie de la réminiscence (anamnèsis) est un pilier de l&#x27;épistémologie platonicienne. Selon cette théorie, apprendre n&#x27;est pas acquérir un savoir nouveau, mais se ressouvenir de connaissances que l&#x27;âme possédait avant de s&#x27;incarner dans un corps. Platon utilise cette théorie comme un argument en faveur de l&#x27;immortalité de l&#x27;âme : si l&#x27;âme peut se remémorer des connaissances qu&#x27;elle n&#x27;a pas acquises dans cette vie, c&#x27;est qu&#x27;elle existait avant de s&#x27;incarner.</p><p id="1d6b2280-a891-801c-be4a-dfea691d01a0" class="">Platon distingue deux types de réminiscence : celle qui va d&#x27;un objet sensible à un autre objet sensible (comme l&#x27;exemple de l&#x27;amant qui, en voyant la lyre de son bien-aimé, se souvient de celui-ci), et celle qui va d&#x27;un objet sensible à une réalité intelligible (comme lorsque la vue d&#x27;objets égaux nous fait penser à l&#x27;égalité en soi). C&#x27;est ce deuxième type qui est crucial pour sa théorie de la connaissance : les objets sensibles, imparfaits, nous rappellent les Idées parfaites que notre âme contemplait avant de s&#x27;incarner.</p><p id="1d6b2280-a891-8092-af7b-e182c4528064" class="">Cette théorie explique aussi pourquoi Socrate ne prétend pas enseigner, mais plutôt aider par sa maïeutique (art d&#x27;accoucher les esprits) ses interlocuteurs à retrouver par eux-mêmes des vérités enfouies en eux.</p><p id="1d6b2280-a891-80be-bf75-d8b93327c77a" class="">
+</p><h2 id="1d6b2280-a891-8024-b2e6-d7dc96736cad" class="">L&#x27;immortalité de l&#x27;âme</h2><p id="1d6b2280-a891-806f-8d04-f91703e21769" class="">
+</p><blockquote id="1d6b2280-a891-80ae-aa47-d87f8e671a45" class=""><em><strong>SOCRATE</strong></em><em> : Ce qui est composé et de nature composée, il est normal que cela se dissipe en se dissociant selon le même processus que celui de sa composition. Mais si par hasard il existe quelque chose de simple, n&#x27;est-ce pas à cela seul, plus qu&#x27;à tout le reste, qu&#x27;il appartient de ne pas se dissiper ?<br/><br/></em><em><strong>CÉBÈS</strong></em><em> : C&#x27;est mon avis.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Or, ce qui est toujours semblable à soi-même et dans le même état, n&#x27;est-ce pas ce qui a le plus de chance d&#x27;être simple, et ce qui à l&#x27;inverse est dissemblable à soi-même et dans des états différents, n&#x27;est-ce pas cela qui est composé ?<br/><br/></em><em><strong>CÉBÈS</strong></em><em> : C&#x27;est mon avis.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : [...] La réalité en soi de ce que nous définissons dans nos questions et nos réponses, est-elle toujours dans le même état et semblable à elle-même, ou est-elle tantôt dans un état, tantôt dans un autre ? Je parle de l&#x27;égal en soi, du beau en soi, de chaque chose en soi, de l&#x27;être. Ce qui est réellement chacune de ces choses admet-il jamais un changement, aussi minime soit-il ? Ou bien chacune de ces réalités, toujours semblable à elle-même et toujours dans le même état, sans jamais admettre en aucune façon aucune altération, est-elle nécessairement telle qu&#x27;elle est ?<br/><br/></em><em><strong>CÉBÈS</strong></em><em> : Forcément, Socrate, répondit Cébès, elle est toujours semblable à elle-même et dans le même état.<br/><br/><br/></em>Platon, Phédon, 78c-78d, traduction Monique Dixsaut</blockquote><p id="1d6b2280-a891-8091-a763-c4f102bcc93c" class="">
+</p><blockquote id="1d6b2280-a891-80f7-840f-cd0aa58a2bde" class=""><em><strong>SOCRATE</strong></em><em> : Et maintenant, ce que nous disions à l&#x27;instant, ces choses multiples, belles, hommes, chevaux, vêtements, ou quelles que soient les autres choses de ce genre, qu&#x27;on les dise égales, belles ou ayant n&#x27;importe quelle qualité : restent-elles les mêmes, ou bien, tout à l&#x27;opposé de ces réalités dont nous parlions, ne restent-elles pour ainsi dire jamais les mêmes ni par rapport à elles-mêmes ni par rapport les unes aux autres ?<br/><br/></em><em><strong>CÉBÈS</strong></em><em> : C&#x27;est le cas, dit Cébès, elles ne sont jamais dans le même état.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Or ces choses-là, tu peux les toucher, les voir, les percevoir par tous tes autres sens, alors que ces réalités qui sont toujours semblables à elles-mêmes, tu ne peux les saisir par aucun autre moyen que par un raisonnement de ta pensée : ces réalités sont invisibles, elles ne se donnent pas à voir.<br/><br/></em><em><strong>CÉBÈS</strong></em><em> : Ce que tu dis est absolument vrai, dit-il.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Posons donc, si tu veux, répondit-il, deux espèces d&#x27;êtres, l&#x27;une visible, l&#x27;autre invisible.<br/><br/></em><em><strong>CÉBÈS</strong></em><em> : Posons-les, dit-il.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : L&#x27;invisible est toujours semblable à lui-même, tandis que le visible n&#x27;est jamais semblable à lui-même.<br/><br/></em><em><strong>CÉBÈS</strong></em><em> : Posons encore cela, dit-il.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Et maintenant, autre chose, dit-il : nous-mêmes, n&#x27;est-ce pas, nous sommes faits d&#x27;une âme et d&#x27;un corps ?<br/><br/></em><em><strong>CÉBÈS</strong></em><em> : Rien d&#x27;autre.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Alors, à laquelle de ces deux espèces disons-nous que le corps ressemble le plus, à laquelle est-il le plus apparenté ?<br/><br/></em><em><strong>CÉBÈS</strong></em><em> : Il est parfaitement clair pour tout le monde, dit-il, que c&#x27;est au visible.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Et l&#x27;âme ? Est-elle visible ou invisible ?<br/><br/></em><em><strong>CÉBÈS</strong></em><em> : Invisible, du moins pour les hommes, Socrate, dit-il.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Mais quand nous parlons de choses visibles et invisibles, c&#x27;est par référence à la nature humaine que nous en parlons. [...] Que dirons-nous donc de l&#x27;âme ? Qu&#x27;on peut la voir ou qu&#x27;on ne peut pas la voir ?<br/><br/></em><em><strong>CÉBÈS</strong></em><em> : Qu&#x27;on ne peut pas la voir.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : L&#x27;âme est donc plus semblable que le corps à l&#x27;invisible, et le corps plus semblable que l&#x27;âme au visible.<br/><br/></em><em><strong>CÉBÈS</strong></em><em> : De toute nécessité, Socrate.<br/><br/><br/></em>Platon, Phédon, 78e-79c, traduction Monique Dixsaut</blockquote><h2 id="1d6b2280-a891-801c-9da4-ff833a817286" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-803d-b66a-f9a1a9ed4248" class="">Dans ce passage, Platon développe un argument majeur en faveur de l&#x27;immortalité de l&#x27;âme, fondé sur sa distinction entre le monde sensible et le monde intelligible. Il établit d&#x27;abord que le sensible (visible) est caractérisé par le changement, la multiplicité et la composition, tandis que l&#x27;intelligible (invisible) se caractérise par l&#x27;immutabilité, l&#x27;unité et la simplicité.</p><p id="1d6b2280-a891-80d1-b6da-d1feabc753e2" class="">L&#x27;âme, étant invisible et capable de saisir les réalités intelligibles, est apparentée à celles-ci, tandis que le corps, visible et changeant, relève du monde sensible. Par conséquent, l&#x27;âme partage avec les Idées leur nature immuable et simple. Or, ce qui est simple ne peut se décomposer ; donc l&#x27;âme, contrairement au corps, ne peut se désagréger à la mort.</p><p id="1d6b2280-a891-80cb-8039-c744e392bd0e" class="">Cette argumentation est capitale car elle lie la théorie platonicienne de la connaissance (distinction entre opinion sensible et science intelligible) à sa conception de l&#x27;âme et à sa métaphysique des Idées. La possibilité même pour l&#x27;âme de connaître les Idées témoigne de sa parenté avec elles et, par conséquent, de sa nature immortelle.</p><h1 id="1d6b2280-a891-80a8-8072-d5d6a86f079c" class="">Théétète</h1><p id="1d6b2280-a891-8094-b1d8-def851a0fc94" class="">Le <em>Théétète</em> est l&#x27;un des dialogues épistémologiques majeurs de Platon, où Socrate s&#x27;entretient avec le jeune mathématicien Théétète sur la nature de la connaissance (epistémè). Trois définitions successives de la connaissance y sont examinées et réfutées : la connaissance comme sensation, comme opinion vraie, et comme opinion vraie accompagnée d&#x27;une explication rationnelle. Bien que le dialogue se termine sans conclusion définitive (de manière aporétique), il pose les bases de toute la réflexion épistémologique occidentale.</p><h2 id="1d6b2280-a891-80d3-81ab-f7765efeb6ad" class="">La critique de la connaissance comme sensation</h2><blockquote id="1d6b2280-a891-80ef-ab3d-e5d5414db901" class=""><em><strong>SOCRATE</strong></em><em> : Eh bien, voici une définition qui n&#x27;est pas ordinaire de la science, c&#x27;est celle que tu donnes. C&#x27;est celle que donnait aussi Protagoras, quoiqu&#x27;il se soit exprimé d&#x27;une autre manière. Il dit en effet quelque part que l&#x27;homme est la mesure de toutes choses, de celles qui sont, au sens où elles sont, de celles qui ne sont pas, au sens où elles ne sont pas. Tu l&#x27;as lu sans doute ?<br/><br/></em><em><strong>THÉÉTÈTE</strong></em><em> : Oui, je l&#x27;ai lu, et plus d&#x27;une fois.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Or n&#x27;est-ce pas à peu près ceci qu&#x27;il veut dire, que les choses sont pour moi telles qu&#x27;elles m&#x27;apparaissent, et pour toi telles qu&#x27;elles t&#x27;apparaissent ? car nous sommes, toi et moi, des hommes.<br/><br/></em><em><strong>THÉÉTÈTE</strong></em><em> : C&#x27;est bien cela qu&#x27;il dit.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Il est naturel, en effet, qu&#x27;un homme sage ne parle pas pour ne rien dire ; suivons donc sa pensée. N&#x27;arrive-t-il pas quelquefois que, lorsque le même vent souffle, l&#x27;un de nous frissonne, et l&#x27;autre non, ou que l&#x27;un frissonne légèrement, l&#x27;autre fortement ?<br/><br/></em><em><strong>THÉÉTÈTE</strong></em><em> : Cela arrive certainement.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Dirons-nous alors que le vent en lui-même est froid ou non froid, ou croirons-nous Protagoras, qui veut qu&#x27;il soit froid pour celui qui frissonne, et non pour celui qui ne frissonne pas ?<br/><br/></em><em><strong>THÉÉTÈTE</strong></em><em> : Il semble bien que nous devions le croire.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Or, cette apparence est la sensation de celui qui l&#x27;éprouve ?<br/><br/></em><em><strong>THÉÉTÈTE</strong></em><em> : Oui.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Apparence et sensation sont donc la même chose dans les sensations de chaleur et dans toutes les sensations du même genre ; car telles chacun les sent, telles aussi elles sont apparemment pour chacun.<br/><br/></em><em><strong>THÉÉTÈTE</strong></em><em> : Il semble bien.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : La sensation est donc toujours sensation de ce qui est et, étant science, elle est infaillible.<br/><br/><br/></em>Platon, Théétète, 151e-152c, traduction Émile Chambry</blockquote><p id="1d6b2280-a891-80bf-8c30-fe613dd62273" class="">
+</p><blockquote id="1d6b2280-a891-803b-a666-d1a78aee55e2" class=""><em><strong>SOCRATE</strong></em><em> : Mais considère encore ceci : si l&#x27;on te demandait : &quot;Est-il possible qu&#x27;une même chose devienne plus grande ou plus nombreuse, sans qu&#x27;on lui ajoute rien ?&quot; Je crois que tu répondrais que c&#x27;est impossible, à moins qu&#x27;on ne la considère par rapport à autre chose, et alors elle pourrait paraître plus grande ou plus petite, plus ou moins nombreuse, sans avoir subi d&#x27;augmentation ni de diminution.<br/><br/></em><em><strong>THÉÉTÈTE</strong></em><em> : C&#x27;est ce que je répondrais, en effet.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : Et maintenant, si l&#x27;on te posait une seconde question : &quot;Ce qui n&#x27;était pas auparavant, mais qui existe ensuite, est-il possible que cela existe sans être devenu et sans devenir ?&quot; [...] Alors, Théétète, à ces deux questions, que répondrais-tu ?<br/><br/></em><em><strong>THÉÉTÈTE</strong></em><em> : Par Zeus, je ne sais pas.<br/><br/></em><em><strong>SOCRATE</strong></em><em> : C&#x27;est pourtant, mon ami, parce que nous avons avancé des choses étonnantes et absurdes, comme il semble. Vois ce qui résulte de notre conversation et des propositions que nous avons approuvées tant de fois. On dit que Socrate malade est différent de Socrate bien portant. Le tout diffère-t-il de ses parties ? Quand je suis bien portant, je suis le même qu&#x27;avant, mais quand je suis malade, je deviens autre. Et ainsi, suis-je ce que j&#x27;étais, ou suis-je un autre ?<br/><br/><br/></em>Platon, Théétète, 154c-155c (extraits), traduction Émile Chambry</blockquote><h2 id="1d6b2280-a891-80af-a6c3-fed4baf6976c" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-80bb-972e-c5af91f7d98a" class="">Dans ce passage, Platon examine la thèse selon laquelle la connaissance (epistémè) est sensation (aisthesis), qu&#x27;il attribue au sophiste Protagoras et à sa célèbre formule : &quot;L&#x27;homme est la mesure de toutes choses.&quot; Selon cette conception relativiste, il n&#x27;y a pas de vérité objective, mais seulement des apparences qui varient selon les individus et les circonstances.</p><p id="1d6b2280-a891-8087-9abc-ea41bdfea10b" class="">Platon montre que cette thèse conduit à des conséquences paradoxales. Si la sensation est toujours vraie pour celui qui l&#x27;éprouve, alors des jugements contradictoires sur un même objet (comme le vent qui paraît froid à l&#x27;un et non à l&#x27;autre) peuvent être simultanément vrais. De plus, si tout est en perpétuel changement, comme le soutient Héraclite dont Protagoras s&#x27;inspire, comment peut-on identifier quoi que ce soit comme étant &quot;le même&quot; ?</p><p id="1d6b2280-a891-8011-a25f-e5f1576633f5" class="">Cette critique de la sensation comme fondement de la connaissance est essentielle dans la théorie platonicienne : pour Platon, la véritable connaissance ne peut s&#x27;appuyer sur le monde sensible, caractérisé par le changement et la contradiction, mais doit s&#x27;élever vers les réalités intelligibles immuables. Cette position anticipera toutes les critiques ultérieures du sensualisme et du relativisme en épistémologie.</p><figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8026-a981-d36da0555bfb"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><h1 id="1d6b2280-a891-8054-b01c-e7d9bc66beb3" class=""><strong>Pertinence contemporaine</strong></h1><p id="1d6b2280-a891-80c9-bde3-d845ee33df76" class="">Les textes de Platon conservent une étonnante actualité dans les débats philosophiques contemporains. L&#x27;allégorie de la caverne continue d&#x27;inspirer des réflexions sur l&#x27;éducation, l&#x27;illusion et la réalité à l&#x27;ère numérique. Sa critique du relativisme dans le <em>Théétète</em> résonne avec les débats actuels sur la &quot;post-vérité&quot; et le constructivisme social. Sa conception tripartite de l&#x27;âme préfigure certaines théories psychologiques modernes sur les conflits internes. Sa théorie des Idées, bien que métaphysiquement contestée, a été réactualisée dans les débats sur le réalisme philosophique et mathématique.</p><p id="1d6b2280-a891-8014-9e1f-fdab77c56370" class="">Plus fondamentalement, la méthode dialectique de Platon, son questionnement radical sur la nature de la connaissance, de la justice et du bien, et sa conception de la philosophie comme conversion du regard et ascension vers la vérité continuent de définir la pratique philosophique occidentale. Comme l&#x27;a dit Alfred North Whitehead, &quot;toute la philosophie occidentale n&#x27;est qu&#x27;une série de notes en bas de page aux dialogues de Platon.&quot;</p></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,690 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>FASCICULE 6 : MÉTHODOLOGIE ET EXERCICES</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-8038-87a2-fd3b889f8115" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1727522974735-44251dfe61b3?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 40.849999999999994%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">6️⃣</span></div><h1 class="page-title">FASCICULE 6 : MÉTHODOLOGIE ET EXERCICES</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><h1 id="1c9b2280-a891-80ab-beba-f27998a645d4" class="">EXPLICATION DE TEXTE</h1><h2 id="1c9b2280-a891-809d-bea2-d16a90037fc1" class=""><strong>Méthodologie générale</strong></h2><figure id="1c9b2280-a891-8082-ab0c-e0ea7ce7b879" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Les%20e%CC%81tapes%20de%20l&#x27;explication%20de%20texte%201c9b2280a8918082ab0ce0ea7ce7b879.html">Les étapes de l&#x27;explication de texte</a></figure><figure id="1c9b2280-a891-80ae-98b9-e0a68a4784af" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/L&#x27;analyse%20des%20concepts%20et%20arguments%201c9b2280a89180ae98b9e0a68a4784af.html">L&#x27;analyse des concepts et arguments</a></figure><figure id="1c9b2280-a891-80ad-b2e8-ef6c341e526c" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/L&#x27;e%CC%81lucidation%20des%20the%CC%80ses%20et%20proble%CC%80mes%201c9b2280a89180adb2e8ef6c341e526c.html">L&#x27;élucidation des thèses et problèmes</a></figure><h2 id="1c9b2280-a891-8041-ae49-c139ec6ff7e1" class=""><strong>Types de textes philosophiques</strong></h2><figure id="1c9b2280-a891-8048-87ed-cdc6dc9bf838" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Textes%20argumentatifs%201c9b2280a891804887edcdc6dc9bf838.html">Textes argumentatifs</a></figure><figure id="1c9b2280-a891-8025-8ea7-e5deee1d789e" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Textes%20analytiques%201c9b2280a89180258ea7e5deee1d789e.html">Textes analytiques</a></figure><figure id="1c9b2280-a891-8075-b304-d16ff0a54531" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Dialogues%20philosophiques%201c9b2280a8918075b304d16ff0a54531.html">Dialogues philosophiques</a></figure><figure id="1c9b2280-a891-80ba-aceb-fd1a05e9d49c" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Aphorismes%20et%20fragments%201c9b2280a89180baacebfd1a05e9d49c.html">Aphorismes et fragments</a></figure><h2 id="1c9b2280-a891-8071-b91f-d8ff0ea3f4f8" class=""><strong>Exemples commentés</strong></h2><figure id="1c9b2280-a891-8073-a9ee-c92cdadd8834" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Exemple%20de%20niveau%20correct%201c9b2280a8918073a9eec92cdadd8834.html">Exemple de niveau &quot;correct&quot;</a></figure><figure id="1c9b2280-a891-8013-a258-c6cd122cd851" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Exemple%20de%20niveau%20bon%201c9b2280a8918013a258c6cd122cd851.html">Exemple de niveau &quot;bon&quot;</a></figure><figure id="1c9b2280-a891-807c-bcf2-e5642e8bc912" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Exemple%20de%20niveau%20excellent%201c9b2280a891807cbcf2e5642e8bc912.html">Exemple de niveau &quot;excellent&quot;</a></figure><h2 id="1c9b2280-a891-8069-b72b-ee8f161eacad" class=""><strong>Exercices progressifs</strong></h2><figure id="1c9b2280-a891-80de-ac11-c0535399b704" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Textes%20courts%20avec%20questionnaires%20guide%CC%81s%201c9b2280a89180deac11c0535399b704.html">Textes courts avec questionnaires guidés</a></figure><figure id="1c9b2280-a891-8085-9004-cda424eaa27c" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Explications%20partielles%20a%CC%80%20comple%CC%81ter%201c9b2280a89180859004cda424eaa27c.html">Explications partielles à compléter</a></figure><figure id="1c9b2280-a891-803d-a6e5-d9282591ee17" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Textes%20complets%20a%CC%80%20expliquer%201c9b2280a891803da6e5d9282591ee17.html">Textes complets à expliquer</a></figure><p id="1d5b2280-a891-80f2-9d9f-c1ab0f224622" class="">
+</p><hr id="1d4b2280-a891-807e-8199-fa6e73ecc339"/><h1 id="1c9b2280-a891-8017-a8dd-c7baec40b815" class="">DISSERTATION PHILOSOPHIQUE</h1><h2 id="1c9b2280-a891-8075-ad5d-e71881629f60" class=""><strong>Méthodologie générale</strong></h2><figure id="1c9b2280-a891-80fb-b23e-c513244d2c5e" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/L&#x27;analyse%20du%20sujet%201c9b2280a89180fbb23ec513244d2c5e.html">L&#x27;analyse du sujet</a></figure><figure id="1c9b2280-a891-80a8-82b3-f0dd5715bc64" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/La%20proble%CC%81matisation%201c9b2280a89180a882b3f0dd5715bc64.html">La problématisation</a></figure><figure id="1c9b2280-a891-80bf-a4c9-d082620e6cf3" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/La%20construction%20du%20plan%201c9b2280a89180bfa4c9d082620e6cf3.html">La construction du plan</a></figure><figure id="1c9b2280-a891-8088-aac1-cd5510f6e7f0" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/L&#x27;usage%20des%20re%CC%81fe%CC%81rences%201c9b2280a8918088aac1cd5510f6e7f0.html">L&#x27;usage des références</a></figure><h2 id="1c9b2280-a891-8079-9054-f3abb9dcc967" class=""><strong>Types de sujets</strong></h2><figure id="1c9b2280-a891-80c1-bfff-de857a86c49d" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Sujets%20conceptuels%201c9b2280a89180c1bfffde857a86c49d.html">Sujets conceptuels</a></figure><figure id="1c9b2280-a891-80c4-a1ec-f7be6c4671df" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Sujets%20sous%20forme%20de%20question%201c9b2280a89180c4a1ecf7be6c4671df.html">Sujets sous forme de question</a></figure><figure id="1c9b2280-a891-8060-9e17-f1c279a26e70" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Sujets%20sous%20forme%20de%20citation%201c9b2280a89180609e17f1c279a26e70.html">Sujets sous forme de citation</a></figure><h2 id="1c9b2280-a891-8051-bda7-e96367a89b67" class=""><strong>Exemples commentés</strong></h2><figure id="1c9b2280-a891-8091-ab70-fc6a85394cdc" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Exemple%20de%20niveau%20correct%201c9b2280a8918091ab70fc6a85394cdc.html">Exemple de niveau &quot;correct&quot;</a></figure><figure id="1c9b2280-a891-809b-93d8-c8b6792fb43e" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Exemple%20de%20niveau%20bon%201c9b2280a891809b93d8c8b6792fb43e.html">Exemple de niveau &quot;bon&quot;</a></figure><figure id="1c9b2280-a891-8012-879c-c31f2466e2fe" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Exemple%20de%20niveau%20excellent%201c9b2280a8918012879cc31f2466e2fe.html">Exemple de niveau &quot;excellent&quot;</a></figure><h2 id="1c9b2280-a891-801c-8e5a-c02978bbef8b" class=""><strong>Exercices progressifs</strong></h2><figure id="1c9b2280-a891-8011-9b41-f9363d621934" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Analyses%20de%20sujets%201c9b2280a89180119b41f9363d621934.html">Analyses de sujets</a></figure><figure id="1c9b2280-a891-8069-a526-ea50b02b809b" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Proble%CC%81matisations%20guide%CC%81es%201c9b2280a8918069a526ea50b02b809b.html">Problématisations guidées</a></figure><figure id="1c9b2280-a891-804f-9548-c3a92f900f09" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Plans%20de%CC%81taille%CC%81s%20a%CC%80%20construire%201c9b2280a891804f9548c3a92f900f09.html">Plans détaillés à construire</a></figure><p id="1d5b2280-a891-80f3-b1ea-f7ad5b93fc0a" class="">
+</p><hr id="1d5b2280-a891-8087-b018-f0bff29876b4"/><h1 id="1d6b2280-a891-8026-aafc-fa6c4b9dd202" class="">CONSOLIDER LA MÉTHODE</h1><figure id="1d4b2280-a891-8030-a816-db9943d9eb75" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Exercice%20de%20re%CC%81daction%20niveau%201%201d4b2280a8918030a816db9943d9eb75.html">Exercice de rédaction niveau 1</a></figure><figure id="1d4b2280-a891-80a9-be24-e013d7bf83fb" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Exercice%20de%20re%CC%81daction%20niveau%202%201d4b2280a89180a9be24e013d7bf83fb.html">Exercice de rédaction niveau 2</a></figure><figure id="1d4b2280-a891-80cc-8e2c-fe83e2ec58eb" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Exercice%20de%20re%CC%81daction%20niveau%203%201d4b2280a89180cc8e2cfe83e2ec58eb.html">Exercice de rédaction niveau 3</a></figure><figure id="1d4b2280-a891-80c0-99a5-fcfe43997a32" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Exercice%20de%20re%CC%81daction%20niveau%204%201d4b2280a89180c099a5fcfe43997a32.html">Exercice de rédaction niveau 4</a></figure><figure id="1d4b2280-a891-8075-857f-dc08faeab478" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Exercice%20de%20re%CC%81daction%20niveau%205%201d4b2280a8918075857fdc08faeab478.html">Exercice de rédaction niveau 5</a></figure><p id="1d6b2280-a891-80c2-9c15-d81e26471042" class="">
+</p><hr id="1d6b2280-a891-800a-9c84-dd001313049b"/><h1 id="1c9b2280-a891-80d9-b437-c008d5af8fed" class="">MOBILISATION DES REPÈRES</h1><h2 id="1c9b2280-a891-80d0-857a-ed233165afc8" class=""><strong>Les 35 repères du programme</strong></h2><figure id="1c9b2280-a891-80c0-a054-cd35b03026e0" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/De%CC%81finition%20contextuelle%20de%20chaque%20repe%CC%80re%201c9b2280a89180c0a054cd35b03026e0.html">Définition contextuelle de chaque repère</a></figure><figure id="1c9b2280-a891-802e-9ecb-cb3e27986211" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Exemples%20d&#x27;utilisation%20dans%20les%20textes%20e%CC%81tudie%CC%81s%201c9b2280a891802e9ecbcb3e27986211.html">Exemples d&#x27;utilisation dans les textes étudiés</a></figure><h2 id="1c9b2280-a891-80bf-91ac-e65a464b7c8d" class=""><strong>Exercices d&#x27;application</strong></h2><figure id="1c9b2280-a891-8027-8c2f-e0c47214b851" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Identification%20des%20repe%CC%80res%20dans%20un%20texte%201c9b2280a89180278c2fe0c47214b851.html">Identification des repères dans un texte</a></figure><figure id="1c9b2280-a891-802d-9fa8-fa3f073676d5" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Utilisation%20pertinente%20dans%20une%20argumentation%201c9b2280a891802d9fa8fa3f073676d5.html">Utilisation pertinente dans une argumentation</a></figure><figure id="1c9b2280-a891-801c-9215-f223654b2808" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Distinction%20conceptuelle%20applique%CC%81e%201c9b2280a891801c9215f223654b2808.html">Distinction conceptuelle appliquée</a></figure><p id="1d6b2280-a891-8064-adb4-e4c32253a12f" class="">
+</p><hr id="1d4b2280-a891-8052-a758-f7d842bd40a1"/><h1 id="1c9b2280-a891-807e-a4b4-d56b9ebabb2b" class="">PRÉPARATION À L&#x27;ÉPREUVE DU BACCALAURÉAT</h1><figure id="1c9b2280-a891-80c1-aa28-eaf4824e9559" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Structure%20de%20l&#x27;e%CC%81preuve%201c9b2280a89180c1aa28eaf4824e9559.html">Structure de l&#x27;épreuve</a></figure><figure id="1c9b2280-a891-8090-9c92-f271af61c3b2" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Conseils%20pratiques%201c9b2280a89180909c92f271af61c3b2.html">Conseils pratiques</a></figure><figure id="1c9b2280-a891-801d-b4f4-e8a0b61f1165" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Sujets%20types%20avec%20corrige%CC%81s%201c9b2280a891801db4f4e8a0b61f1165.html">Sujets types avec corrigés</a></figure><figure id="1c9b2280-a891-80ad-b2a6-d897d2e67b3e" class="link-to-page"><a href="FASCICULE%206%20ME%CC%81THODOLOGIE%20ET%20EXERCICES%201c9b2280a891803887a2fd3b889f8115/Auto-e%CC%81valuation%201c9b2280a89180adb2a6d897d2e67b3e.html">Auto-évaluation</a></figure><p id="1d5b2280-a891-8033-9c3f-dbba58356159" class="">
+</p><p id="1d5b2280-a891-8050-b30d-e004b9f51d10" class="">
+</p><p id="1d4b2280-a891-80e2-a752-e6830bd088c2" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

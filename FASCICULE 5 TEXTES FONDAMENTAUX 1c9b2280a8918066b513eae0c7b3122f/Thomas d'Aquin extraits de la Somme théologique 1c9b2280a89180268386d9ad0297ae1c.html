@@ -1,0 +1,683 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Thomas d&#x27;Aquin : extraits de la Somme théologique</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-8026-8386-d9ad0297ae1c" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1438032005730-c779502df39b?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 86.36%"/><h1 class="page-title"><strong>Thomas d&#x27;Aquin</strong> : extraits de la <em>Somme théologique</em></h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d7b2280-a891-8052-8cb2-ed43d56f75fe" class="">Saint Thomas d&#x27;Aquin (1224/1225-1274), théologien et philosophe dominicain, est l&#x27;une des figures intellectuelles majeures du Moyen Âge et l&#x27;un des plus grands penseurs de la tradition chrétienne. Son œuvre maîtresse, la <em>Somme théologique</em> (Summa theologiae), rédigée entre 1266 et 1273, représente la synthèse la plus accomplie de la théologie médiévale et l&#x27;expression la plus achevée de sa pensée. Cette œuvre monumentale, destinée aux débutants en théologie, vise à exposer de façon systématique l&#x27;ensemble de la doctrine chrétienne en l&#x27;articulant avec la philosophie naturelle et la métaphysique héritées d&#x27;Aristote. Organisée en trois parties (dont la deuxième est elle-même divisée en deux sections), la <em>Somme</em> aborde successivement Dieu et la création (Prima Pars), la morale générale (Prima Secundae), la morale spéciale (Secunda Secundae) et le Christ et les sacrements (Tertia Pars). Chaque question est traitée selon une méthode rigoureuse qui expose d&#x27;abord les objections, puis un argument d&#x27;autorité contraire, suivi de la réponse détaillée et enfin de la solution aux objections. Par sa rigueur intellectuelle, sa clarté d&#x27;exposition et sa capacité à intégrer la raison philosophique dans la pensée chrétienne, la <em>Somme théologique</em> a exercé une influence considérable non seulement sur la théologie catholique, mais aussi sur toute la philosophie occidentale.</p><blockquote id="1d7b2280-a891-80b1-8b8a-e7ba22921bd7" class=""><em>« Ens et verum convertuntur »(L&#x27;être et le vrai sont convertibles)</em></blockquote><h1 id="1d7b2280-a891-80aa-9a55-cb936fbe8b39" class=""><strong>Contexte historique et philosophique</strong></h1><p id="1d7b2280-a891-80ba-b0a8-f12c1114c296" class="">Thomas d&#x27;Aquin vit au XIIIe siècle, période d&#x27;intense fermentation intellectuelle en Europe occidentale. C&#x27;est l&#x27;époque du développement des universités, de l&#x27;apogée de la scolastique et de la redécouverte massive des œuvres d&#x27;Aristote, transmises et commentées par les philosophes arabes (notamment Avicenne et Averroès) et juifs (comme Maïmonide). Cette réintroduction de la pensée aristotélicienne dans l&#x27;Occident chrétien suscite de vifs débats, certains y voyant une menace pour la foi, d&#x27;autres une opportunité d&#x27;enrichissement intellectuel.</p><p id="1d7b2280-a891-8015-b937-e66e8b05a8d1" class="">Dans ce contexte, Thomas d&#x27;Aquin entreprend un travail de synthèse visant à harmoniser la philosophie aristotélicienne avec la théologie chrétienne. Face aux tenants d&#x27;un augustinisme plus traditionnel (comme les franciscains Bonaventure et Jean Duns Scot) et aux partisans d&#x27;un aristotélisme radical (comme les averroïstes latins), il développe une position médiane qui reconnaît l&#x27;autonomie relative de la raison naturelle tout en affirmant sa compatibilité avec la foi révélée. Sa vision sera temporairement mise en cause par la condamnation de 1277, où l&#x27;évêque de Paris Étienne Tempier censure certaines thèses aristotéliciennes, incluant quelques positions thomistes. Mais progressivement, sa synthèse s&#x27;imposera comme l&#x27;expression la plus achevée de la pensée catholique, et il sera canonisé en 1323.</p><p id="1d7b2280-a891-80b7-982c-c27afa24e45a" class="">Philosophiquement, Thomas d&#x27;Aquin s&#x27;inscrit dans la tradition aristotélicienne qu&#x27;il renouvelle profondément à la lumière de la foi chrétienne. Il adopte la métaphysique aristotélicienne de l&#x27;acte et de la puissance, mais l&#x27;enrichit par sa théorie de l&#x27;être comme acte d&#x27;exister (esse) distinct de l&#x27;essence. Sa pensée se caractérise par un réalisme modéré concernant les universaux, une approche intellectualiste de la connaissance qui valorise l&#x27;expérience sensible, et une vision de l&#x27;homme comme unité substantielle d&#x27;âme et de corps. La conception thomiste de la loi naturelle comme participation de la créature rationnelle à la loi éternelle de Dieu constitue l&#x27;un des fondements de sa philosophie morale et politique.</p><figure class="block-color-blue callout" style="white-space:pre-wrap;display:flex" id="1d7b2280-a891-8027-94cc-d90c7f50573a"><div style="font-size:1.5em"><span class="icon">📘</span></div><div style="width:100%"><h1 id="1d7b2280-a891-8062-b0c0-e63701d89438" class=""><strong>Les concepts clés de la pensée thomiste</strong></h1><ul id="1d7b2280-a891-8068-bef7-d53a6611cef7" class="bulleted-list"><li style="list-style-type:disc"><strong>Analogie de l&#x27;être</strong> : l&#x27;être se dit en plusieurs sens analogiques, non univoques ni équivoques</li></ul><ul id="1d7b2280-a891-80ae-ba3c-f4a9bd088095" class="bulleted-list"><li style="list-style-type:disc"><strong>Distinction essence/existence</strong> : dans les créatures, l&#x27;essence (ce qu&#x27;est une chose) se distingue de l&#x27;existence (le fait d&#x27;être)</li></ul><ul id="1d7b2280-a891-8040-a939-fd4818c0383a" class="bulleted-list"><li style="list-style-type:disc"><strong>Acte/puissance</strong> : l&#x27;acte est la perfection ou la réalisation, la puissance est la capacité ou la potentialité</li></ul><ul id="1d7b2280-a891-801a-9fbc-cfe9b6503f06" class="bulleted-list"><li style="list-style-type:disc"><strong>Hylémorphisme</strong> : tout corps est composé de matière (principe indéterminé) et de forme (principe déterminant)</li></ul><ul id="1d7b2280-a891-8076-b909-dccd2fe254c7" class="bulleted-list"><li style="list-style-type:disc"><strong>Quatre causes</strong> : matérielle, formelle, efficiente et finale, principes explicatifs de tout être et devenir</li></ul><ul id="1d7b2280-a891-80bb-8eb4-d46f84f10438" class="bulleted-list"><li style="list-style-type:disc"><strong>Intellect agent/possible</strong> : l&#x27;intellect agent abstrait l&#x27;universel des images sensibles, l&#x27;intellect possible le reçoit</li></ul><ul id="1d7b2280-a891-8030-9aec-e98102cdc4a6" class="bulleted-list"><li style="list-style-type:disc"><strong>Loi éternelle/naturelle/positive</strong> : hiérarchie des lois depuis la sagesse divine jusqu&#x27;aux lois humaines</li></ul><ul id="1d7b2280-a891-800c-a68d-f101b35dc163" class="bulleted-list"><li style="list-style-type:disc"><strong>Vertus cardinales/théologales</strong> : prudence, justice, force, tempérance (naturelles) ; foi, espérance, charité (surnaturelles)</li></ul><ul id="1d7b2280-a891-8076-a0f5-ef954e1455d3" class="bulleted-list"><li style="list-style-type:disc"><strong>Béatitude</strong> : fin ultime de l&#x27;homme consistant dans la vision de l&#x27;essence divine</li></ul></div></figure><h1 id="1d7b2280-a891-8019-b4e0-c270a5730aa2" class="">L&#x27;existence de Dieu</h1><p id="1d7b2280-a891-809d-a6bb-ce81094b14c5" class=""><em>Somme théologique, Ia, q. 2, a. 3</em></p><blockquote id="1d7b2280-a891-80aa-ba79-cd15cf66dba7" class="">Article 3 : Dieu existe-t-il ?<br/><br/><br/><em><strong>Objection 1 :</strong></em><em> Il semble que Dieu n&#x27;existe pas. En effet, si l&#x27;un des deux contraires est infini, l&#x27;autre est totalement détruit. Or on donne à Dieu précisément ce sens qu&#x27;il est le bien infini. Donc, si Dieu existait, le mal n&#x27;existerait pas. Or le mal existe dans le monde. Donc Dieu n&#x27;existe pas.<br/><br/><br/></em><em><strong>Objection 2 :</strong></em><em> De plus, ce qui peut s&#x27;accomplir par des principes en petit nombre ne se fait pas par des principes plus nombreux. Or il semble bien que tout ce que nous voyons dans le monde pourrait s&#x27;accomplir par d&#x27;autres principes, en supposant que Dieu n&#x27;existe pas ; car ce qui est naturel se ramène comme à son principe à la nature, et ce qui est libre se ramène à la raison humaine ou à la volonté comme à son principe. Donc rien n&#x27;oblige à affirmer que Dieu existe.<br/><br/><br/></em><strong>En sens contraire, dans l&#x27;Exode (3, 14), Dieu dit de lui-même : « Je suis celui qui suis. »<br/><br/>Réponse :<br/></strong> On peut prouver l&#x27;existence de Dieu par cinq voies.<br/><br/>La première et la plus manifeste est celle qui se prend du mouvement. Il est certain, et nos sens nous en témoignent, que dans ce monde certaines choses se meuvent. Or, tout ce qui se meut est mû par un autre. En effet, rien ne se meut qu&#x27;autant qu&#x27;il est en puissance par rapport au terme de son mouvement, tandis qu&#x27;au contraire, ce qui meut le fait pour autant qu&#x27;il est en acte. Mouvoir, c&#x27;est faire passer de la puissance à l&#x27;acte. Or, rien ne peut être amené de la puissance à l&#x27;acte sinon par un être en acte. Ainsi ce qui est chaud en acte, comme le feu, rend le bois, qui est chaud en puissance, chaud en acte, et par là le meut et l&#x27;altère. Or il n&#x27;est pas possible que la même chose soit à la fois et sous le même rapport en acte et en puissance ; elle ne le peut que sous des rapports divers. Par exemple, ce qui est chaud en acte ne peut pas être en même temps chaud en puissance, mais il est, en même temps, froid en puissance. Il est donc impossible que, sous le même rapport et de la même manière, quelque chose soit à la fois mû et mouvant, c&#x27;est-à-dire qu&#x27;il se meuve lui-même. Il faut donc que tout ce qui se meut soit mû par un autre. Si donc ce qui meut est mû lui-même, il faut qu&#x27;il soit mû par un autre, et celui-ci par un autre encore. Or, on ne peut continuer à l&#x27;infini, car alors il n&#x27;y aurait pas de premier moteur, ni, par conséquent, de moteur d&#x27;aucune sorte, puisque les moteurs qui suivent ne meuvent que selon qu&#x27;ils sont mus par le premier moteur, comme le bâton ne meut que parce qu&#x27;il est mû par la main. Il faut donc nécessairement parvenir à un premier moteur qui n&#x27;est mû par aucun autre, et un tel être, tout le monde comprend que c&#x27;est Dieu.<br/><br/>La seconde voie part de la notion de cause efficiente. Nous constatons, à observer les choses sensibles, qu&#x27;il y a un ordre entre les causes efficientes ; mais ce qui ne se trouve pas et qui n&#x27;est pas possible, c&#x27;est qu&#x27;une chose soit la cause efficiente d&#x27;elle-même, ce qui la supposerait antérieure à elle-même, chose impossible. Or, il n&#x27;est pas possible non plus qu&#x27;on remonte à l&#x27;infini dans les causes efficientes. Car, parmi toutes les causes efficientes ordonnées, la première est cause des intermédiaires et les intermédiaires sont causes du dernier terme, que ces intermédiaires soient nombreux ou qu&#x27;il n&#x27;y en ait qu&#x27;un seul. D&#x27;autre part, supprimez la cause, vous supprimez aussi l&#x27;effet. Donc, s&#x27;il n&#x27;y a pas de premier terme dans la série des causes efficientes, il n&#x27;y aura ni dernier terme, ni cause intermédiaire. Or, si l&#x27;on remontait à l&#x27;infini dans la série des causes efficientes, il n&#x27;y aurait pas de cause première ; par conséquent, il n&#x27;y aurait ni effet dernier, ni cause efficiente intermédiaire, ce qui est évidemment faux. Il faut donc nécessairement affirmer qu&#x27;il existe une cause efficiente première, que tous appellent Dieu.<br/><br/>La troisième voie se prend du possible et du nécessaire, et la voici. Parmi les choses, nous en trouvons qui peuvent être et ne pas être, puisque certaines choses naissent et disparaissent, et par conséquent ont la possibilité d&#x27;être et de ne pas être. Mais il est impossible que tout ce qui est de telle nature existe toujours ; car ce qui peut ne pas être n&#x27;existe pas à un certain moment. Si donc tout peut ne pas être, à un moment donné, rien n&#x27;a existé. Or, si c&#x27;était vrai, maintenant encore rien n&#x27;existerait ; car ce qui n&#x27;existe pas ne commence à exister que par quelque chose qui existe. Donc, s&#x27;il n&#x27;y avait aucun être, il serait impossible que quelque chose commençât d&#x27;exister, et ainsi, aujourd&#x27;hui, il n&#x27;y aurait rien, ce qu&#x27;on voit être faux. Donc, tous les êtres ne sont pas seulement possibles, et il y a du nécessaire dans les choses. Or, tout ce qui est nécessaire a en soi-même la cause de sa nécessité, ou la tient d&#x27;un autre. Et comme on ne peut, là non plus, remonter à l&#x27;infini dans la série des nécessaires ayant une cause de leur nécessité, pas plus que dans la série des causes efficientes, comme on vient de le prouver, il faut donc poser l&#x27;existence d&#x27;un être nécessaire par lui-même, qui ne tire pas d&#x27;ailleurs sa nécessité, mais qui est cause de la nécessité que l&#x27;on trouve en dehors de lui, et c&#x27;est ce que tous appellent Dieu.<br/><br/>La quatrième voie procède des degrés que l&#x27;on trouve dans les choses. On voit en effet dans les choses du plus ou moins bon, du plus ou moins vrai, du plus ou moins noble, etc. Or, le plus ou moins se dit de choses différentes selon qu&#x27;elles se rapprochent diversement de ce qui réalise au maximum ; par exemple, est plus chaud ce qui se rapproche davantage de ce qui est le plus chaud. Il y a donc quelque chose qui est le plus vrai, le meilleur, le plus noble, et, par conséquent, l&#x27;étant au suprême degré ; car, comme l&#x27;affirme Aristote, ce qui est au maximum du vrai est aussi au maximum de l&#x27;être. Par ailleurs, ce qui est au sommet dans un genre donné est cause de tout ce qui appartient à ce genre ; ainsi le feu, qui est au maximum de la chaleur, est cause de toutes les chaleurs, comme il est dit au même livre. Il existe donc quelque chose qui est, pour tous les êtres, cause de leur être, de leur bonté, et de toutes leurs perfections, et c&#x27;est ce que nous appelons Dieu.<br/><br/>La cinquième voie est tirée du gouvernement des choses. Nous voyons que des êtres dépourvus de connaissance, comme les corps naturels, agissent en vue d&#x27;une fin, ce qui nous est manifesté par le fait que, toujours ou le plus souvent, ils agissent de la même manière, de façon à réaliser le meilleur ; il est donc clair que ce n&#x27;est pas par hasard, mais en vertu d&#x27;une intention qu&#x27;ils parviennent à leur fin. Or, ce qui est dépourvu de connaissance ne tend à une fin que dirigé par un être connaissant et intelligent, comme la flèche par l&#x27;archer. Il y a donc un être intelligent par lequel toutes les choses naturelles sont ordonnées à leur fin, et c&#x27;est lui que nous appelons Dieu.<br/><br/><br/><strong>Solution 1 :</strong> Comme dit saint Augustin : « Dieu, souverainement bon, ne permettrait aucunement que quelque mal existe dans ses œuvres s&#x27;il n&#x27;était assez puissant et assez bon pour tirer le bien du mal même. » C&#x27;est donc à l&#x27;infinie bonté de Dieu qu&#x27;il se rattache de permettre le mal pour en tirer du bien.<br/><br/><br/><strong>Solution 2 :</strong> La nature agissant en vue d&#x27;une fin déterminée sous la direction d&#x27;un agent supérieur, il est nécessaire de ramener à Dieu, comme à sa première cause, tout ce qui, dans la nature, s&#x27;accomplit. De même aussi, tout ce qui est fait librement doit être ramené à une cause plus élevée que la raison et la volonté humaines, car celles-ci sont changeantes et faillibles ; or tout ce qui est changeant et sujet à défaillance doit être ramené à un principe immobile et nécessaire par soi, selon la première voie.</blockquote><figure class="block-color-blue callout" style="white-space:pre-wrap;display:flex" id="1d7b2280-a891-80fa-ace7-cc6797482454"><div style="font-size:1.5em"><span class="icon">📘</span></div><div style="width:100%"><h2 id="1d7b2280-a891-80c9-9ad2-ce976f18d1bb" class=""><strong>Commentaire</strong></h2><p id="1d7b2280-a891-8074-a8ef-f4372b85d9db" class="">Cet article constitue l&#x27;un des textes les plus célèbres de la <em>Somme théologique</em>, où Thomas d&#x27;Aquin présente ses cinq preuves de l&#x27;existence de Dieu, connues sous le nom de &quot;quinque viae&quot; (cinq voies). Contrairement à l&#x27;argument ontologique de saint Anselme, qui procède a priori en déduisant l&#x27;existence de Dieu de sa définition comme &quot;ce dont on ne peut rien concevoir de plus grand&quot;, Thomas adopte une démarche a posteriori, partant de l&#x27;expérience sensible pour remonter à Dieu comme cause première.</p><p id="1d7b2280-a891-80e4-b8fd-e6d7248b24ba" class="">La première voie, dite &quot;du mouvement&quot; ou &quot;cinétique&quot;, s&#x27;appuie sur la métaphysique aristotélicienne du mouvement conçu comme passage de la puissance à l&#x27;acte. Constatant que tout ce qui se meut est mû par un autre, Thomas montre que la série des moteurs ne peut remonter à l&#x27;infini et doit aboutir à un premier moteur immobile. Cette preuve repose sur la distinction fondamentale entre acte et puissance : rien ne peut s&#x27;actualiser soi-même mais doit être actualisé par quelque chose déjà en acte.</p><p id="1d7b2280-a891-80b8-bc88-fd512755185a" class="">La deuxième voie, dite &quot;de la causalité efficiente&quot;, suit un raisonnement similaire mais appliqué à la série des causes productrices. Observant que rien ne peut être cause de soi-même et que la série des causes ne peut remonter à l&#x27;infini, Thomas conclut à l&#x27;existence d&#x27;une cause première incausée. L&#x27;impossibilité d&#x27;une régression à l&#x27;infini dans les causes essentiellement ordonnées (où la cause seconde n&#x27;agit qu&#x27;en vertu de la cause première) est un principe crucial de cette démonstration.</p><p id="1d7b2280-a891-80b1-9358-dbaebecd3fcb" class="">La troisième voie, dite &quot;du possible et du nécessaire&quot;, s&#x27;appuie sur la contingence des êtres qui peuvent être ou ne pas être. Si tous les êtres étaient contingents, il y aurait eu un moment où rien n&#x27;existait, et rien n&#x27;existerait aujourd&#x27;hui, ce qui est manifestement faux. Il faut donc qu&#x27;existe un être nécessaire par lui-même, cause de la nécessité des autres êtres.</p><p id="1d7b2280-a891-80aa-87c3-fba05dbc799b" class="">La quatrième voie, dite &quot;des degrés de perfection&quot;, part du constat qu&#x27;il existe dans les choses des degrés de vérité, de bonté et de noblesse. Ces degrés supposent l&#x27;existence d&#x27;un maximum qui est cause de toutes les perfections participées. Cette preuve, d&#x27;inspiration platonicienne, fait appel au principe selon lequel &quot;ce qui est au maximum dans un genre est cause de tout ce genre&quot;.</p><p id="1d7b2280-a891-80a7-b9f4-ff770941a47e" class="">La cinquième voie, dite &quot;du gouvernement du monde&quot; ou &quot;téléologique&quot;, observe que les êtres dépourvus de connaissance agissent néanmoins en vue d&#x27;une fin. Cette finalité naturelle suppose une intelligence ordonnatrice qui dirige les choses vers leur fin, comme l&#x27;archer dirige la flèche.</p><p id="1d7b2280-a891-8096-b71a-fc05b3fd32b0" class="">Dans ses réponses aux objections, Thomas montre que l&#x27;existence du mal n&#x27;est pas incompatible avec celle de Dieu, puisque la bonté divine peut tirer le bien du mal, et que l&#x27;explication des phénomènes naturels et des actions libres requiert ultimement le recours à une cause première et immuable.</p><p id="1d7b2280-a891-80d1-9e9a-c5122f64cb12" class="">Ces cinq preuves illustrent la méthode thomiste qui, sans nier la foi, cherche à établir rationnellement les &quot;préambules de la foi&quot; accessibles à la raison naturelle. Elles constituent une application exemplaire du principe selon lequel &quot;la grâce ne détruit pas la nature mais la parfait&quot;.</p></div></figure><h1 id="1d7b2280-a891-809a-b363-ee3f21c79dca" class="">La connaissance humaine</h1><p id="1d7b2280-a891-80e0-9ed8-df16af564abc" class=""><em>Somme théologique, Ia, q. 84, a. 1</em></p><blockquote id="1d7b2280-a891-805e-bf30-fac98ee71fac" class="">Article 1 : L&#x27;âme connaît-elle les corps par l&#x27;intellect ?<br/><br/><br/><em><strong>Objection 1 :</strong></em><em> Il semble que l&#x27;âme ne connaisse pas les corps par l&#x27;intellect. Car saint Augustin dit que les corps ne peuvent être saisis par l&#x27;intellect, et que rien de corporel ne peut être perçu sinon par les sens. Il dit encore que la vision intellectuelle a pour objet ce qui est présent dans l&#x27;âme par son essence. Ce qui n&#x27;est pas le cas des corps. Donc l&#x27;âme ne peut, par l&#x27;intellect, connaître les corps.<br/><br/><br/></em><em><strong>Objection 2 :</strong></em><em> Les sens sont aux objets sensibles ce que l&#x27;intellect est aux objets intelligibles. Or l&#x27;âme ne peut en aucune façon, au moyen des sens, connaître les réalités spirituelles, qui sont intelligibles. Donc elle ne peut d&#x27;aucune manière, par l&#x27;intellect, connaître les corps, qui sont sensibles.<br/><br/><br/></em><em><strong>Objection 3 :</strong></em><em> L&#x27;intellect a pour objet ce qui est nécessaire et existe toujours de la même manière. Or tous les corps sont mobiles et existent selon des modes variables. L&#x27;âme ne peut donc pas connaître les corps par l&#x27;intellect.<br/><br/><br/></em><strong>En sens contraire, la science est dans l&#x27;intellect. Si donc l&#x27;intellect ne connaît pas les corps, il s&#x27;ensuit qu&#x27;il n&#x27;y a aucune science qui les prenne pour objet. Et ainsi périrait la science de la nature, qui étudie le corps mobile.<br/><br/>Réponse :<br/></strong> Pour éclaircir cette question, il faut noter que les premiers philosophes qui étudièrent la nature des choses pensèrent que rien n&#x27;existait dans le monde, hormis les corps. Et comme ils voyaient que tous les corps sont mobiles et croyaient qu&#x27;ils sont dans un flux perpétuel, ils estimèrent que nous ne pouvons avoir aucune certitude sur la vérité des choses. Car ce qui est dans un flux continuel ne peut être saisi avec certitude, puisqu&#x27;il s&#x27;écoule avant que l&#x27;esprit puisse en juger.<br/><br/>Héraclite disait en effet, comme le rapporte Aristote, qu&#x27;il n&#x27;est pas possible de toucher deux fois l&#x27;eau d&#x27;un fleuve qui s&#x27;écoule. Platon, qui vint après, voulant sauvegarder la connaissance certaine de la vérité obtenue par l&#x27;intellect, admit, à côté des êtres corporels, un genre d&#x27;êtres séparés de la matière et du mouvement, êtres qu&#x27;il appelait espèces ou idées. Par participation à ces idées, chacun des êtres singuliers et sensibles est dit être un homme, ou un cheval, etc. Ainsi donc, selon lui, les sciences, les définitions et tout ce qui regarde l&#x27;acte de l&#x27;intelligence ne se rapportent pas aux corps sensibles, mais à ces êtres immatériels et séparés ; de telle sorte que c&#x27;est l&#x27;âme, en les connaissant, qui connaît les réalités corporelles.<br/><br/>Aristote procéda par une autre méthode. Il montra d&#x27;abord par de multiples arguments que dans les corps sensibles il existe quelque chose de stable. Par exemple, bien que tout corps soit changeant selon ses qualités sensibles communes, comme chaud et froid, etc., il demeure fixe selon la substance. En ce sens, Aristote enseigne que tous les corps ne sont pas en flux perpétuel, car certains sont doués de fixité. De plus, il fit remarquer que, si certaines défaillances se rencontrent dans les sens par rapport à des sensibles propres, on ne leur en attribuera pas au sujet des sensibles communs, par exemple à propos de la quantité, du nombre, etc. À plus forte raison, s&#x27;ils se trompent parfois à l&#x27;égard des sensibles par accident, en revanche le jugement de l&#x27;intellect sur les natures des choses n&#x27;est pas défaillant, ni son jugement sur ce que les sensibles propres lui font connaître. C&#x27;est ainsi qu&#x27;Aristote élimina les deux raisons pour lesquelles les anciens affirmaient que les corps sensibles ne tombent pas sous la connaissance intellectuelle : l&#x27;instabilité et le flux continuel des corps sensibles, et l&#x27;infidélité des sens à leur égard.<br/><br/>En tout cela, néanmoins, Aristote part de ce principe que notre connaissance intellectuelle a son origine dans les sens. Et par suite, dans la solution qu&#x27;il propose, il reste quelque chose de l&#x27;ambiguïté des opinions précédentes, à savoir que les puissances sensitives ne connaissent que les choses particulières. Si donc les seules choses qui existent sont les particuliers sensibles, comme le disaient les anciens physiciens, il s&#x27;ensuivrait que dans la réalité il n&#x27;existe aucune substance immatérielle, et donc rien d&#x27;intelligible en acte.<br/><br/>Toutefois, pour faire en sorte que nous ayons une connaissance intellectuelle, Aristote admet une faculté intellectuelle appelée intellect agent, qui abstrait des images sensibles des espèces intelligibles. Selon Aristote, celles-ci sont intelligibles en acte et sont reçues dans l&#x27;intellect possible. Cette action abstractive n&#x27;est pas attribuée aux sens, mais à l&#x27;intellect. Ainsi, selon la doctrine d&#x27;Aristote, l&#x27;intellect, pour une part, est en puissance à l&#x27;égard des espèces intelligibles et peut, pour une autre part, les produire en acte. En conséquence, l&#x27;intellect humain peut connaître les corps d&#x27;une connaissance universelle et nécessaire au moyen des espèces abstraites des images sensibles.<br/><br/><br/><strong>Solution 1 :</strong> Ces paroles d&#x27;Augustin sont à entendre comme signifiant que l&#x27;âme ne connaît pas les corps par l&#x27;intellect directement et par leur essence, mais indirectement et par des espèces intelligibles, soit des espèces tirées par abstraction des images sensibles, comme dans notre cas, soit, pour Augustin, des espèces que l&#x27;âme reçoit immédiatement de Dieu.<br/><br/><br/><strong>Solution 2 :</strong> Comme le dit saint Augustin, on ne doit pas dire que l&#x27;intellect connaît seulement les choses spirituelles, de même que le sens connaît seulement les objets corporels ; car il s&#x27;ensuivrait que Dieu et les anges ne connaîtraient pas les réalités corporelles. La raison de cette différence est que la puissance inférieure ne s&#x27;étend pas aux objets de la puissance supérieure, tandis que la puissance supérieure opère d&#x27;une manière plus haute sur les objets de la puissance inférieure.<br/><br/><br/><strong>Solution 3 :</strong> Tout mouvement présuppose quelque chose d&#x27;immobile. En effet, lorsqu&#x27;une chose change selon sa qualité, il reste la substance qui est immobile. Et lorsque la forme substantielle change, la matière demeure. En outre, les choses changeantes ont des relations stables ; par exemple, bien que Socrate ne soit pas toujours assis, il est pourtant immuablement vrai que, lorsqu&#x27;il est assis, il reste au même endroit. Et c&#x27;est pourquoi rien n&#x27;empêche d&#x27;avoir une science immuable des choses mobiles.</blockquote><figure class="block-color-blue callout" style="white-space:pre-wrap;display:flex" id="1d7b2280-a891-8061-a292-c80bb2755d95"><div style="font-size:1.5em"><span class="icon">📘</span></div><div style="width:100%"><h2 id="1d7b2280-a891-8014-a42f-fa0c2b37a06c" class=""><strong>Commentaire</strong></h2><p id="1d7b2280-a891-805f-9b41-fd226a6ecc1e" class="">Cet article aborde l&#x27;une des questions fondamentales de l&#x27;épistémologie médiévale : comment l&#x27;âme humaine, par son intellect, peut-elle connaître les réalités matérielles ? Thomas y expose sa théorie de la connaissance à travers un dialogue historique entre les positions de trois grandes écoles philosophiques : les premiers physiciens présocratiques, le platonisme et l&#x27;aristotélisme.</p><p id="1d7b2280-a891-8047-9c6c-f70176ce5972" class="">Thomas commence par rappeler la position des présocratiques, pour qui la réalité se réduisait aux corps en perpétuel devenir, rendant impossible toute connaissance stable et certaine. Face à ce relativisme, Platon avait proposé une solution radicale : si la science est possible, c&#x27;est qu&#x27;elle porte non sur les corps sensibles mais sur des réalités intelligibles séparées (les Idées) dont les choses sensibles ne sont que des participations imparfaites. L&#x27;âme connaît donc les corps en connaissant ces réalités incorporelles.</p><p id="1d7b2280-a891-804b-a1d2-caa5d1f9732a" class="">Thomas expose ensuite la solution aristotélicienne qu&#x27;il fait sienne. Aristote reconnaît une certaine stabilité dans les corps sensibles eux-mêmes (notamment dans leur substance) et une certaine fiabilité des sens (au moins pour les sensibles communs). Mais comment passer des données sensibles, particulières et contingentes, à la connaissance intellectuelle, universelle et nécessaire ? C&#x27;est ici qu&#x27;intervient la doctrine de l&#x27;abstraction : l&#x27;intellect agent a le pouvoir d&#x27;abstraire des images sensibles (phantasmata) les espèces intelligibles qui représentent les essences universelles des choses. Ces espèces sont reçues dans l&#x27;intellect possible, qui passe ainsi de la puissance à l&#x27;acte de connaître.</p><p id="1d7b2280-a891-8051-aba8-e853c66c7643" class="">Cette théorie de l&#x27;abstraction permet à Thomas de tenir ensemble deux thèses apparemment contradictoires : d&#x27;une part, fidèle à l&#x27;empirisme aristotélicien, il affirme que &quot;rien n&#x27;est dans l&#x27;intellect qui n&#x27;ait d&#x27;abord été dans les sens&quot; ; d&#x27;autre part, il maintient que l&#x27;intellect peut atteindre l&#x27;universel et le nécessaire, transcendant ainsi les limites du sensible. L&#x27;abstraction est cette opération par laquelle l&#x27;intellect dégage l&#x27;essence universelle en faisant abstraction des conditions individuantes de la matière.</p><p id="1d7b2280-a891-80df-abbe-fcaa210c9d04" class="">Dans ses réponses aux objections, Thomas précise que l&#x27;intellect ne connaît pas les corps directement par leur essence, mais indirectement par des espèces intelligibles abstraites. Il affirme la supériorité de la faculté intellectuelle sur les sens : tandis que le sens ne peut s&#x27;élever aux objets intelligibles, l&#x27;intellect peut connaître, à sa manière, les objets sensibles. Enfin, il résout l&#x27;apparente contradiction entre la mobilité des corps et l&#x27;immutabilité de la science en montrant que même dans le changement subsistent des éléments stables qui peuvent faire l&#x27;objet d&#x27;une connaissance certaine.</p><p id="1d7b2280-a891-8010-937a-f4667742b25a" class="">Cet article illustre parfaitement la méthode thomiste, qui procède par confrontation historique des positions philosophiques pour dégager une synthèse équilibrée, et qui s&#x27;attache à concilier l&#x27;héritage aristotélicien (primauté de l&#x27;expérience sensible) avec les exigences de la connaissance intellectuelle (universalité et nécessité). Il manifeste également la confiance de Thomas dans la capacité de l&#x27;intellect humain à connaître le réel – confiance qui s&#x27;enracine dans sa vision théologique de l&#x27;homme créé à l&#x27;image de Dieu et doté d&#x27;une intelligence capable de saisir, bien qu&#x27;imparfaitement, la vérité des choses</p></div></figure><h2 id="1d7b2280-a891-803d-9527-f00fa504413b" class="">La loi naturelle</h2><p id="1d7b2280-a891-8014-a25d-dcee400dc6c9" class=""><em>Somme théologique, Ia-IIae, q. 94, a. 2</em></p><blockquote id="1d7b2280-a891-80f2-80e0-c93dcf0d2849" class="">Article 2 : La loi naturelle contient-elle plusieurs préceptes ou un seul ?<br/><br/><br/><em><strong>Objection 1 :</strong></em><em> Il semble que la loi naturelle ne contienne qu&#x27;un seul précepte. En effet, la loi est comprise dans le genre du précepte. Donc, si la loi naturelle comprenait plusieurs préceptes, il s&#x27;ensuivrait qu&#x27;il y aurait aussi plusieurs lois naturelles.<br/><br/><br/></em><em><strong>Objection 2 :</strong></em><em> De plus, la loi naturelle est consécutive à la nature humaine. Or la nature humaine, bien que multiple dans ses parties, est une dans la notion de son espèce. Donc, ou bien il n&#x27;y a qu&#x27;un seul précepte de la loi naturelle, à cause de l&#x27;unité du tout ; ou bien il y en a plusieurs, en raison de la multiplicité des parties de la nature humaine. Et dans ce cas, il faudrait que même ce qui regarde l&#x27;inclination du concupiscible appartienne à la loi naturelle.<br/><br/><br/></em><em><strong>Objection 3 :</strong></em><em> En outre, la loi, avons-nous dit, a trait à l&#x27;acte vertueux. Mais les actes vertueux se déterminent par rapport aux actes vicieux. Ainsi donc, puisqu&#x27;il n&#x27;y a qu&#x27;un seul précepte négatif de la loi naturelle, qui interdit l&#x27;acte vicieux, il semble que de même il n&#x27;y aurait qu&#x27;un seul précepte affirmatif qui prescrit l&#x27;acte vertueux.<br/><br/><br/></em><strong>En sens contraire, les préceptes de la loi naturelle, chez l&#x27;homme, jouent le même rôle que les principes premiers dans l&#x27;ordre démonstratif. Or ces principes premiers sont multiples. Donc les préceptes de la loi naturelle sont également multiples.<br/><br/>Réponse :<br/></strong> Ainsi que nous l&#x27;avons dit précédemment, les préceptes de la loi naturelle sont, par rapport à la raison pratique, comme les principes premiers de la démonstration par rapport à la raison spéculative : les uns et les autres sont des principes connus de soi.<br/><br/>Or on dit qu&#x27;une chose est connue de soi de deux façons : soit en elle-même, soit par rapport à nous. En elle-même, toute proposition est connue de soi, dont l&#x27;attribut appartient à la notion du sujet ; mais il arrive que celui qui ignore la définition du sujet ne connaisse pas de telles propositions. Ainsi cette proposition : « L&#x27;homme est un être raisonnable » est connue de soi par nature, car celui qui dit « homme » dit « être raisonnable » ; et pourtant celui qui ignore ce qu&#x27;est l&#x27;homme ne connaît pas cette proposition.<br/><br/>De là vient que, selon Boèce, il y a des axiomes ou propositions qui sont universellement connus de soi, mais seulement par les sages, comme par exemple que les êtres incorporels ne sont pas dans un lieu.<br/><br/>Je dis, par conséquent, que les préceptes de la loi naturelle sont au niveau des principes de la raison pratique, c&#x27;est-à-dire par rapport à ce qu&#x27;il faut faire, puisque le bien est la fin de l&#x27;action, comme le vrai est la fin de la raison spéculative. Par suite, le premier principe pour la raison pratique est celui qui se fonde sur la notion de bien, à savoir que « le bien est ce que tous les êtres désirent ». C&#x27;est donc le premier précepte de la loi qu&#x27;il faut faire et rechercher le bien, et éviter le mal. Et c&#x27;est sur cela que se fondent tous les autres préceptes de la loi naturelle, c&#x27;est-à-dire que toutes les choses à faire ou à éviter relèvent des préceptes de la loi naturelle ; et la raison pratique les reconnaît naturellement comme des biens humains.<br/><br/>Mais parce que le bien a raison de fin, et le mal raison du contraire, tout ce vers quoi l&#x27;homme se sent une inclination naturelle, la raison le perçoit naturellement comme un bien et, par suite, comme devant être recherché activement, et le contraire comme un mal devant être évité. L&#x27;ordre des préceptes de la loi naturelle suit donc l&#x27;ordre des inclinations naturelles.<br/><br/>En effet, il y a d&#x27;abord en l&#x27;homme une inclination vers le bien selon la nature qui lui est commune avec toutes les substances, en ce sens que toute substance recherche la conservation de son être, selon sa nature propre. Et selon cette inclination, relèvent de la loi naturelle tous les moyens qui assurent la conservation de la vie humaine et qui empêchent le contraire.<br/><br/>En second lieu, il y a en l&#x27;homme une inclination à rechercher certains biens plus spéciaux, conformes à la nature qui lui est commune avec les autres animaux. Et selon cette inclination, on dit que la loi naturelle contient « ce que la nature a enseigné à tous les animaux », comme l&#x27;union du mâle et de la femelle, l&#x27;éducation des enfants, et autres choses semblables.<br/><br/>En troisième lieu, il y a dans l&#x27;homme une inclination au bien selon la nature de la raison, qui lui est propre ; ainsi a-t-il une inclination naturelle à connaître la vérité sur Dieu et à vivre en société. Et à ce titre, appartient à la loi naturelle tout ce qui relève de cette inclination propre : par exemple que l&#x27;homme évite l&#x27;ignorance, qu&#x27;il ne fasse pas injure à son prochain avec lequel il doit entretenir des rapports, et tous les autres préceptes semblables qui concernent cette inclination.<br/><br/><br/><strong>Solution 1 :</strong> Tous ces préceptes de la loi naturelle constituent une seule loi naturelle, parce qu&#x27;ils se rattachent à un premier précepte.<br/><br/><br/><strong>Solution 2 :</strong> Toutes les inclinations de n&#x27;importe quelle partie de la nature humaine, par exemple de la concupiscence et des autres puissances sensitives, pour autant qu&#x27;elles sont réglées par la raison, relèvent de la loi naturelle, et se ramènent à un seul premier précepte, comme on vient de le dire. De cette façon, les préceptes de la loi naturelle, pris en eux-mêmes, sont multiples, mais tous se rattachent à un seul premier principe.<br/><br/><br/><strong>Solution 3 :</strong> Bien que la raison en elle-même soit une, elle a pourtant mission d&#x27;ordonner tout ce qui regarde l&#x27;homme. Ainsi la loi naturelle englobe tout ce qui peut être réglé par la raison.</blockquote><figure class="block-color-blue callout" style="white-space:pre-wrap;display:flex" id="1d7b2280-a891-8012-9e9a-c6791eca164f"><div style="font-size:1.5em"><span class="icon">📘</span></div><div style="width:100%"><h2 id="1d7b2280-a891-801a-8d63-d92c8471c911" class=""><strong>Commentaire</strong></h2><p id="1d7b2280-a891-80b6-90ce-d65a2851a4d6" class="">Cet article fondamental de la <em>Somme théologique</em> expose la conception thomiste de la loi naturelle, l&#x27;un des piliers de sa philosophie morale et politique. Thomas y développe une vision hiérarchisée des préceptes de la loi naturelle, fondée sur l&#x27;ordre des inclinations naturelles de l&#x27;être humain.</p><p id="1d7b2280-a891-80e0-861a-cd8e643ea489" class="">Thomas commence par établir un parallèle entre les préceptes de la loi naturelle dans l&#x27;ordre pratique et les premiers principes dans l&#x27;ordre spéculatif : les uns et les autres sont des principes &quot;connus de soi&quot; (per se nota). Cette analogie est cruciale, car elle montre que la raison pratique, comme la raison théorique, possède ses propres principes premiers, immédiatement évidents, qui ne dérivent pas d&#x27;autres principes plus fondamentaux. Cependant, Thomas précise qu&#x27;une proposition peut être connue de soi &quot;en elle-même&quot; sans l&#x27;être &quot;pour nous&quot;, si nous ignorons les termes qui la composent.</p><p id="1d7b2280-a891-808f-800a-e75c2cc6c5dc" class="">Il établit ensuite le premier principe de la raison pratique, fondé sur la notion de bien : &quot;il faut faire et rechercher le bien, et éviter le mal&quot;. Ce principe, analogue au principe de non-contradiction dans l&#x27;ordre spéculatif, est le fondement de tous les autres préceptes de la loi naturelle. Thomas opère ici une synthèse entre l&#x27;intellectualisme aristotélicien (le bien est ce que la raison reconnaît comme tel) et le volontarisme augustinien (le bien est ce que nous désirons naturellement).</p><p id="1d7b2280-a891-802c-aed2-c427c53c4f31" class="">La partie centrale de l&#x27;article présente la hiérarchie des préceptes de la loi naturelle selon l&#x27;ordre des inclinations naturelles. Thomas distingue trois niveaux d&#x27;inclination correspondant à trois dimensions de la nature humaine :</p><ol type="1" id="1d7b2280-a891-802f-bd31-fb5f85faa530" class="numbered-list" start="1"><li>L&#x27;inclination commune à toutes les substances : la conservation de son être. À ce niveau, la loi naturelle prescrit tout ce qui est nécessaire à la préservation de la vie humaine.</li></ol><ol type="1" id="1d7b2280-a891-80f6-a202-d571a5237a26" class="numbered-list" start="2"><li>L&#x27;inclination commune à tous les animaux : l&#x27;union des sexes, l&#x27;éducation des enfants, etc. Ces préceptes correspondent à notre nature animale.</li></ol><ol type="1" id="1d7b2280-a891-80ce-b3b5-cdd6c018bd5f" class="numbered-list" start="3"><li>L&#x27;inclination propre à l&#x27;homme en tant qu&#x27;être rationnel : la connaissance de la vérité, notamment sur Dieu, et la vie en société. À ce niveau, la loi naturelle prescrit d&#x27;éviter l&#x27;ignorance, de respecter autrui, etc.</li></ol><p id="1d7b2280-a891-8035-b996-c9062778e352" class="">Cette hiérarchisation reflète la vision thomiste de l&#x27;homme comme être complexe, à la fois corporel et spirituel, individuel et social. La loi naturelle n&#x27;est pas une simple collection de règles abstraites, mais un ensemble ordonné de préceptes qui correspondent aux différentes dimensions de notre nature. Thomas évite ainsi deux écueils opposés : d&#x27;une part, le dualisme platonicien qui déprécierait les inclinations corporelles ; d&#x27;autre part, le naturalisme qui réduirait la moralité aux impulsions biologiques. Pour lui, toutes les inclinations naturelles sont bonnes en elles-mêmes, mais doivent être intégrées dans un ordre rationnel.</p><p id="1d7b2280-a891-80d8-8851-d9536caeacdc" class="">Dans ses réponses aux objections, Thomas précise que cette multiplicité de préceptes ne compromet pas l&#x27;unité de la loi naturelle, car tous se rattachent au premier principe. Il affirme également que la raison, bien qu&#x27;une en elle-même, a pour fonction d&#x27;ordonner toutes les dimensions de la vie humaine.</p><p id="1d7b2280-a891-8022-89a0-f6a42e826e54" class="">Cette conception de la loi naturelle, fondée sur une anthropologie réaliste et une métaphysique du bien, a profondément influencé la tradition juridique et politique occidentale. Elle propose une base rationnelle à la morale, accessible à tous les hommes indépendamment de la révélation, tout en reconnaissant la diversité des cultures et des situations qui peuvent affecter l&#x27;application concrète de ces principes universels.</p></div></figure><h1 id="1d7b2280-a891-8020-96df-d3976295e09f" class="">La béatitude</h1><p id="1d7b2280-a891-802a-87a5-fcb48e75e046" class=""><em>Somme théologique, Ia-IIae, q. 3, a. 8</em></p><blockquote id="1d7b2280-a891-8045-ba54-ecdc7c53a83e" class="">Article 8 : La béatitude de l&#x27;homme consiste-t-elle dans la vision de l&#x27;essence divine ?<br/><br/><br/><em><strong>Objection 1 :</strong></em><em> Il semble que la béatitude de l&#x27;homme ne consiste pas dans la vision de l&#x27;essence divine. Car saint Grégoire dit : « La contemplation de Dieu n&#x27;est pas encore la récompense, mais ce qui viendra après la résurrection. » Or la béatitude est la récompense de la vertu. Donc la béatitude de l&#x27;homme ne consiste pas dans la vision de l&#x27;essence divine.<br/><br/><br/></em><em><strong>Objection 2 :</strong></em><em> De plus, la béatitude est le bien parfait, comme le dit Aristote. Or la perfection de l&#x27;homme est en proportion de sa compréhension. Mais les choses que l&#x27;on voit ne sont pas toutes comprises, comme le dit saint Augustin : « Ce que nous voyons, nous ne le comprenons pas intégralement. » Or l&#x27;essence divine est bien plus incompréhensible que n&#x27;importe quelle chose intelligible créée. Donc la vision de l&#x27;essence divine ne donne pas la béatitude à l&#x27;homme.<br/><br/><br/></em><em><strong>Objection 3 :</strong></em><em> En outre, la béatitude parfaite de l&#x27;homme consiste non seulement dans la perfection de son intellect, par lequel il connaît les choses intelligibles, mais aussi dans la perfection de ses sens, par lesquels il perçoit les choses sensibles, comme le montre Aristote. Or, dans l&#x27;état de béatitude, il n&#x27;y a pas d&#x27;acte des sens quand nous voyons Dieu par essence. La béatitude parfaite ne consiste donc pas dans cette vision.<br/><br/><br/></em><strong>En sens contraire, il est dit en saint Jean (17, 3) : « La vie éternelle, c&#x27;est qu&#x27;ils te connaissent, toi, le seul vrai Dieu. » Or la vie éternelle est la fin ultime, comme on l&#x27;a montré plus haut. La béatitude de l&#x27;homme consiste donc dans la connaissance de Dieu, qui est la vision de l&#x27;essence divine.<br/><br/>Réponse :<br/></strong> La béatitude ultime et parfaite ne peut consister que dans la vision de l&#x27;essence divine. Pour le comprendre clairement, deux points sont à considérer. D&#x27;abord, l&#x27;homme n&#x27;est pas parfaitement heureux tant qu&#x27;il lui reste quelque chose à désirer et à rechercher. Ensuite, la perfection d&#x27;une puissance se mesure à la nature de son objet. Or l&#x27;objet de l&#x27;intelligence est « ce qui est », c&#x27;est-à-dire l&#x27;essence des choses, comme le dit Aristote. Il en résulte que la perfection de l&#x27;intelligence est proportionnée à la connaissance qu&#x27;elle a de l&#x27;essence d&#x27;une chose. Si donc une intelligence connaît l&#x27;essence d&#x27;un certain effet, sans pouvoir connaître par elle l&#x27;essence de la cause, au point de savoir quelle est cette cause, on ne dira pas que cette intelligence atteint parfaitement la cause elle-même ; encore que, par l&#x27;effet, elle puisse savoir que cette cause existe. Pour cette raison, il reste à l&#x27;homme un désir naturel, quand il connaît un effet et qu&#x27;il sait que cet effet a une cause, de savoir aussi ce qu&#x27;est cette cause. C&#x27;est là le désir de l&#x27;admiration, qui cause la recherche, comme il est dit au début de la Métaphysique.<br/><br/>Par exemple, si quelqu&#x27;un observant une éclipse de soleil considère qu&#x27;elle est produite par une cause, et s&#x27;il ne sait pas ce qu&#x27;est cette cause, il admire cette cause et, dans son admiration, il la recherche. Et cette recherche ne s&#x27;arrêtera pas avant qu&#x27;il soit parvenu à connaître l&#x27;essence de cette cause.<br/><br/>Si donc l&#x27;intelligence humaine, connaissant l&#x27;essence d&#x27;un effet créé, ne connaît pas de Dieu autre chose sinon qu&#x27;il existe, la perfection de cette intelligence n&#x27;atteint pas encore de façon absolue la cause première ; il reste encore à l&#x27;homme un désir naturel de chercher la cause. C&#x27;est pourquoi il n&#x27;est pas encore parfaitement heureux. Pour la béatitude parfaite, il est donc requis que l&#x27;intelligence atteigne l&#x27;essence même de la cause première. Et ainsi elle aura sa perfection par l&#x27;union à Dieu comme à son objet, en quoi seul consiste la béatitude de l&#x27;homme, comme nous l&#x27;avons montré précédemment.<br/><br/><br/><strong>Solution 1 :</strong> Grégoire parle de la contemplation en cette vie, imparfaite, qui est comme à travers un miroir ou en énigme.<br/><br/><br/><strong>Solution 2 :</strong> De même que Dieu, du fait qu&#x27;il est l&#x27;être subsistant lui-même, contient en lui toute la perfection de l&#x27;être, ainsi, étant connu tel qu&#x27;il est par essence, il est connu autant qu&#x27;il est connaissable. En effet, il est connaissable à l&#x27;infini, et aucun intellect créé ne peut le connaître infiniment. Ainsi, un intellect créé ne peut le connaître aussi parfaitement qu&#x27;il est connaissable ; de même, aucune créature ne peut l&#x27;aimer autant qu&#x27;il est aimable, car, à ces deux égards, sa bonté est infinie. Mais aucun être créé ne peut le comprendre, c&#x27;est-à-dire avoir de lui une connaissance aussi parfaite qu&#x27;il est connaissable. C&#x27;est comme si quelqu&#x27;un savait qu&#x27;une proposition est démontrable, mais sans connaître sa démonstration : l&#x27;intelligibilité de la proposition ne lui échappe pas, mais il ne la comprend pas parfaitement, parce qu&#x27;il n&#x27;arrive pas à la connaître parfaitement, c&#x27;est-à-dire sous tous ses aspects.<br/><br/><br/><strong>Solution 3 :</strong> Dans la béatitude parfaite, tout l&#x27;homme est rendu parfait, mais d&#x27;une autre manière dans sa partie inférieure que dans sa partie supérieure. Car, dans cette perfection, la partie inférieure est perfectionnée par rejaillissement de la partie supérieure. Pour Aristote, il place la béatitude dans les opérations de la partie supérieure, c&#x27;est-à-dire de l&#x27;intellect, mais il reconnaît que dans cette perfection de l&#x27;âme, il en rejaillit quelque chose sur le corps, qui lui donne « un état meilleur ». Or dans la béatitude dont nous parlons maintenant, la partie inférieure ne sera pas perfectionnée par rejaillissement, mais par une réalisation directe.</blockquote><figure class="block-color-blue callout" style="white-space:pre-wrap;display:flex" id="1d7b2280-a891-8074-ae05-f9bff4b47e86"><div style="font-size:1.5em"><span class="icon">📘</span></div><div style="width:100%"><h2 id="1d7b2280-a891-806e-98d2-c0158a5e9790" class=""><strong>Commentaire</strong></h2><p id="1d7b2280-a891-80f2-8ec9-f73d39eb97c1" class="">Cet article aborde une question centrale de la théologie thomiste : la nature de la béatitude ultime de l&#x27;homme. Thomas y développe sa conception de la fin dernière humaine comme vision béatifique, c&#x27;est-à-dire contemplation directe de l&#x27;essence divine.</p><p id="1d7b2280-a891-80df-837e-d5b702ac7c6f" class="">Thomas fonde son argumentation sur deux principes fondamentaux. Premièrement, la béatitude parfaite exige l&#x27;absence de tout désir inassouvi : l&#x27;homme ne peut être parfaitement heureux tant qu&#x27;il lui reste &quot;quelque chose à désirer et à rechercher&quot;. Deuxièmement, la perfection d&#x27;une faculté se mesure à la nature de son objet : la perfection de l&#x27;intelligence consiste à connaître l&#x27;essence des choses, son objet propre.</p><p id="1d7b2280-a891-80ef-8434-f453068aa250" class="">À partir de ces principes, Thomas développe un raisonnement en deux temps. D&#x27;abord, il analyse la dynamique naturelle de l&#x27;intelligence humaine, qui ne se satisfait pas de connaître l&#x27;existence d&#x27;une cause par ses effets, mais désire naturellement connaître son essence. L&#x27;exemple de l&#x27;éclipse solaire illustre ce désir naturel de comprendre qui anime l&#x27;intelligence et qui ne s&#x27;apaise que dans la connaissance des causes. Ensuite, il applique cette analyse à la connaissance de Dieu : tant que l&#x27;homme ne connaît Dieu que comme cause première dont il constate l&#x27;existence à travers ses effets (les créatures), son désir naturel de connaître reste insatisfait. Seule la vision directe de l&#x27;essence divine peut combler ce désir et procurer la béatitude parfaite.</p><p id="1d7b2280-a891-803d-a003-df69b76b28ca" class="">Cette conception de la béatitude comme vision de Dieu représente une synthèse remarquable entre la tradition philosophique grecque (notamment aristotélicienne) et la révélation chrétienne. D&#x27;un côté, Thomas reprend la conception aristotélicienne du bonheur comme activité parfaite de la faculté la plus noble (l&#x27;intellect) ; de l&#x27;autre, il l&#x27;intègre dans la perspective chrétienne de la vision face à face de Dieu promise dans l&#x27;Écriture (1 Co 13,12). La béatitude n&#x27;est pas simplement un état subjectif de satisfaction, mais une relation objective avec le Bien suprême, une participation à la vie divine par la connaissance et l&#x27;amour.</p><p id="1d7b2280-a891-80c5-b0e7-e79d9ac6f06f" class="">Dans ses réponses aux objections, Thomas précise plusieurs points importants. À la première objection, il distingue la contemplation imparfaite possible en cette vie et la vision parfaite réservée à l&#x27;au-delà. À la deuxième, il précise que la vision béatifique ne signifie pas une &quot;compréhension&quot; exhaustive de Dieu (impossible pour une créature finie), mais une connaissance directe de son essence, proportionnée à la capacité de l&#x27;intelligence créée. À la troisième, il explique comment, dans la béatitude parfaite, ce n&#x27;est pas seulement l&#x27;intellect mais l&#x27;homme tout entier qui est perfectionné, la partie supérieure (l&#x27;âme intellectuelle) communiquant sa perfection à la partie inférieure (le corps et les sens) par rejaillissement.</p><p id="1d7b2280-a891-8096-914e-f02653f88e44" class="">Cette doctrine de la béatitude comme vision de l&#x27;essence divine a des implications profondes pour l&#x27;anthropologie thomiste. Elle affirme que l&#x27;homme est naturellement orienté vers une fin surnaturelle qu&#x27;il ne peut atteindre par ses seules forces naturelles, d&#x27;où la nécessité de la grâce. Elle établit également une continuité entre la recherche philosophique de la vérité et l&#x27;accomplissement théologique dans la vision béatifique, tout en maintenant la distinction des ordres naturel et surnaturel. Enfin, elle situe la perfection humaine non dans une activité pratique ou productive, mais dans la contemplation de la vérité suprême, reflétant ainsi la conviction profonde de Thomas que la connaissance et l&#x27;amour de Dieu constituent le bien le plus élevé pour l&#x27;homme.</p></div></figure><h1 id="1d7b2280-a891-8003-a566-d186f88c17ed" class="">La vertu</h1><p id="1d7b2280-a891-8064-96ac-e3b656d0d6e0" class=""><em>Somme théologique, Ia-IIae, q. 55, a. 4</em></p><blockquote id="1d7b2280-a891-80d1-872a-f7e00d255b8e" class="">Article 4 : La vertu est-elle bien définie ?<br/><br/><br/><em><strong>Objection 1 :</strong></em><em> Il semble que la définition de la vertu que nous avons rapportée ne convienne pas : « La vertu est une bonne qualité de l&#x27;esprit, par laquelle on vit droitement, dont nul ne fait mauvais usage, que Dieu opère en nous sans nous. » En effet, la vertu est une bonté de l&#x27;homme, puisqu&#x27;elle rend bon celui qui la possède. Or la bonté ne semble pas être bonne, pas plus que la blancheur n&#x27;est blanche. C&#x27;est donc à tort qu&#x27;on définit la vertu comme « une bonne qualité ».<br/><br/><br/></em><em><strong>Objection 2 :</strong></em><em> De plus, aucune différence ne peut être plus générale que son genre ; si donc « qualité » est le genre, il ne semble pas qu&#x27;on puisse lui donner pour différence « bonne ».<br/><br/><br/></em><em><strong>Objection 3 :</strong></em><em> Comme dit Aristote, « ce qui n&#x27;est pas par soi-même ne doit pas entrer dans la définition ». Or être mû par autre chose, c&#x27;est le propre d&#x27;un être imparfait, et cela ne convient pas à la vertu. On ne doit donc pas introduire dans la définition de la vertu : « que Dieu opère en nous sans nous », d&#x27;autant plus qu&#x27;en ajoutant le mot « sans nous », on exclut ce qui se fait par nous-mêmes ; et alors la définition ne convient plus à une vertu morale.<br/><br/><br/></em><strong>En sens contraire, nous avons l&#x27;autorité de saint Augustin, de qui principalement cette définition est tirée.<br/><br/>Réponse :<br/></strong> Cette définition exprime parfaitement toute la raison de la vertu. Car la raison parfaite d&#x27;une chose se prend de toutes ses causes. Or la définition en question comprend toutes les causes de la vertu.<br/><br/>La cause formelle de la vertu, comme de toute chose, se prend de son genre et de sa différence spécifique, quand on dit « qualité bonne ». En effet, la vertu, comme toutes les habitudes, est un accident dans le genre de la qualité. Mais la différence propre par où elle se distingue des autres qualités, c&#x27;est qu&#x27;elle est bonne ; néanmoins « bonne » n&#x27;est pas une différence dans le genre de la qualité, mais dans celui de l&#x27;habitude, à cause de ce qu&#x27;il y a d&#x27;équivoque dans le terme même de qualité. Et parce que, comme c&#x27;est le cas pour toutes les habitudes, il y a une double matière : celle dans laquelle l&#x27;habitude se trouve comme dans son sujet ; et celle vers laquelle l&#x27;habitude s&#x27;oriente comme vers son objet ; la matière dans laquelle se trouve la vertu est indiquée quand on dit « de l&#x27;esprit », ce qui signifie que la vertu ne peut se trouver que dans la partie rationnelle de l&#x27;âme, comme nous l&#x27;avons vu. La vertu est ordonnée au bien, puisque c&#x27;est cela qui fait qu&#x27;une habitude est bonne, et, par conséquence, toute vertu est ordonnée au bien ; c&#x27;est pourquoi on ajoute « par laquelle on vit droitement », c&#x27;est-à-dire, par laquelle on agit droitement. Quant à la fin de la vertu, c&#x27;est la béatitude elle-même, ou Dieu ; cela est indiqué par les mots « dont nul ne fait mauvais usage ». La cause efficiente est Dieu, et cela est signifié par « que Dieu opère en nous ».<br/><br/>Les mots « sans nous » doivent s&#x27;entendre des vertus infuses que Dieu opère en nous sans que nous en soyons les causes ; mais nous y coopérons en y consentant. Cette partie de la définition ne s&#x27;applique pas aux vertus acquises.<br/><br/>Ainsi, si de la définition on retranche « que Dieu opère en nous sans nous », le reste de la définition sera commun à toutes les vertus, acquises et infuses.<br/><br/><br/><strong>Solution 1 :</strong> Ce qui est premier dans un genre n&#x27;est pas attribué par dénomination à tout ce qui se trouve dans ce genre ; ainsi, la qualité et l&#x27;essence du feu ne sont pas attribuées à l&#x27;air, qui est chauffé par le feu. Mais, s&#x27;il s&#x27;agit de genres qui impliquent une priorité de nature, comme lorsque l&#x27;on dit que le principe naturel d&#x27;un être est bon, alors le terme bon peut convenir au principe lui-même : ainsi on peut dire qu&#x27;il existe une bonne qualité. Ainsi donc, on dit qu&#x27;une habitude est bonne, de même qu&#x27;on dit que la blancheur est une couleur, en raison même de son genre ; et si nous disons qu&#x27;une vertu est bonne, c&#x27;est parce qu&#x27;elle appartient au genre des habitudes.<br/><br/><br/><strong>Solution 2 :</strong> « Bonne », dans la définition de la vertu, n&#x27;est pas entendu comme une différence générale, mais comme une différence propre au genre de l&#x27;habitude. Pour appréhender cette notion, il faut considérer que les habitudes sont par définition ordonnées à un acte. Or rien ne diffère d&#x27;autre chose par ce qui lui est seulement accidentel, mais ce qui fait qu&#x27;une chose est telle est sa différence propre, en tant qu&#x27;elle est ordonnée à une fin, qui est l&#x27;acte. Ainsi donc, quelles que soient les habitudes qui rendent l&#x27;acte nécessairement bon, on parlera d&#x27;habitude bonne et de vertu. Sur cette base, « bonne » s&#x27;entend comme différence achevant l&#x27;essence même de vertu.<br/><br/><br/><strong>Solution 3 :</strong> La vertu infuse n&#x27;est pas causée par nos actes mais par l&#x27;opération divine en nous. C&#x27;est pourquoi il convient que dans la définition apparaisse « que Dieu opère en nous sans nous ». Mais cette action de Dieu n&#x27;empêche pas les actes de la vertu morale d&#x27;être volontaires. Et l&#x27;on dit « sans nous » en tant que causes efficientes, mais non qu&#x27;il n&#x27;y ait pas de notre part un consentement.</blockquote><figure class="block-color-blue callout" style="white-space:pre-wrap;display:flex" id="1d7b2280-a891-801f-99ac-ea06e2e36e58"><div style="font-size:1.5em"><span class="icon">📘</span></div><div style="width:100%"><h2 id="1d7b2280-a891-80ce-a1d6-fdfdca6c815f" class=""><strong>Commentaire</strong></h2><p id="1d7b2280-a891-8083-91b1-f170fbda6e1c" class="">Dans cet article, Thomas d&#x27;Aquin examine la définition classique de la vertu formulée par saint Augustin : &quot;La vertu est une bonne qualité de l&#x27;esprit, par laquelle on vit droitement, dont nul ne fait mauvais usage, que Dieu opère en nous sans nous.&quot; Cette analyse lui permet de déployer sa conception de la vertu et d&#x27;articuler les différentes dimensions de cette notion centrale en éthique.</p><p id="1d7b2280-a891-809a-8ded-d41870e24cb7" class="">Thomas commence par approuver cette définition, estimant qu&#x27;elle &quot;exprime parfaitement toute la raison de la vertu&quot; en incluant ses quatre causes aristotéliciennes : formelle, matérielle, finale et efficiente. Cette approche causale, typique de la méthode thomiste, permet une analyse complète et systématique du concept.</p><p id="1d7b2280-a891-80a9-a5e5-f8a4ed6a48fc" class="">La cause formelle de la vertu est indiquée par son genre et sa différence spécifique : c&#x27;est une &quot;qualité bonne&quot;. En tant qu&#x27;habitude (habitus), la vertu appartient au genre des qualités stables qui disposent un sujet d&#x27;une certaine manière. Sa différence spécifique est d&#x27;être bonne, c&#x27;est-à-dire orientée vers le bien. Cette analyse articule la dimension ontologique de la vertu (son statut d&#x27;accident qualitatif) et sa dimension axiologique (son orientation vers le bien).</p><p id="1d7b2280-a891-8055-8c02-d8625ebc4d2c" class="">La cause matérielle est double : d&#x27;une part, la matière &quot;dans laquelle&quot; (in qua) se trouve la vertu, à savoir &quot;l&#x27;esprit&quot; ou la partie rationnelle de l&#x27;âme ; d&#x27;autre part, la matière &quot;vers laquelle&quot; (circa quam) la vertu s&#x27;oriente, c&#x27;est-à-dire son objet propre, qui est de &quot;vivre droitement&quot;. Cette distinction permet à Thomas de préciser que la vertu, tout en étant une disposition stable du caractère, se manifeste nécessairement dans des actes droits.</p><p id="1d7b2280-a891-8055-ad0d-e0fc70521e4f" class="">La cause finale de la vertu est exprimée par &quot;dont nul ne fait mauvais usage&quot;. Contrairement aux autres capacités humaines qui peuvent être utilisées pour le bien ou pour le mal, la vertu est intrinsèquement orientée vers le bien. Sa fin ultime est la béatitude ou Dieu lui-même, ce qui reflète la vision téléologique de Thomas où toute la vie morale est ordonnée à une fin dernière.</p><p id="1d7b2280-a891-8000-99cf-e5bd36a8d647" class="">La cause efficiente est indiquée par &quot;que Dieu opère en nous sans nous&quot;, formule qui s&#x27;applique spécifiquement aux vertus infuses (théologales et morales infuses) qui sont directement causées par Dieu, contrairement aux vertus acquises qui résultent de la répétition d&#x27;actes humains. Cette distinction entre vertus acquises et vertus infuses, fondamentale dans la théologie morale thomiste, permet d&#x27;articuler l&#x27;ordre naturel et l&#x27;ordre surnaturel.</p><p id="1d7b2280-a891-80f6-a33d-e4b539e9f015" class="">Dans ses réponses aux objections, Thomas apporte des précisions subtiles. À la première objection, il explique comment une qualité peut être qualifiée de &quot;bonne&quot; sans redondance. À la deuxième, il clarifie que &quot;bonne&quot; n&#x27;est pas une différence générique mais une différence propre au genre de l&#x27;habitude, puisqu&#x27;elle concerne l&#x27;ordination de la vertu à son acte. À la troisième, il précise que l&#x27;action divine dans les vertus infuses n&#x27;exclut pas la coopération humaine par le consentement, préservant ainsi la dimension volontaire de l&#x27;acte vertueux.</p><p id="1d7b2280-a891-805c-a500-d6998a6732eb" class="">Cette analyse de la définition de la vertu illustre parfaitement la méthode thomiste qui intègre rigoureusement la philosophie aristotélicienne et la théologie chrétienne. Elle montre également comment Thomas parvient à concilier des aspects apparemment opposés : la stabilité de la vertu comme disposition et son dynamisme comme principe d&#x27;action ; sa dimension naturelle (vertus acquises) et sa dimension surnaturelle (vertus infuses) ; l&#x27;action divine et la liberté humaine. Cette synthèse équilibrée est caractéristique de la vision thomiste de la vie morale comme participation ordonnée de la créature rationnelle à la sagesse divine.</p></div></figure><figure class="block-color-teal callout" style="white-space:pre-wrap;display:flex" id="1d7b2280-a891-8047-ac2f-e921aa6ef3c0"><div style="font-size:1.5em"><span class="icon">♻️</span></div><div style="width:100%"><h1 id="1d7b2280-a891-8058-ad43-d942ff8d297e" class=""><strong>Pertinence contemporaine</strong></h1><p id="1d7b2280-a891-8009-a866-ddda57826a62" class="">Malgré les sept siècles qui nous séparent de Thomas d&#x27;Aquin, sa pensée continue d&#x27;exercer une influence considérable sur la philosophie et la théologie contemporaines, et conserve une pertinence remarquable pour aborder les questions fondamentales de notre temps.</p><p id="1d7b2280-a891-8074-925f-fe8dec8ff654" class="">Dans le domaine de la philosophie de la religion, la synthèse thomiste entre foi et raison offre un modèle de dialogue entre science et religion qui dépasse les oppositions simplistes. Sa conviction que la vérité ne contredit pas la vérité et que raison et révélation sont deux chemins complémentaires vers une même réalité fondamentale inspire encore aujourd&#x27;hui ceux qui cherchent à articuler connaissance scientifique et croyance religieuse dans un cadre cohérent.</p><p id="1d7b2280-a891-80b4-8701-c84cac2a059e" class="">En métaphysique, le réalisme modéré de Thomas, qui affirme l&#x27;intelligibilité du réel sans tomber dans un idéalisme désincarné, connaît un regain d&#x27;intérêt dans le contexte des débats contemporains sur le naturalisme et le matérialisme réductionniste. Sa théorie de l&#x27;être comme acte d&#x27;exister (esse) et sa doctrine de l&#x27;analogie offrent des ressources conceptuelles pour penser la transcendance sans dualisme, particulièrement pertinentes face aux courants post-métaphysiques.</p><p id="1d7b2280-a891-80a3-8066-f5da7a428118" class="">En éthique, le renouveau de l&#x27;éthique des vertus depuis les années 1980 (avec des philosophes comme Alasdair MacIntyre, Elizabeth Anscombe ou Charles Taylor) puise largement dans la tradition aristotélico-thomiste. Face aux insuffisances perçues des éthiques déontologiques (kantiennes) et conséquentialistes (utilitaristes), l&#x27;approche thomiste centrée sur le développement du caractère et l&#x27;orientation vers le bien humain intégral offre une alternative féconde. De même, sa conception de la loi naturelle comme fondement rationnel des droits humains continue d&#x27;inspirer la réflexion juridique et politique.</p><p id="1d7b2280-a891-80c2-9292-e70d414d7644" class="">En anthropologie philosophique, la vision thomiste de l&#x27;homme comme unité substantielle d&#x27;âme et de corps évite tant le spiritualisme désincarné que le matérialisme réducteur, offrant un cadre conceptuel pour penser l&#x27;être humain dans sa complexité biologique, psychologique et spirituelle. Cette perspective peut éclairer des débats contemporains sur la nature humaine, l&#x27;identité personnelle ou les enjeux bioéthiques.</p><p id="1d7b2280-a891-80c1-af7c-c74c2278f3dd" class="">Dans le domaine social et politique, l&#x27;enseignement de Thomas sur le bien commun, la subsidiarité et la justice distributive continue d&#x27;inspirer la doctrine sociale de l&#x27;Église catholique et nourrit la réflexion sur des questions comme l&#x27;économie politique, l&#x27;éthique environnementale ou la gouvernance mondiale.</p><p id="1d7b2280-a891-8063-a509-d2f6d14cc87d" class="">Enfin, à une époque marquée par la fragmentation des savoirs et la spécialisation croissante, l&#x27;ambition synthétique de la <em>Somme théologique</em>, qui articule dans un tout cohérent théologie, métaphysique, éthique, psychologie et politique, peut inspirer les tentatives contemporaines de dialogue interdisciplinaire et de vision intégrale du savoir.</p><p id="1d7b2280-a891-8038-964e-ff52c0bf350d" class="">Cette persistante actualité s&#x27;explique par le caractère fondamental des questions que Thomas a abordées et par la profondeur et la subtilité de ses analyses. Sa pensée ne constitue pas un système clos, mais une méthode ouverte qui invite à poursuivre le dialogue entre foi et raison, entre tradition et innovation, dans la recherche commune de la vérité.</p></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

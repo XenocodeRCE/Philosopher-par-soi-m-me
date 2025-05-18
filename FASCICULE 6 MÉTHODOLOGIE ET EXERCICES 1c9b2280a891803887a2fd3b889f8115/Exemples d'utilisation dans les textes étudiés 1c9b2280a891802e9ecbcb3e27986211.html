@@ -1,0 +1,683 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Exemples d&#x27;utilisation dans les textes étudiés</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-802e-9ecb-cb3e27986211" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1728917330549-873f49478eea?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 23.129999999999995%"/><h1 class="page-title">Exemples d&#x27;utilisation dans les textes étudiés</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d6b2280-a891-8054-9250-f11df7c75569" class=""><em>Comprendre la définition des repères est une chose, savoir les utiliser pour analyser un texte en est une autre. Cette section vous propose des exemples concrets pour voir comment mobiliser ces distinctions conceptuelles afin d&#x27;éclairer la pensée d&#x27;un auteur. Ces exemples ne sont pas exhaustifs, et souvent plusieurs repères peuvent être pertinents pour un même texte.</em></p><h1 id="1d6b2280-a891-80c7-b3de-d04b73d19e48" class=""><strong>Exemple 1 : Rousseau - Liberté et Loi</strong></h1><blockquote id="1d6b2280-a891-8089-9932-ed7a71f7b016" class="">On a beau vouloir confondre l&#x27;indépendance et la liberté, ces deux choses sont si différentes que même elles s&#x27;excluent mutuellement. Quand chacun fait ce qu&#x27;il lui plaît, on fait souvent ce qui déplaît à d&#x27;autres, et cela ne s&#x27;appelle pas un état libre. La liberté consiste moins à faire sa volonté qu&#x27;à n&#x27;être pas soumis à celle d&#x27;autrui ; elle consiste encore à ne pas soumettre la volonté d&#x27;autrui à la nôtre. [...] Dans la liberté commune personne n&#x27;a droit de faire ce que la liberté d&#x27;un autre lui interdit : et la vraie liberté n&#x27;est jamais destructive d&#x27;elle-même. Ainsi la liberté sans la justice est une véritable contradiction [...].<br/><br/>Jean-Jacques Rousseau, Lettres écrites de la montagne, Huitième lettre<br/></blockquote><h2 id="1d6b2280-a891-803a-a096-fb405b15f6f8" class=""><strong>Analyse utilisant les repères:</strong></h2><ul id="1d6b2280-a891-80f7-b1d6-f5babb7d7beb" class="bulleted-list"><li style="list-style-type:disc">Le repère <strong>Légal / Légitime</strong> est implicitement au cœur du texte. Rousseau ne parle pas seulement de l&#x27;absence de loi (indépendance), mais de la nécessité d&#x27;une règle juste (&quot;la vraie liberté&quot;, &quot;la justice&quot;) pour qu&#x27;un état soit véritablement &quot;libre&quot;. Il cherche le fondement légitime de la liberté, qui n&#x27;est pas l&#x27;absence de règle mais la présence d&#x27;une règle juste.</li></ul><ul id="1d6b2280-a891-807a-9313-fa171c2d8fcd" class="bulleted-list"><li style="list-style-type:disc">La distinction <strong>Obligation / Contrainte</strong> est utile ici. L&#x27;indépendance (&quot;faire ce qu&#x27;il lui plaît&quot;) refuse toute règle et peut mener à la contrainte mutuelle (&quot;ce qui déplaît à d&#x27;autres&quot;). La vraie liberté, en revanche, implique l&#x27;obéissance à la loi (une forme d&#x27;obligation reconnue comme juste) pour éviter la soumission à la volonté arbitraire d&#x27;autrui (contrainte).</li></ul><ul id="1d6b2280-a891-8084-9576-cbc5fb95a85f" class="bulleted-list"><li style="list-style-type:disc">Le repère <strong>Public / Privé</strong> aide à comprendre que la liberté n&#x27;est pas seulement une affaire privée (faire ce que je veux dans mon coin), mais une question publique, qui concerne la &quot;liberté commune&quot; et nécessite des règles partagées (&quot;justice&quot;).</li></ul><h1 id="1d6b2280-a891-8015-b7c1-e328432e84ca" class=""><strong>Exemple 2 : Descartes - Le Doute Méthodique</strong></h1><blockquote id="1d6b2280-a891-80b6-8f7d-d3f37f34579b" class="">Ainsi, à cause que nos sens nous trompent quelquefois, je voulus supposer qu&#x27;il n&#x27;y avait aucune chose qui fût telle qu&#x27;ils nous la font imaginer. Et pource qu&#x27;il y a des hommes qui se méprennent en raisonnant, même touchant les plus simples matières de géométrie, et y font des paralogismes, jugeant que j&#x27;étais sujet à faillir autant qu&#x27;aucun autre, je rejetai comme fausses toutes les raisons que j&#x27;avais prises auparavant pour démonstrations.<br/><br/>Descartes, Discours de la méthode, Quatrième partie<br/></blockquote><h2 id="1d6b2280-a891-80e9-b968-d79e9bfffdcf" class=""><strong>Analyse utilisant les repères:</strong></h2><ul id="1d6b2280-a891-80d9-8b53-f3e2cda20f97" class="bulleted-list"><li style="list-style-type:disc">La distinction <strong>Croire / Savoir</strong> est centrale. Descartes remet en cause ce qu&#x27;il croyait savoir par les sens ou par le raisonnement, car ces sources ne lui offrent pas une certitude absolue. Il cherche un fondement indubitable pour le savoir.</li></ul><ul id="1d6b2280-a891-8092-9c08-cce3f38b46f7" class="bulleted-list"><li style="list-style-type:disc">Le repère <strong>Vrai / Probable / Certain</strong> est mobilisé. Descartes ne se contente pas du probable ou du vraisemblable (&quot;quelquefois&quot;). Il recherche une certitude absolue. Le simple fait que les sens ou la raison *puissent* nous tromper suffit à rejeter leurs témoignages comme fondement certain de la vérité.</li></ul><ul id="1d6b2280-a891-801b-8abc-fe1faf60a0e6" class="bulleted-list"><li style="list-style-type:disc">La démarche de Descartes illustre le passage du <strong>Subjectif</strong> (son propre jugement faillible) à la recherche d&#x27;un fondement <strong>Objectif</strong> pour la connaissance, même s&#x27;il part d&#x27;une décision subjective (&quot;je voulus supposer&quot;).</li></ul><ul id="1d6b2280-a891-805a-baa0-c33e009b84e5" class="bulleted-list"><li style="list-style-type:disc">L&#x27;argumentation repose sur des <strong>Hypothèses</strong> (&quot;supposer que...&quot;) pour en tirer des <strong>Conséquences</strong> radicales (rejet des sens et de la raison comme sources premières de certitude).</li></ul><h1 id="1d6b2280-a891-80f9-9ff6-cd31d6aa8e9d" class=""><strong>Exemple 3 : Kant - L&#x27;Impératif Catégorique</strong></h1><blockquote id="1d6b2280-a891-8053-b2bb-fd1ce05c2609" class="">Agis uniquement d&#x27;après la maxime qui fait que tu peux vouloir en même temps qu&#x27;elle devienne une loi universelle.<br/><br/>Kant, Fondements de la métaphysique des mœurs<br/></blockquote><h2 id="1d6b2280-a891-80a6-8161-c8e1b0a79f0b" class=""><strong>Analyse utilisant les repères:</strong></h2><ul id="1d6b2280-a891-8093-8175-f23115e4632f" class="bulleted-list"><li style="list-style-type:disc">Le repère <strong>Formel / Matériel</strong> est essentiel. Kant propose ici un critère purement formel pour juger de la moralité d&#x27;une action : la possibilité d&#x27;universaliser la maxime (la règle subjective). Il ne donne pas de contenu matériel précis (que faire ?), mais une forme que doit pouvoir revêtir toute maxime morale.</li></ul><ul id="1d6b2280-a891-80f3-90c6-d26fdbc533f1" class="bulleted-list"><li style="list-style-type:disc">La distinction <strong>Universel / Général / Particulier / Singulier</strong> est au cœur de la formule. La maxime (règle particulière ou singulière que je me donne) doit pouvoir être voulue comme &quot;loi universelle&quot;, c&#x27;est-à-dire valable pour tous, sans exception. C&#x27;est ce test d&#x27;universalisation qui garantit l&#x27;objectivité morale.</li></ul><ul id="1d6b2280-a891-80a3-a1ce-c309f618f5d0" class="bulleted-list"><li style="list-style-type:disc">Le repère <strong>Obligation / Contrainte</strong> s&#x27;applique ici. L&#x27;impératif catégorique représente une obligation morale que la raison se donne à elle-même, non une contrainte extérieure. Obéir à cet impératif, c&#x27;est être autonome.</li></ul><ul id="1d6b2280-a891-80e7-8e6d-f5085d778a05" class="bulleted-list"><li style="list-style-type:disc">Kant oppose implicitement cet impératif, fondé en <strong>Droit</strong> (ce que la raison exige), aux inclinations sensibles, qui relèvent du <strong>Fait</strong> (ce que nous désirons naturellement).</li></ul><h1 id="1d6b2280-a891-8036-9b9d-c4f8f3612322" class=""><strong>Exemple 4 : Platon - Opinion et Savoir</strong></h1><blockquote id="1d6b2280-a891-8044-8800-efbee9999004" class="">[...] Les opinions vraies, elles aussi, tant qu&#x27;elles demeurent, sont une belle chose [...]. Mais elles ne consentent pas à demeurer longtemps, et elles s&#x27;échappent de l&#x27;âme de l&#x27;homme : aussi ne sont-elles pas d&#x27;un grand prix, tant qu&#x27;on ne les a pas reliées par un raisonnement qui en donne la cause [aitias logismô]. [...] Une fois liées, d&#x27;abord elles deviennent sciences, et ensuite elles demeurent stables. Voilà pourquoi la science est plus précieuse que l&#x27;opinion droite ; et c&#x27;est par le lien qu&#x27;elle diffère de l&#x27;opinion droite.<br/><br/>Platon, Ménon, 97e-98a<br/></blockquote><h2 id="1d6b2280-a891-8055-a204-f757bccddbab" class=""><strong>Analyse utilisant les repères:</strong></h2><ul id="1d6b2280-a891-80ea-9ef7-d6505adccbcf" class="bulleted-list"><li style="list-style-type:disc">La distinction fondamentale est <strong>Croire / Savoir</strong> (ici, sous les termes &quot;opinion droite&quot; et &quot;science&quot;). Platon montre qu&#x27;une opinion, même vraie, n&#x27;est pas un savoir.</li></ul><ul id="1d6b2280-a891-80e2-b633-c7e253687703" class="bulleted-list"><li style="list-style-type:disc">Le critère de distinction est la stabilité, liée à la justification. L&#x27;opinion vraie est instable, le savoir est stable. Cela renvoie au repère <strong>Contingent / Nécessaire</strong> : l&#x27;opinion vraie est vraie de manière contingente (par hasard), tandis que le savoir vise une forme de nécessité (lien logique, connaissance des causes).</li></ul><ul id="1d6b2280-a891-8082-b85b-e90866fcd164" class="bulleted-list"><li style="list-style-type:disc">Le passage de l&#x27;opinion au savoir se fait par un &quot;raisonnement qui en donne la cause&quot;, un &quot;lien&quot;. On peut utiliser le repère <strong>Médiat / Immédiat</strong> : l&#x27;opinion vraie peut sembler immédiate, mais le savoir est médiat, construit par ce lien rationnel.</li></ul><ul id="1d6b2280-a891-80e5-b710-e69bbb899264" class="bulleted-list"><li style="list-style-type:disc">Le repère <strong>Vrai / Probable / Certain</strong> est aussi pertinent. L&#x27;opinion droite est vraie, mais elle manque de certitude fondée. La science vise une certitude justifiée par le &quot;raisonnement causal&quot;.</li></ul><h1 id="1d6b2280-a891-805d-843c-e407e47e6343" class=""><strong>Exemple 5 : Aristote - Les Types d&#x27;Amitié</strong></h1><blockquote id="1d6b2280-a891-8076-a18a-d88e2c081d79" class="">Il y a, semble-t-il, trois espèces d&#x27;amitié [...]. Ceux dont l&#x27;amitié repose sur l&#x27;utilité ne s&#x27;aiment pas l&#x27;un l&#x27;autre pour eux-mêmes, mais en tant qu&#x27;il y a quelque bien qu&#x27;ils retirent l&#x27;un de l&#x27;autre. Pareillement aussi pour ceux dont l&#x27;amitié repose sur le plaisir [...]. Ces amitiés sont donc accidentelles [...]. L&#x27;amitié parfaite est celle des hommes qui sont bons et semblables en vertu ; car ceux-là se souhaitent pareillement du bien les uns aux autres en tant qu&#x27;ils sont bons, et ils sont bons en eux-mêmes.<br/><br/>Aristote, Éthique à Nicomaque, Livre VIII (adapté)<br/></blockquote><h2 id="1d6b2280-a891-80bc-a86b-c1f2d0412e6a" class=""><strong>Analyse utilisant les repères:</strong></h2><ul id="1d6b2280-a891-8037-8e9e-eeb8391449c9" class="bulleted-list"><li style="list-style-type:disc">Aristote utilise ici la distinction <strong>Essentiel / Accidentel</strong> pour différencier les types d&#x27;amitié. Les amitiés fondées sur l&#x27;utilité ou le plaisir sont &quot;accidentelles&quot; car elles ne reposent pas sur ce que les amis sont &quot;en eux-mêmes&quot; (leur vertu), mais sur des bénéfices ou agréments extérieurs et changeants. L&#x27;amitié parfaite, elle, repose sur l&#x27;essence même des amis (leur bonté).</li></ul><ul id="1d6b2280-a891-8059-be34-e7b55656b3b0" class="bulleted-list"><li style="list-style-type:disc">Le repère <strong>Analyse / Synthèse</strong> décrit la méthode d&#x27;Aristote : il analyse le concept général d&#x27;amitié en le décomposant en trois espèces distinctes selon un critère (le fondement de l&#x27;affection).</li></ul><ul id="1d6b2280-a891-805c-a401-c28dd2a09808" class="bulleted-list"><li style="list-style-type:disc">On peut aussi voir une application de <strong>Fin / Cause / Principe</strong>. La fin visée dans les amitiés accidentelles est l&#x27;utilité ou le plaisir (causes externes de l&#x27;amitié), tandis que la fin de l&#x27;amitié parfaite est l&#x27;amitié elle-même, fondée sur le principe de la vertu partagée.</li></ul><h1 id="1d6b2280-a891-8045-92b1-f1ff5fd35045" class=""><strong>Exemple 6 : Spinoza - L&#x27;Illusion de la Liberté</strong></h1><blockquote id="1d6b2280-a891-80de-92fd-f5a1aa6867ab" class="">Telle est cette liberté humaine que tous se vantent de posséder et qui consiste en cela seul que les hommes sont conscients de leurs désirs et ignorants des causes qui les déterminent. Un enfant croit librement appéter le lait, un jeune garçon irrité vouloir la vengeance [...]. De même un délirant, un bavard [...] croient agir par un libre décret de l&#x27;âme, et non se laisser contraindre.<br/><br/>Spinoza, Éthique III, scolie de la proposition 2<br/></blockquote><h2 id="1d6b2280-a891-80bb-907c-fc0eec773384" class=""><strong>Analyse utilisant les repères:</strong></h2><ul id="1d6b2280-a891-80d5-bb16-ca363833e04a" class="bulleted-list"><li style="list-style-type:disc">Le texte s&#x27;articule autour de l&#x27;opposition entre la croyance en la liberté et la réalité du déterminisme, mobilisant ainsi <strong>Croire / Savoir</strong>. Les hommes croient savoir qu&#x27;ils sont libres, mais selon Spinoza, ils ne savent pas (ignorent) les causes qui les déterminent réellement.</li></ul><ul id="1d6b2280-a891-80a8-9d55-ede97a9de771" class="bulleted-list"><li style="list-style-type:disc">La distinction <strong>Cause / Fin</strong> est pertinente. Les hommes sont conscients de leurs désirs (qui peuvent apparaître comme des fins visées), mais ignorent les causes nécessaires qui produisent ces désirs.</li></ul><ul id="1d6b2280-a891-80ba-9159-f1f4a127b152" class="bulleted-list"><li style="list-style-type:disc">Le repère <strong>Contingent / Nécessaire</strong> est fondamental pour Spinoza. Ce que les hommes croient être des choix libres (contingents) sont en réalité les effets de causes nécessaires qu&#x27;ils ignorent.</li></ul><ul id="1d6b2280-a891-8090-8aa5-c2d7f3615b13" class="bulleted-list"><li style="list-style-type:disc">Les exemples (enfant, jeune garçon, ivrogne...) servent ici à illustrer (<strong>Exemple / Preuve</strong>) l&#x27;idée générale que la conscience du désir ne prouve pas la liberté de la volonté.</li></ul><h1 id="1d6b2280-a891-8066-829f-d7d2175273c7" class=""><strong>Exemple 7 : Nietzsche - La Vérité comme Illusion</strong></h1><blockquote id="1d6b2280-a891-8061-b3b7-de54f070dbb0" class="">&quot;Qu&#x27;est-ce donc que la vérité ? Une multitude mouvante de métaphores, de métonymies, d&#x27;anthropomorphismes, bref, une somme de relations humaines qui ont été poétiquement et rhétoriquement haussées, transposées, ornées, et qui, après un long usage, semblent à un peuple fermes, canoniques et contraignantes : les vérités sont des illusions dont on a oublié qu&#x27;elles le sont [...].&quot;<br/><br/>Nietzsche, Le Livre du philosophe (fragment posthume)<br/></blockquote><h2 id="1d6b2280-a891-809a-b8a2-f73169e3bbee" class=""><strong>Analyse utilisant les repères:</strong></h2><ul id="1d6b2280-a891-803c-8d26-ea2c1e357796" class="bulleted-list"><li style="list-style-type:disc">Nietzsche utilise explicitement le repère <strong>Concept / Image / Métaphore</strong> pour redéfinir la vérité. Il la décrit non comme un concept objectif, mais comme un ensemble de figures de style (métaphores, métonymies) et de projections humaines (&quot;anthropomorphismes&quot;).</li></ul><ul id="1d6b2280-a891-80e7-ab78-f043627f6233" class="bulleted-list"><li style="list-style-type:disc">Il oppose la perception commune de la vérité comme &quot;ferme, canonique et contraignante&quot; (une forme d&#x27;<strong>Absolu</strong> ou de <strong>Nécessaire</strong> socialement construit) à son origine <strong>Relative</strong> aux &quot;relations humaines&quot; et à l&#x27;usage.</li></ul><ul id="1d6b2280-a891-8095-9728-e572d83c0ef5" class="bulleted-list"><li style="list-style-type:disc">La thèse provocatrice &quot;les vérités sont des illusions&quot; joue sur l&#x27;opposition <strong>Vrai / Probable / Certain</strong> (ou plutôt Vrai / Illusion). Elle remet en cause la distinction même, suggérant que ce que nous tenons pour vrai n&#x27;est qu&#x27;une illusion dont la nature illusoire a été oubliée.</li></ul><ul id="1d6b2280-a891-8070-abc9-dc8008c9176d" class="bulleted-list"><li style="list-style-type:disc">Le passage de l&#x27;origine &quot;poétique et rhétorique&quot; à la vérité &quot;contraignante&quot; illustre une tension entre l&#x27;<strong>Origine</strong> (construction humaine, historique) et le <strong>Fondement</strong> apparent (la vérité semble fondée en soi, alors qu&#x27;elle ne l&#x27;est pas selon Nietzsche).</li></ul><h1 id="1d6b2280-a891-806c-a2f6-f10499c97a2c" class=""><strong>Exemple 8 : Arendt - Le Pardon et l&#x27;Action</strong></h1><blockquote id="1d6b2280-a891-802f-960c-d917eae6ae6f" class="">Le pardon est la seule réaction qui ne se borne pas à réagir mais qui agisse de manière nouvelle et inattendue [...]. Pardonner est la clé de l&#x27;action et de la liberté ; seuls ceux qui savent pardonner peuvent être libres. En effet, sans être pardonné, libéré des conséquences de ce que nous avons fait, notre capacité d&#x27;agir serait comme enfermée dans un seul acte dont nous ne pourrions jamais nous relever ; nous resterions pour toujours les victimes de ses conséquences.<br/><br/>Hannah Arendt, Condition de l&#x27;homme moderne (adapté)<br/></blockquote><h2 id="1d6b2280-a891-8040-bfbd-cd32450c82a4" class=""><strong>Analyse utilisant les repères:</strong></h2><ul id="1d6b2280-a891-80ec-a9fd-c754a1c233ce" class="bulleted-list"><li style="list-style-type:disc">Arendt oppose le pardon comme &quot;action nouvelle et inattendue&quot; à la simple &quot;réaction&quot;. Cela mobilise la distinction entre l&#x27;<strong>En acte / En puissance</strong> : l&#x27;action (dont le pardon est une forme éminente) actualise une nouvelle possibilité, brise la chaîne des réactions passées.</li></ul><ul id="1d6b2280-a891-80e4-8c1a-e94d65841f81" class="bulleted-list"><li style="list-style-type:disc">Le texte explore la relation entre le passé et l&#x27;avenir. Sans pardon, nous sommes déterminés par les conséquences de nos actes passés (une forme de <strong>Nécessaire</strong>). Le pardon introduit une rupture, une forme de <strong>Contingence</strong> qui rouvre l&#x27;avenir et rend l&#x27;action libre possible.</li></ul><ul id="1d6b2280-a891-8031-813d-c4d46383e17f" class="bulleted-list"><li style="list-style-type:disc">L&#x27;idée d&#x27;être &quot;libéré des conséquences de ce que nous avons fait&quot; peut être analysée avec <strong>Origine / Fondement</strong>. Le pardon ne nie pas l&#x27;origine (l&#x27;acte passé), mais il en change le poids, le fondement de l&#x27;action future n&#x27;est plus l&#x27;acte passé mais la possibilité d&#x27;un nouveau commencement.</li></ul><ul id="1d6b2280-a891-8097-84dd-dd08f45d015e" class="bulleted-list"><li style="list-style-type:disc">La liberté ici n&#x27;est pas une simple <strong>Théorie</strong>, mais une <strong>Pratique</strong> rendue possible par le pardon, qui nous libère du poids du passé pour agir à nouveau.</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-80a0-9794-d1055af27672"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h3 id="1d6b2280-a891-801d-982c-e96a35f69f64" class=""><strong>Comment Utiliser les Repères dans Votre Analyse</strong></h3><p id="1d6b2280-a891-80c0-b21d-f9d8c4b95583" class="">Lorsque vous expliquez un texte, gardez ces repères à l&#x27;esprit. Demandez-vous : l&#x27;auteur fait-il une distinction importante ? Oppose-t-il deux notions ? Cherche-t-il une origine ou un fondement ? Son raisonnement est-il formel ou matériel ? Utiliser explicitement le vocabulaire des repères dans votre explication (&quot;L&#x27;auteur distingue ici l&#x27;essentiel de l&#x27;accidentel...&quot;, &quot;On voit ici l&#x27;opposition entre le légal et le légitime...&quot;) montre votre maîtrise des outils d&#x27;analyse philosophique et enrichit votre commentaire.</p></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

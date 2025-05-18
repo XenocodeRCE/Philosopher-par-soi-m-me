@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>L&#x27;analyse des concepts et arguments</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-80ae-98b9-e0a68a4784af" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1553830591-42e4fd7035ec?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><h1 class="page-title">L&#x27;analyse des concepts et arguments</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d4b2280-a891-8034-be55-f616d3e57502" class=""><em>Après avoir repéré la structure globale du texte (</em><em><a href="Les%20e%CC%81tapes%20de%20l&#x27;explication%20de%20texte%201c9b2280a8918082ab0ce0ea7ce7b879.html">Les étapes de l&#x27;explication de texte</a></em><em>), il faut maintenant entrer dans le détail de son contenu. </em></p><p id="1d4b2280-a891-8002-b49e-eb4e7a628d9d" class=""><em>Cette étape, réalisée principalement au brouillon, consiste à &quot;désosser&quot; le texte pour comprendre précisément comment l&#x27;auteur construit sa pensée. Il s&#x27;agit d&#x27;analyser les outils qu&#x27;il utilise : les concepts, les arguments et les exemples.</em></p><h1 id="1d4b2280-a891-8048-bf2a-fd358f84086b" class=""><strong>1. Analyser les Concepts Clés</strong></h1><p id="1d4b2280-a891-8068-a66e-d32c11da2b5b" class="">Les concepts sont les briques fondamentales de la pensée philosophique. Il est crucial de comprendre comment l&#x27;auteur les utilise.</p><ul id="1d4b2280-a891-8057-be38-eb492b4a330e" class="bulleted-list"><li style="list-style-type:disc"><strong>Identifier les concepts :</strong> Repérez les termes abstraits importants (liberté, devoir, conscience, etc.), ceux qui sont répétés, ceux qui semblent techniques, ou ceux que l&#x27;auteur prend la peine de définir ou de distinguer.</li></ul><ul id="1d4b2280-a891-804b-b181-cffb80eeb98e" class="bulleted-list"><li style="list-style-type:disc"><strong>Définir dans le contexte :</strong> Ne vous contentez pas d&#x27;une définition de dictionnaire. Cherchez le sens précis que le mot prend <strong>sous la plume de cet auteur, dans ce texte précis</strong>. Comment le définit-il explicitement ? Si ce n&#x27;est pas explicite, quel sens se dégage de l&#x27;usage qu&#x27;il en fait ?</li></ul><ul id="1d4b2280-a891-8058-ad14-e9aadf59296e" class="bulleted-list"><li style="list-style-type:disc"><strong>Repérer les distinctions conceptuelles :</strong> Les philosophes procèdent souvent en distinguant des notions proches pour affiner leur pensée (ex : distinguer la liberté de la licence, le légal du légitime, croire de savoir). Identifier ces distinctions est essentiel pour comprendre la thèse.</li></ul><ul id="1d4b2280-a891-80c2-8fc3-fab22d15a603" class="bulleted-list"><li style="list-style-type:disc"><strong>Analyser les oppositions :</strong> Notez les concepts qui sont opposés par l&#x27;auteur (ex : raison vs passion, nature vs culture). Ces oppositions structurent généralement l&#x27;argumentation.</li></ul><ul id="1d4b2280-a891-808e-a753-df86b4bb363f" class="bulleted-list"><li style="list-style-type:disc"><strong>Exemple :</strong> Si le texte parle de &quot;bonheur&quot;, s&#x27;agit-il du plaisir immédiat, de la satisfaction durable, de la vertu, de la tranquillité de l&#x27;âme ? Le sens précis est à trouver dans le texte.</li></ul><h1 id="1d4b2280-a891-80fb-a1e4-ede38596d16e" class=""><strong>2. Analyser les Arguments</strong></h1><p id="1d4b2280-a891-80db-923c-c3150c7d1c31" class="">L&#x27;auteur ne se contente pas d&#x27;affirmer sa thèse, il cherche à la justifier par des arguments. Il faut comprendre comment il construit ses raisonnements.</p><ul id="1d4b2280-a891-802d-ab81-decf4e5ced99" class="bulleted-list"><li style="list-style-type:disc"><strong>Identifier la structure d&#x27;un argument :</strong> Un argument est habituellement composé de <strong>prémisses</strong> (les idées de départ, les faits ou principes admis) et d&#x27;une <strong>conclusion</strong> (l&#x27;idée que l&#x27;auteur veut établir à partir des prémisses). Essayez de repérer ce schéma : &quot;Si [prémisse 1] et [prémisse 2], alors [conclusion]&quot;.</li></ul><ul id="1d4b2280-a891-80f7-a0e7-e2e400640f0b" class="bulleted-list"><li style="list-style-type:disc"><strong>Repérer les liens logiques :</strong> Les connecteurs logiques (car, donc, puisque, or, ainsi, par conséquent...) sont des indicateurs précieux de l&#x27;articulation des arguments. Soulignez-les et comprenez leur fonction (cause, conséquence, opposition, addition...).</li></ul><ul id="1d4b2280-a891-801b-9a6a-d396ea1380ef" class="bulleted-list"><li style="list-style-type:disc"><strong>Comprendre le type de raisonnement (sans technicité excessive) :</strong> L&#x27;auteur procède-t-il par déduction (partir d&#x27;une règle générale pour aboutir à un cas particulier) ? Par induction (partir de cas particuliers pour établir une règle générale) ? Par analogie (comparer deux situations) ? Par réfutation (montrer qu&#x27;une thèse adverse est fausse) ?</li></ul><ul id="1d4b2280-a891-8079-b306-f7dd6b576752" class="bulleted-list"><li style="list-style-type:disc"><strong>Évaluer la force du lien :</strong> Le lien entre les prémisses et la conclusion vous semble-t-il solide ? L&#x27;argument est-il convaincant dans le cadre de la pensée de l&#x27;auteur ? (Attention : il ne s&#x27;agit pas encore de donner votre avis personnel, mais de comprendre la logique interne du texte).</li></ul><ul id="1d4b2280-a891-80b4-8e04-ce5ba5d763c0" class="bulleted-list"><li style="list-style-type:disc"><strong>Exemple :</strong> Dans le texte de Rousseau (Partie 5, Ex. 22), l&#x27;argument est : Prémisse 1 : La liberté implique l&#x27;obéissance aux lois (et non aux hommes). Prémisse 2 : Un peuple libre ne voit pas l&#x27;homme, mais l&#x27;organe de la loi dans celui qui gouverne. Conclusion : La liberté n&#x27;existe que là où règnent les lois.</li></ul><h1 id="1d4b2280-a891-806c-8b10-c54bb0d03b53" class=""><strong>3. Analyser les Exemples et Illustrations</strong></h1><p id="1d4b2280-a891-8062-b119-cf7ee3f8b07e" class="">Les auteurs utilisent souvent des exemples, des images ou des métaphores pour appuyer ou éclaircir leur propos.</p><ul id="1d4b2280-a891-8082-91ca-da4255386945" class="bulleted-list"><li style="list-style-type:disc"><strong>Identifier les exemples :</strong> Repérez les moments où l&#x27;auteur fait référence à une situation concrète, un fait historique, une œuvre d&#x27;art, une expérience vécue...</li></ul><ul id="1d4b2280-a891-80e4-953c-f1104be4ea5a" class="bulleted-list"><li style="list-style-type:disc"><strong>Comprendre leur fonction :</strong> Pourquoi cet exemple est-il utilisé ici ? Sert-il à <strong>illustrer</strong> une idée abstraite pour la rendre plus compréhensible ? Sert-il de <strong>preuve</strong> (ou d&#x27;indice) en faveur de l&#x27;argument ? Sert-il de <strong>contre-exemple</strong> pour réfuter une idée ? A-t-il une portée <strong>analogique</strong> (comparer deux choses pour en éclairer une) ?</li></ul><ul id="1d4b2280-a891-80bc-87e7-e6b9d4719a2d" class="bulleted-list"><li style="list-style-type:disc"><strong>Analyser la pertinence et la portée :</strong> L&#x27;exemple est-il bien choisi ? Est-il suffisant pour justifier l&#x27;idée générale ? Quelles sont ses limites ? (Voir Exercice 13, Partie 3 des exercices).</li></ul><ul id="1d4b2280-a891-8099-91d0-d7ad16bfe36f" class="bulleted-list"><li style="list-style-type:disc"><strong>Décrypter les images et métaphores :</strong> Si l&#x27;auteur utilise une image (ex: &quot;l&#x27;esprit est une table rase&quot;), quel est son sens ? Quelle idée cherche-t-il à faire passer par cette analogie ?</li></ul><h1 id="1d4b2280-a891-8099-ad29-c5b4d91afb66" class=""><strong>Conseil Pratique : Le Tableau d&#x27;Analyse</strong></h1><p id="1d4b2280-a891-80ad-9871-e61164838f24" class="">Au brouillon, vous pouvez utiliser un tableau à plusieurs colonnes pour organiser votre analyse détaillée. Par exemple : </p><table id="1d4b2280-a891-8057-b3a7-e40c79ef88f1" class="simple-table"><tbody><tr id="1d4b2280-a891-806a-af79-e1a0bca224a2"><td id="dyh_" class="">Parties du texte (lignes)</td><td id="gWN&gt;" class="">Concepts et définitions</td><td id="nREB" class="" style="width:180px">Arguments (Prémisses/Conclu)</td><td id="=w\q" class="">Exemples</td><td id="mQ=L" class="">Remarques et question</td></tr><tr id="1d4b2280-a891-8091-9561-cef3f789ac4f"><td id="dyh_" class=""></td><td id="gWN&gt;" class=""></td><td id="nREB" class="" style="width:180px"></td><td id="=w\q" class=""></td><td id="mQ=L" class=""></td></tr><tr id="1d4b2280-a891-8042-ab69-cecb1d290937"><td id="dyh_" class=""></td><td id="gWN&gt;" class=""></td><td id="nREB" class="" style="width:180px"></td><td id="=w\q" class=""></td><td id="mQ=L" class=""></td></tr></tbody></table><p id="1d4b2280-a891-803e-8eb1-f2670f30567a" class="">Cela vous aidera à rassembler vos idées de manière structurée avant de rédiger l&#x27;explication.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d4b2280-a891-8033-95f8-e21dffaab518"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1d4b2280-a891-80c8-959f-de747c303ccf" class="">N&#x27;oubliez pas : cette phase d&#x27;analyse est un travail d&#x27;enquête minutieuse sur le texte. Plus elle sera approfondie au brouillon, plus votre explication rédigée sera claire, précise et pertinente.</p></div></figure><p id="1d4b2280-a891-8078-95cc-e90f88e9ff69" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

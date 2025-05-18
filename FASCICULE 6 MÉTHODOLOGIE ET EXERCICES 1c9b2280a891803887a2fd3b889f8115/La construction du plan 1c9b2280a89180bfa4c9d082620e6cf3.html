@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>La construction du plan</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-80bf-a4c9-d082620e6cf3" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1496112576525-8b31e9ce4872?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 28.979999999999993%"/><h1 class="page-title">La construction du plan</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d5b2280-a891-803d-9295-c045f57880db" class=""><em>Une fois le sujet analysé et la problématique clairement formulée, il faut organiser votre réflexion en un plan structuré. Le plan est la réponse organisée que vous allez apporter au problème soulevé. Il doit être logique, progressif et équilibré. C&#x27;est la colonne vertébrale de votre devoir.</em></p><h3 id="1d5b2280-a891-80c5-af6e-dc191483c484" class=""><strong>1. Rôle et Qualités d&#x27;un Bon Plan</strong></h3><ul id="1d5b2280-a891-8057-9d04-fd55bcbcc127" class="bulleted-list"><li style="list-style-type:disc"><strong>Répondre à la problématique :</strong> Chaque partie du plan doit contribuer à répondre aux questions posées dans votre problématique.</li></ul><ul id="1d5b2280-a891-8064-8259-cee84c40d478" class="bulleted-list"><li style="list-style-type:disc"><strong>Être progressif :</strong> Le plan doit montrer une avancée dans la réflexion. On ne juxtapose pas des idées sans lien ; on chemine d&#x27;une idée à une autre, en approfondissant l&#x27;analyse ou en dépassant des contradictions.</li></ul><ul id="1d5b2280-a891-804e-b56d-d47d978882b8" class="bulleted-list"><li style="list-style-type:disc"><strong>Être équilibré :</strong> Les grandes parties (généralement 2 ou 3) doivent avoir une importance et une longueur à peu près équivalentes.</li></ul><ul id="1d5b2280-a891-8003-84d9-f0b143255f23" class="bulleted-list"><li style="list-style-type:disc"><strong>Être cohérent :</strong> Les arguments à l&#x27;intérieur de chaque partie doivent être logiquement liés à l&#x27;idée directrice de la partie. Les différentes parties doivent s&#x27;articuler logiquement entre elles (grâce aux transitions).</li></ul><ul id="1d5b2280-a891-8097-955c-d543a49d5ba6" class="bulleted-list"><li style="list-style-type:disc"><strong>Couvrir le sujet :</strong> Le plan doit permettre d&#x27;explorer les différents aspects importants du sujet, sans en négliger.</li></ul><h3 id="1d5b2280-a891-80eb-8119-d70f8340170d" class=""><strong>2. Les Types de Plans Courants</strong></h3><p id="1d5b2280-a891-805f-964d-e066c963d017" class="">Il n&#x27;y a pas de plan unique ou parfait, mais certains types de plans sont fréquemment utilisés en philosophie, en fonction de la nature du sujet et de la problématique :</p><ul id="1d5b2280-a891-80a5-88e0-f92724b1f6e8" class="bulleted-list"><li style="list-style-type:disc"><strong>Le Plan Dialectique (Thèse - Antithèse - Synthèse) :</strong><ul id="1d5b2280-a891-80a9-9eac-c43a4ef74390" class="bulleted-list"><li style="list-style-type:circle"><strong>Quand l&#x27;utiliser ?</strong> Idéal pour les sujets invitant à une réponse nuancée (oui/non, peut-on..., faut-il...), qui révèlent une opposition forte ou un paradoxe.</li></ul><ul id="1d5b2280-a891-8031-a869-e508a4b269bc" class="bulleted-list"><li style="list-style-type:circle"><strong>Structure :</strong><ul id="1d5b2280-a891-80b4-8a19-cf4b0f0ea76b" class="bulleted-list"><li style="list-style-type:square"><strong>I. Thèse :</strong> On explore et argumente une première réponse possible à la question (le &quot;oui&quot; ou le &quot;non&quot; apparent, l&#x27;opinion commune...).</li></ul><ul id="1d5b2280-a891-804a-95c3-c2a0279531b8" class="bulleted-list"><li style="list-style-type:square"><strong>II. Antithèse :</strong> On montre les limites, les insuffisances ou les contradictions de la première partie, et on développe la position opposée ou un autre aspect du problème. Ce n&#x27;est pas une simple négation, mais une critique argumentée.</li></ul><ul id="1d5b2280-a891-80ae-828e-fea2dec774d7" class="bulleted-list"><li style="list-style-type:square"><strong>III. Synthèse (ou Dépassement) :</strong> On cherche à dépasser l&#x27;opposition entre la thèse et l&#x27;antithèse. Il ne s&#x27;agit pas d&#x27;un compromis mou, mais de formuler une position plus complexe et nuancée qui intègre les éléments valides des deux premières parties, souvent en redéfinissant un terme clé ou en déplaçant le problème.</li></ul></li></ul><ul id="1d5b2280-a891-8099-b756-f350bc9c1965" class="bulleted-list"><li style="list-style-type:circle"><strong>Exemple (Sujet : </strong><em><code><strong>Peut-on se mentir à soi-même ?</strong></code></em><strong>) :</strong> I. Oui, l&#x27;idée de mensonge à soi-même semble décrire des expériences courantes (se voiler la face...). II. Mais, logiquement, comment être à la fois trompeur et trompé (objection de la conscience transparente) ? III. Dépassement : La notion de &quot;mauvaise foi&quot; (Sartre) ou d&#x27;inconscient permet de penser cette possibilité complexe sans contradiction logique stricte.</li></ul></li></ul><ul id="1d5b2280-a891-80c6-bcd6-dd1311716d5d" class="bulleted-list"><li style="list-style-type:disc"><strong>Le Plan Thématique (ou Analytique / Progressif) :</strong><ul id="1d5b2280-a891-80b2-bb64-ec906dee4ec2" class="bulleted-list"><li style="list-style-type:circle"><strong>Quand l&#x27;utiliser ?</strong> Pertinent pour les sujets demandant une définition (&quot;Qu&#x27;est-ce que...?&quot;), une exploration des causes (&quot;Pourquoi...?&quot;), des modalités (&quot;Comment...?&quot;), ou l&#x27;analyse d&#x27;une notion complexe.</li></ul><ul id="1d5b2280-a891-8059-a17e-e8290cf5c24f" class="bulleted-list"><li style="list-style-type:circle"><strong>Structure :</strong> Le plan progresse en examinant différents aspects, dimensions ou étapes de la compréhension du problème. Chaque partie explore un &quot;thème&quot; lié au sujet.</li></ul><ul id="1d5b2280-a891-80a8-adfc-daa247dcb749" class="bulleted-list"><li style="list-style-type:circle"><strong>Progression :</strong> L&#x27;ordre des parties doit être logique : on peut aller du plus évident au plus complexe, du particulier au général, d&#x27;une définition à ses implications, etc.</li></ul><ul id="1d5b2280-a891-8075-8bfe-c149a2003be0" class="bulleted-list"><li style="list-style-type:circle"><strong>Exemple (Sujet : </strong><em><code><strong>Qu&#x27;est-ce que prouver ?</strong></code></em><strong>) :</strong> I. Prouver dans les sciences formelles (maths, logique) : la démonstration déductive. II. Prouver dans les sciences expérimentales : le rôle de l&#x27;observation, de l&#x27;expérimentation, de l&#x27;induction. III. Les limites de la preuve : Peut-on tout prouver ? Le domaine de la croyance, de l&#x27;intime conviction, de la persuasion.</li></ul></li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1d5b2280-a891-8094-8f0b-d530fc3319ad" class="code"><code class="language-JavaScript">Note : Parfois, un plan peut combiner des éléments des deux types.</code></pre><h3 id="1d5b2280-a891-80e4-b61c-f2bcac0b7d26" class=""><strong>3. Comment Construire Concrètement Son Plan ?</strong></h3><p id="1d5b2280-a891-808e-ade2-d81e1a83fa1a" class="">
+</p><ul id="1d5b2280-a891-8078-af9d-dc3e1c025c4d" class="bulleted-list"><li style="list-style-type:disc"><strong>Partir de la problématique :</strong> Le plan doit découler directement des questions posées dans la problématique. Chaque grande partie doit correspondre à une étape de la réponse au problème.</li></ul><ul id="1d5b2280-a891-80af-95bc-de442fe70e4f" class="bulleted-list"><li style="list-style-type:disc"><strong>Brainstorming et Organisation :</strong> Rassemblez au brouillon toutes les idées, arguments, exemples, références qui vous viennent à l&#x27;esprit suite à l&#x27;analyse et à la problématisation.</li></ul><ul id="1d5b2280-a891-80f4-af96-d815752389c0" class="bulleted-list"><li style="list-style-type:disc"><strong>Regrouper les idées :</strong> Organisez ces éléments en 2 ou 3 grands axes cohérents qui constitueront vos parties principales. Donnez un titre (même provisoire) à chaque partie pour clarifier son idée directrice.</li></ul><ul id="1d5b2280-a891-8049-b1cb-d11cc9f73710" class="bulleted-list"><li style="list-style-type:disc"><strong>Détailler chaque partie :</strong> Pour chaque grande partie, prévoyez 2 ou 3 sous-parties correspondant aux arguments principaux que vous allez développer. Pour chaque argument, pensez à un exemple ou une référence pour l&#x27;appuyer.</li></ul><ul id="1d5b2280-a891-8033-82a1-eb384a6fee42" class="bulleted-list"><li style="list-style-type:disc"><strong>Vérifier la progression :</strong> Assurez-vous que l&#x27;enchaînement des parties et des arguments est logique et qu&#x27;il y a une progression dans la réflexion. La troisième partie (si elle existe) doit apporter un éclairage décisif ou une solution nuancée au problème.</li></ul><ul id="1d5b2280-a891-807e-af9b-f7c101cbd1a6" class="bulleted-list"><li style="list-style-type:disc"><strong>Prévoir les transitions :</strong> Pensez brièvement à la manière dont vous allez passer d&#x27;une partie à l&#x27;autre</li></ul><h3 id="1d5b2280-a891-8089-8d3c-c878488f115b" class=""><strong>4. L&#x27;Importance du Plan Détaillé au Brouillon</strong></h3><p id="1d5b2280-a891-80bd-87ac-cac3d4c12ae1" class="">Avant de commencer à rédiger, il est indispensable d&#x27;avoir au brouillon un plan très détaillé :</p><ul id="1d5b2280-a891-8087-bdf6-edbec94cf4bf" class="bulleted-list"><li style="list-style-type:disc"><strong>Titres clairs</strong> pour chaque grande partie (I, II, III) et sous-partie (A, B, C).</li></ul><ul id="1d5b2280-a891-8030-997c-e1e3a9ba47bf" class="bulleted-list"><li style="list-style-type:disc">L&#x27;<strong>idée précise</strong> de chaque argument.</li></ul><ul id="1d5b2280-a891-808c-9b53-c395e62eaa3a" class="bulleted-list"><li style="list-style-type:disc">Les <strong>exemples</strong> et/ou <strong>références philosophiques</strong> que vous utiliserez pour chaque argument.</li></ul><ul id="1d5b2280-a891-80ac-a64f-c2a6ebd816f9" class="bulleted-list"><li style="list-style-type:disc">Éventuellement, quelques mots sur les <strong>transitions</strong>.</li></ul><p id="1d5b2280-a891-8001-a602-ee261b55510f" class="">Ce plan détaillé est votre guide pour la rédaction. Il vous évite de vous perdre, assure la cohérence de votre propos et vous permet de gérer votre temps plus efficacement.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d5b2280-a891-80db-8e88-c805e5db3e06"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h3 id="1d5b2280-a891-8057-b6e8-f385256e601c" class=""><strong>Le Plan : Une Structure Souple mais Nécessaire</strong></h3><p id="1d5b2280-a891-805c-ac62-fd79401e9abb" class="">Le plan n&#x27;est pas un carcan rigide, il peut légèrement évoluer pendant la rédaction si une idée nouvelle et pertinente émerge. Cependant, partir sans plan détaillé est le meilleur moyen de produire une copie confuse, répétitive ou décousue. Un bon plan est le signe d&#x27;une pensée organisée et maîtrisée, ce qui est essentiel en philosophie.</p></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

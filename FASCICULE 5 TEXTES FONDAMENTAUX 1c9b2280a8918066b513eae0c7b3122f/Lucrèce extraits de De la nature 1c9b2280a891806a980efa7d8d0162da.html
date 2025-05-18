@@ -1,0 +1,687 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Lucrèce : extraits de De la nature</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-806a-980e-fa7d8d0162da" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1603683072984-50fcbfbbe3a0?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 64.48%"/><h1 class="page-title"><strong>Lucrèce</strong> : extraits de <em>De la nature</em></h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d6b2280-a891-804a-a78d-e6540fbc0894" class="">Lucrèce (en latin Titus Lucretius Carus, vers 98-55 av. J.-C.) est un poète et philosophe romain, disciple fervent d&#x27;Épicure. Son œuvre majeure, <em>De rerum natura</em> (De la nature des choses), est un long poème didactique en six livres composé en hexamètres dactyliques, exposant la physique et l&#x27;éthique épicuriennes. Ce texte remarquable unit la précision philosophique à une puissance poétique exceptionnelle. Lucrèce y développe une vision matérialiste du monde, fondée sur la théorie atomiste, et combat les superstitions religieuses qui, selon lui, sont source d&#x27;angoisse et d&#x27;infelicité. Le poème fut redécouvert à la Renaissance et exerça une influence considérable sur le développement de la pensée moderne, notamment dans sa critique de la religion et son matérialisme. Nous présentons ici des extraits significatifs des différents livres de ce chef-d&#x27;œuvre qui constitue l&#x27;une des plus brillantes expositions de la philosophie épicurienne.</p><h1 id="1d6b2280-a891-8057-a831-c4d725f2bff3" class=""><strong>Contexte historique et philosophique</strong></h1><p id="1d6b2280-a891-8066-88ea-cbd81ff5a94c" class="">Lucrèce vit à une époque troublée de l&#x27;histoire romaine, marquée par les guerres civiles qui voient la fin de la République. La date exacte de sa naissance et les détails de sa vie nous sont peu connus. La tradition, fondée sur un passage de saint Jérôme, veut qu&#x27;il soit mort fou après avoir absorbé un philtre d&#x27;amour, mais cette allégation est probablement une invention visant à discréditer sa philosophie matérialiste. <em>De rerum natura</em> s&#x27;inscrit dans la tradition épicurienne, près de deux siècles après la mort du maître. Le poème vise à libérer les hommes de la crainte des dieux et de la mort en expliquant tous les phénomènes par des causes naturelles. En cela, il s&#x27;oppose non seulement aux croyances religieuses traditionnelles, mais aussi aux autres écoles philosophiques, notamment le stoïcisme, alors dominant à Rome. L&#x27;originalité de Lucrèce est d&#x27;avoir mis en vers latins une doctrine grecque réputée austère, lui conférant ainsi une puissance émotionnelle et une beauté formelle qui ont assuré sa transmission jusqu&#x27;à nous.</p><figure class="block-color-teal callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-80c4-847f-c6f9cea31819"><div style="font-size:1.5em"><span class="icon">✅</span></div><div style="width:100%"><h1 id="1d6b2280-a891-8048-a9d0-d6762ec3d3c1" class=""><strong>Les principes fondamentaux exposés par Lucrèce</strong></h1><ul id="1d6b2280-a891-807d-8678-eb2a5babdbe3" class="bulleted-list"><li style="list-style-type:disc"><strong>Matérialisme atomiste</strong> : tout est composé d&#x27;atomes et de vide</li></ul><ul id="1d6b2280-a891-80bb-8fb4-fa45f49fb25d" class="bulleted-list"><li style="list-style-type:disc"><strong>Conservation de la matière</strong> : rien ne vient de rien, rien ne retourne à rien</li></ul><ul id="1d6b2280-a891-800c-8c26-d2bef4ffb13a" class="bulleted-list"><li style="list-style-type:disc"><strong>Rejet du finalisme</strong> : la nature n&#x27;obéit à aucun dessein préétabli</li></ul><ul id="1d6b2280-a891-809c-816f-f8bcd575232c" class="bulleted-list"><li style="list-style-type:disc"><strong>Sensualisme</strong> : toute connaissance provient des sens</li></ul><ul id="1d6b2280-a891-80a4-b401-e9e020f779d0" class="bulleted-list"><li style="list-style-type:disc"><strong>Mortalité de l&#x27;âme</strong> : l&#x27;âme, matérielle, se dissout à la mort</li></ul><ul id="1d6b2280-a891-803d-9f35-dda867e446fd" class="bulleted-list"><li style="list-style-type:disc"><strong>Indifférence des dieux</strong> : les dieux existent mais ne s&#x27;occupent pas des affaires humaines</li></ul><ul id="1d6b2280-a891-80ca-834b-fb613df23456" class="bulleted-list"><li style="list-style-type:disc"><strong>Critique de la religion</strong> : les rites et croyances religieuses sont source d&#x27;angoisse</li></ul><ul id="1d6b2280-a891-8022-a10e-d94e437f3eed" class="bulleted-list"><li style="list-style-type:disc"><strong>Éthique hédoniste modérée</strong> : le plaisir consiste principalement en l&#x27;absence de douleur et de trouble</li></ul></div></figure><h1 id="1d6b2280-a891-8079-8782-d955e1327370" class="">Hymne à Vénus et éloge d&#x27;Épicure</h1><blockquote id="1d6b2280-a891-8004-9ccf-f87d0e7286aa" class=""><em>Mère des Énéades, plaisir des hommes et des dieux,<br/>Vénus nourricière, toi qui, sous les signes errants du ciel,<br/>peuples la mer porte-navires et les terres fertiles,<br/>puisque c&#x27;est grâce à toi que toute espèce vivante<br/>est conçue et, une fois sortie des ténèbres, voit la lumière du soleil ;<br/>devant toi, déesse, devant ton apparition, s&#x27;enfuient les vents,<br/>s&#x27;enfuient les nuages du ciel ; sous tes pas la terre industrieuse<br/>déploie ses doux tapis de fleurs, les flots marins te sourient<br/>et le ciel apaisé resplendit tout inondé de lumière.<br/>Car sitôt que s&#x27;est dévoilé l&#x27;aspect printanier du jour,<br/>sitôt que, désentravé, souffle le zéphyr fécondant,<br/>d&#x27;abord les oiseaux des airs te célèbrent, déesse,<br/>et ta venue, le cœur bouleversé par ta puissance.<br/>Puis les bêtes sauvages, les troupeaux bondissent sur les gras herbages,<br/>et traversent les fleuves rapides : ainsi prisonniers de ton charme,<br/>tous avidement te suivent où tu veux les entraîner.<br/>Enfin, par les mers et les monts et les fleuves impétueux,<br/>par les demeures feuillues des oiseaux et les plaines verdoyantes,<br/>à tous instillant au cœur la douce passion d&#x27;amour,<br/>tu fais en sorte que selon son espèce chacun perpétue son espèce.<br/>Puisque seule tu gouvernes la nature<br/>et que sans toi rien n&#x27;aborde aux rivages divins de la lumière,<br/>rien ne se fait de joyeux ni d&#x27;aimable,<br/>c&#x27;est ton aide que je sollicite pour écrire ces vers<br/>que j&#x27;entreprends sur la nature, à l&#x27;intention de mon ami,<br/>de Memmius, ce fils des Memmius que tu as voulu,<br/>en tout temps parer, déesse, de toutes les qualités.<br/>Aussi, déesse, donne à mes propos un charme éternel.<br/>Fais cependant que cessent sur les mers et sur la terre entière<br/>les cruels travaux de la guerre, plongés dans le sommeil.<br/>Car toi seule peux combler les mortels de la paix tranquille,<br/>puisque les cruels travaux de la guerre, c&#x27;est Mars,<br/>le dieu des armes qui les dirige, lui qui souvent se couche<br/>sur ton sein, vaincu par l&#x27;éternelle blessure d&#x27;amour ;<br/>ainsi renversé, la tête reposant sur ta poitrine sacrée,<br/>il repaît d&#x27;amour ses yeux avides fixés sur toi,<br/>et son souffle, quand il est couché, reste suspendu à tes lèvres.<br/>Tandis qu&#x27;il repose, déesse, sur ton corps sacré,<br/>penche-toi sur lui, et de ta bouche sainte<br/>verse-lui de douces paroles, demandant, illustre déesse,<br/>pour les Romains la paix tranquille.<br/><br/>Lucrèce, De la nature, I, 1-43, traduction José Kany-Turpin<br/></em></blockquote><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8044-8d15-c5deaa4902bb"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1d6b2280-a891-8028-a4a9-ceef07d268d4" class=""><strong>Commentaire</strong></p><p id="1d6b2280-a891-802f-910c-cc46f703f4bf" class="">Cette invocation à Vénus, qui ouvre le poème, peut sembler paradoxale dans une œuvre qui critique la religion traditionnelle. Toutefois, elle s&#x27;explique de plusieurs façons. D&#x27;abord, Vénus symbolise ici la force créatrice et génératrice de la nature, conforme à la vision épicurienne du monde. Ensuite, elle incarne le plaisir et la volupté, valeurs centrales de l&#x27;épicurisme. Enfin, cette invocation respecte les conventions de la poésie épique tout en jouant habilement avec elles.</p><p id="1d6b2280-a891-80ee-8008-cf08b10841d8" class="">Lucrèce établit un parallèle implicite entre la puissance pacificatrice de Vénus (qui apaise Mars, dieu de la guerre) et la philosophie épicurienne qui apporte la paix de l&#x27;âme. Ce passage témoigne de la maîtrise poétique de Lucrèce, qui parvient à utiliser le langage mythologique traditionnel pour introduire une philosophie qui, paradoxalement, réfute l&#x27;intervention des dieux dans les affaires humaines.</p><p id="1d6b2280-a891-8062-b989-ea815be68dca" class="">Stylistiquement, ces vers illustrent la virtuosité du poète, qui emploie allitérations, assonances et images sensorielles pour créer une atmosphère de sérénité et de beauté naturelle, préfigurant ainsi l&#x27;harmonie que procure la sagesse épicurienne.</p></div></figure><p id="1d6b2280-a891-802c-93e5-dcae6da394a0" class="">
+</p><blockquote id="1d6b2280-a891-80fe-83f2-dfeba9cc7454" class=""><em>Quand la vie humaine gisait aux yeux de tous honteusement<br/>écrasée sous le poids de la religion,<br/>qui des régions célestes montrait sa tête,<br/>menaçant les mortels de son aspect horrible,<br/>un Grec, un homme, le premier osa lever ses yeux mortels<br/>contre elle, le premier osa lui résister.<br/>Ni les fables sur les dieux, ni la foudre, ni le ciel<br/>avec son grondement menaçant ne purent l&#x27;arrêter ;<br/>bien au contraire, ils aiguisèrent l&#x27;ardeur de son courage,<br/>si bien qu&#x27;il souhaita, le premier, forcer les verrous étroits<br/>des portes de la nature. Donc la vigueur de son esprit triompha,<br/>et il s&#x27;avança loin au-delà des murailles enflammées du monde,<br/>et par l&#x27;esprit et l&#x27;intelligence il parcourut l&#x27;immensité ;<br/>vainqueur, il en rapporte la connaissance<br/>de ce qui peut naître, de ce qui ne le peut,<br/>enfin de quelle façon les pouvoirs de toute chose sont limités<br/>et quel terme les borne. Aussi, à son tour, la religion<br/>est renversée et foulée aux pieds, et nous, sa victoire<br/>nous élève jusqu&#x27;au ciel.<br/><br/>Lucrèce, De la nature, I, 62-79, traduction José Kany-Turpin<br/></em></blockquote><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-80db-b78b-e19a07818cde"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1d6b2280-a891-80e7-bb4a-e1791c43d7c6" class=""><strong>Commentaire</strong></p><p id="1d6b2280-a891-8079-a847-ccadf2a41e3c" class="">Ce célèbre éloge d&#x27;Épicure (le &quot;Grec&quot; dont parle Lucrèce sans le nommer) présente le philosophe comme un héros libérateur de l&#x27;humanité. Cette image quasi mythique du sage qui affronte la religion oppressive constitue l&#x27;un des passages les plus puissants et les plus cités du poème. Lucrèce utilise un vocabulaire militaire et héroïque pour décrire la conquête intellectuelle d&#x27;Épicure, présenté comme un explorateur des secrets de l&#x27;univers.</p><p id="1d6b2280-a891-8048-8135-cbfbfea2d3ca" class="">La religion (religio) est dépeinte comme une force tyrannique qui &quot;écrase&quot; les hommes. Il ne s&#x27;agit pas d&#x27;une critique de toute forme de spiritualité, mais spécifiquement des croyances superstitieuses et des cultes qui, selon les épicuriens, engendrent la peur et l&#x27;angoisse. L&#x27;opposition entre la &quot;tête&quot; menaçante de la religion et le regard audacieux d&#x27;Épicure crée une image saisissante du triomphe de la raison sur la superstition.</p><p id="1d6b2280-a891-8061-894f-c5e7123e27d6" class="">Lucrèce insiste sur les limites de toute chose (&quot;les pouvoirs de toute chose sont limités&quot;), principe fondamental de la physique épicurienne qui nie l&#x27;infini qualitatif tout en affirmant l&#x27;infini quantitatif de l&#x27;univers. Cette connaissance des limites naturelles est présentée comme libératrice, car elle délivre l&#x27;homme de la peur de l&#x27;inconnu et du surnaturel.</p></div></figure><h1 id="1d6b2280-a891-80e3-aa85-dac3f7c20efb" class="">Rien ne naît du néant</h1><blockquote id="1d6b2280-a891-809b-ad35-cfa608365a34" class=""><em>Ce principe, il faut d&#x27;abord l&#x27;établir :<br/>jamais rien ne naît du néant par l&#x27;effet d&#x27;une intervention divine.<br/>Car si de rien pouvait naître quelque chose,<br/>de tout pourrait naître toute espèce, nul besoin de semence.<br/>Des hommes pourraient surgir de la mer, de la terre<br/>les poissons à écailles, et du ciel s&#x27;élanceraient les oiseaux ;<br/>gros et petit bétail, bêtes sauvages de toute espèce<br/>occuperaient, engendrés au hasard, terres cultivées et déserts.<br/>Les mêmes fruits ne resteraient pas attachés aux mêmes arbres,<br/>mais changeraient : tous pourraient tout produire.<br/>En effet, si chaque être n&#x27;avait ses éléments générateurs,<br/>comment chacun aurait-il une mère bien déterminée ?<br/>Mais comme tous les êtres sont engendrés de semences précises,<br/>chacun naît et s&#x27;avance vers les rivages de la lumière<br/>à partir des éléments qui le constituent.<br/><br/>Lucrèce, De la nature, I, 146-158, traduction José Kany-Turpin<br/></em></blockquote><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-80c6-82c7-d4289830644a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1d6b2280-a891-80d9-b305-cf1ef5136375" class=""><strong>Commentaire</strong></p><p id="1d6b2280-a891-801e-b514-d1b9344a0fce" class="">Lucrèce énonce ici l&#x27;un des principes fondamentaux de la physique épicurienne : &quot;rien ne naît du néant&quot; (ex nihilo nihil fit). Ce principe, déjà formulé par les philosophes présocratiques, notamment Parménide, est central dans le matérialisme atomiste. Lucrèce démontre sa validité par l&#x27;absurde : si quelque chose pouvait naître de rien, alors n&#x27;importe quoi pourrait naître de n&#x27;importe quoi, sans besoin de &quot;semence&quot; appropriée.</p><p id="1d6b2280-a891-8021-8e2b-e55e22213bec" class="">L&#x27;argument repose sur l&#x27;observation de l&#x27;ordre régulier de la nature : les êtres vivants naissent d&#x27;une &quot;mère déterminée&quot; et les fruits poussent sur des arbres spécifiques. Cette régularité serait impossible si la génération spontanée à partir de rien était possible. Le poète oppose ainsi l&#x27;ordre naturel, fondé sur la transmission d&#x27;éléments matériels spécifiques (les atomes), au chaos qui résulterait d&#x27;une création ex nihilo.</p><p id="1d6b2280-a891-8094-87b7-fbcb6c3e32c1" class="">Ce passage illustre la méthode argumentative de Lucrèce, qui part de l&#x27;observation empirique et utilise le raisonnement logique pour établir des principes généraux. En niant la possibilité d&#x27;une création divine à partir de rien, Lucrèce pose les fondements d&#x27;une explication entièrement naturelle et matérialiste de l&#x27;univers.</p></div></figure><h1 id="1d6b2280-a891-8095-a70c-cf229c008fd7" class="">Le clinamen : la déclinaison des atomes</h1><p id="1d6b2280-a891-809b-8ede-c4c26dd7d65b" class="">
+</p><blockquote id="1d6b2280-a891-808f-96be-f0aee9e40c3c" class=""><em>Les corps, quand ils sont emportés tout droit dans le vide<br/>par leur propre pesanteur, à un moment indéterminé,<br/>en un lieu indéterminé, s&#x27;écartent un peu de leur direction,<br/>juste assez pour qu&#x27;on puisse parler d&#x27;un changement de direction.<br/>Sans cet écart, tous, comme des gouttes de pluie,<br/>tomberaient de haut en bas dans le vide ;<br/>point de rencontre, point de choc<br/>possible entre les principes : la nature n&#x27;aurait jamais rien créé.<br/>[...]<br/>Enfin, si tout mouvement est toujours solidaire,<br/>si du mouvement ancien naît toujours le nouveau<br/>selon un ordre déterminé, si par leur déclinaison<br/>les atomes ne créent pas un principe de mouvement<br/>qui brise les liens du destin pour empêcher<br/>qu&#x27;une cause ne suive une autre cause à l&#x27;infini,<br/>d&#x27;où vient cette liberté accordée aux êtres vivants sur terre,<br/>d&#x27;où vient, dis-je, cette volonté arrachée aux destins,<br/>qui nous fait aller là où nous conduisent nos plaisirs,<br/>et comme les atomes, nous permet de changer de direction,<br/>sans être déterminés par le temps ni par le lieu,<br/>mais selon les désirs de notre esprit lui-même ?<br/>Car, sans aucun doute, c&#x27;est la volonté personnelle<br/>qui donne à chacun son impulsion et c&#x27;est par là<br/>que le mouvement se distribue dans les membres.<br/><br/>Lucrèce, De la nature, II, 216-223 et 251-262, traduction José Kany-Turpin<br/></em></blockquote><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-80fd-876f-fc13b4756db3"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1d6b2280-a891-8046-af73-c0e6f078e7de" class=""><strong>Commentaire</strong></p><p id="1d6b2280-a891-8067-8959-dfbb06d581df" class="">Ce passage expose la théorie du clinamen (déclinaison ou déviation spontanée des atomes), l&#x27;une des contributions les plus originales et controversées de l&#x27;épicurisme. Selon Lucrèce, les atomes, qui tombent naturellement en ligne droite dans le vide en raison de leur poids, dévient parfois légèrement de leur trajectoire, &quot;à un moment indéterminé, en un lieu indéterminé&quot;. Cette déviation minimale a deux conséquences fondamentales.</p><ul id="1d6b2280-a891-8089-b4d9-fbdaec0acaf6" class="bulleted-list"><li style="list-style-type:disc">Premièrement, elle permet aux atomes de se rencontrer et de former des agrégats, rendant ainsi possible la création des corps composés. Sans le clinamen, les atomes resteraient parallèles dans leur chute et ne se rencontreraient jamais, l&#x27;univers resterait stérile.</li></ul><ul id="1d6b2280-a891-8072-a4c6-d9f9b81732b6" class="bulleted-list"><li style="list-style-type:disc">Deuxièmement, et c&#x27;est l&#x27;aspect le plus philosophiquement audacieux, le clinamen fonde la possibilité du libre arbitre. En introduisant un élément d&#x27;indétermination dans la nature, il &quot;brise les liens du destin&quot; et permet d&#x27;échapper au déterminisme absolu. Lucrèce établit un parallèle explicite entre la déclinaison des atomes et la volonté humaine : les deux représentent une rupture dans la chaîne des causes nécessaires.</li></ul><p id="1d6b2280-a891-80b7-be6c-f6c4f1cd8ae9" class="">Cette théorie constitue une réponse au déterminisme des stoïciens et au mécanisme strict de Démocrite. Elle anticipe de façon remarquable certains débats modernes sur le déterminisme, le hasard et la liberté, notamment en physique quantique.</p></div></figure><h1 id="1d6b2280-a891-8067-9c70-c0d6e6bbb94b" class="">La nature composée de l&#x27;âme et sa mortalité</h1><p id="1d6b2280-a891-80d4-88fe-d7dc28f28535" class="">
+</p><blockquote id="1d6b2280-a891-8083-8acf-e45bfd5b30f8" class=""><em>Tout d&#x27;abord je dis que l&#x27;esprit, qu&#x27;on appelle souvent<br/>intelligence, où siègent le conseil et le gouvernement<br/>de la vie, est une partie de l&#x27;homme au même titre<br/>que les mains, les pieds et les yeux sont parties<br/>de l&#x27;ensemble d&#x27;un être vivant.<br/>[...]<br/>L&#x27;esprit lui-même n&#x27;a pas une nature unitaire<br/>mais il est formé pour ainsi dire d&#x27;un corps<br/>et constitue une partie déterminée de l&#x27;homme tout entier.<br/>Mais tout comme la tête et l&#x27;œil ou l&#x27;oreille<br/>sont les parties déterminées d&#x27;un ensemble<br/>et sont doués de vie et de sensibilité,<br/>mais qu&#x27;arrachés au corps, ne peuvent rester tels,<br/>de même l&#x27;esprit ne peut exister par lui-même<br/>sans l&#x27;homme, sans un corps qui le contienne<br/>et dont il semble être une partie.<br/>[...]<br/>Donc, puisque la naissance et l&#x27;accroissement<br/>sont le privilège de l&#x27;esprit et de l&#x27;âme<br/>dans les limites précises du corps,<br/>et que, nous l&#x27;avons appris, ils se dissolvent<br/>en leurs éléments primordiaux et se retirent dans les ténèbres,<br/>apprenez que l&#x27;esprit et l&#x27;âme sont mortels.<br/>Car semblablement privés de corps et de sang,<br/>ils tombent en ruine, puis se dissolvent.<br/><br/>Lucrèce, De la nature, III, 136-140, 143-152, 417-424, traduction José Kany-Turpin<br/></em></blockquote><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-80c5-a3e1-df7366e78cb2"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1d6b2280-a891-805b-b271-cbeb7100e514" class=""><strong>Commentaire</strong></p><p id="1d6b2280-a891-8048-ba83-d4fd2a602235" class="">Le livre III du <em>De rerum natura</em> est consacré à la nature de l&#x27;âme et à la réfutation de son immortalité, thèse essentielle pour libérer les hommes de la crainte de la mort. Lucrèce y développe une conception pleinement matérialiste de l&#x27;âme, qu&#x27;il divise en deux principes : l&#x27;esprit (animus), siège de la pensée, situé dans la poitrine, et l&#x27;âme (anima), principe vital diffus dans tout le corps.</p><p id="1d6b2280-a891-80d8-b884-c668bc0afb88" class="">Dans ces extraits, Lucrèce souligne d&#x27;abord que l&#x27;esprit est une &quot;partie de l&#x27;homme&quot;, comparable aux membres du corps. Cette comparaison vise à réfuter la conception platonicienne de l&#x27;âme comme entité séparable et immortelle. L&#x27;esprit, bien que doté de fonctions supérieures (&quot;conseil et gouvernement de la vie&quot;), reste une composante matérielle de l&#x27;être humain.</p><p id="1d6b2280-a891-80d6-83bc-d5a4c5dce771" class="">L&#x27;âme est également présentée comme une réalité composite et non unitaire, constituée d&#x27;atomes particulièrement subtils mais néanmoins matériels. L&#x27;argument central de Lucrèce est l&#x27;interdépendance de l&#x27;âme et du corps : comme un œil séparé du corps ne peut plus voir, l&#x27;âme séparée du corps ne peut subsister indépendamment.</p><p id="1d6b2280-a891-80cc-926b-c91f81310926" class="">La conclusion logique, énoncée dans le dernier extrait, est la mortalité de l&#x27;âme. Puisque l&#x27;âme naît avec le corps, croît avec lui et peut être altérée (par la maladie, l&#x27;ivresse, etc.), elle périt nécessairement avec lui, se dissolvant en ses composants atomiques. Cette conception matérialiste vise à libérer l&#x27;homme de la crainte des châtiments après la mort, source majeure d&#x27;angoisse selon les épicuriens.</p></div></figure><h1 id="1d6b2280-a891-8044-bb10-ec31669aa8a6" class="">Contre la crainte de la mort</h1><blockquote id="1d6b2280-a891-8080-9e37-f613ab9131c3" class=""><em>&quot;Tu ne jouiras plus d&#x27;une demeure heureuse, d&#x27;une épouse<br/>et de tendres enfants qui accourent pour te disputer<br/>les premiers baisers et toucher ton cœur d&#x27;une douceur secrète.<br/>Tu ne pourras plus te livrer à des entreprises prospères,<br/>être le rempart des tiens : ô malheureux, ô malheureux,<br/>disent-ils, un seul jour funeste t&#x27;a ravi<br/>tous les bienfaits de la vie !&quot; Mais ils n&#x27;ajoutent pas :<br/>&quot;Et maintenant chez toi ne subsiste plus aucun désir de ces choses.&quot;<br/>S&#x27;ils le concevaient bien dans leur esprit, s&#x27;ils conformaient<br/>leurs propos à cette pensée, ils se délivreraient<br/>d&#x27;une grande angoisse et d&#x27;une grande peur dans leur cœur :<br/>&quot;Toi qui es tel que le sommeil éternel t&#x27;a saisi,<br/>tu seras pour toujours à l&#x27;abri de toutes douleurs et peines,<br/>mais nous, près de ton bûcher horrible, nous avons<br/>versé des pleurs intarissables et jamais<br/>aucun jour n&#x27;effacera cette douleur dans notre cœur.&quot;<br/>Mais à qui parle ainsi il faut demander :<br/>&quot;Si l&#x27;affaire se réduit à un sommeil, à un repos,<br/>quelle amertume si grande peut-il y avoir<br/>pour qu&#x27;on se consume en un deuil éternel ?&quot;<br/>[...]<br/>Or maintenant ni pour nous ni pour toi la vie<br/>ne sera plus possible : tout est également mort.<br/>Alors il y aura moins de gens pour gémir devant ton urne,<br/>et tout se confondra dans le gouffre et l&#x27;abîme de la mort.<br/><br/>Lucrèce, De la nature, III, 830-851 et 868-869, traduction José Kany-Turpin<br/></em></blockquote><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8035-9a55-c1610b284a4b"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1d6b2280-a891-80bf-ae55-c2a7bd7cd9c3" class=""><strong>Commentaire</strong></p><p id="1d6b2280-a891-8013-a5a7-c14d9fb34dcb" class="">Poursuivant sa réflexion sur la mort, Lucrèce s&#x27;attaque ici directement à l&#x27;angoisse que suscite la perspective de la fin de l&#x27;existence. Ce passage célèbre analyse et réfute le raisonnement de ceux qui craignent la mort comme une privation des biens de la vie (famille, prospérité, sécurité). L&#x27;erreur, selon Lucrèce, consiste à imaginer qu&#x27;après la mort subsiste un sujet capable d&#x27;éprouver la privation et la souffrance.</p><p id="1d6b2280-a891-80fc-a14c-f0c89c5128b1" class="">Le poète met en évidence la contradiction inhérente au deuil : les vivants pleurent les morts comme s&#x27;ils étaient encore sensibles à la douleur (&quot;ô malheureux&quot;), mais omettent de considérer que la mort supprime précisément toute sensibilité, y compris le désir des biens perdus. En qualifiant la mort de &quot;sommeil éternel&quot;, Lucrèce utilise une métaphore répandue, mais la pousse à sa conclusion logique : si la mort est comme le sommeil, pourquoi la craindre plus que lui ?</p><p id="1d6b2280-a891-8051-98c3-c6af51b2611e" class="">La réponse aux personnes endeuillées (&quot;Si l&#x27;affaire se réduit à un sommeil...&quot;) déplace subtilement le questionnement vers la souffrance des vivants plutôt que vers celle, imaginaire, des morts. Ce n&#x27;est pas le défunt qui souffre de sa condition, mais les survivants qui projettent leur propre douleur sur lui.</p><p id="1d6b2280-a891-80e3-926b-cd646f35447e" class="">Le rappel final de l&#x27;universalité de la mort (&quot;tout se confondra dans le gouffre et l&#x27;abîme de la mort&quot;) vise à relativiser la perte individuelle. Cette méditation sur la mort, empreinte d&#x27;une sagesse mélancolique mais libératrice, reste l&#x27;un des moments les plus profonds et les plus humains du poème de Lucrèce.</p></div></figure><h1 id="1d6b2280-a891-80fe-ac50-de183d1c3e71" class="">Le développement de la civilisation</h1><p id="1d6b2280-a891-805b-900c-e1deda442585" class="">
+</p><blockquote id="1d6b2280-a891-805c-815c-c65060548b8e" class=""><em>Les armes antiques furent les mains, les ongles et les dents,<br/>les pierres aussi et, en outre, les bâtons, branches de forêt,<br/>puis la flamme et le feu dès qu&#x27;ils furent connus.<br/>Plus tard, on découvrit la puissance du fer et du bronze ;<br/>mais l&#x27;usage du bronze précéda celui du fer,<br/>car il est plus malléable et plus abondant.<br/>Avec le bronze on retournait la terre, avec le bronze<br/>on affrontait les flots tumultueux de la guerre,<br/>on infligeait de larges blessures, on s&#x27;emparait<br/>du bétail et des champs : ceux qui étaient nus et sans armes<br/>cédaient facilement tout aux hommes en armes.<br/>Puis peu à peu, l&#x27;épée de fer prit le dessus<br/>et l&#x27;aspect de la faucille de bronze devint objet de risée ;<br/>avec le fer on se mit à fendre le sol<br/>et à égaliser les épreuves douteuses de la guerre.<br/>[...]<br/>Naviguer sur les flots, cultiver les champs,<br/>bâtir des murailles, établir des lois, fabriquer<br/>des armes, des routes, des vêtements et le reste,<br/>absolument tous les avantages et plaisirs de la vie,<br/>poèmes, tableaux, statues d&#x27;un travail achevé,<br/>l&#x27;usage et en même temps l&#x27;expérience éveillée<br/>des esprits infatigables les ont peu à peu enseignés,<br/>tandis que les hommes avançaient pas à pas.<br/>Ainsi, le temps amène progressivement chaque chose<br/>sous les yeux des mortels, et la raison l&#x27;élève<br/>aux rivages de la lumière. Car ils voyaient<br/>les idées s&#x27;éclairer dans leur esprit l&#x27;une après l&#x27;autre,<br/>jusqu&#x27;au moment où leur art atteignit le plus haut sommet.<br/><br/>Lucrèce, De la nature, V, 1281-1296 et 1448-1457, traduction José Kany-Turpin<br/></em></blockquote><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-805f-b531-fd494d4dd96f"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1d6b2280-a891-80b3-a5bb-fab6b201ad0a" class=""><strong>Commentaire</strong></p><p id="1d6b2280-a891-8090-8f9e-e5f581975de9" class="">Dans le livre V, Lucrèce propose une histoire naturelle de l&#x27;humanité et du développement de la civilisation, révolutionnaire par son caractère non providentialiste. Ces extraits présentent une vision du progrès technique et culturel comme résultat d&#x27;un processus graduel d&#x27;apprentissage par l&#x27;expérience, sans intervention divine.</p><p id="1d6b2280-a891-80da-8e59-d4fb3dd7c749" class="">Le premier passage décrit l&#x27;évolution des armes et des outils, depuis les moyens naturels (mains, ongles, dents) jusqu&#x27;aux métaux (bronze puis fer). Cette succession des &quot;âges&quot; techniques (pierre, bronze, fer) témoigne d&#x27;observations archéologiques remarquablement précises pour l&#x27;époque. Lucrèce reconnaît la double fonction, pacifique et guerrière, des outils métalliques, utilisés tant pour l&#x27;agriculture que pour les conflits.</p><p id="1d6b2280-a891-8093-941f-e83b694f4719" class="">Le second extrait brosse un tableau plus large du progrès humain, englobant navigation, agriculture, architecture, législation, arts et poésie. L&#x27;évolution est présentée comme un processus cumulatif (&quot;pas à pas&quot;) où interagissent l&#x27;usage pratique, l&#x27;expérience empirique et la raison. La métaphore finale de l&#x27;élévation &quot;aux rivages de la lumière&quot; rappelle l&#x27;aspect libérateur de la connaissance, thème cher à Lucrèce.</p><p id="1d6b2280-a891-808b-9872-dfdff6d53500" class="">Cette conception naturaliste du progrès, sans finalité préétablie ni plan divin, représente une rupture avec les visions mythiques ou théologiques de l&#x27;origine des techniques. Elle préfigure les théories modernes du développement culturel et anticipe la méthode des sciences humaines.</p></div></figure><h1 id="1d6b2280-a891-80e2-be66-e3c58c4ab1d7" class="">La peste d&#x27;Athènes</h1><blockquote id="1d6b2280-a891-808e-9589-c84c98c2f843" class=""><em>Tel était l&#x27;aspect de cette épidémie mortelle<br/>qui se répandait largement dans la terre de Cécrops,<br/>décimant les citoyens : elle creusait les routes<br/>et dépeuplait la ville. Venue du fond de l&#x27;Égypte,<br/>après avoir traversé une vaste étendue d&#x27;air<br/>et les plaines flottantes, elle s&#x27;abattit enfin<br/>sur le peuple entier de Pandion ; alors par groupes<br/>ils étaient livrés à la maladie et à la mort.<br/>D&#x27;abord ils avaient la tête brûlante de fièvre<br/>et les deux yeux rouges d&#x27;une lueur diffuse ;<br/>la gorge aussi à l&#x27;intérieur devenait noire,<br/>suintait le sang et, obstruée d&#x27;ulcères,<br/>empêchait le passage de la voix ; l&#x27;interprète<br/>de la pensée, la langue, dégouttait de sang,<br/>affaiblie par le mal, lourde à se mouvoir, rugueuse au toucher.<br/>Puis, quand par la gorge la maladie avait gagné<br/>la poitrine et afflué vers le cœur douloureux des malades,<br/>alors tous les verrous de la vie chancelaient.<br/>[...]<br/>Dans les temples des dieux, les sanctuaires<br/>regorgeaient partout de cadavres<br/>que les gardiens remplissaient de ces hôtes ;<br/>ni le culte divin ni le pouvoir des dieux<br/>n&#x27;avaient plus d&#x27;importance : la douleur présente dominait.<br/>Il n&#x27;était plus d&#x27;usage d&#x27;ensevelir les morts.<br/><br/>Lucrèce, De la nature, VI, 1138-1152 et 1272-1277, traduction José Kany-Turpin<br/></em></blockquote><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8061-82cc-eff1d70e472d"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1d6b2280-a891-806b-9157-f59623d29a1d" class=""><strong>Commentaire</strong></p><p id="1d6b2280-a891-80ca-a060-c84876388b7e" class="">Le poème de Lucrèce s&#x27;achève de façon saisissante par une description détaillée de la peste qui ravagea Athènes en 430-429 av. J.-C., pendant la guerre du Péloponnèse. Ce récit, qui s&#x27;inspire de celui de Thucydide tout en lui apportant une dimension poétique nouvelle, constitue le point culminant de la démonstration matérialiste de Lucrèce.</p><p id="1d6b2280-a891-806c-b173-e18ee0fb2ed1" class="">La description clinique des symptômes (fièvre, yeux rouges, gorge ulcérée, langue affectée) témoigne d&#x27;un souci de précision scientifique. Lucrèce insiste sur la progression de la maladie, qui gagne peu à peu les organes vitaux jusqu&#x27;à ébranler &quot;tous les verrous de la vie&quot;. Cette minutie dans l&#x27;observation des phénomènes physiques est caractéristique de la méthode épicurienne, fondée sur l&#x27;expérience sensible.</p><p id="1d6b2280-a891-801d-8ac5-c58c01edfece" class="">Mais au-delà de l&#x27;aspect médical, ce tableau de la peste a une portée philosophique et morale. L&#x27;accumulation des cadavres dans les temples et l&#x27;impuissance des dieux (&quot;ni le culte divin ni le pouvoir des dieux n&#x27;avaient plus d&#x27;importance&quot;) illustrent de façon dramatique la thèse centrale de l&#x27;épicurisme : les phénomènes naturels ne dépendent pas de l&#x27;intervention divine, et les prières sont impuissantes face aux lois de la nature.</p><p id="1d6b2280-a891-804e-ab03-f6bb42308867" class="">En terminant son poème par cette image apocalyptique, Lucrèce ne cherche pas à susciter la terreur, mais paradoxalement à l&#x27;exorciser. En montrant que même les pires calamités obéissent à des causes naturelles explicables, il invite le lecteur à adopter l&#x27;attitude du sage épicurien : comprendre la nature pour se libérer de la peur irrationnelle.</p></div></figure><figure class="block-color-teal callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-806a-a66b-d31f2595f0de"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><h3 id="1d6b2280-a891-80c2-9376-e03b6e717fb0" class=""><strong>Pertinence contemporaine</strong></h3><p id="1d6b2280-a891-80bb-89dc-d7dd796ee663" class="">L&#x27;œuvre de Lucrèce conserve une remarquable actualité, tant par ses thèses philosophiques que par sa forme poétique. Son matérialisme radical a influencé le développement des sciences modernes et préfigure les approches naturalistes de phénomènes autrefois attribués au surnaturel. Sa théorie du clinamen, longtemps considérée comme une simple curiosité, trouve des résonances dans certaines interprétations de la physique quantique et dans les débats contemporains sur le déterminisme et le libre arbitre.</p><p id="1d6b2280-a891-8083-b45b-c5c19e7bb6c1" class="">Sa critique de la religion comme source d&#x27;angoisse continue d&#x27;alimenter les discussions sur le rôle des croyances religieuses dans la société. Sa réflexion sur la mort et sa tentative de démystifier les craintes qu&#x27;elle suscite offrent toujours des ressources pour penser notre condition mortelle. Sa vision du développement progressif de la civilisation a nourri les théories évolutionnistes de la culture et les approches matérialistes de l&#x27;histoire.</p><p id="1d6b2280-a891-80c6-8432-d25f65deecde" class="">Sur le plan poétique, la fusion qu&#x27;opère Lucrèce entre exposé didactique et création littéraire reste un modèle de vulgarisation scientifique et philosophique. Sa capacité à exprimer des concepts abstraits à travers des images concrètes et des métaphores frappantes démontre la possibilité d&#x27;une pensée qui s&#x27;adresse simultanément à l&#x27;intellect et à la sensibilité. À l&#x27;heure où notre civilisation affronte des défis environnementaux majeurs, sa célébration de la nature et son invitation à une sagesse fondée sur la modération des désirs résonnent avec une particulière acuité.</p></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

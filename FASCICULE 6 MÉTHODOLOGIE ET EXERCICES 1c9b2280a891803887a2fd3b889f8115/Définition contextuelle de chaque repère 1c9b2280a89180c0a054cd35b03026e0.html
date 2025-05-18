@@ -1,0 +1,683 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Définition contextuelle de chaque repère</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-80c0-a054-cd35b03026e0" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1524639064490-254e0a1db723?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><h1 class="page-title">Définition contextuelle de chaque repère</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d6b2280-a891-8009-86e4-c1f5de9335c1" class=""><em>Les &quot;repères&quot; au programme sont des outils conceptuels essentiels. Maîtriser leur sens et savoir les utiliser à bon escient est crucial. Voici pour chacun une définition concise, une question clé qu&#x27;il permet d&#x27;aborder, une confusion fréquente à éviter, et ses domaines d&#x27;application privilégiés.</em></p><h1 id="1d6b2280-a891-80c5-914e-f49aca6552d1" class=""><strong>Absolu / Relatif</strong></h1><ul id="1d6b2280-a891-809c-a53b-c3900a3daee9" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> Est <strong>absolu</strong> ce qui ne dépend de rien d&#x27;autre (valeur en soi, indépendante). Est <strong>relatif</strong> ce qui dépend d&#x27;une relation, d&#x27;un point de vue, d&#x27;un contexte.</li></ul><ul id="1d6b2280-a891-8041-a977-d3dce729ccf6" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> La vérité / les valeurs morales sont-elles absolues ou relatives ?</li></ul><ul id="1d6b2280-a891-8045-b09c-ea1670eef08d" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Relatif ≠ Subjectif. Le relatif peut être objectif (ex: vitesse relative à un référentiel).</li></ul><ul id="1d6b2280-a891-80ae-8914-d396db281bf7" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Métaphysique, théorie de la connaissance, morale, esthétique.</li></ul><h1 id="1d6b2280-a891-80be-9b5a-d736b74fe978" class=""><strong>Abstrait / Concret</strong></h1><ul id="1d6b2280-a891-800b-b1b7-d9b06b901a58" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> Est <strong>concret</strong> ce qui est perçu par les sens, particulier (cet arbre). Est <strong>abstrait</strong> ce qui est isolé par la pensée, général (le concept d&#x27;arbre).</li></ul><ul id="1d6b2280-a891-80e8-bcc0-d8cd393e9f58" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> La pensée abstraite nous éloigne-t-elle ou nous rapproche-t-elle du réel concret?</li></ul><ul id="1d6b2280-a891-801f-92ed-d5302218e037" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Abstrait ≠ Compliqué ou irréel. Les concepts abstraits sont des outils de pensée.</li></ul><ul id="1d6b2280-a891-80c2-85e1-e080b5ff91b9" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Théorie de la connaissance, logique, mathématiques, art.</li></ul><h1 id="1d6b2280-a891-807c-848e-ed6958d0f069" class=""><strong>En acte / En puissance</strong></h1><ul id="1d6b2280-a891-80af-ac22-f028b9e08eac" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> (Aristote) Est <strong>en puissance</strong> ce qui peut devenir (la graine → arbre en puissance). Est <strong>en acte</strong> ce qui est réalisé (l&#x27;arbre → arbre en acte).</li></ul><ul id="1d6b2280-a891-80f3-a617-e4af4fc5daf4" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> Comment penser le changement et le devenir ? Tout est-il déjà déterminé en puissance ?</li></ul><ul id="1d6b2280-a891-80c6-a8ec-c8f04e245bb3" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Puissance ≠ simple possibilité logique. La puissance implique une capacité réelle de développement.</li></ul><ul id="1d6b2280-a891-8016-864d-d178d30484d9" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Métaphysique, biologie, philosophie de l&#x27;esprit.</li></ul><h1 id="1d6b2280-a891-80f1-846e-ceebdd7b64ba" class=""><strong>Analyse / Synthèse</strong></h1><ul id="1d6b2280-a891-802a-92bb-e59b7905bbe8" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> L&#x27;<strong>analyse</strong> décompose un tout en ses éléments. La <strong>synthèse</strong> recompose un tout à partir d&#x27;éléments.</li></ul><ul id="1d6b2280-a891-8041-bb05-fc791c8357ad" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> Laquelle de ces démarches est première ou plus fondamentale pour la connaissance ?</li></ul><ul id="1d6b2280-a891-803d-9d49-ea1e0b0c90d8" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> La synthèse n&#x27;est pas un simple résumé, mais une recomposition structurée.</li></ul><ul id="1d6b2280-a891-802e-9ab6-fbf3c7621d07" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Méthodologie scientifique et philosophique, logique.</li></ul><h1 id="1d6b2280-a891-802d-92f5-c125a29153c0" class=""><strong>Concept / Image / Métaphore</strong></h1><ul id="1d6b2280-a891-802b-9812-f6f641457ddc" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> Le <strong>concept</strong> est une idée abstraite/générale. L&#x27;<strong>image</strong> est une représentation sensible/concrète. La <strong>métaphore</strong> utilise une image par analogie pour exprimer une idée.</li></ul><ul id="1d6b2280-a891-8002-8fc7-f39e9967b560" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> La pensée philosophique peut-elle se passer d&#x27;images ou de métaphores ? Quel est leur rôle ?</li></ul><ul id="1d6b2280-a891-803b-b4b1-cd0e1162789a" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Prendre la métaphore pour le concept lui-même.</li></ul><ul id="1d6b2280-a891-80f3-9b65-da340eba1185" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Théorie de la connaissance, langage, art, rhétorique.</li></ul><h1 id="1d6b2280-a891-80f1-8f2d-cd9da6a226d0" class=""><strong>Contingent / Nécessaire</strong></h1><ul id="1d6b2280-a891-80a2-9a98-dbb1166af49c" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> Est <strong>nécessaire</strong> ce qui ne peut pas ne pas être. Est <strong>contingent</strong> ce qui est, mais pourrait ne pas être ou être autrement.</li></ul><ul id="1d6b2280-a891-8050-9507-e8cb504141b9" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> La liberté humaine est-elle possible face à la nécessité (naturelle, logique) ?</li></ul><ul id="1d6b2280-a891-8047-9fad-fef3533ff53a" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Contingent ≠ Aléatoire (le hasard peut avoir ses lois).</li></ul><ul id="1d6b2280-a891-80d0-a18f-cad16467e702" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Métaphysique, logique, philosophie morale (liberté).</li></ul><h1 id="1d6b2280-a891-8009-95e3-e31f1ddd7298" class=""><strong>Croire / Savoir</strong></h1><ul id="1d6b2280-a891-8058-ad77-d10296859e5b" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>Croire</strong> = tenir pour vrai sans preuve certaine. <strong>Savoir</strong> = certitude fondée sur des preuves/justifications.</li></ul><ul id="1d6b2280-a891-8000-9c1d-d9841bad3937" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> Quelle est la frontière entre croire et savoir ? Peut-on croire ce que l&#x27;on sait ?</li></ul><ul id="1d6b2280-a891-8014-8818-dae5a8bbe213" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> La force de la conviction (croyance) ≠ la validité de la connaissance (savoir).</li></ul><ul id="1d6b2280-a891-807d-838e-f784ea26613b" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Théorie de la connaissance, religion, morale.</li></ul><h1 id="1d6b2280-a891-809c-b206-d490429e06b2" class=""><strong>Essentiel / Accidentel</strong></h1><ul id="1d6b2280-a891-802d-b7b8-fbfdcd380e46" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> L&#x27;<strong>essentiel</strong> (essence) = ce qui fait qu&#x27;une chose est ce qu&#x27;elle est. L&#x27;<strong>accidentel</strong> = propriété non nécessaire à sa nature.</li></ul><ul id="1d6b2280-a891-80d5-886b-edd8d61a8322" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> Y a-t-il une essence de l&#x27;homme ? Qu&#x27;est-ce qui est essentiel pour définir l&#x27;art ?</li></ul><ul id="1d6b2280-a891-80aa-825a-f212e1195291" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Essentiel ≠ Important subjectivement.</li></ul><ul id="1d6b2280-a891-805d-8004-d826a758cd1a" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Métaphysique, anthropologie philosophique, logique.</li></ul><h1 id="1d6b2280-a891-8034-9ac4-f6bb5976de4d" class=""><strong>Exemple / Preuve</strong></h1><ul id="1d6b2280-a891-807a-bd72-e32d6675a625" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> L&#x27;<strong>exemple</strong> illustre un cas particulier. La <strong>preuve</strong> établit une vérité de manière contraignante.</li></ul><ul id="1d6b2280-a891-80fb-8174-e4751a11c15d" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> Un exemple peut-il suffire à prouver une thèse générale ?</li></ul><ul id="1d6b2280-a891-8009-bdac-e4c88fac4505" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> La &quot;preuve par l&#x27;exemple&quot; est une généralisation souvent abusive (sophisme).</li></ul><ul id="1d6b2280-a891-80cb-85b7-f7cdbce4d6fc" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Logique, argumentation, méthode scientifique.</li></ul><h1 id="1d6b2280-a891-8020-8b87-cf7e9e8292e5" class=""><strong>Expliquer / Comprendre</strong></h1><ul id="1d6b2280-a891-8074-81c1-d35b02f15539" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> (Sciences humaines) <strong>Expliquer</strong> = trouver les causes objectives. <strong>Comprendre</strong> = saisir le sens subjectif/intentionnel.</li></ul><ul id="1d6b2280-a891-800d-a8aa-c47fdc742568" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> Les actions humaines doivent-elles être seulement expliquées ou aussi comprises ?</li></ul><ul id="1d6b2280-a891-80ad-8f00-ded4c13aa334" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Comprendre ≠ Justifier ou excuser.</li></ul><ul id="1d6b2280-a891-80ec-8fb4-d20219ae8602" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Épistémologie des sciences humaines, histoire, sociologie, psychologie.</li></ul><h1 id="1d6b2280-a891-803e-9cea-e1c837040534" class=""><strong>En fait / En droit</strong></h1><ul id="1d6b2280-a891-8019-aebe-e892b1e54cf9" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>En fait</strong> = ce qui est réellement. <strong>En droit</strong> = ce qui devrait être (selon une norme, une loi, la justice).</li></ul><ul id="1d6b2280-a891-8097-a0aa-cd9d53272827" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> Le droit doit-il se fonder sur le fait, ou le fait doit-il être jugé à l&#x27;aune du droit ?</li></ul><ul id="1d6b2280-a891-80bb-9887-e55f624e440f" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Justifier une situation de fait (ex: inégalité) par le simple fait qu&#x27;elle existe.</li></ul><ul id="1d6b2280-a891-80eb-a592-c30b01b0e6bb" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Philosophie politique, droit, morale.</li></ul><h1 id="1d6b2280-a891-8086-bca3-ff09f9e96122" class=""><strong>Formel / Matériel</strong></h1><ul id="1d6b2280-a891-8051-85f8-c6cba7bfa2d3" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>Formel</strong> = qui concerne la forme, la structure logique. <strong>Matériel</strong> = qui concerne le contenu, la matière.</li></ul><ul id="1d6b2280-a891-801a-ab4b-d4cd05d5e991" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> La validité formelle d&#x27;un raisonnement garantit-elle sa vérité matérielle ?</li></ul><ul id="1d6b2280-a891-8042-9f5a-d9613a8b0201" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Un raisonnement peut être logiquement impeccable (formellement valide) mais aboutir à une conclusion fausse si les prémisses sont fausses (matériellement fausses).</li></ul><ul id="1d6b2280-a891-8002-bf2f-c523817f4fdc" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Logique, épistémologie, morale (cf. formalisme kantien).</li></ul><h1 id="1d6b2280-a891-8038-b11c-c3660e466be1" class=""><strong>Genre / Espèce / Individu</strong></h1><ul id="1d6b2280-a891-80b0-bf06-e4f23a670813" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> (Logique) <strong>Genre</strong> (général) &gt; <strong>Espèce</strong> (spécifique) &gt; <strong>Individu</strong> (singulier).</li></ul><ul id="1d6b2280-a891-800e-92d8-e6f366ea01f8" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> Comment définir une chose ? (Par son genre et sa différence spécifique).</li></ul><ul id="1d6b2280-a891-8046-bd8d-cabc18942a13" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Les niveaux de généralité.</li></ul><ul id="1d6b2280-a891-80d4-ae81-de772877c87e" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Logique, classification, définition.</li></ul><h1 id="1d6b2280-a891-807c-bf53-f7897fc5c205" class=""><strong>Hypothèse / Conséquence / Conclusion</strong></h1><ul id="1d6b2280-a891-80f8-9e38-cc7b56fe585c" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>Hypothèse</strong> = supposition initiale. <strong>Conséquence</strong> = ce qui découle logiquement. <strong>Conclusion</strong> = résultat du raisonnement.</li></ul><ul id="1d6b2280-a891-8038-a4dd-c9994899bdf9" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> Quelle est la structure d&#x27;un raisonnement valide ? Comment vérifier une hypothèse ?</li></ul><ul id="1d6b2280-a891-80ee-9404-f0896cacbffa" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Prendre une hypothèse pour une conclusion prouvée.</li></ul><ul id="1d6b2280-a891-805c-94ed-e68728b98cb7" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Logique, méthode scientifique, argumentation.</li></ul><h1 id="1d6b2280-a891-8099-b79f-ef069cac059f" class=""><strong>Idéal / Réel</strong></h1><ul id="1d6b2280-a891-8092-9059-c353fa62b12b" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> L&#x27;<strong>idéal</strong> = modèle parfait pensé. Le <strong>réel</strong> = ce qui existe effectivement.</li></ul><ul id="1d6b2280-a891-80f4-a108-d0f141a8e274" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> Faut-il juger le réel à l&#x27;aune de l&#x27;idéal ? L&#x27;idéal est-il réalisable ?</li></ul><ul id="1d6b2280-a891-80e5-9dfe-f0cce162e188" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Idéal ≠ Utopie (l&#x27;utopie est souvent une critique du réel via un idéal imaginaire).</li></ul><ul id="1d6b2280-a891-8059-94ac-cefece7b14f5" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Morale, politique, esthétique, métaphysique.</li></ul><h1 id="1d6b2280-a891-80b0-838c-d4c6f829a0b9" class=""><strong>Identité / Égalité / Différence</strong></h1><ul id="1d6b2280-a891-8088-8d2f-ef0c549b835f" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>Identité</strong> (A=A). <strong>Égalité</strong> (A=B selon un critère, malgré des différences). <strong>Différence</strong> (A≠B).</li></ul><ul id="1d6b2280-a891-80f8-8260-c8839fbec6b3" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> L&#x27;exigence d&#x27;égalité (en droits, sociale) implique-t-elle de nier les différences ?</li></ul><ul id="1d6b2280-a891-8067-972b-c315ecf67ca9" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Égalité ≠ Identité. Revendiquer l&#x27;égalité n&#x27;est pas revendiquer d&#x27;être identique.</li></ul><ul id="1d6b2280-a891-8056-bafd-c2db4a65cb5b" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Logique, politique, morale, anthropologie.</li></ul><h1 id="1d6b2280-a891-80f0-8cf5-ce03c1f3959a" class=""><strong>Impossible / Possible</strong></h1><ul id="1d6b2280-a891-8061-bff7-cd1c07567897" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>Impossible</strong> = contradictoire. <strong>Possible</strong> = non-contradictoire (peut être réel ou non).</li></ul><ul id="1d6b2280-a891-8002-86a6-ed09a93789f8" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> Quelles sont les limites de la puissance humaine ou technique ? Tout ce qui est possible est-il permis ?</li></ul><ul id="1d6b2280-a891-8006-9f95-c162fc4efade" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Possible ≠ Probable ou Réalisable facilement.</li></ul><ul id="1d6b2280-a891-800d-8bae-e997134be2d7" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Logique, métaphysique, morale, politique.</li></ul><h1 id="1d6b2280-a891-8088-a20e-e3dc93487935" class=""><strong>Intuitif / Discursif</strong></h1><ul id="1d6b2280-a891-8086-9b43-cd927bbb7e17" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>Intuitif</strong> = saisie immédiate, sans raisonnement. <strong>Discursif</strong> = connaissance par étapes, par raisonnement.</li></ul><ul id="1d6b2280-a891-80b2-8361-c83e08cee6dc" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> Existe-t-il une connaissance purement intuitive ? La raison discursive est-elle le seul mode de connaissance valide ?</li></ul><ul id="1d6b2280-a891-808b-9f00-fe550154f9b7" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Intuition ≠ Simple pressentiment ou instinct.</li></ul><ul id="1d6b2280-a891-80d5-87a8-f910a3bb2b30" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Théorie de la connaissance, épistémologie, métaphysique (ex: Bergson).</li></ul><h1 id="1d6b2280-a891-8039-901e-d0349a7caef8" class=""><strong>Légal / Légitime</strong></h1><ul id="1d6b2280-a891-80cf-91cf-d4f4a68d7146" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>Légal</strong> = conforme à la loi positive. <strong>Légitime</strong> = conforme à la justice, à la morale, au droit idéal.</li></ul><ul id="1d6b2280-a891-808d-8e0b-e618772a2d3c" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> Faut-il toujours obéir aux lois ? La légalité suffit-elle à fonder la légitimité ?</li></ul><ul id="1d6b2280-a891-80a4-9526-f0c753957e7b" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Ce qui est légal n&#x27;est pas forcément légitime, et inversement.</li></ul><ul id="1d6b2280-a891-800b-89ea-e37bda83e3ec" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Philosophie politique, droit, morale.</li></ul><h1 id="1d6b2280-a891-809e-91c2-e0ff304959fa" class=""><strong>Médiat / Immédiat</strong></h1><ul id="1d6b2280-a891-809d-9ba4-c612735210ae" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>Immédiat</strong> = sans intermédiaire. <strong>Médiat</strong> = obtenu par un intermédiaire (raisonnement, langage, outil...).</li></ul><ul id="1d6b2280-a891-8032-9a55-ca1326940d8c" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> La conscience de soi est-elle immédiate ? Avons-nous un accès immédiat au réel ?</li></ul><ul id="1d6b2280-a891-80e2-bed3-c815f27e2eed" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Immédiat ≠ Facile ou simple.</li></ul><ul id="1d6b2280-a891-8058-8474-c5a71eb93849" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Théorie de la connaissance, phénoménologie, métaphysique.</li></ul><h1 id="1d6b2280-a891-80a4-a1ed-ccbd2b063a09" class=""><strong>Objectif / Subjectif / Intersubjectif</strong></h1><ul id="1d6b2280-a891-80a0-98be-f3f3e7d84d8a" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>Objectif</strong> = indépendant du sujet. <strong>Subjectif</strong> = propre au sujet individuel. <strong>Intersubjectif</strong> = partagé entre plusieurs sujets (par accord, communication).</li></ul><ul id="1d6b2280-a891-804c-973f-f8b8e9c8a4c3" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> La science peut-elle atteindre une objectivité totale ? La vérité est-elle intersubjective ?</li></ul><ul id="1d6b2280-a891-804a-93c9-e0f8d2ddf14d" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Subjectif ≠ Faux. Intersubjectif ≠ Objectif (un accord peut être erroné).</li></ul><ul id="1d6b2280-a891-80e7-bf28-dd49cf77dcb7" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Théorie de la connaissance, épistémologie, sciences humaines, morale.</li></ul><h1 id="1d6b2280-a891-802f-9d6f-fd2ccb243297" class=""><strong>Obligation / Contrainte</strong></h1><ul id="1d6b2280-a891-805b-a460-ecd2c33fd675" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>Contrainte</strong> = force extérieure subie. <strong>Obligation</strong> = devoir intérieur reconnu (moral, juridique).</li></ul><ul id="1d6b2280-a891-8078-bd30-ca1c4f2d25b3" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> Être libre, est-ce n&#x27;avoir aucune obligation ou n&#x27;être soumis à aucune contrainte ?</li></ul><ul id="1d6b2280-a891-8012-8ac9-ca93c55cd1ca" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> L&#x27;obligation morale n&#x27;est pas une contrainte physique, elle suppose la liberté.</li></ul><ul id="1d6b2280-a891-8033-8d69-cdf6bb89a59e" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Morale, politique, droit.</li></ul><h1 id="1d6b2280-a891-808e-807b-ff96b3f7c7c2" class=""><strong>Origine / Fondement</strong></h1><ul id="1d6b2280-a891-8020-9204-f7df86e8f7a3" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>Origine</strong> = point de départ chronologique. <strong>Fondement</strong> = justification logique ou en droit.</li></ul><ul id="1d6b2280-a891-800a-bafe-c4fab1ab1635" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> L&#x27;origine d&#x27;une pratique ou d&#x27;une institution suffit-elle à la justifier (fonder) ?</li></ul><ul id="1d6b2280-a891-8014-925e-d1c40db7a3a4" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Le &quot;sophisme génétique&quot; : juger de la valeur d&#x27;une chose uniquement par son origine.</li></ul><ul id="1d6b2280-a891-8077-8472-cc1b3f1b0ace" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Politique, morale, histoire, épistémologie.</li></ul><h1 id="1d6b2280-a891-80da-8a26-dfe53669810a" class=""><strong>Persuader / Convaincre</strong></h1><ul id="1d6b2280-a891-805d-a3cf-e5b107b429f3" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>Convaincre</strong> = par la raison (arguments logiques). <strong>Persuader</strong> = par les sentiments, l&#x27;émotion (rhétorique).</li></ul><ul id="1d6b2280-a891-8080-a333-d027f4c235ea" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> Faut-il seulement convaincre ou peut-on aussi persuader en philosophie ou en politique ?</li></ul><ul id="1d6b2280-a891-805b-aa5e-dc3dd47d4228" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Un discours persuasif n&#x27;est pas nécessairement convaincant rationnellement.</li></ul><ul id="1d6b2280-a891-803c-951a-d71c92900a7f" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Argumentation, rhétorique, politique, publicité.</li></ul><h1 id="1d6b2280-a891-80b5-90f1-e39f2ef4cbed" class=""><strong>Principe / Cause / Fin</strong></h1><ul id="1d6b2280-a891-8081-8c54-dfd9f7bb6d02" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>Principe</strong> = fondement logique/moral. <strong>Cause</strong> = ce qui produit un effet. <strong>Fin</strong> = but visé.</li></ul><ul id="1d6b2280-a891-8027-9bcf-d533843d1296" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> Une action doit-elle être jugée selon ses principes, ses causes ou ses fins (conséquences) ?</li></ul><ul id="1d6b2280-a891-8037-81ec-f1e2ca21af95" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Cause ≠ Principe (la cause explique comment, le principe justifie pourquoi). Cause ≠ Fin (la cause précède, la fin est visée).</li></ul><ul id="1d6b2280-a891-80c9-bb28-c790f73516af" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Métaphysique, morale (déontologisme vs conséquentialisme), logique, science.</li></ul><h1 id="1d6b2280-a891-80e8-858a-dd1d21ced72e" class=""><strong>Public / Privé</strong></h1><ul id="1d6b2280-a891-8018-96ed-e4ea547111c4" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>Public</strong> = concerne la collectivité, ouvert à tous. <strong>Privé</strong> = concerne l&#x27;individu, l&#x27;intime.</li></ul><ul id="1d6b2280-a891-8096-9159-ce03682b1f09" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> Quelle est la juste limite entre la sphère publique et la sphère privée ?</li></ul><ul id="1d6b2280-a891-800c-b29f-ec24aa2e6066" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> La distinction n&#x27;est pas toujours nette (ex: réseaux sociaux).</li></ul><ul id="1d6b2280-a891-80ed-b8c2-e66b7407804a" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Philosophie politique, droit, morale, sociologie.</li></ul><h1 id="1d6b2280-a891-8040-9c64-dbc4347d0e5e" class=""><strong>Ressemblance / Analogie</strong></h1><ul id="1d6b2280-a891-8062-b8f9-dfcc298620e5" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>Ressemblance</strong> = similitude directe. <strong>Analogie</strong> = similitude de rapports (A/B = C/D).</li></ul><ul id="1d6b2280-a891-80c5-baa6-f8a5ea4f9c0d" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> Le raisonnement par analogie est-il rigoureux ? Quelle est sa valeur explicative ou persuasive ?</li></ul><ul id="1d6b2280-a891-8072-a3a8-de0681950704" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Une analogie n&#x27;est pas une identité.</li></ul><ul id="1d6b2280-a891-8073-b924-cc5c236b2208" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Logique, argumentation, rhétorique, science (modèles).</li></ul><h1 id="1d6b2280-a891-803c-ab07-e6e0a5f6a866" class=""><strong>Théorie / Pratique</strong></h1><ul id="1d6b2280-a891-80f0-9b90-fd20d74afa1e" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>Théorie</strong> = connaissance abstraite/spéculative. <strong>Pratique</strong> = action concrète/application.</li></ul><ul id="1d6b2280-a891-8023-bc1e-c5df441dad13" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> La pratique est-elle une simple application de la théorie ? La théorie est-elle inutile sans la pratique ?</li></ul><ul id="1d6b2280-a891-8015-879f-fc5726af08c6" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Opposer radicalement les deux ; elles sont souvent interdépendantes.</li></ul><ul id="1d6b2280-a891-8012-9e9b-e27d1105c81c" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Épistémologie, morale, politique, technique.</li></ul><h1 id="1d6b2280-a891-8046-903e-ffa10bbe98eb" class=""><strong>Transcendant / Immanent</strong></h1><ul id="1d6b2280-a891-80c6-9dbd-ff17c9963f2e" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>Transcendant</strong> = extérieur et supérieur à un domaine. <strong>Immanent</strong> = intérieur à ce domaine.</li></ul><ul id="1d6b2280-a891-8023-8982-c354caa77e09" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> Les valeurs morales sont-elles transcendantes (données par Dieu, la Raison) ou immanentes (issues de la société, de la nature humaine) ?</li></ul><ul id="1d6b2280-a891-808c-be65-e9191817cf17" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Transcendant ≠ Inaccessible ou Inconnaissable.</li></ul><ul id="1d6b2280-a891-8094-bcec-ef963d46aadd" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Métaphysique, théologie, morale, politique.</li></ul><h1 id="1d6b2280-a891-8008-8f19-cf53445de106" class=""><strong>Universel / Général / Particulier / Singulier</strong></h1><ul id="1d6b2280-a891-8016-9618-e6d6efd2ec43" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>Universel</strong> (tous, sans exception) &gt; <strong>Général</strong> (la plupart, avec exceptions) &gt; <strong>Particulier</strong> (quelques-uns, un groupe) &gt; <strong>Singulier</strong> (un seul).</li></ul><ul id="1d6b2280-a891-8096-8e6b-de5b5fb6d8a1" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> La science recherche-t-elle l&#x27;universel ou le général ? La morale doit-elle être universelle ?</li></ul><ul id="1d6b2280-a891-807f-96c6-fc61f84684b6" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Confondre universel et général.</li></ul><ul id="1d6b2280-a891-80c4-b7f6-d518d3d895c6" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Logique, épistémologie, morale, politique.</li></ul><h1 id="1d6b2280-a891-8011-9945-de803f8b1dc3" class=""><strong>Vrai / Probable / Certain</strong></h1><ul id="1d6b2280-a891-805b-8089-cd6e8db6f15c" class="bulleted-list"><li style="list-style-type:disc"><strong>Définition :</strong> <strong>Vrai</strong> = conforme au réel ou logiquement valide. <strong>Certain</strong> = indubitable (subjectivement ou objectivement). <strong>Probable</strong> = a des chances d&#x27;être vrai/de se produire.</li></ul><ul id="1d6b2280-a891-80e0-9969-ec098d8646b7" class="bulleted-list"><li style="list-style-type:disc"><strong>Question clé :</strong> La certitude est-elle un critère de vérité ? Faut-il se contenter du probable dans certains domaines ?</li></ul><ul id="1d6b2280-a891-806d-8f94-ce4a4a01e2c9" class="bulleted-list"><li style="list-style-type:disc"><strong>Confusion à éviter :</strong> Certain ≠ Vrai. On peut être certain d&#x27;une chose fausse.</li></ul><ul id="1d6b2280-a891-80e5-942f-c289defdf880" class="bulleted-list"><li style="list-style-type:disc"><strong>Domaines :</strong> Théorie de la connaissance, logique, épistémologie, sciences.</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8095-ac28-fdf115f979b2"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h1 id="1d6b2280-a891-80d6-aaa0-cdbf12cac5d5" class=""><strong>Utiliser les Repères à Bon Escient</strong></h1><p id="1d6b2280-a891-800d-a146-deb27ea6fda0" class="">Ces repères sont des outils précieux pour analyser un sujet, construire une argumentation ou comprendre un texte. N&#x27;hésitez pas à les mobiliser explicitement lorsque c&#x27;est pertinent (&quot;Il faut ici distinguer le légal du légitime...&quot;, &quot;L&#x27;auteur oppose ici la théorie et la pratique...&quot;). Les informations ajoutées ici (question clé, confusion, domaine) visent à vous aider à mieux cerner leur pertinence et leur usage potentiel dans votre réflexion.</p></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

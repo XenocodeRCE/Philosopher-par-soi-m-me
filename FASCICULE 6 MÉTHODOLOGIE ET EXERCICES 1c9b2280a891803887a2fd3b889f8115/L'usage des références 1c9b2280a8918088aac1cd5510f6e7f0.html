@@ -1,0 +1,683 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>L&#x27;usage des références</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-8088-aac1-cd5510f6e7f0" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1631519952398-5b1d76b946e8?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><h1 class="page-title">L&#x27;usage des références</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d5b2280-a891-8094-a681-de812acf818e" class=""><em>Une dissertation philosophique ne se nourrit pas seulement de votre propre réflexion, mais aussi du dialogue que vous entretenez avec la tradition philosophique et la culture en général. Savoir utiliser des références (auteurs, concepts, exemples) à bon escient est une compétence essentielle pour donner de la profondeur, de la précision et de la crédibilité à votre argumentation.</em></p><h3 id="1d5b2280-a891-8065-bc45-ead890861e8e" class=""><strong>1. Pourquoi Utiliser des Références ?</strong></h3><p id="1d5b2280-a891-8003-804b-f28c19e9d5ab" class="">Les références ne sont pas là pour &quot;faire bien&quot; ou pour montrer que vous avez appris des noms par cœur. Elles ont plusieurs fonctions :</p><ul id="1d5b2280-a891-808e-88f4-eef2deb43d69" class="bulleted-list"><li style="list-style-type:disc"><strong>Appuyer un argument :</strong> L&#x27;idée d&#x27;un philosophe reconnu peut venir renforcer la validité de votre propre argument.</li></ul><ul id="1d5b2280-a891-8048-bbc6-ff264040f82e" class="bulleted-list"><li style="list-style-type:disc"><strong>Illustrer une idée :</strong> Un exemple précis (historique, littéraire, scientifique, artistique…) ou la position d&#x27;un auteur peut éclairer concrètement une idée abstraite.</li></ul><ul id="1d5b2280-a891-80f5-ae8b-c43097429d28" class="bulleted-list"><li style="list-style-type:disc"><strong>Nuancer ou critiquer :</strong> Vous pouvez utiliser une référence pour introduire une objection, montrer les limites d&#x27;une position ou présenter une alternative.</li></ul><ul id="1d5b2280-a891-80c7-8475-ec8cbcc3f69f" class="bulleted-list"><li style="list-style-type:disc"><strong>Montrer votre culture philosophique :</strong> Utiliser des références pertinentes montre que votre réflexion s&#x27;inscrit dans un dialogue avec d&#x27;autres penseurs.</li></ul><ul id="1d5b2280-a891-80d4-ba1f-facf20023623" class="bulleted-list"><li style="list-style-type:disc"><strong>Préciser votre pensée :</strong> Se référer à un concept philosophique précis (ex : l&#x27;impératif catégorique chez Kant, la mauvaise foi chez Sartre) permet d&#x27;exprimer une idée de manière rigoureuse.</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d5b2280-a891-8040-a4b1-e4e0b20b97e2"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d5b2280-a891-801f-b785-d755c835c2ca" class=""><strong>Attention :</strong> L&#x27;excès de références ou leur mauvaise utilisation (le &quot;plaquage&quot;) est à éviter. Votre propre raisonnement doit rester au centre.</p></div></figure><h3 id="1d5b2280-a891-809d-b839-c829ba1e2b63" class=""><strong>2. Qu&#x27;est-ce qu&#x27;une Référence Pertinente ?</strong></h3><p id="1d5b2280-a891-8034-877b-f2be96b670ae" class="">Plusieurs types de références peuvent être mobilisés :</p><ul id="1d5b2280-a891-8099-91cc-c8f0373ac958" class="bulleted-list"><li style="list-style-type:disc"><strong>Les auteurs et leurs idées :</strong> Citer un philosophe (Platon, Descartes, Kant, Nietzsche, Arendt…) en expliquant sa thèse ou son argument sur un point précis lié à votre sujet.</li></ul><ul id="1d5b2280-a891-80d5-a134-f8553a0d8f1e" class="bulleted-list"><li style="list-style-type:disc"><strong>Les concepts philosophiques :</strong> Utiliser de manière juste et éclairante des concepts techniques (le doute méthodique, l&#x27;inconscient, le contrat social, l&#x27;allégorie de la caverne…).</li></ul><ul id="1d5b2280-a891-80b9-8a9e-d9c12f197fb6" class="bulleted-list"><li style="list-style-type:disc"><strong>Les exemples significatifs :</strong><ul id="1d5b2280-a891-8071-806f-fca1b92bb5e8" class="bulleted-list"><li style="list-style-type:circle"><strong>Historiques :</strong> Un événement, une période, une figure historique (ex : la Révolution française pour penser la liberté politique).</li></ul><ul id="1d5b2280-a891-809a-9161-e67dd6267f84" class="bulleted-list"><li style="list-style-type:circle"><strong>Littéraires / Artistiques :</strong> Une œuvre, un personnage, un courant artistique (ex : Antigone pour le conflit loi/morale, une œuvre d&#x27;art abstraite pour questionner la représentation).</li></ul><ul id="1d5b2280-a891-8010-abc4-e7af2578cfdd" class="bulleted-list"><li style="list-style-type:circle"><strong>Scientifiques :</strong> Une découverte, une théorie, une expérience (ex : l&#x27;expérience de Milgram pour réfléchir à l&#x27;obéissance).</li></ul><ul id="1d5b2280-a891-807b-a3c8-fe4b89c81d12" class="bulleted-list"><li style="list-style-type:circle"><strong>Mythologiques / Religieux :</strong> Un mythe, une figure, un texte sacré (utilisés pour leur portée symbolique).</li></ul><ul id="1d5b2280-a891-803d-9a60-c734da5ba4fd" class="bulleted-list"><li style="list-style-type:circle"><strong>Issus de l&#x27;observation contemporaine :</strong> Un fait de société, une actualité (à analyser avec prudence et recul philosophique).</li></ul></li></ul><h3 id="1d5b2280-a891-8057-8c46-e9ba196023a1" class=""><strong>3. Comment Bien Intégrer les Références ? (Les &quot;Do&quot; et &quot;Don&#x27;t&quot;)</strong></h3><ul id="1d5b2280-a891-80b2-a1a8-e39db4b5e37a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>DO : Expliquer la référence.</strong></mark> Ne vous contentez pas de citer un nom ou un titre. Expliquez l&#x27;idée de l&#x27;auteur ou la signification de l&#x27;exemple. <code>&quot;Comme l&#x27;explique Rousseau dans le Contrat Social, la volonté générale n&#x27;est pas la somme des volontés particulières, mais vise l&#x27;intérêt commun…&quot;</code></li></ul><ul id="1d5b2280-a891-80cf-8fd8-ef480ef11ed8" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>DON&#x27;T : Faire du &quot;name-dropping&quot;</strong></mark><strong>.</strong> Évitez les listes de noms sans explication. &quot;Platon, Aristote, Kant et Hegel ont parlé de ce sujet.&quot; (Et alors ?)</li></ul><ul id="1d5b2280-a891-806b-a3f0-e004ce87e5de" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>DO : Montrer la pertinence.</strong></mark> Explicitez clairement le lien entre la référence et votre propre argument. Pourquoi citez-vous cet auteur ou cet exemple à ce moment précis de votre raisonnement ? <code>&quot;Cette idée que la perception est une interprétation trouve un appui chez Merleau-Ponty lorsqu&#x27;il analyse…&quot;</code></li></ul><ul id="1d5b2280-a891-805e-a8a6-df0a29534eb5" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>DON&#x27;T : Plaquer des connaissances</strong></mark><strong>.</strong> N&#x27;insérez pas une référence qui n&#x27;a qu&#x27;un rapport lointain avec votre propos, juste pour montrer que vous la connaissez.</li></ul><ul id="1d5b2280-a891-8014-a759-ebf06ec7cb5d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>DO : Être précis et fidèle.</strong></mark> Respectez la pensée de l&#x27;auteur cité. Ne lui faites pas dire ce qu&#x27;il n&#x27;a pas dit. Si vous citez, citez exactement (avec des guillemets).</li></ul><ul id="1d5b2280-a891-8054-ae95-c7213bda4479" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>DON&#x27;T : Simplifier à l&#x27;extrême ou caricaturer.</strong></mark> La pensée des philosophes est souvent complexe.</li></ul><ul id="1d5b2280-a891-8027-b757-e6d3a2192450" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>DO : Intégrer la référence à votre propre argumentation.</strong></mark> La référence doit servir votre propos, l&#x27;éclairer, le renforcer. C&#x27;est un outil au service de votre réflexion.</li></ul><ul id="1d5b2280-a891-80fe-bc3c-e984121d355e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red"><strong>DON&#x27;T : Laisser la référence remplacer votre argumentation.</strong></mark> Ne vous cachez pas derrière les auteurs. Votre devoir doit être une réflexion personnelle et argumentée.</li></ul><ul id="1d5b2280-a891-8008-9b18-cec373a11904" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>DO : Utiliser les citations avec parcimonie.</strong></mark> Préférez les citations courtes et bien intégrées à votre phrase. Une longue citation doit être exceptionnelle et toujours suivie d&#x27;une explication détaillée.</li></ul><h3 id="1d5b2280-a891-8042-b845-e6105cef4326" class=""><strong>4. L&#x27;Usage Spécifique des Exemples</strong></h3><p id="1d5b2280-a891-8064-9e31-cfd86a37c993" class="">Les exemples (non philosophiques) sont utiles, mais doivent être maniés avec soin :</p><ul id="1d5b2280-a891-8023-b8ac-fa8bca1973e6" class="bulleted-list"><li style="list-style-type:disc"><strong>Un exemple n&#x27;est pas une preuve universelle :</strong> Il sert à illustrer, à rendre concret, parfois à tester une idée, mais un cas particulier ne suffit pas à établir une loi générale en philosophie.</li></ul><ul id="1d5b2280-a891-8018-8806-df830c85ffa5" class="bulleted-list"><li style="list-style-type:disc"><strong>Analysez l&#x27;exemple :</strong> Ne vous contentez pas de le mentionner. Expliquez en quoi il est pertinent, ce qu&#x27;il montre par rapport à votre argument.</li></ul><ul id="1d5b2280-a891-8030-ad17-ff6857865e14" class="bulleted-list"><li style="list-style-type:disc"><strong>Variez les types d&#x27;exemples :</strong> Puisez dans différents domaines (histoire, littérature, art, science, actualité...) pour montrer l&#x27;étendue de votre culture et la portée de votre réflexion.</li></ul><ul id="1d5b2280-a891-80e7-af2b-fd35bb498701" class="bulleted-list"><li style="list-style-type:disc"><strong>Évitez les exemples trop personnels ou anecdotiques</strong> s&#x27;ils ne sont pas analysés de manière à leur donner une portée plus générale.</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d5b2280-a891-807d-a476-ec5822dcc6c6"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h3 id="1d5b2280-a891-80b3-b0f5-e09f3e3fc53f" class=""><strong>Qualité Plutôt que Quantité</strong></h3><p id="1d5b2280-a891-80e2-9317-cddaea148dde" class="">Il vaut mieux utiliser peu de références, mais de manière approfondie, pertinente et bien expliquée, plutôt que de multiplier les allusions superficielles. Ce qui est valorisé, c&#x27;est votre capacité à dialoguer intelligemment avec la culture et la pensée philosophique pour nourrir votre propre réflexion sur le sujet posé.</p></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,694 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Analyses de sujets</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-8011-9b41-f9363d621934" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1616812757122-a6b613cf617c?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><h1 class="page-title">Analyses de sujets</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d5b2280-a891-809e-928b-f7bd723a77af" class=""><em>Avant de chercher à répondre à un sujet de dissertation, il est indispensable de l&#x27;analyser en profondeur pour en saisir tous les aspects et éviter le hors-sujet. Les exercices suivants vous guident dans cette démarche d&#x27;analyse systématique, en appliquant les étapes vues dans la méthodologie.</em></p><p id="1d5b2280-a891-8020-8085-c4f604c8f5a5" class="">
+</p><blockquote id="1d5b2280-a891-80ad-a3b0-c7838b5d84fb" class=""><strong>Sujet 1 : Le langage trahit-il la pensée ?</strong></blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d5b2280-a891-80b6-9d9c-d37f57d92b8e"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d5b2280-a891-8026-97bd-e2dcc33226b7" class="">1. Quels sont les <strong>mots-clés</strong> de ce sujet ?<br/>2. Définissez précisément chaque mot-clé :<br/>    ◦ Qu&#x27;entend-on par &quot;langage&quot; ici (la parole ? l&#x27;écriture ? tout système de signes ?) ?<br/>    ◦ Que signifie &quot;trahir&quot; (déformer ? révéler malgré soi ? être infidèle à ?) ?<br/>    ◦ Qu&#x27;est-ce que la &quot;pensée&quot; (idées claires ? sentiments ? flux de conscience ?) ?<br/>3. Quelle est la <br/><strong>relation</strong> posée entre &quot;langage&quot; et &quot;pensée&quot; ? Est-elle positive ou négative selon la question ?<br/>4. Quelle est la <br/><strong>forme</strong> de la question ? Qu&#x27;implique-t-elle comme type de réponse attendue (oui/non nuancé) ?<br/>5. Quel(s) <br/><strong>présupposé(s)</strong> cette question contient-elle (par exemple, sur le fait que le langage a pour fonction d&#x27;exprimer la pensée) ?<br/>6. Essayez de <br/><strong>reformuler</strong> la question avec vos propres mots pour vérifier votre compréhension.</p></div></figure><p id="1d5b2280-a891-8054-bf0b-cd2d865e756f" class="">
+</p><blockquote id="1d5b2280-a891-8010-a9ef-d03ffd549a1e" class=""><strong>Sujet 2 : Suffit-il de voir pour savoir ?</strong></blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d5b2280-a891-80d2-8c02-f5d1f86018ae"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d5b2280-a891-80d8-9b91-e4258fc8b332" class="">1. Quels sont les <strong>mots-clés</strong> ?<br/>2. Définissez &quot;voir&quot; (perception sensible directe ? constatation visuelle ? compréhension intellectuelle - &quot;je vois ce que tu veux dire&quot; ?) et &quot;savoir&quot; (connaissance certaine ? croyance justifiée ? compétence ?).<br/>3. Analysez la <br/><strong>formulation</strong> &quot;Suffit-il de... ?&quot;. Que demande précisément cette question (la vision est-elle une condition suffisante du savoir ? Est-elle au moins nécessaire ?) ?<br/>4. Quel <br/><strong>présupposé</strong> est contenu dans l&#x27;idée que &quot;voir&quot; pourrait être lié au &quot;savoir&quot; ? (Pensez à l&#x27;importance de la vue dans notre culture).<br/>5. Quelles situations ou quels domaines pourraient illustrer l&#x27;idée que voir <br/><strong>suffit</strong> pour savoir ?<br/>6. Quelles situations ou quels arguments pourraient montrer que voir <br/><strong>ne suffit pas</strong> (ou même peut empêcher) de savoir ?<br/>7. Essayez de <br/><strong>reformuler</strong> la question.</p></div></figure><p id="1d5b2280-a891-8048-a752-fc3c7ce203b5" class="">
+</p><p id="1d5b2280-a891-8047-998a-d412b45a2c3e" class="">
+</p><blockquote id="1d5b2280-a891-804b-8863-cfb801e87b30" class=""><strong>Sujet 3 : La technique</strong></blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d5b2280-a891-802f-ade1-d6565cffa610"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d5b2280-a891-805a-a0c4-d888a667f0a1" class="">1. Ce sujet est de type <strong>conceptuel</strong>. Quel est le concept central ?<br/>2. <br/><strong>Définissez</strong> &quot;la technique&quot;. Distinguez-la de la science, de l&#x27;art, du travail... (Ensemble des procédés ? Outils ? Savoir-faire ? Rapport au monde ?)<br/>3. Quelles sont les <br/><strong>questions implicites</strong> que soulève cette notion ? Formulez au moins trois questions philosophiques que l&#x27;on pourrait se poser à propos de &quot;la technique&quot;. (Exemples : La technique est-elle neutre ? Libère-t-elle l&#x27;homme ou l&#x27;aliène-t-elle ? Modifie-t-elle notre rapport à la nature ? Est-elle spécifiquement humaine ?)<br/>4. Identifiez des <br/><strong>tensions</strong> ou des <strong>paradoxes</strong> liés à la technique (ex: puissance créatrice vs puissance destructrice ; libération vs aliénation...).<br/>5. Comment pourriez-vous <br/><strong>reformuler</strong> ce sujet sous forme d&#x27;une question problématisée pour une dissertation ?</p></div></figure><p id="1d5b2280-a891-80c3-916f-fdbfba1e5403" class="">
+</p><blockquote id="1d5b2280-a891-80ff-9765-e463afae58f3" class=""><strong>Sujet 4 : Pourquoi l&#x27;art nous touche-t-il ?</strong></blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d5b2280-a891-80a0-9c88-e74933ce9b47"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d5b2280-a891-80a1-a258-f26fce0ae2c1" class="">1. Quels sont les <strong>mots-clés</strong> ?<br/>2. Définissez &quot;art&quot; (œuvres ? activité créatrice ? expérience esthétique ?) et &quot;nous toucher&quot; (émouvoir ? plaire ? faire réfléchir ? atteindre une vérité sensible ?).<br/>3. Analysez la <br/><strong>formulation</strong> &quot;Pourquoi...?&quot;. Que demande cette question (les causes, les raisons, les mécanismes de l&#x27;effet de l&#x27;art sur nous) ?<br/>4. Quel est le <br/><strong>présupposé</strong> principal de cette question ?<br/>5. Quelles <br/><strong>pistes de réponse</strong> (différentes raisons pour lesquelles l&#x27;art nous touche) pouvez-vous envisager ? (Pensez à la beauté, à l&#x27;expression des émotions, à la représentation du réel, à la transgression, au message...)<br/>6. Comment pourriez-vous <br/><strong>reformuler</strong> cette question pour en faire ressortir un problème philosophique plus précis ?</p></div></figure><p id="1d5b2280-a891-8026-9a8b-c4061937fb3a" class="">
+</p><blockquote id="1d5b2280-a891-80fb-ad0e-e8c9b436334a" class=""><strong>Sujet 5 : La conscience de soi est-elle une connaissance ?</strong></blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d5b2280-a891-80d1-8ccd-e5183167cc2a"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d5b2280-a891-8017-b673-d2adf52ca366" class="">1. Quels sont les <strong>mots-clés</strong> principaux ?<br/>2. Définissez &quot;conscience de soi&quot; (simple sentiment d&#x27;exister ? réflexion sur soi ? introspection ?) et &quot;connaissance&quot; (savoir objectif ? certitude ? vérité ?).<br/>3. Analysez la <br/><strong>relation</strong> posée par le verbe &quot;être&quot;. La question porte sur l&#x27;identité ou la non-identité des deux termes.<br/>4. Quelle est la <br/><strong>forme</strong> de la question ? Qu&#x27;implique-t-elle comme type de réponse ?<br/>5. Quel <br/><strong>présupposé</strong> peut-on identifier ? (Par exemple, que la conscience de soi existe et qu&#x27;elle a un rapport avec la connaissance).<br/>6. Quels arguments pourraient soutenir que la conscience de soi <br/><strong>est</strong> une connaissance (certitude immédiate du &quot;je pense&quot;, introspection...) ?<br/>7. Quels arguments pourraient soutenir qu&#x27;elle <br/><strong>n&#x27;est pas</strong> (ou pas seulement) une connaissance (subjectivité, illusion sur soi, part d&#x27;inconscient...) ?<br/>8. Essayez de <br/><strong>reformuler</strong> la question.</p></div></figure><p id="1d5b2280-a891-8040-96fd-f33f456482d6" class="">
+</p><p id="1d5b2280-a891-80ce-9346-fee458fed039" class="">
+</p><blockquote id="1d5b2280-a891-80f3-b8e4-d3f2945c7e39" class=""><strong>Sujet 6 : L&#x27;État doit-il viser le bonheur des citoyens ?</strong></blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d5b2280-a891-802c-b994-de90cfddc468"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d5b2280-a891-80b3-b691-e51278aa27c2" class="">1. Quels sont les <strong>mots-clés</strong> ?<br/>2. Définissez &quot;État&quot; (institution politique ? pouvoir souverain ? organisateur de la vie commune ?), &quot;viser&quot; (avoir pour but ? garantir ? permettre ?) et &quot;bonheur des citoyens&quot; (bien-être matériel ? satisfaction subjective ? épanouissement moral ?).<br/>3. Analysez la <br/><strong>formulation</strong> &quot;Doit-il...?&quot;. Sur quoi porte la question (légitimité morale ? rôle politique ? possibilité pratique ?) ?<br/>4. Quel(s) <br/><strong>présupposé(s)</strong> identifiez-vous ? (Par exemple, que le bonheur est un but souhaitable, que l&#x27;État a un rôle à jouer dans la vie des citoyens).<br/>5. Quelles raisons pourraient justifier que l&#x27;État <br/><strong>doive</strong> viser le bonheur (bienveillance, finalité de la politique...) ?<br/>6. Quelles raisons pourraient justifier que l&#x27;État <br/><strong>ne doive pas</strong> (ou ne puisse pas) viser le bonheur (respect de la liberté individuelle, danger du paternalisme ou du totalitarisme, nature privée du bonheur...) ?<br/>7. Essayez de <br/><strong>reformuler</strong> la question.</p></div></figure><p id="1d5b2280-a891-80db-9e16-f4ff9e3b7886" class="">
+</p><blockquote id="1d5b2280-a891-80eb-b287-dfde9f8d4497" class=""><strong>Sujet 7 : Peut-on prouver une croyance ?</strong></blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d5b2280-a891-802d-b636-e45945d5d07f"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d5b2280-a891-80f8-8a45-f97f5a477c4d" class="">1. Quels sont les <strong>mots-clés</strong> ?<br/>2. Définissez &quot;prouver&quot; (démontrer logiquement ? vérifier expérimentalement ? établir la certitude ?) et &quot;croyance&quot; (foi religieuse ? opinion ? conviction intime ? adhésion sans preuve ?). Distinguez &quot;croyance&quot; de &quot;savoir&quot;.<br/>3. Analysez la <br/><strong>formulation</strong> &quot;Peut-on...?&quot;. Sur quoi porte la question (possibilité logique ? capacité humaine ? légitimité ?) ?<br/>4. Quel(s) <br/><strong>présupposé(s)</strong> la question contient-elle sur la nature de la preuve et de la croyance ? (Par exemple, qu&#x27;elles semblent appartenir à des registres différents).<br/>5. Dans quels cas ou sous quelles conditions pourrait-on envisager de &quot;prouver&quot; une croyance (ou de la transformer en savoir) ?<br/>6. Pourquoi semble-t-il difficile, voire impossible, de &quot;prouver&quot; certaines croyances (notamment religieuses ou métaphysiques) ?<br/>7. Essayez de <br/><strong>reformuler</strong> la question.</p></div></figure><p id="1d5b2280-a891-802c-8e10-d381e72618a6" class="">
+</p><blockquote id="1d5b2280-a891-8033-9d7e-d1322bd2f642" class=""><strong>Sujet 8 : Nature et Culture</strong></blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d5b2280-a891-8003-b88c-d5fd983dde11"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d5b2280-a891-8014-bef4-da4c08f8220b" class="">1. Ce sujet est de type <strong>conceptuel</strong> mettant en relation deux notions. Quels sont ces deux concepts ?<br/>2. <br/><strong>Définissez</strong> &quot;Nature&quot; (ce qui est inné ? le monde physique ? l&#x27;essence ?) et &quot;Culture&quot; (ce qui est acquis ? l&#x27;ensemble des savoirs, croyances, institutions ? transformation de la nature ?).<br/>3. Quelle est la <br/><strong>relation</strong> la plus évidente entre ces deux termes (opposition ? distinction ? autre ?) ?<br/>4. Quelles <br/><strong>questions implicites</strong> cette mise en relation soulève-t-elle ? (Exemples : L&#x27;homme est-il un être naturel ou culturel ? La culture dénature-t-elle l&#x27;homme ? Peut-on les opposer radicalement ? Y a-t-il une &quot;nature humaine&quot; ?)<br/>5. Identifiez des <br/><strong>domaines</strong> où l&#x27;articulation entre nature et culture est particulièrement problématique (ex: éducation, langage, technique, morale...).<br/>6. Comment pourriez-vous <br/><strong>reformuler</strong> ce sujet sous forme d&#x27;une question problématisée pour une dissertation ? (Ex: &quot;La culture s&#x27;oppose-t-elle à la nature en l&#x27;homme ?&quot; ou &quot;Peut-on distinguer en l&#x27;homme ce qui relève de la nature et ce qui relève de la culture ?&quot;)</p></div></figure><p id="1d5b2280-a891-802b-bce3-c35b28292d27" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d5b2280-a891-8094-8286-f90836ffcfa1"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h3 id="1d5b2280-a891-8066-8b58-e9b698fae11f" class=""><strong>L&#x27;Analyse : La Clé du Hors-Sujet Évité</strong></h3><p id="1d5b2280-a891-8006-9069-daa43f88f945" class="">Prendre le temps de réaliser cette analyse détaillée pour chaque sujet vous force à cerner précisément ce qui est demandé et les enjeux soulevés. C&#x27;est le meilleur moyen d&#x27;éviter le hors-sujet et de poser les bases solides pour une problématisation pertinente et un plan cohérent. Ne sautez jamais cette étape, même si le sujet vous semble simple au premier abord !</p></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,683 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Identification des repères dans un texte</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-8027-8c2f-e0c47214b851" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 74.89%"/><h1 class="page-title">Identification des repères dans un texte</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d6b2280-a891-808f-be90-e5e6a43904cb" class=""><em>Le but de ces exercices est de vous entraîner à reconnaître les distinctions conceptuelles (les repères) qui sont à l&#x27;œuvre ou qui sont pertinentes pour analyser un texte philosophique. Pour chaque extrait, identifiez les repères qui vous semblent les plus utiles pour en comprendre le sens et justifiez brièvement votre choix.</em></p><h1 id="1d6b2280-a891-80d5-b314-d89c48870cf1" class=""><strong>Exercice 1</strong></h1><blockquote id="1d6b2280-a891-802d-ac6e-f9a1ad4c7660" class="">La loi, en général, est la raison humaine, en tant qu&#x27;elle gouverne tous les peuples de la terre et les lois politiques et civiles de chaque nation ne doivent être que les cas particuliers où s&#x27;applique cette raison humaine. [...] [Les lois] doivent être tellement propres au peuple pour lequel elles sont faites, que c&#x27;est un très grand hasard si celles d&#x27;une nation peuvent convenir à une autre. Elles doivent être relatives au physique du pays ; au climat glacé, brûlant ou tempéré ; à la qualité du terrain, à sa situation, à sa grandeur ; au genre de vie des peuples, laboureurs, chasseurs ou pasteurs [...].<br/><br/>Montesquieu, De l&#x27;Esprit des Lois, Livre I, Chapitre 3<br/></blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-808f-b9ad-d62315936d64"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d6b2280-a891-8093-9e80-c3d024baec8b" class="">1. Quel(s) repère(s) vous semble(nt) pertinent(s) pour analyser la première phrase sur la loi comme &quot;raison humaine&quot; ? Pensez notamment à <strong>Universel / Particulier</strong> ou <strong>En droit / En fait</strong>. Justifiez.<br/>2. Comment Montesquieu utilise-t-il ensuite la distinction <br/><strong>Absolu / Relatif</strong> pour décrire les lois politiques et civiles ? Justifiez en citant le texte.<br/>3. Peut-on utiliser le repère <br/><strong>Cause / Principe</strong> ici ? Si oui, comment ?</p></div></figure><h1 id="1d6b2280-a891-808d-94ca-d9c4cb8b194a" class=""><strong>Exercice 2</strong></h1><blockquote id="1d6b2280-a891-8050-a6ce-e22b3b2072be" class="">Il me semble que la différence qui est entre les plus grandes âmes et celles qui sont basses et vulgaires, consiste, principalement, en ce que les âmes vulgaires se laissent aller à leurs passions, et ne sont heureuses ou malheureuses, que selon que les choses qui leur surviennent sont agréables ou fâcheuses ; au lieu que les autres ont des raisonnements si forts et si puissants que, bien qu&#x27;elles aient aussi des passions, et même souvent de plus violentes que celles du commun¹, leur raison demeure néanmoins toujours la maîtresse, et fait que les afflictions même leur servent, et contribuent à la parfaite félicité dont elles jouissent dès cette vie.<br/><br/>Descartes, Lettre à Élisabeth, 18 mai 1645<br/>¹ Du commun : des gens ordinaires.<br/></blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8055-b2ce-dabc801f5559"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d6b2280-a891-8023-aac1-f297df4654e9" class="">1. Quelle opposition majeure structure ce texte ? Quel(s) repère(s) permet(tent) de la penser (par exemple : <strong>Raison / Passion</strong> [implicite], <strong>Actif / Passif</strong> [implicite], <strong>Liberté / Déterminisme</strong> [implicite]) ? Justifiez.<br/>2. Comment la distinction <br/><strong>Subjectif / Objectif</strong> pourrait-elle s&#x27;appliquer à la manière dont les deux types d&#x27;âmes vivent les événements (&quot;selon que les choses [...] sont agréables ou fâcheuses&quot; vs &quot;les afflictions même leur servent&quot;) ?<br/>3. Le repère <br/><strong>Théorie / Pratique</strong> peut-il éclairer la différence entre avoir des raisonnements forts et les appliquer dans la vie ?</p></div></figure><h1 id="1d6b2280-a891-80ef-9acc-ea0bf4a7855e" class=""><strong>Exercice 3</strong></h1><blockquote id="1d6b2280-a891-806b-8846-e1265d3c103b" class="">L&#x27;opinion publique contient toujours une part de vérité et une part d&#x27;erreur. Si nous nous bornons à considérer l&#x27;opinion dans ce qu&#x27;elle a de vrai, nous dirons qu&#x27;il n&#x27;y a rien de mieux ; si nous ne regardons que ce qu&#x27;elle a de faux, nous dirons qu&#x27;il n&#x27;y a rien de plus absurde. De là vient qu&#x27;elle est pour les uns un objet de respect et pour les autres un objet de mépris. Mais ni ce respect ni ce mépris ne sont mérités, car l&#x27;opinion, étant un composé de vrai et de faux, ne mérite ni l&#x27;un ni l&#x27;autre.<br/><br/>Auguste Comte, Cours de philosophie positive (adapté)<br/></blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-80d0-a4ca-de31bbba62eb"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d6b2280-a891-80bb-b67f-e8bb82265629" class="">1. Quel repère fondamental Comte utilise-t-il pour analyser l&#x27;&quot;opinion publique&quot; ? (Pensez à <strong>Vrai / Faux</strong> [implicite]).<br/>2. Comment la distinction <br/><strong>Analyse / Synthèse</strong> est-elle à l&#x27;œuvre dans la méthode de Comte ici ?<br/>3. Le repère <br/><strong>Absolu / Relatif</strong> pourrait-il être utilisé pour discuter la nature de l&#x27;opinion publique telle que décrite ici ?<br/>4. En quoi ce texte illustre-t-il la différence entre <br/><strong>Croire</strong> (l&#x27;opinion, même si elle contient du vrai) et <strong>Savoir</strong> (qui exigerait de séparer le vrai du faux) ?</p></div></figure><h1 id="1d6b2280-a891-80f4-91aa-e77209bbef76" class=""><strong>Exercice 4</strong></h1><blockquote id="1d6b2280-a891-8034-b88f-c6ad07eca471" class="">Il semble que de toutes les sciences humaines, l&#x27;histoire soit celle qui souffre le plus de la difficulté ou plutôt de l&#x27;impossibilité où nous sommes de faire des expériences. L&#x27;astronome observe les astres, mais il ne peut agir sur eux ; [...] Le physicien, le chimiste agissent sur la matière inerte ou vivante ; ils font de véritables expériences. L&#x27;historien n&#x27;a même pas la ressource de l&#x27;observation directe ; il travaille sur des documents. Que peuvent valoir des expériences faites après coup sur des documents ?<br/><br/>Henri-Irénée Marrou, De la connaissance historique<br/></blockquote><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8091-9b8a-f6bd4f686581"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d6b2280-a891-8005-9fda-c1710185ace8" class="">1. Quelle distinction l&#x27;auteur établit-il entre l&#x27;histoire et d&#x27;autres sciences (astronomie, physique, chimie) concernant leur méthode ? Quel repère lié à la méthode scientifique est ici central (pensez à <strong>Théorie / Pratique</strong> ou <strong>Observation / Expérimentation</strong> [implicite]) ?<br/>2. Comment le repère <br/><strong>Médiat / Immédiat</strong> permet-il de caractériser le rapport de l&#x27;historien à son objet (&quot;observation directe&quot; vs &quot;travaille sur des documents&quot;) ?<br/>3. Le texte soulève une question sur la possibilité pour l&#x27;histoire d&#x27;atteindre le même statut que d&#x27;autres sciences. Quel repère lié à la connaissance cela engage-t-il (pensez à <br/><strong>Vrai / Probable / Certain</strong>) ?<br/>4. Peut-on utiliser la distinction <br/><strong>Expliquer / Comprendre</strong> pour penser la spécificité du travail de l&#x27;historien par rapport au physicien ?</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8058-b04e-db9fc5de37dc"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h1 id="1d6b2280-a891-80f9-87df-e5578c787f84" class=""><strong>L&#x27;Art de Repérer</strong></h1><p id="1d6b2280-a891-806b-85c9-ca9512485340" class="">Identifier les repères pertinents dans un texte demande de l&#x27;entraînement. Ne vous attendez pas à les voir tous ou à ce qu&#x27;ils soient toujours explicites. Cherchez les distinctions clés que fait l&#x27;auteur, les oppositions qu&#x27;il met en place, les concepts qu&#x27;il articule. Se référer à la liste des repères peut vous aider à nommer et à analyser plus précisément ces mouvements de la pensée.</p></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

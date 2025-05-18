@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Exercice de rédaction niveau 4</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1d4b2280-a891-80c0-99a5-fcfe43997a32" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1622447806884-6aabf9a96e7d?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><h1 class="page-title">Exercice de rédaction niveau 4</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><h2 id="1d4b2280-a891-804a-bd01-fdf64054e732" class=""><strong>Exercice 16 : Dissertation Guidée Pas-à-Pas</strong></h2><p id="1d4b2280-a891-8010-a33e-ff825f804203" class=""><strong>Objectif :</strong> Mettre en œuvre l&#x27;ensemble de la méthodologie de la dissertation sur un sujet complet.</p><h3 id="1d4b2280-a891-8030-ac89-f040bb8d56b4" class=""><strong>Sujet :</strong></h3><blockquote id="1d4b2280-a891-8007-8a07-cbdd422bf69f" class=""><strong>&quot;La liberté consiste-t-elle à faire ce que l&#x27;on veut ?&quot;</strong></blockquote><h3 id="1d4b2280-a891-8049-b8f4-f49ecd030012" class=""><strong>Consignes :</strong></h3><p id="1d4b2280-a891-801e-ba8d-f194e9f6f8cc" class="">Suivez les étapes ci-dessous pour construire votre réflexion et préparer la rédaction.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d4b2280-a891-80ff-894b-d095e8d1bd9e"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d4b2280-a891-8088-af6e-eec321149421" class=""><strong>Étape 1 : Analyse des termes et première approche</strong></p><p id="1d4b2280-a891-80e9-9905-d2552720afb5" class="">Définissez &quot;liberté&quot;, &quot;consister&quot;, &quot;faire ce que l&#x27;on veut&quot;. Quelle est l&#x27;idée commune ou l&#x27;opinion spontanée sur ce sujet ? Quelle tension ou quel paradoxe cette opinion soulève-t-elle immédiatement (pensez aux limites, aux conséquences) ?</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d4b2280-a891-80a6-8987-fd630fbddb3d"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d4b2280-a891-807d-9c44-d42bed43ac55" class=""><strong>Étape 2 : Formulation de la problématique</strong></p><p id="1d4b2280-a891-80c6-8753-d3a71449e1e4" class="">Transformez la tension identifiée en une question complexe (ou plusieurs questions liées) qui montre l&#x27;enjeu philosophique. Pourquoi la définition de la liberté comme simple satisfaction des désirs est-elle problématique ?</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d4b2280-a891-8025-9434-c5d95320222d"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d4b2280-a891-802c-bc7d-e408b572d3e1" class=""><strong>Étape 3 : Élaboration du plan détaillé</strong></p><p id="1d4b2280-a891-80c8-b556-d3d508422d3d" class="">Proposez un plan en 2 ou 3 parties. Par exemple : I. L&#x27;attrait initial de l&#x27;idée : la liberté comme absence de contrainte et satisfaction des désirs. II. Les limites et les illusions de cette conception (contraintes internes/externes, conflit des désirs, distinction vouloir/désirer). III. Vers une autre conception de la liberté (autonomie, maîtrise de soi, liberté civile...). Pour chaque partie, notez les arguments clés et les références/exemples possibles (ex: Calliclès chez Platon, Rousseau, Kant, Stoïciens...).</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d4b2280-a891-80e9-8682-f3a15196a9b8"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d4b2280-a891-80e5-9060-f2ec9df96fbe" class=""><strong>Étape 4 : Préparation de l&#x27;introduction</strong></p><p id="1d4b2280-a891-80a0-9918-d99788afbca8" class="">Rédigez au brouillon l&#x27;introduction complète : Accroche, analyse menant à la problématique, problématique, annonce du plan.</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d4b2280-a891-809d-85ec-d0d997eb62fe"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><p id="1d4b2280-a891-80e6-b854-dcec28e3d2d5" class=""><strong>Étape 5 : Préparation de la conclusion</strong></p><p id="1d4b2280-a891-8034-a15a-d68fa4766a81" class="">Rédigez au brouillon la conclusion : Bilan synthétique des étapes du raisonnement, réponse nuancée à la problématique.</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d4b2280-a891-80ee-a1ff-ce051d30fbbe"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h3 id="1d4b2280-a891-80dc-9c0b-c9a678d433fa" class=""><strong>Conseil :</strong></h3><p id="1d4b2280-a891-80d7-ab3c-ec36cafd14b2" class="">Cet exercice vise à structurer la pensée avant la rédaction. Prenez le temps de bien remplir chaque étape au brouillon. La qualité de cette préparation conditionne largement la qualité de la dissertation finale.</p></div></figure><h2 id="1d4b2280-a891-80bf-bc4c-e55aac2b70e6" class=""><strong>Exercice 17 : Comparer Deux Perspectives Philosophiques</strong></h2><p id="1d4b2280-a891-8073-aa65-fce605d36f0c" class=""><strong>Objectif :</strong> Analyser et mettre en relation deux approches différentes d&#x27;un même problème.</p><h3 id="1d4b2280-a891-80fc-a49b-ee5bade85531" class=""><strong>Thème : L&#x27;origine de nos connaissances</strong></h3><h3 id="1d4b2280-a891-8059-b214-f9786eea17d8" class=""><strong>Perspective A : Rationalisme (type Descartes)</strong></h3><p id="1d4b2280-a891-80bf-a942-dda3ff225f01" class="">Certaines de nos idées les plus fondamentales (Dieu, soi-même, principes mathématiques) sont innées ou découvertes par la seule raison, indépendamment de l&#x27;expérience sensible. La raison est la source première et la plus fiable de la connaissance certaine.</p><h3 id="1d4b2280-a891-80c7-aff6-e94dbff159f6" class=""><strong>Perspective B : Empirisme (type Locke/Hume)</strong></h3><p id="1d4b2280-a891-80fa-b9cd-f0b8f8e725ae" class="">L&#x27;esprit est à la naissance une &quot;table rase&quot;. Toutes nos idées proviennent directement ou indirectement de l&#x27;expérience sensible (sensations externes, réflexion interne). Il n&#x27;y a pas d&#x27;idées innées.</p><h3 id="1d4b2280-a891-8089-8b58-edd3ad5c7d22" class=""><strong>Consignes :</strong></h3><ol type="1" id="1d4b2280-a891-80e0-9d30-c5ec90d88219" class="numbered-list" start="1"><li>Quel est le point de désaccord fondamental entre ces deux perspectives ?</li></ol><ol type="1" id="1d4b2280-a891-8040-bed4-d5e69aa04f92" class="numbered-list" start="2"><li>Quels types de connaissances chaque perspective privilégie-t-elle ou explique-t-elle le mieux ?</li></ol><ol type="1" id="1d4b2280-a891-8085-aac7-d6a5659b6d7b" class="numbered-list" start="3"><li>Peut-on imaginer une position intermédiaire ou une synthèse (comme chez Kant) ? Si oui, quelle serait son idée principale ?</li></ol><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d4b2280-a891-80ea-b6b1-ea8ba8dc4d96"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h3 id="1d4b2280-a891-803f-bbfb-fb3401bf66cf" class=""><strong>Intérêt de la comparaison :</strong></h3><p id="1d4b2280-a891-80b2-9ba0-ded8aa2ae703" class="">Confronter des thèses opposées permet de mieux comprendre les forces et les faiblesses de chacune, et d&#x27;affiner sa propre position sur une question philosophique.</p></div></figure><h2 id="1d4b2280-a891-807a-ae02-eea7f10d00d8" class=""><strong>Exercice 18 : Repérer les Sophismes (Erreurs de Raisonnement)</strong></h2><p id="1d4b2280-a891-8074-a086-ec629ab41bf9" class=""><strong>Objectif :</strong> Développer un esprit critique en identifiant des arguments fallacieux courants.</p><h3 id="1d4b2280-a891-8018-b4ce-f716fd485b63" class=""><strong>Arguments à analyser :</strong></h3><ol type="1" id="1d4b2280-a891-803d-a0a9-cadd7654b154" class="numbered-list" start="1"><li>&quot;Mon professeur de philosophie dit que Dieu n&#x27;existe pas, donc Dieu n&#x27;existe pas.&quot;</li></ol><ol type="1" id="1d4b2280-a891-80ae-8afb-fc1924a941fa" class="numbered-list" start="2"><li>&quot;Soit vous êtes pour la liberté d&#x27;expression totale, soit vous êtes contre la liberté. Il n&#x27;y a pas de milieu.&quot;</li></ol><ol type="1" id="1d4b2280-a891-8063-9fec-fb8080064d8c" class="numbered-list" start="3"><li>&quot;Tous ceux qui critiquent la politique du gouvernement sont évidemment des extrémistes anti-démocratiques.&quot;</li></ol><ol type="1" id="1d4b2280-a891-8026-b07b-c0961bba00a2" class="numbered-list" start="4"><li>&quot;On a toujours fait comme ça, donc c&#x27;est forcément la bonne manière de faire.&quot;</li></ol><ol type="1" id="1d4b2280-a891-80d6-93d3-f127b4807854" class="numbered-list" start="5"><li>&quot;Ne prenez pas en compte les arguments de M. Dubois sur l&#x27;écologie, c&#x27;est bien connu qu&#x27;il roule en 4x4.&quot;</li></ol><h3 id="1d4b2280-a891-8023-b705-d2eba81e2336" class=""><strong>Consignes :</strong></h3><p id="1d4b2280-a891-80ed-836e-de0e9008f699" class="">Pour chaque argument, identifiez le type d&#x27;erreur logique (sophisme) commise. Voici quelques types courants :</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d4b2280-a891-8095-a75e-c73f98263f74"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><ul id="1d4b2280-a891-80ca-9a57-e6c25a16b82c" class="bulleted-list"><li style="list-style-type:disc"><strong>Argument d&#x27;autorité :</strong> Invoquer une autorité non pertinente ou de manière abusive.</li></ul><ul id="1d4b2280-a891-80ee-8baa-d945352fc3d7" class="bulleted-list"><li style="list-style-type:disc"><strong>Faux dilemme (ou fausse dichotomie) :</strong> Présenter seulement deux options comme les seules possibles alors qu&#x27;il en existe d&#x27;autres.</li></ul><ul id="1d4b2280-a891-809b-853e-f0b7db8879ce" class="bulleted-list"><li style="list-style-type:disc"><strong>Homme de paille (ou épouvantail) :</strong> Caricaturer ou déformer la position adverse pour la réfuter plus facilement.</li></ul><ul id="1d4b2280-a891-8060-ad18-ef2cb6c816fa" class="bulleted-list"><li style="list-style-type:disc"><strong>Appel à la tradition :</strong> Justifier une idée ou une pratique par le simple fait qu&#x27;elle est ancienne.</li></ul><ul id="1d4b2280-a891-8017-a43d-c258b26ab459" class="bulleted-list"><li style="list-style-type:disc"><strong>Attaque ad hominem :</strong> Attaquer la personne qui énonce l&#x27;argument plutôt que l&#x27;argument lui-même.</li></ul></div></figure><p id="1d4b2280-a891-800d-a320-f2d7e6b54cab" class="">Expliquez brièvement en quoi consiste l&#x27;erreur dans chaque cas.</p><h2 id="1d4b2280-a891-80b7-aad3-dbd9fe5a3381" class=""><strong>Exercice 19 : Raffiner le Style Philosophique</strong></h2><p id="1d4b2280-a891-8015-be31-dd0ff2bb48ab" class=""><strong>Objectif :</strong> Améliorer la précision, la clarté et l&#x27;élégance de l&#x27;expression écrite.</p><h3 id="1d4b2280-a891-8069-87f0-cc89529538d8" class=""><strong>Paragraphe à améliorer :</strong></h3><blockquote id="1d4b2280-a891-80b3-906b-e007a1d65ad3" class="">&quot;Les gens pensent souvent qu&#x27;être heureux c&#x27;est avoir plein de trucs, genre de l&#x27;argent ou une grosse voiture. Mais en fait, c&#x27;est pas ça le plus important. C&#x27;est plus un truc intérieur, comment on voit les choses. Si on est bien dans sa tête, on peut être heureux même sans rien avoir. C&#x27;est une question d&#x27;état d&#x27;esprit, quoi.&quot;</blockquote><h3 id="1d4b2280-a891-80f5-9354-f5cfd0bafb7a" class=""><strong>Consignes :</strong></h3><p id="1d4b2280-a891-802e-9710-cde77c4c2c53" class="">Réécrivez ce paragraphe en adoptant un style plus philosophique et académique :</p><ul id="1d4b2280-a891-80fd-b353-f8804906a360" class="bulleted-list"><li style="list-style-type:disc">Utilisez un vocabulaire plus précis et abstrait (ex: bonheur, possession matérielle, condition suffisante/nécessaire, état intérieur, disposition de l&#x27;esprit, perception subjective...).</li></ul><ul id="1d4b2280-a891-8032-903d-fe11977ef28b" class="bulleted-list"><li style="list-style-type:disc">Évitez les expressions familières (&quot;plein de trucs&quot;, &quot;genre&quot;, &quot;c&#x27;est pas ça&quot;, &quot;truc intérieur&quot;, &quot;bien dans sa tête&quot;, &quot;quoi&quot;).</li></ul><ul id="1d4b2280-a891-80e7-8152-da6f08ace050" class="bulleted-list"><li style="list-style-type:disc">Structurez les phrases de manière plus élaborée (propositions subordonnées, connecteurs logiques variés).</li></ul><ul id="1d4b2280-a891-80f1-a0c8-e02a8f9cc8ee" class="bulleted-list"><li style="list-style-type:disc">Clarifiez la logique de l&#x27;argument (opposition entre vision matérialiste et vision internaliste du bonheur).</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d4b2280-a891-8023-a4e4-cba82eed453d"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h3 id="1d4b2280-a891-80b2-bbcd-fc7525fb385f" class=""><strong>Vers un style philosophique :</strong></h3><p id="1d4b2280-a891-80d0-9b5c-ecc046db85aa" class="">Il ne s&#x27;agit pas d&#x27;être inutilement compliqué, mais de rechercher la précision conceptuelle, la rigueur logique et une certaine distance critique par rapport au langage courant.</p></div></figure><h2 id="1d4b2280-a891-80f2-ab51-cf30f26c63f1" class=""><strong>Exercice 20 : Cartographie d&#x27;une Notion au Programme</strong></h2><p id="1d4b2280-a891-80b5-8221-f7ec9cc9baf2" class=""><strong>Objectif :</strong> Synthétiser et organiser ses connaissances sur une notion clé du programme de Terminale.</p><h3 id="1d4b2280-a891-8034-8a56-dc9807d77afb" class=""><strong>Notion à explorer :</strong></h3><blockquote id="1d4b2280-a891-8036-b4e5-c4760a888a79" class=""><strong>La Vérité</strong></blockquote><h3 id="1d4b2280-a891-80e9-bc6c-f4aedbb27f39" class=""><strong>Consignes :</strong></h3><p id="1d4b2280-a891-80f6-b10e-cfd5a759bee4" class="">Créez une &quot;carte mentale&quot; ou une liste structurée autour de cette notion. Incluez les éléments suivants :</p><ol type="1" id="1d4b2280-a891-8005-954d-c49df1cfed89" class="numbered-list" start="1"><li><strong>Définition(s) possible(s) :</strong> Qu&#x27;est-ce que la vérité ? (ex: adéquation pensée/réel, cohérence logique, dévoilement, consensus...)</li></ol><ol type="1" id="1d4b2280-a891-8007-b790-cb7021627cda" class="numbered-list" start="2"><li><strong>Concepts liés :</strong> Quels autres concepts sont importants pour penser la vérité ? (ex: réalité, opinion, croyance, savoir, erreur, illusion, doute, preuve, langage, interprétation...)</li></ol><ol type="1" id="1d4b2280-a891-8037-affc-fe5d9ee0be9a" class="numbered-list" start="3"><li><strong>Questions / Problèmes fondamentaux :</strong> Quelles grandes questions se posent à propos de la vérité ? (ex: La vérité est-elle accessible ? Existe-t-il des vérités absolues ? Peut-on désirer le faux ? Toute vérité est-elle bonne à dire ? Quels sont les critères de la vérité ?...)</li></ol><ol type="1" id="1d4b2280-a891-8096-bb35-ce6385e6e58f" class="numbered-list" start="4"><li><strong>Auteurs et théories clés (si connus) :</strong> Quels philosophes ont proposé des idées importantes sur la vérité ? (ex: Platon, Aristote, Descartes, Pascal, Kant, Nietzsche, pragmatistes...) Mentionnez brièvement leur idée principale.</li></ol><ol type="1" id="1d4b2280-a891-808c-9ec6-f8a9d098b6fb" class="numbered-list" start="5"><li><strong>Distinctions importantes :</strong> Quelles distinctions sont cruciales ? (ex: vérité formelle / vérité matérielle, vérité de fait / vérité de raison, opinion droite / savoir...)</li></ol><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d4b2280-a891-80c0-b14f-c446925663b3"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h3 id="1d4b2280-a891-8005-bff2-de806fb9c08a" class=""><strong>Utilité de l&#x27;exercice :</strong></h3><p id="1d4b2280-a891-80b8-9c26-d214271f3017" class="">Cet exercice aide à réviser activement une notion, à en saisir les enjeux et les articulations, et à préparer des arguments et des références pour une dissertation ou une explication de texte.</p></div></figure><p id="1d4b2280-a891-8065-bf3d-d5a2a8b54d60" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

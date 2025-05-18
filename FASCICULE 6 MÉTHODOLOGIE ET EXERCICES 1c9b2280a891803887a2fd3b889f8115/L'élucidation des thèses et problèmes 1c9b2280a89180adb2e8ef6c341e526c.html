@@ -1,0 +1,683 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>L&#x27;élucidation des thèses et problèmes</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-80ad-b2e8-ef6c341e526c" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1582137490248-c53207ec5602?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><h1 class="page-title">L&#x27;élucidation des thèses et problèmes</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d4b2280-a891-8000-b1b0-fdc8a3f787e7" class=""><em>Une fois l&#x27;analyse détaillée des concepts et des arguments réalisée au brouillon (</em><em><a href="L&#x27;analyse%20des%20concepts%20et%20arguments%201c9b2280a89180ae98b9e0a68a4784af.html">L&#x27;analyse des concepts et arguments</a></em><em>), l&#x27;objectif final de l&#x27;explication est de mettre en lumière le &quot;message&quot; essentiel du texte : sa thèse centrale et le problème philosophique qu&#x27;il éclaire. Il ne s&#x27;agit plus seulement de décrire, mais de synthétiser pour révéler l&#x27;intérêt et la portée de la pensée de l&#x27;auteur.</em></p><h1 id="1d4b2280-a891-8078-ab8c-f28e1629e908" class=""><strong>1. Élucider la Thèse Principale</strong></h1><p id="1d4b2280-a891-80f7-b41d-ec308ccdd808" class="">Il ne suffit pas d&#x27;avoir identifié la thèse (Partie 1, Étape 3), il faut maintenant en expliquer le sens profond et montrer comment elle est construite.</p><ul id="1d4b2280-a891-80cc-8991-e563f4a5f677" class="bulleted-list"><li style="list-style-type:disc"><strong>Expliquer le sens :</strong> Reformulez la thèse de manière encore plus précise, en utilisant les définitions de concepts que vous avez analysées (Partie 2). Qu&#x27;est-ce que l&#x27;auteur affirme exactement ? Quelles sont les implications directes de cette affirmation ?</li></ul><ul id="1d4b2280-a891-80cd-9df6-d2f6c6f95b3f" class="bulleted-list"><li style="list-style-type:disc"><strong>Montrer la construction :</strong> Votre explication doit montrer comment les différentes parties du texte et les arguments identifiés (Partie 1, Étape 4 et Partie 2) convergent pour établir cette thèse. Il faut retracer le cheminement logique de l&#x27;auteur.</li></ul><ul id="1d4b2280-a891-8051-a281-f97b2936183f" class="bulleted-list"><li style="list-style-type:disc"><strong>Synthétiser l&#x27;argumentation :</strong> Mettez en évidence le ou les arguments principaux qui soutiennent la thèse. Comment l&#x27;auteur prouve-t-il ce qu&#x27;il avance ?</li></ul><ul id="1d4b2280-a891-8007-92dd-e41a8a17d850" class="bulleted-list"><li style="list-style-type:disc"><strong>Clarifier les présupposés :</strong> Toute thèse repose sur certaines idées admises implicitement par l&#x27;auteur (des présupposés). Essayer de les identifier peut aider à mieux comprendre la position défendue. (Ex: si un auteur défend la liberté totale, il présuppose peut-être que l&#x27;homme n&#x27;est pas déterminé).</li></ul><h1 id="1d4b2280-a891-80f0-b09c-db46683d3038" class=""><strong>2. Dégager le(s) Problème(s) Philosophique(s) et l&#x27;Enjeu</strong></h1><p id="1d4b2280-a891-8070-a7e9-e67facc5d34c" class="">C&#x27;est ici que l&#x27;on montre la portée philosophique du texte, pourquoi il mérite d&#x27;être lu et médité.</p><ul id="1d4b2280-a891-8058-b6c4-c0bf59631387" class="bulleted-list"><li style="list-style-type:disc"><strong>Identifier le Problème :</strong> Rappelez la question centrale à laquelle le texte répond (Partie 1, Étape 2). Montrez en quoi cette question est un *vrai problème philosophique*, c&#x27;est-à-dire une question ouverte, difficile, pour laquelle il n&#x27;y a pas de réponse évidente et qui engage notre compréhension du monde, de nous-mêmes ou de nos valeurs.</li></ul><ul id="1d4b2280-a891-80a1-b8fd-f5575e48215e" class="bulleted-list"><li style="list-style-type:disc"><strong>Expliquer l&#x27;Enjeu :</strong> L&#x27;enjeu (ou l&#x27;intérêt philosophique), c&#x27;est ce qui est &quot;en jeu&quot; dans la réponse apportée par l&#x27;auteur. Quelles sont les conséquences de sa thèse ? Qu&#x27;est-ce que cela change à notre manière de penser le thème abordé ? En quoi la position de l&#x27;auteur est-elle significative ? Est-elle originale ? S&#x27;oppose-t-elle à d&#x27;autres visions ?</li></ul><ul id="1d4b2280-a891-80ce-87f2-daab89850f4e" class="bulleted-list"><li style="list-style-type:disc"><strong>Relier au contexte plus large :</strong> Montrez comment ce texte précis s&#x27;inscrit dans une discussion philosophique plus vaste. Par exemple, comment cette analyse de la perception par Merleau-Ponty dialogue-t-elle avec le rationalisme ou l&#x27;empirisme ? Comment cette critique de la technique par Heidegger nous interroge-t-elle aujourd&#x27;hui ?</li></ul><ul id="1d4b2280-a891-80a1-a2e4-e58b53064134" class="bulleted-list"><li style="list-style-type:disc"><strong>Souligner l&#x27;actualité ou l&#x27;universalité :</strong> Le problème soulevé par le texte est-il toujours pertinent aujourd&#x27;hui ? Touche-t-il à une dimension fondamentale de l&#x27;existence humaine ?</li></ul><h1 id="1d4b2280-a891-80ef-8534-d9bad9d2b1c4" class=""><strong>3. (Pour aller plus loin) Évaluer la Portée et les Limites</strong></h1><p id="1d4b2280-a891-807f-bdfc-d0b30acc77eb" class="">Si l&#x27;objectif premier est d&#x27;expliquer fidèlement, dégager l&#x27;enjeu ouvre naturellement la voie à une évaluation critique (qui sera surtout développée dans l&#x27;éventuelle &quot;ouverture&quot; de la conclusion).</p><ul id="1d4b2280-a891-805b-afe0-dab4eb66907f" class="bulleted-list"><li style="list-style-type:disc"><strong>Identifier les points forts :</strong> Quels sont les aspects les plus convaincants de l&#x27;argumentation de l&#x27;auteur ? Quelle est la force de sa thèse ?</li></ul><ul id="1d4b2280-a891-80a8-bf8f-f434912c259a" class="bulleted-list"><li style="list-style-type:disc"><strong>Pointer les questions ouvertes :</strong> La thèse de l&#x27;auteur résout-elle entièrement le problème posé ? Quelles questions laisse-t-elle en suspens ?</li></ul><ul id="1d4b2280-a891-8040-9297-d8c506dc50a4" class="bulleted-list"><li style="list-style-type:disc"><strong>Suggérer des limites ou objections possibles :</strong> Y a-t-il des présupposés discutables ? Des contre-exemples auxquels l&#x27;auteur ne répond pas ? Des aspects négligés ? (Attention : restez prudent et mesuré, le but n&#x27;est pas de &quot;démolir&quot; l&#x27;auteur mais de montrer que vous avez un regard critique).</li></ul><ul id="1d4b2280-a891-8018-9965-ff7883d07b65" class="bulleted-list"><li style="list-style-type:disc"><strong>Comparer brièvement :</strong> Mettre la thèse en perspective avec une autre position philosophique peut aider à en mesurer la spécificité et la portée.</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d4b2280-a891-801b-8956-f647ae4e427f"><div style="font-size:1.5em"><span class="icon">🚨</span></div><div style="width:100%"><p id="1d4b2280-a891-80c2-9493-dd6412dec4b2" class=""><strong>Important</strong></p><p id="1d4b2280-a891-8004-9a10-cf5f377741cc" class="">Dans le corps de l&#x27;explication de texte au Baccalauréat, on se concentre sur l&#x27;explication fidèle. La dimension critique intervient surtout à la toute fin, dans la conclusion, ou si le sujet le demande explicitement.</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d4b2280-a891-8094-bf61-cd5616851929"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h3 id="1d4b2280-a891-8030-b53c-ead7c0796739" class=""><strong>Le But Ultime de l&#x27;Explication</strong></h3><p id="1d4b2280-a891-8063-b32c-d59d90079407" class="">Au terme de votre explication, le lecteur doit avoir compris non seulement <strong>ce que dit</strong> l&#x27;auteur (la thèse), mais aussi <strong>comment il le dit</strong> (la structure, les arguments, les concepts) et notamment <strong>pourquoi c&#x27;est important</strong> (le problème, l&#x27;enjeu, l&#x27;intérêt philosophique). Votre travail consiste à rendre le texte intelligible et à en révéler la profondeur.</p><p id="1d4b2280-a891-8087-9682-cd3b5fdc6cf0" class="">Ces trois parties de méthodologie vous donnent les clés pour aborder cet exercice. Comme toujours en philosophie, la maîtrise viendra avec la pratique régulière et la réflexion personnelle sur les textes rencontrés.</p></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

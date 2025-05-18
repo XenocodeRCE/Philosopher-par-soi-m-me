@@ -1,0 +1,724 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Marc Aurèle : extraits des Pensées pour moi-même</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-80ad-9071-e7d32640e823" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1627535163414-d217badd2c03?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 20.36%"/><h1 class="page-title"><strong>Marc Aurèle</strong> : extraits des <em>Pensées pour moi-même</em></h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d6b2280-a891-8097-bead-cff39f2804cd" class="">Marc Aurèle (121-180 apr. J.-C.), empereur romain de 161 à 180, est considéré comme l&#x27;un des derniers grands représentants du stoïcisme antique. Couronné à l&#x27;âge de 40 ans, il règne pendant près de deux décennies marquées par des guerres incessantes aux frontières de l&#x27;empire, des catastrophes naturelles et une terrible épidémie de peste. Malgré ces épreuves, il s&#x27;efforce d&#x27;appliquer les principes stoïciens dans sa vie personnelle comme dans sa fonction impériale. Son œuvre, connue sous le titre de <em>Pensées pour moi-même</em> (Ta eis heauton en grec), est un recueil de méditations personnelles écrites probablement durant ses campagnes militaires sur le Danube, sans intention de publication. Divisé en douze livres, ce journal intime philosophique présente des réflexions sur la condition humaine, le devoir moral, la nature et la mort. À travers ces notes adressées à lui-même, Marc Aurèle cherche à raffermir sa résolution de vivre selon les principes stoïciens dans les circonstances difficiles de son règne. Par sa sincérité et sa profondeur, cette œuvre unique constitue l&#x27;un des témoignages les plus émouvants de la philosophie antique et n&#x27;a cessé d&#x27;influencer la pensée occidentale jusqu&#x27;à nos jours.</p><h1 id="1d6b2280-a891-8073-96f9-c4d5068b2432" class=""><strong>Contexte historique et philosophique</strong></h1><p id="1d6b2280-a891-8007-b566-e0e7af41bb67" class="">Marc Aurèle accède au pouvoir à une époque charnière de l&#x27;histoire romaine, au crépuscule de la <em>Pax Romana</em>. Son règne marque la transition entre l&#x27;apogée de l&#x27;Empire et les prémices de son déclin. Sur le plan extérieur, Rome doit faire face aux premières grandes invasions germaniques et à la pression des Parthes à l&#x27;est. Sur le plan intérieur, l&#x27;épidémie de peste antonine, probablement de variole, décime la population et affaiblit durablement l&#x27;économie. Dans ce contexte troublé, Marc Aurèle incarne le modèle du souverain-philosophe, idéal politique remontant à Platon.</p><p id="1d6b2280-a891-8093-9ba8-d4c52d37d360" class="">Philosophiquement, Marc Aurèle s&#x27;inscrit dans la tradition du stoïcisme impérial romain, qui met l&#x27;accent sur l&#x27;éthique pratique. Formé par des maîtres réputés, notamment Junius Rusticus qui lui fait découvrir Épictète, il développe une version personnelle du stoïcisme colorée par son expérience du pouvoir. Ses <em>Pensées</em> s&#x27;articulent autour de trois disciplines stoïciennes fondamentales : l&#x27;assentiment (jugement correct sur les représentations), le désir (alignement de la volonté sur l&#x27;ordre cosmique) et l&#x27;action (accomplissement des devoirs sociaux). Le stoïcisme de Marc Aurèle se distingue par un sens aigu de la fragilité humaine, une attention particulière à la notion de communauté rationnelle et une conscience vive de l&#x27;écoulement du temps.</p><figure class="block-color-orange callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-809e-9d06-e977ded74db9"><div style="font-size:1.5em"><span class="icon">📙</span></div><div style="width:100%"><h1 id="1d6b2280-a891-8001-804f-e5a3f2e54e54" class=""><strong>Les concepts clés du stoïcisme de Marc Aurèle</strong></h1><ul id="1d6b2280-a891-8085-83ab-f1100865a8b5" class="bulleted-list"><li style="list-style-type:disc"><strong>Logos</strong> : raison universelle qui gouverne le cosmos et dont l&#x27;âme humaine est une parcelle</li></ul><ul id="1d6b2280-a891-8042-87e6-e1cdf979b0b1" class="bulleted-list"><li style="list-style-type:disc"><strong>Providence</strong> : ordre rationnel de l&#x27;univers, bienveillant malgré les apparences</li></ul><ul id="1d6b2280-a891-8046-a51e-e2322bac5ab9" class="bulleted-list"><li style="list-style-type:disc"><strong>Sympatheia</strong> : interdépendance de toutes les parties du cosmos</li></ul><ul id="1d6b2280-a891-80c2-a5fd-d1a1eba514f6" class="bulleted-list"><li style="list-style-type:disc"><strong>Daimon</strong> : le guide intérieur, la parcelle divine en chaque homme</li></ul><ul id="1d6b2280-a891-803f-b630-f1e4e141063e" class="bulleted-list"><li style="list-style-type:disc"><strong>Phantasiai</strong> : les représentations mentales qu&#x27;il faut examiner avant d&#x27;y donner son assentiment</li></ul><ul id="1d6b2280-a891-80d8-a6fe-c8064cbf5788" class="bulleted-list"><li style="list-style-type:disc"><strong>Kathekon</strong> : le devoir social adapté à chaque situation et relation</li></ul><ul id="1d6b2280-a891-8040-978b-e5aa5a99b783" class="bulleted-list"><li style="list-style-type:disc"><strong>Amor fati</strong> : l&#x27;amour du destin, l&#x27;acceptation volontaire de ce qui arrive</li></ul><ul id="1d6b2280-a891-808c-857b-e14a4eecdad3" class="bulleted-list"><li style="list-style-type:disc"><strong>Memento mori</strong> : le souvenir de la mort comme exercice spirituel pour vivre pleinement le présent</li></ul><ul id="1d6b2280-a891-80cb-9a87-d6ce927c29ea" class="bulleted-list"><li style="list-style-type:disc"><strong>Cosmopolitisme</strong> : la citoyenneté dans la cité universelle des êtres raisonnables</li></ul></div></figure><h1 id="1d6b2280-a891-80cf-966a-dee72c6bae5b" class="">La vision de la nature et du cosmos</h1><p id="1d6b2280-a891-8023-973e-c60a89acf879" class="">
+</p><blockquote id="1d6b2280-a891-801f-aba1-edec87697541" class="">De la vie humaine, la durée n&#x27;est qu&#x27;un point ; la substance, un flux ; la sensation, obscure ; la composition du corps entier, prompte à se corrompre ; l&#x27;âme, une toupie ; le sort, difficile à conjecturer ; la réputation, incertaine. En un mot, tout ce qui est du corps est comme l&#x27;eau qui coule ; tout ce qui est de l&#x27;âme, songe et fumée. La vie est une guerre, un séjour d&#x27;étranger ; la renommée posthume, un oubli. Qu&#x27;est-ce donc qui peut nous escorter sur notre route ? Une seule et unique chose : la philosophie. Et celle-ci consiste à préserver le guide intérieur exempt de violence et de dommage, supérieur aux plaisirs et aux peines, ne faisant rien au hasard, ne se servant ni du mensonge ni de la simulation, n&#x27;ayant besoin qu&#x27;un autre fasse ou ne fasse pas quelque chose ; acceptant, de plus, ce qui arrive et ce qui lui est départi, comme venant du même principe d&#x27;où il est lui-même venu ; et, par-dessus tout, attendant la mort d&#x27;une âme sereine, n&#x27;y voyant rien que la dissolution des éléments dont chaque être vivant est composé. Et si, pour les éléments eux-mêmes, il n&#x27;y a rien de terrible à ce que chacun se transforme continuellement en autre chose, pourquoi regarder avec appréhension la transformation et la dissolution de toutes choses ? Cela est conforme à la nature, et rien n&#x27;est mal de ce qui est conforme à la nature.<br/><br/><br/><strong>Livre II, 17, Traduction Mario Meunier (modifiée)</strong></blockquote><p id="1d6b2280-a891-8050-8fb6-d2a97500f350" class="">
+</p><blockquote id="1d6b2280-a891-801f-afb4-ccc541536676" class="">Accommode-toi aux choses que le destin t&#x27;assigne ; et les hommes que le sort t&#x27;a donnés pour compagnons, aime-les, mais vraiment, de tout ton cœur.<br/><br/><br/><strong>Livre IV, 23, Traduction Mario Meunier</strong></blockquote><p id="1d6b2280-a891-809c-99ca-f122a6cb0dca" class="">
+</p><blockquote id="1d6b2280-a891-80b5-a41d-ca27e573caaa" class="">Tout est enchaîné et lié par un lien sacré, et rien, à peu près, n&#x27;est étranger à rien. Tout a été coordonné, tout contribue à l&#x27;ordre du même monde. Car, de toutes choses, un seul monde a été formé ; un seul Dieu s&#x27;étend par toutes choses ; une seule substance, une seule loi, une raison commune à tous les êtres intelligents. La vérité est une, s&#x27;il est vrai que la perfection pour les êtres de même nature et participants à la même raison est aussi une.<br/><br/><br/><strong>Livre VII, 9, Traduction Mario Meunier</strong></blockquote><figure class="block-color-orange callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-805e-937e-c3ed049aeabe"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><h2 id="1d6b2280-a891-8017-bc0f-da3cd3edeb7b" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-8063-90bc-f8bd0d0d7031" class="">Ces trois pensées illustrent la vision cosmologique de Marc Aurèle, fondement de son éthique. Dans II, 17, il développe une méditation sur la brièveté et la fragilité de l&#x27;existence humaine. Le style staccato, fait de brèves propositions juxtaposées, crée un effet d&#x27;accumulation qui souligne l&#x27;insignifiance de tout ce que les hommes valorisent habituellement. Le corps, la réputation, la fortune apparaissent comme des réalités éphémères et incertaines. Face à cette précarité, seule la philosophie offre un ancrage stable, en préservant le &quot;guide intérieur&quot; (hêgemonikon) des influences perturbatrices. La description de ce guide intérieur constitue une synthèse remarquable des vertus stoïciennes : impassibilité, sincérité, indépendance, acceptation du destin.</p><p id="1d6b2280-a891-8075-9cee-cd28eda2b023" class="">La brève maxime IV, 23 formule l&#x27;idéal stoïcien d&#x27;acceptation active du destin (amor fati) et d&#x27;amour authentique pour les compagnons que le sort nous a donnés. Cette pensée concise exprime parfaitement la double dimension de l&#x27;éthique stoïcienne : relation juste avec l&#x27;ordre cosmique et avec les autres hommes.</p><p id="1d6b2280-a891-80b7-a342-e1c6910a08db" class="">Dans VII, 9, Marc Aurèle développe la conception stoïcienne de l&#x27;unité organique du cosmos. Tous les êtres sont &quot;enchaînés et liés par un lien sacré&quot;, formant un ensemble cohérent régi par une raison universelle (logos). Cette vision d&#x27;un univers ordonné et unifié par un principe divin rationnel fonde le cosmopolitisme stoïcien : tous les êtres humains, en tant que participants à la raison universelle, appartiennent à une même communauté. La répétition du mot &quot;un&quot; (un seul monde, un seul Dieu, une seule substance, une seule loi) martèle cette conviction fondamentale de l&#x27;unité sous-jacente à la diversité apparente.</p><p id="1d6b2280-a891-80a8-a070-ebd9bded1551" class="">Ces trois pensées montrent comment la métaphysique stoïcienne, loin d&#x27;être une spéculation abstraite, fournit à Marc Aurèle un cadre pour comprendre sa place dans l&#x27;univers et orienter sa conduite. L&#x27;acceptation de l&#x27;ordre cosmique devient le fondement d&#x27;une éthique de la sérénité face à la mort et de la bienveillance envers les autres.</p></div></figure><p id="1d6b2280-a891-80ad-b45e-d0578a16b3cd" class="">
+</p><h1 id="1d6b2280-a891-8083-ba74-f53b09d91f9a" class="">L&#x27;écoulement du temps et la mort</h1><p id="1d6b2280-a891-8018-bbf6-c8302f8a51b9" class="">
+</p><blockquote id="1d6b2280-a891-806f-8199-d274f5ac0d83" class="">Le temps est un fleuve, un courant impétueux de toutes choses. À peine une chose est-elle apparue, qu&#x27;elle est emportée ; une autre est amenée à son tour, qui sera emportée elle aussi.<br/><br/><br/><strong>Livre IV, 43, Traduction Mario Meunier</strong></blockquote><p id="1d6b2280-a891-8052-9a80-f5e2dde679c6" class="">
+</p><blockquote id="1d6b2280-a891-80d8-a118-d848489928cc" class="">Même si tu devais vivre trois mille ans, et dix fois autant, souviens-toi cependant que nul ne perd une autre vie que celle qu&#x27;il vit, et qu&#x27;il ne vit pas une autre vie que celle qu&#x27;il perd. Le plus long et le plus court aboutissent donc au même point. Le présent en effet est le même pour tous ; ce qu&#x27;on perd est donc égal, et ce qu&#x27;on perd n&#x27;est manifestement qu&#x27;un instant. Car on ne peut perdre ni le passé ni l&#x27;avenir : comment pourrait-on nous ôter ce que nous n&#x27;avons pas ?<br/><br/>Souviens-toi donc de ces deux points : l&#x27;un, que depuis l&#x27;éternité, tout est semblable et recommence en cycles, et qu&#x27;il est indifférent de voir les mêmes choses pendant cent ans, pendant deux cents ans ou pendant l&#x27;infinité du temps ; l&#x27;autre, que celui qui a vécu très longtemps et celui qui mourra très vite perdent exactement la même chose. Car c&#x27;est seulement du présent qu&#x27;on peut être privé, puisque c&#x27;est la seule chose qu&#x27;on possède, et qu&#x27;on ne peut perdre ce qu&#x27;on n&#x27;a pas.<br/><br/><br/><strong>Livre II, 14, Traduction Mario Meunier (modifiée)<br/><br/></strong></blockquote><p id="1d6b2280-a891-8074-9ecf-d64754099269" class="">
+</p><blockquote id="1d6b2280-a891-808a-96ea-d99907dd6787" class="">Proche est ta fin, et tu ne deviens pas encore simple, ni serein, ni détaché de l&#x27;idée que le mal peut te venir des choses extérieures, ni bienveillant envers tous, ni convaincu que la sagesse réside uniquement dans la juste action.<br/><br/><br/><strong>Livre IX, 21, Traduction Mario Meunier (modifiée)</strong></blockquote><p id="1d6b2280-a891-8033-9577-c62803b85c7d" class="">
+</p><blockquote id="1d6b2280-a891-8092-a1d5-f366828624ed" class="">Pourquoi te tourmenter ? Qu&#x27;y a-t-il de nouveau dans tout cela ? Qu&#x27;est-ce qui te trouble ? La forme ? Contemple-la. La matière ? Contemple-la. En dehors de ces deux choses, il n&#x27;y a rien. Mais désormais, face à Dieu, deviens enfin plus simple, et meilleur.<br/><br/><br/><strong>Livre XII, 35, Traduction Mario Meunier (modifiée)</strong></blockquote><p id="1d6b2280-a891-809c-9218-dc2de809ecb2" class="">
+</p><p id="1d6b2280-a891-8087-81aa-cc96b8eb9d72" class="">
+</p><figure class="block-color-orange callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8009-a3f8-c22966b1c9d6"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><h2 id="1d6b2280-a891-80ff-af96-c3bade4f9b24" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-80db-8365-c16b72f3901a" class="">La méditation sur le temps et la mort constitue l&#x27;un des exercices spirituels les plus constants de Marc Aurèle. Ces quatre pensées explorent différentes facettes de cette réflexion, qui, loin d&#x27;être morbide, vise à intensifier la conscience du présent.</p><p id="1d6b2280-a891-8067-8c57-cbcb21ebbd22" class="">La métaphore du &quot;fleuve du temps&quot; (IV, 43) exprime avec une concision poétique la vision héraclitéenne de l&#x27;écoulement universel, reprise par les stoïciens. L&#x27;image du courant qui emporte toute chose illustre non seulement la fugacité de l&#x27;existence humaine, mais aussi l&#x27;impermanence de tout ce qui est objet de nos désirs et de nos craintes.</p><p id="1d6b2280-a891-80fc-b727-d7e4500a64ae" class="">La longue réflexion de II, 14 approfondit cette idée en développant un paradoxe : la durée objective de la vie n&#x27;a pas d&#x27;importance réelle, puisque nous ne vivons jamais que dans l&#x27;instant présent. Qu&#x27;on vive trente ou trois mille ans, on ne possède jamais que le présent, seul point où l&#x27;existence se réalise effectivement. Ce raisonnement apparemment abstrait vise en réalité une transformation concrète du rapport au temps : une dévalorisation de la durée quantitative (dont l&#x27;aspiration à la longévité est l&#x27;expression) au profit d&#x27;une intensification qualitative de l&#x27;expérience du présent.</p><p id="1d6b2280-a891-809c-8ec1-dfbd240fe00b" class="">Les deux dernières pensées (IX, 21 et XII, 35) manifestent la dimension personnelle et existentielle de cette méditation. Marc Aurèle s&#x27;adresse à lui-même avec une sévérité exigeante, se rappelant que la proximité de la mort doit être une incitation à progresser moralement. Cette conscience aigüe de sa propre finitude n&#x27;est pas source d&#x27;angoisse, mais au contraire d&#x27;une simplification éthique : face à la mort, seuls comptent la sérénité intérieure, le détachement des choses extérieures, la bienveillance universelle et la juste action.</p><p id="1d6b2280-a891-8016-94f3-c7f0756bd1b0" class="">Ces pensées illustrent parfaitement la fonction du <em>memento mori</em> (souvenir de la mort) dans la spiritualité stoïcienne : non pas une contemplation morbide de la fin, mais un exercice visant à libérer l&#x27;âme des préoccupations vaines et à concentrer son attention sur l&#x27;essentiel – l&#x27;action vertueuse dans le moment présent.</p></div></figure><p id="1d6b2280-a891-80b9-abbd-dc37cc686b2f" class="">
+</p><h1 id="1d6b2280-a891-802d-8394-ca729af0f421" class="">Le guide intérieur et la citadelle de l&#x27;âme</h1><p id="1d6b2280-a891-8056-91ec-ecb15848332c" class="">
+</p><blockquote id="1d6b2280-a891-80a0-b89d-c87c1cd27703" class="">Souviens-toi que c&#x27;est ce guide intérieur, cette force directrice qui se rend elle-même ce qu&#x27;elle veut être, qui se fait elle-même telle qu&#x27;elle veut être, et qui fait que tout événement lui apparaît tel qu&#x27;elle veut qu&#x27;il lui apparaisse.<br/><br/><br/><strong>Livre VIII, 48, Traduction Mario Meunier (modifiée)</strong></blockquote><p id="1d6b2280-a891-800b-89df-fa76637be14d" class="">
+</p><blockquote id="1d6b2280-a891-80fc-ad5a-c12a80df53e5" class="">Dès l&#x27;aurore, dis-toi d&#x27;avance : je rencontrerai un indiscret, un ingrat, un insolent, un fourbe, un envieux, un égoïste. Tous ces défauts sont arrivés à ces hommes par leur ignorance des vrais biens et des vrais maux. Mais moi, qui ai reconnu que la nature du bien est le beau moral, et que la nature du mal est le honteux, et que la nature du pécheur lui-même est apparentée à la mienne, non par la communauté du sang ou de la semence, mais par la communauté d&#x27;intelligence et de divine origine, je ne puis recevoir de dommage d&#x27;aucun d&#x27;eux, car nul ne peut me faire participer à ce qui est honteux. Je ne puis non plus m&#x27;irriter contre mon parent ni le haïr, car nous sommes nés pour collaborer, comme les pieds, les mains, les paupières, les deux rangées de dents, celle d&#x27;en haut et celle d&#x27;en bas. Agir les uns contre les autres est donc contraire à la nature. Or, s&#x27;irriter et se détourner, c&#x27;est agir l&#x27;un contre l&#x27;autre.<br/><br/><br/><strong>Livre II, 1, Traduction Mario Meunier (modifiée)</strong></blockquote><p id="1d6b2280-a891-80c9-8766-e4ab4e491c77" class="">
+</p><blockquote id="1d6b2280-a891-805e-aead-c2c07248dc4e" class="">Ils cherchent des retraites à la campagne, au bord de la mer, dans les montagnes ; et toi-même, tu as coutume de désirer ardemment ces lieux de solitude. Mais tout cela est de la plus vulgaire opinion, alors qu&#x27;il t&#x27;est possible, à l&#x27;heure que tu veux, de te retirer en toi-même. Nulle part, en effet, l&#x27;homme ne trouve de retraite plus calme et plus exempte d&#x27;affaires que dans son âme, surtout s&#x27;il possède en lui-même ces principes sur lesquels il suffit de se pencher pour trouver aussitôt une quiétude parfaite. Et je n&#x27;entends par quiétude rien d&#x27;autre qu&#x27;un parfait ordre intérieur. Accorde-toi donc constamment cette retraite et renouvelle-toi toi-même. Aie des principes courts et élémentaires qui, dès que tu les rencontreras, suffiront à purifier ton âme de tout ennui et à te renvoyer sans irritation aux occupations auxquelles tu retournes.<br/><br/><br/><strong>Livre IV, 3, Traduction Mario Meunier (modifiée)</strong></blockquote><p id="1d6b2280-a891-8007-949e-fbd3989c6d34" class="">
+</p><blockquote id="1d6b2280-a891-80ef-b150-fa3a765fde9c" class="">L&#x27;habitude est efficace. Le sont aussi: pécher par habitude, y renoncer si tu le veux avec persévérance. Je suis maître de mon opinion, et rien ne peut m&#x27;arrêter. Notre esprit se transforme et se change en ce qu&#x27;il choisit en lui-même.<br/><br/><br/><strong>Livre VIII, 51, Traduction Mario Meunier (modifiée)</strong></blockquote><p id="1d6b2280-a891-8000-8a33-fb6d0d3e4ffd" class="">
+</p><figure class="block-color-orange callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-80b1-874f-f0a7da35dd9a"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><h2 id="1d6b2280-a891-805e-85f7-f5b7b1d7867f" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-80a1-ae41-facecf875097" class="">Ces quatre pensées explorent un thème central du stoïcisme de Marc Aurèle : le pouvoir absolu du guide intérieur (hêgemonikon) sur lui-même et sur ses représentations. Cette souveraineté de la raison constitue le fondement de la liberté intérieure face aux circonstances extérieures.</p><p id="1d6b2280-a891-8011-9545-c347062f32df" class="">La brève déclaration de VIII, 48 affirme avec force cette autonomie de la partie directrice de l&#x27;âme, capable de se façonner elle-même et de déterminer comment les événements lui apparaissent. Cette pensée exprime l&#x27;essence même de la psychologie stoïcienne : ce n&#x27;est pas l&#x27;événement en lui-même qui nous affecte, mais le jugement que nous portons sur lui, jugement qui dépend entièrement de notre guide intérieur.</p><p id="1d6b2280-a891-800e-901f-dacfa4ff06f1" class="">La méditation matinale de II, 1 illustre une application concrète de ce principe. En anticipant mentalement les rencontres désagréables de la journée, Marc Aurèle prépare son âme à y répondre avec sérénité. Il neutralise d&#x27;avance les réactions d&#x27;irritation en recadrant sa perception : les défauts d&#x27;autrui sont le fruit de l&#x27;ignorance, non de la malice ; les autres hommes, même imparfaits, sont nos &quot;parents&quot; dans la communauté rationnelle. Cette pratique de la préméditation des difficultés (praemeditatio malorum) est un exercice spirituel stoïcien classique, visant à éviter la surprise qui déclenche les passions perturbatrices.</p><p id="1d6b2280-a891-809d-8406-c00c93457b10" class="">La réflexion de IV, 3 sur la retraite intérieure reprend la même thématique sous un angle différent. À la fuite physique vers des lieux isolés, Marc Aurèle oppose la véritable retraite, celle qui s&#x27;effectue dans la &quot;citadelle de l&#x27;âme&quot;. Cette métaphore spatiale de l&#x27;intériorité suggère un lieu inviolable, protégé des tumultes extérieurs. Les &quot;principes courts et élémentaires&quot; évoqués sont les dogmes fondamentaux du stoïcisme, qui, médités régulièrement, permettent de retrouver la sérénité.</p><p id="1d6b2280-a891-801d-9a48-faaea4a5b717" class="">Enfin, VIII, 51 insiste sur la puissance de l&#x27;habitude, tant pour le vice que pour la vertu. La dernière phrase synthétise admirablement l&#x27;idéal stoïcien d&#x27;auto-transformation par l&#x27;exercice de la volonté rationnelle : &quot;Notre esprit se transforme et se change en ce qu&#x27;il choisit en lui-même.&quot; Cette conviction que l&#x27;homme peut se façonner lui-même par ses choix constitue le fondement de toute la pratique spirituelle stoïcienne.</p><p id="1d6b2280-a891-807d-846f-d8d133de1597" class="">Ces quatre pensées révèlent un aspect essentiel du stoïcisme de Marc Aurèle : la philosophie n&#x27;est pas seulement un savoir théorique, mais une pratique quotidienne visant à fortifier la souveraineté du guide intérieur face aux sollicitations extérieures.</p></div></figure><h1 id="1d6b2280-a891-8034-b0a5-d85bb183cad7" class="">La communauté humaine et le devoir social</h1><p id="1d6b2280-a891-80c2-8802-f71155ecb8bc" class="">
+</p><blockquote id="1d6b2280-a891-8036-98dc-ff3350d43621" class="">Telle est la nature de ton âme, que si elle s&#x27;occupe uniquement de ce qui lui est propre et ne fait que ce qu&#x27;elle veut elle-même et ce qui dépend d&#x27;elle, elle aura ce qu&#x27;elle désire, à moins qu&#x27;elle ne se jette dans sa propre perdition en poursuivant un objet étranger.<br/><br/><br/><strong>Livre II, 16, Traduction Mario Meunier (modifiée)</strong></blockquote><p id="1d6b2280-a891-8008-bb97-e3b3441175dc" class="">
+</p><blockquote id="1d6b2280-a891-80c3-86e3-ed15b1c23553" class="">L&#x27;intelligence de chacun est un dieu, un effluve de la divinité. Aussi un homme peut-il me dire : &quot;Que te veulent les dieux ?&quot; Je répondrai : &quot;Que me veut-on par une telle question ? Et toi-même, que te veulent les dieux ?&quot;<br/><br/><br/><strong>Livre V, 16, Traduction Mario Meunier (modifiée)</strong></blockquote><p id="1d6b2280-a891-809b-9398-c35f7e068892" class="">
+</p><blockquote id="1d6b2280-a891-8051-a238-fd3085eafce9" class="">Il y a trois relations : l&#x27;une avec le corps qui t&#x27;enveloppe ; l&#x27;autre avec la cause divine d&#x27;où proviennent tous les événements pour tous les êtres ; la troisième avec ceux qui vivent en même temps que toi.<br/><br/><br/><strong>Livre VIII, 27, Traduction Mario Meunier</strong></blockquote><p id="1d6b2280-a891-8048-9718-d34a747f89da" class="">
+</p><p id="1d6b2280-a891-80f0-8f0f-dab38402283d" class="">
+</p><p id="1d6b2280-a891-80f1-8821-d5b62a5ebc11" class="">
+</p><blockquote id="1d6b2280-a891-802e-8b3b-c25fb4fae6e1" class="">Qui commet l&#x27;injustice est impie. La nature universelle ayant en effet constitué les êtres raisonnables les uns pour les autres, afin qu&#x27;ils s&#x27;entraident selon leur mérite et ne se nuisent en aucune manière, celui qui transgresse cette volonté commet manifestement l&#x27;impiété envers la plus vénérable des divinités. Et qui ment est également impie envers cette même divinité. La nature universelle est, en effet, la nature de tous les êtres réels, et les êtres réels sont apparentés à tous ceux de même espèce. Cette nature s&#x27;appelle aussi Vérité, et elle est la cause première de toutes les vérités. Celui qui ment volontairement est donc impie, en ce qu&#x27;en trompant il commet une injustice ; et celui qui ment involontairement l&#x27;est aussi, en ce qu&#x27;il est en désaccord avec la nature universelle et en ce qu&#x27;il agit contre l&#x27;ordre du monde, en luttant contre la nature du monde. Car il lutte contre elle, celui qui s&#x27;est porté, de lui-même, contrairement à la vérité. Il avait reçu de la nature des facultés qu&#x27;il a négligées, et il est maintenant incapable de discerner le faux d&#x27;avec le vrai.<br/><br/><br/><strong>Livre IX, 1, Traduction Mario Meunier (modifiée)</strong></blockquote><p id="1d6b2280-a891-80c9-af76-e6c3194f6b85" class="">
+</p><p id="1d6b2280-a891-8089-b6a4-cea8527033b0" class="">
+</p><blockquote id="1d6b2280-a891-807d-b16f-e8a388504f69" class="">Ce qui n&#x27;est pas nuisible à la cité ne nuit pas non plus au citoyen. Pour toute apparence de dommage, applique cette règle : si la cité n&#x27;en est pas lésée, je ne le suis pas non plus. Et si la cité en est lésée, il ne faut pas s&#x27;irriter contre celui qui la lèse, mais lui montrer en quoi il s&#x27;est trompé.<br/><br/><br/><strong>Livre VI, 54, Traduction Mario Meunier (modifiée)</strong></blockquote><p id="1d6b2280-a891-80c8-bec4-d9c9b41f8b76" class="">
+</p><figure class="block-color-orange callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8015-8c95-d66d70b38fe9"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><h2 id="1d6b2280-a891-8060-9bc0-c98ccae2d248" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-80d1-bfcd-e26adb2dee5c" class="">Ces cinq pensées explorent les dimensions sociales et religieuses de l&#x27;éthique stoïcienne, montrant comment Marc Aurèle conçoit la place de l&#x27;homme dans la communauté humaine et cosmique.</p><p id="1d6b2280-a891-80da-b24b-dce82854e020" class="">La réflexion de II, 16 affirme le principe stoïcien fondamental selon lequel le bonheur réside dans la concentration sur ce qui dépend de nous (nos jugements, nos désirs, nos actions). Ce repli apparent sur soi n&#x27;est pas égoïsme : c&#x27;est la condition même d&#x27;une action juste dans le monde, libérée de la poursuite d&#x27;objets &quot;étrangers&quot; (richesse, pouvoir, réputation) qui détournent l&#x27;âme de sa véritable nature.</p><p id="1d6b2280-a891-80c2-90a7-e3440835aae5" class="">La brève pensée V, 16 exprime une idée centrale du stoïcisme : l&#x27;intelligence humaine (nous) est une parcelle de la raison divine. Cette conception, qui remonte à Zénon et Chrysippe, fonde le cosmopolitisme stoïcien : tous les êtres humains, en tant que participants à la raison universelle, forment une communauté naturelle. La formulation paradoxale (&quot;Que te veulent les dieux ?&quot;) souligne l&#x27;absurdité qu&#x27;il y aurait à concevoir les dieux comme des entités séparées et capricieuses, alors qu&#x27;ils sont immanents à la raison humaine elle-même.</p><p id="1d6b2280-a891-8041-960a-ce00da1d624f" class="">La pensée VIII, 27 esquisse une cartographie des relations constitutives de l&#x27;être humain : avec son corps, avec l&#x27;ordre cosmique, avec ses semblables. Cette triple dimension correspond aux trois disciplines stoïciennes fondamentales : celle du désir (rapport au corps), celle de l&#x27;assentiment (rapport à la vérité), celle de l&#x27;action (rapport aux autres).</p><p id="1d6b2280-a891-804b-b3b5-fa303efa06a1" class="">La longue réflexion de IX, 1 développe une conception originale de la morale comme piété. L&#x27;injustice et le mensonge sont présentés comme des formes d&#x27;impiété, non pas au sens religieux conventionnel, mais parce qu&#x27;ils contredisent l&#x27;ordre naturel du monde, identifié à la divinité elle-même. Cette naturalisation de la religion, caractéristique du stoïcisme, fonde l&#x27;éthique non sur des commandements divins arbitraires, mais sur la compréhension rationnelle de la structure du réel.</p><p id="1d6b2280-a891-8068-82a6-c4c43fcf5a1a" class="">Enfin, VI, 54 applique ces principes à la vie politique, en établissant une solidarité fondamentale entre l&#x27;intérêt individuel et celui de la cité. Cette pensée, qui reflète l&#x27;expérience de Marc Aurèle comme chef d&#x27;État, montre comment le stoïcisme peut fonder une éthique politique : ni l&#x27;individualisme qui opposerait l&#x27;intérêt personnel à celui de la communauté, ni la soumission aveugle qui sacrifierait la personne à la collectivité, mais une harmonisation rationnelle des deux dimensions.</p><p id="1d6b2280-a891-80a6-b215-e555a40f6e15" class="">Ces cinq pensées illustrent l&#x27;aspect profondément social du stoïcisme de Marc Aurèle : la retraite dans la citadelle intérieure n&#x27;est pas une fuite du monde, mais la condition d&#x27;une action juste dans la communauté, fondée sur la reconnaissance de l&#x27;interdépendance cosmique de tous les êtres.</p></div></figure><p id="1d6b2280-a891-805e-99cb-e353d7694047" class="">
+</p><h1 id="1d6b2280-a891-8011-a02d-f26b5c10a224" class="">Le jugement sur les événements et les choses</h1><p id="1d6b2280-a891-8080-8276-e4acdf33f0a0" class="">
+</p><blockquote id="1d6b2280-a891-804d-a690-f267f639d667" class="">Supprime l&#x27;opinion, tu supprimes la plainte : &quot;J&#x27;ai été lésé.&quot; Supprime la plainte : &quot;J&#x27;ai été lésé&quot;, tu supprimes la lésion.<br/><br/><br/><strong>Livre IV, 7, Traduction Mario Meunier<br/><br/></strong></blockquote><p id="1d6b2280-a891-808c-802a-eeae6ca149dc" class="">
+</p><blockquote id="1d6b2280-a891-8022-90bf-d51328593f5b" class="">Lorsqu&#x27;on t&#x27;apprend que quelqu&#x27;un a dit du mal de toi, ne cherche pas à te défendre contre ces propos, mais réponds : &quot;Il ne connaissait sans doute pas mes autres défauts, car il n&#x27;aurait pas mentionné seulement ceux-là.&quot; <br/><br/><br/><strong>Livre VIII, 47, Traduction Mario Meunier (modifiée)</strong></blockquote><p id="1d6b2280-a891-80ff-bb57-f9e673d4515c" class="">
+</p><blockquote id="1d6b2280-a891-8006-954f-ddeb6a68fc3e" class="">Si ces gens peuvent me nuire, c&#x27;est que je fais une faute. Si quelque autre fait une faute, je me garde de m&#x27;en offenser ; là est mon privilège. Peut-être fréquemment offensé-je ceux-là mêmes d&#x27;où me vient l&#x27;offense ? Peut-être suis-je en faute ?<br/><br/><br/><strong>Livre IV, 39, Traduction Mario Meunier (modifiée)</strong></blockquote><p id="1d6b2280-a891-8079-ab79-eada1b7d11de" class="">
+</p><blockquote id="1d6b2280-a891-8024-8fb9-cb477516c7ec" class="">Un autre fait quelque chose qui me déplaît. C&#x27;est son affaire. Il a ses propres dispositions, sa propre action. Moi, j&#x27;ai maintenant ce que la nature commune veut que j&#x27;aie maintenant, et je fais ce que ma nature veut que je fasse maintenant.<br/><br/><br/><strong>Livre V, 26, Traduction Mario Meunier (modifiée)</strong></blockquote><p id="1d6b2280-a891-8027-bbd2-e4e14eb6bc54" class="">
+</p><blockquote id="1d6b2280-a891-80c2-8793-e95b0afbd8db" class="">Lorsque tu t&#x27;irrites contre quelqu&#x27;un, c&#x27;est que tu as oublié que tout arrive conformément à la nature universelle, et que la faute commise est étrangère à toi ; et aussi, que tout ce qui arrive est toujours arrivé ainsi, arrivera ainsi et arrive actuellement ainsi partout ; que tu as oublié combien est étroite la parenté de l&#x27;homme avec le genre humain tout entier, parenté qui n&#x27;est pas du sang ou de la semence, mais de la communauté d&#x27;intelligence. Tu as oublié également que l&#x27;intelligence de chacun est un dieu et dérive de là-haut ; que rien n&#x27;est propre à personne, mais que notre enfant, notre corps, notre âme même sont venus de là-haut ; que tout est opinion ; et enfin, que chacun ne vit que le moment présent et ne perd que lui.<br/><br/><br/><strong>Livre XII, 26, Traduction Mario Meunier (modifiée)</strong></blockquote><p id="1d6b2280-a891-802a-aa11-fa5bc74fd0cb" class="">
+</p><p id="1d6b2280-a891-8095-a4e0-d00740304caf" class="">
+</p><figure class="block-color-orange callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8018-abef-fe46435497f0"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><h2 id="1d6b2280-a891-8088-876e-c52e06a97996" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-8011-a262-c48ffc24d764" class="">Ces cinq pensées explorent un thème fondamental du stoïcisme : le pouvoir transformateur du jugement sur la perception des événements, particulièrement dans le contexte des relations humaines conflictuelles.</p><p id="1d6b2280-a891-80a0-8c2b-feee8e1f6b0b" class="">La formule lapidaire de IV, 7 exprime avec une concision remarquable le principe stoïcien selon lequel ce ne sont pas les choses qui nous troublent, mais nos jugements sur ces choses. En trois propositions brèves comme des syllogismes, Marc Aurèle montre comment la suppression du jugement erroné (&quot;J&#x27;ai été lésé&quot;) dissout la souffrance elle-même. Cette analyse révèle que la lésion subjective (le sentiment d&#x27;avoir été blessé) dépend entièrement de notre assentiment à une représentation.</p><p id="1d6b2280-a891-8079-8c40-e3501a7c5d48" class="">La pensée VIII, 47 propose une stratégie concrète face à la médisance : plutôt que de se défendre contre des critiques, répondre avec une ironie bienveillante qui reconnaît ses propres imperfections. Cette approche témoigne d&#x27;une humilité authentique et d&#x27;un détachement par rapport à sa réputation – l&#x27;un des &quot;indifférents&quot; selon la classification stoïcienne des biens.</p><p id="1d6b2280-a891-800f-bcad-dfca64cbbc97" class="">Dans IV, 39, Marc Aurèle pousse plus loin la réflexion en suggérant que notre propre faute est la seule chose qui puisse réellement nous nuire. Face à l&#x27;offense, il propose un retournement radical de perspective : plutôt que d&#x27;accuser l&#x27;autre, examiner en quoi nous avons pu contribuer à la situation. Cette attitude réflexive transforme l&#x27;offense reçue en occasion d&#x27;auto-examen et de progrès moral.</p><p id="1d6b2280-a891-80ec-a2e8-fff3c5bad3c2" class="">La pensée V, 26 développe une stratégie de décentrement : face à ce qui nous déplaît chez autrui, reconnaître sa liberté d&#x27;action et nous concentrer sur notre propre devoir présent. Cette attention au &quot;maintenant&quot; (répété trois fois) inscrit la maxime dans la pratique stoïcienne de l&#x27;attention au présent, seul lieu où notre action peut s&#x27;exercer effectivement.</p><p id="1d6b2280-a891-80cd-9c58-ff738f16ff40" class="">Enfin, XII, 26 offre une synthèse des principes stoïciens qui, médités, peuvent calmer l&#x27;irritation contre autrui : la conformité de tout événement à l&#x27;ordre naturel, la distinction entre ce qui dépend de nous et ce qui n&#x27;en dépend pas, l&#x27;universalité des comportements humains, la communauté rationnelle de tous les hommes, la divinité de l&#x27;intelligence, l&#x27;impermanence de toutes choses, le caractère illusoire des opinions, la concentration sur le présent. Cette récapitulation des dogmes fondamentaux montre comment la philosophie stoïcienne fournit un ensemble d&#x27;outils conceptuels pour transformer notre perception des situations conflictuelles.</p><p id="1d6b2280-a891-8088-93e9-cf4864830c60" class="">Ces cinq pensées manifestent l&#x27;orientation profondément thérapeutique du stoïcisme de Marc Aurèle : non pas une spéculation abstraite, mais une pratique concrète visant à transformer nos réactions émotionnelles par un travail sur nos jugements.</p></div></figure><h1 id="1d6b2280-a891-8012-9833-f55174d7bdc9" class="">La vertu et le bien véritable</h1><p id="1d6b2280-a891-804a-9d07-d6f7eb4881e5" class="">
+</p><blockquote id="1d6b2280-a891-808c-bd8f-ef0fd0361f53" class="">Pour qui la gloire est un bien, le fait que d&#x27;autres aient mauvaise opinion de lui devient un mal. Mais si tu comprenais que la décence seule est un bien et l&#x27;indécence un mal, tu n&#x27;aurais plus à blâmer ni soupçonner celui qui, à tort ou à raison, pense mal de toi.<br/><br/><br/><strong>Livre IV, 19, Traduction Mario Meunier (modifiée)</strong></blockquote><p id="1d6b2280-a891-80e6-9582-f667695528eb" class="">
+</p><blockquote id="1d6b2280-a891-8033-8757-cd6d264d9f10" class="">De même que l&#x27;on ne met pas le bien de l&#x27;homme dans l&#x27;exhalaison ou l&#x27;expiration du souffle, ni dans la pensée, ni dans l&#x27;acuité des sensations, ni dans l&#x27;harmonie des parties, ni dans la douceur des contacts utiles à notre corps ; de même qu&#x27;on ne le met ni dans le fait d&#x27;être admiré ni dans le fait d&#x27;être célébré ; de même qu&#x27;on ne le place pas dans les embrassements ni dans les attouchements (car ce sont là des opérations naturelles), on ne le place pas non plus dans les éloges que nous recevons de notre entourage. <br/><br/>Où est donc le bien ? Dans ce que nous jugeons beau. Il se trouve dans les œuvres qu&#x27;accomplissent la raison sociale, l&#x27;impassibilité, le souci de la vérité. Les œuvres de l&#x27;impassibilité sont de s&#x27;imposer à soi-même, dans sa conduite, le respect de la nature ; celles du souci de la vérité, de ne pas donner son assentiment au faux, et de conformer ses impulsions au bien commun.<br/><br/><br/><strong>Livre V, 15, Traduction Mario Meunier (modifiée)</strong></blockquote><p id="1d6b2280-a891-8089-8e8c-fa38a07491f9" class="">
+</p><blockquote id="1d6b2280-a891-8034-9c80-c4359042c88c" class="">Toi, si tu es dans la peine, que ce soit pour avoir négligé tel ou tel précepte, de t&#x27;être fixé tel ou tel point pour souffrir, mais non pour autre chose. Car, pour les choses extérieures qui t&#x27;arrivent, c&#x27;est ou la Providence ou le hasard qui en est responsable, et tu ne peux accuser ni l&#x27;un ni l&#x27;autre.<br/><br/><br/><strong>Livre VII, 67, Traduction Mario Meunier (modifiée)</strong></blockquote><p id="1d6b2280-a891-805a-bcfa-fd2431244998" class="">
+</p><p id="1d6b2280-a891-809c-92b5-cc59ef51f9f9" class="">
+</p><blockquote id="1d6b2280-a891-80de-80da-fbc9c4a8cc5e" class="">Quand quelqu&#x27;un te fait du tort, cherche aussitôt quelle idée du bien ou du mal l&#x27;a conduit à cette faute. Cette connaissance acquise, tu seras pris de pitié, tu ne t&#x27;étonneras plus, tu ne te mettras plus en colère. Car, ou bien tu te fais toi-même du bien et du mal la même idée que lui, ou une idée semblable, et alors tu dois lui pardonner. Ou bien tu ne te fais plus du bien et du mal les mêmes idées que lui, et alors tu seras plus facilement bienveillant envers celui qui les ignore.<br/><br/><br/><strong>Livre IX, 42, Traduction Mario Meunier (modifiée)</strong></blockquote><p id="1d6b2280-a891-80c1-8c90-d62b4d37634e" class="">
+</p><p id="1d6b2280-a891-8069-b2dc-d885a4794eda" class="">
+</p><figure class="block-color-orange callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-80e7-9d5f-df5cc1abe747"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><h2 id="1d6b2280-a891-8078-9d88-eb5ac09f4dbe" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-801d-8272-daf7b2fc0428" class="">Ces quatre pensées explorent la conception stoïcienne du bien véritable, distingué des biens apparents comme la gloire, le plaisir ou la richesse. Elles montrent comment cette vision éthique transforme notre rapport aux autres et aux événements.</p><p id="1d6b2280-a891-80d4-ad2a-db45f72b3c44" class="">Dans IV, 19, Marc Aurèle établit un lien direct entre notre conception du bien et notre réaction à l&#x27;opinion d&#x27;autrui. Si nous considérons la gloire comme un bien, nous sommes nécessairement troublés par la mauvaise opinion des autres. En revanche, si nous reconnaissons que le seul bien véritable est la &quot;décence&quot; (c&#x27;est-à-dire l&#x27;action vertueuse, conforme à la nature rationnelle), nous sommes libérés de cette dépendance vis-à-vis des jugements extérieurs. Cette indépendance n&#x27;est pas orgueil ou mépris, mais la conséquence logique d&#x27;une juste compréhension de la nature du bien.</p><p id="1d6b2280-a891-80c5-9573-d2e774f58806" class="">La pensée V, 15 propose une définition plus complète du bien véritable, par une série d&#x27;exclusions suivie d&#x27;une affirmation positive. Le bien n&#x27;est ni dans les fonctions vitales, ni dans la pensée abstraite, ni dans les sensations, ni dans la constitution corporelle, ni dans les plaisirs, ni dans l&#x27;admiration ou la renommée. Il réside exclusivement dans &quot;ce que nous jugeons beau&quot;, c&#x27;est-à-dire dans les œuvres accomplies selon la raison sociale (koinōnikos logos), l&#x27;impassibilité (apatheia) et le souci de la vérité (alētheia). Ces trois dispositions sont ensuite définies par leurs fruits concrets : respect de la nature, refus du faux, action orientée vers le bien commun. Cette définition synthétise admirablement les trois disciplines stoïciennes : du désir (impassibilité), de l&#x27;assentiment (vérité) et de l&#x27;action (raison sociale).</p><p id="1d6b2280-a891-80b3-857e-f1a574b6cec9" class="">La brève réflexion de VII, 67 établit une distinction fondamentale entre la peine légitime (celle qui naît de nos propres fautes morales) et la peine illégitime (celle qui vient des événements extérieurs). Cette dichotomie reflète la division stoïcienne entre ce qui dépend de nous et ce qui n&#x27;en dépend pas. La formulation paradoxale de la fin (&quot;tu ne peux accuser ni la Providence ni le hasard&quot;) présente ces deux conceptions opposées de la causalité comme également acceptables d&#x27;un point de vue éthique : qu&#x27;on croie à un ordre providentiel ou au hasard, l&#x27;attitude juste reste la même – accepter sereinement ce qui ne dépend pas de nous.</p><p id="1d6b2280-a891-805e-bb00-d7db173a2122" class="">Enfin, IX, 42 développe une application concrète de la conception stoïcienne du bien dans les relations humaines. Face à celui qui nous fait du tort, Marc Aurèle propose de comprendre quelle conception du bien l&#x27;a motivé. Cette compréhension génère naturellement la pitié et dissout la colère. Soit nous partageons sa conception (et devons alors lui pardonner par cohérence), soit nous avons une conception différente (et devons alors être indulgents envers son ignorance). Cette analyse, qui rappelle la maxime socratique &quot;Nul n&#x27;est méchant volontairement&quot;, transforme l&#x27;offense subie en occasion de progrès moral, par l&#x27;exercice de la compréhension et de la bienveillance.</p><p id="1d6b2280-a891-80a5-b30f-dfbdce3764fc" class="">Ces quatre pensées montrent comment la définition stoïcienne du bien comme action vertueuse fonde une éthique de l&#x27;indépendance intérieure, de l&#x27;acceptation du destin et de la compréhension bienveillante d&#x27;autrui. Elles illustrent la cohérence remarquable du système stoïcien, où la conception du bien détermine directement notre rapport au monde et aux autres.</p></div></figure><p id="1d6b2280-a891-8077-a1a9-f77bc1c8effe" class="">
+</p><figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-800c-98ea-e08f6c8955e6"><div style="font-size:1.5em"><span class="icon">📙</span></div><div style="width:100%"><h1 id="1d6b2280-a891-8028-821c-f4b42875351c" class=""><strong>Pertinence contemporaine</strong></h1><p id="1d6b2280-a891-8064-bdc9-fd06227f3ebd" class="">Les <em>Pensées</em> de Marc Aurèle connaissent aujourd&#x27;hui un regain d&#x27;intérêt remarquable, tant dans le monde académique que dans la culture populaire. Cette actualité persistante s&#x27;explique par plusieurs facteurs qui résonnent avec les préoccupations de notre époque.</p><p id="1d6b2280-a891-8025-80c5-e8943d78805f" class="">Dans nos sociétés marquées par la surinformation et la dispersion de l&#x27;attention, la pratique de l&#x27;examen intérieur proposée par Marc Aurèle offre un antidote à l&#x27;agitation permanente. Sa méditation sur la valeur du présent face à la distraction chronique de nos existences numériques prend une résonance particulière. De même, sa réflexion sur la mort comme horizon donnant sens à la vie parle à une époque qui tend à occulter la finitude humaine.</p><p id="1d6b2280-a891-806f-a9b6-db81a5f6f530" class="">Sur le plan éthique, son cosmopolitisme fondé sur la reconnaissance d&#x27;une humanité commune et d&#x27;une parenté universelle propose une alternative aux replis identitaires. Sa conception de la vertu comme seul bien véritable interroge une société souvent dominée par la poursuite des biens matériels et de la reconnaissance sociale. Son attention aux relations humaines, son effort pour comprendre les motivations d&#x27;autrui, même dans le conflit, offre des ressources précieuses face à la polarisation croissante du débat public.</p><p id="1d6b2280-a891-8006-aebd-e20a7b67eb6a" class="">La psychologie stoïcienne de Marc Aurèle, centrée sur la distinction entre ce qui dépend de nous et ce qui n&#x27;en dépend pas, nourrit aujourd&#x27;hui certaines approches thérapeutiques, notamment les thérapies cognitives et comportementales. Sa réflexion sur la façon dont nos jugements déterminent nos réactions émotionnelles anticipe remarquablement certaines découvertes de la psychologie contemporaine.</p><p id="1d6b2280-a891-80ec-b151-e9336b81b4b1" class="">Enfin, à l&#x27;heure des défis écologiques et civilisationnels, la vision stoïcienne d&#x27;un cosmos unifié où tout est interdépendant, et où l&#x27;homme doit trouver sa juste place, offre un cadre conceptuel pour repenser notre rapport à la nature.</p><p id="1d6b2280-a891-80f8-9805-c16334693a00" class="">Ces convergences expliquent pourquoi les <em>Pensées</em>, par-delà les siècles, continuent de nourrir la réflexion philosophique, éthique et existentielle de nombreux lecteurs, comme en témoignent leur présence constante dans les listes de best-sellers et les nombreuses adaptations contemporaines des préceptes stoïciens.</p></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

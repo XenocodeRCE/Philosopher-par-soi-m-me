@@ -1,0 +1,695 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Épictète : extraits du Manuel</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-8077-8ecd-f09e217476b3" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1565694286329-16c31ae20a20?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 18.630000000000003%"/><h1 class="page-title"><strong>Épictète</strong> : extraits du <em>Manuel</em></h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d6b2280-a891-8002-bbbc-e9c6db11038d" class="">Épictète (50-125 ou 130 apr. J.-C.) est l&#x27;une des figures majeures du stoïcisme romain. Né esclave à Hiérapolis en Phrygie, il fut affranchi et devint l&#x27;un des philosophes les plus influents de son temps. Contrairement à Sénèque ou Marc Aurèle, Épictète n&#x27;a jamais écrit lui-même ses enseignements. Ce que nous connaissons de sa philosophie nous a été transmis par son disciple Arrien, qui a compilé ses leçons dans deux ouvrages : les <em>Entretiens</em> (Diatribes) en huit livres, dont quatre nous sont parvenus, et le <em>Manuel</em> (Enchiridion), abrégé des <em>Entretiens</em> destiné à la pratique quotidienne. Le <em>Manuel</em> est un petit ouvrage d&#x27;une cinquantaine de courts chapitres qui offre l&#x27;essence de l&#x27;enseignement pratique d&#x27;Épictète. Sa concision et sa clarté en ont fait un véritable bréviaire de la sagesse stoïcienne qui a exercé une influence considérable sur la pensée occidentale, des Pères de l&#x27;Église jusqu&#x27;aux philosophes contemporains.</p><h1 id="1d6b2280-a891-80dd-b52c-d8aab5a7c933" class=""><strong>Contexte historique et philosophique</strong></h1><p id="1d6b2280-a891-80a5-9759-d133ae704ac8" class="">Épictète vit sous les règnes des empereurs Néron, Vespasien, Titus, Domitien, Nerva, Trajan et Hadrien, pendant la période de l&#x27;apogée de l&#x27;Empire romain. D&#x27;abord esclave d&#x27;Épaphrodite, secrétaire de Néron, il est affranchi et devient disciple du philosophe stoïcien Musonius Rufus. Après l&#x27;expulsion des philosophes de Rome par Domitien en 89, il s&#x27;installe à Nicopolis en Épire où il fonde son école. Épictète se situe dans la tradition du stoïcisme impérial romain, qui privilégie l&#x27;éthique sur la logique et la physique. Suivant cette tradition, il met l&#x27;accent sur l&#x27;application pratique et quotidienne des principes philosophiques.</p><p id="1d6b2280-a891-80bb-8507-f532dedc6e1c" class="">Le stoïcisme d&#x27;Épictète se distingue par sa dimension spirituelle plus prononcée et son insistance sur la providence divine, reflet peut-être de ses origines phrygiennes. Son enseignement est marqué par la distinction fondamentale entre ce qui dépend de nous (nos jugements, nos désirs, nos aversions) et ce qui ne dépend pas de nous (les événements extérieurs). Cette dichotomie sert de fondement à une éthique de la liberté intérieure face aux aléas de l&#x27;existence. Par sa propre expérience de l&#x27;esclavage et de l&#x27;exil, Épictète incarne remarquablement le paradoxe stoïcien de l&#x27;homme extérieurement contraint mais intérieurement libre.</p><figure class="block-color-blue callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8017-acc0-ef28b061a3cc"><div style="font-size:1.5em"><span class="icon">➡️</span></div><div style="width:100%"><h1 id="1d6b2280-a891-804f-9a49-c4e28b517e99" class=""><strong>Les concepts clés du stoïcisme d&#x27;Épictète</strong></h1><ul id="1d6b2280-a891-8094-b4b7-c65fe5906487" class="bulleted-list"><li style="list-style-type:disc"><strong>Dichotomie du contrôle</strong> : distinction entre ce qui dépend de nous (prohairesis) et ce qui n&#x27;en dépend pas</li></ul><ul id="1d6b2280-a891-8028-a3c3-e7dd5b3247f3" class="bulleted-list"><li style="list-style-type:disc"><strong>Prohairesis</strong> : faculté de choix moral, siège de la liberté humaine</li></ul><ul id="1d6b2280-a891-80f9-a011-d6363f1fbebd" class="bulleted-list"><li style="list-style-type:disc"><strong>Usage des représentations</strong> : art d&#x27;examiner nos impressions avant d&#x27;y donner notre assentiment</li></ul><ul id="1d6b2280-a891-809d-9373-e386fcbe04f9" class="bulleted-list"><li style="list-style-type:disc"><strong>Discipline du désir</strong> : n&#x27;attacher de valeur qu&#x27;à ce qui dépend de nous</li></ul><ul id="1d6b2280-a891-80c6-8185-e7b3ab69ac1b" class="bulleted-list"><li style="list-style-type:disc"><strong>Discipline de l&#x27;action</strong> : accomplir ses devoirs sociaux avec détachement</li></ul><ul id="1d6b2280-a891-802f-8cb2-d0c72905dbed" class="bulleted-list"><li style="list-style-type:disc"><strong>Discipline de l&#x27;assentiment</strong> : ne pas se laisser tromper par les apparences</li></ul><ul id="1d6b2280-a891-8040-be39-fa641f54feda" class="bulleted-list"><li style="list-style-type:disc"><strong>Providence</strong> : confiance en l&#x27;ordre rationnel et bienveillant du cosmos</li></ul><ul id="1d6b2280-a891-8012-b809-c0de32f4373b" class="bulleted-list"><li style="list-style-type:disc"><strong>Cosmopolitisme</strong> : conscience d&#x27;appartenir à la communauté universelle des êtres rationnels</li></ul></div></figure><h1 id="1d6b2280-a891-8033-af2a-c36b85f12522" class="">La dichotomie du contrôle</h1><blockquote id="1d6b2280-a891-80bb-bbca-ed15960d4560" class="">Parmi les choses qui existent, certaines dépendent de nous, d&#x27;autres non. Dépendent de nous l&#x27;opinion, l&#x27;impulsion, le désir, l&#x27;aversion, en un mot tout ce qui est notre œuvre propre. Ne dépendent pas de nous le corps, la richesse, les honneurs, les charges publiques, en un mot tout ce qui n&#x27;est pas notre œuvre propre.<br/><br/>Les choses qui dépendent de nous sont par nature libres, sans empêchement, sans entrave ; celles qui ne dépendent pas de nous sont faibles, esclaves, dépendantes, exposées aux empêchements, étrangères.<br/><br/>Souviens-toi donc que, si tu tiens pour libres les choses naturellement esclaves, et pour tiennes les choses étrangères, tu connaîtras l&#x27;entrave, l&#x27;affliction, le trouble, tu accuseras dieux et hommes ; mais si tu tiens pour tien seulement ce qui est tien, et pour étranger, comme il l&#x27;est, ce qui est étranger, personne jamais ne te contraindra, personne ne t&#x27;empêchera, tu ne blâmeras personne, n&#x27;accuseras personne, ne feras jamais rien contre ton gré, tu n&#x27;auras pas d&#x27;ennemi, personne ne te nuira, car tu n&#x27;éprouveras rien de nuisible.<br/><br/>Si donc tu poursuis de si grands biens, souviens-toi que ce n&#x27;est pas avec une ardeur médiocre qu&#x27;il faut les rechercher, mais qu&#x27;il te faut renoncer entièrement à certaines choses, en remettre d&#x27;autres à plus tard. Mais si, outre ces biens, tu veux encore le pouvoir et la richesse, peut-être ne les atteindras-tu pas, pour avoir désiré aussi les premiers biens ; en tout cas, tu manqueras absolument ce qui seul procure liberté et bonheur.<br/><br/>Exerce-toi donc à dire aussitôt à toute représentation troublante : « Tu n&#x27;es qu&#x27;une représentation, et non pas du tout ce que tu représentes. » Puis examine-la, et juge-la d&#x27;après les règles que tu possèdes, dont la première est celle-ci : s&#x27;agit-il de ce qui dépend de nous, ou de ce qui ne dépend pas de nous ? Et s&#x27;il s&#x27;agit de ce qui ne dépend pas de nous, aie prompte cette réponse : « Cela ne me regarde pas. »<br/><br/>Manuel, I, traduction É. Bréhier (modifiée)<br/></blockquote><figure class="block-color-blue callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8017-a567-cc6acac992f8"><div style="font-size:1.5em"><span class="icon">📘</span></div><div style="width:100%"><h2 id="1d6b2280-a891-808f-8e58-dd75d510c44f" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-80fa-a534-e0812ad4b73a" class="">Ce premier chapitre du <em>Manuel</em> expose le principe fondamental de la philosophie d&#x27;Épictète : la dichotomie du contrôle. Cette distinction entre ce qui dépend de nous et ce qui n&#x27;en dépend pas constitue la pierre angulaire de toute sa pensée éthique.</p><p id="1d6b2280-a891-80b2-a9d5-cccb4d72ce5f" class="">Épictète commence par établir clairement les deux catégories : d&#x27;un côté nos facultés intérieures (opinion, désir, aversion), de l&#x27;autre les réalités extérieures (corps, richesse, réputation). Cette division n&#x27;est pas arbitraire mais fondée sur la nature même des choses : les premières sont &quot;libres&quot;, les secondes sont &quot;esclaves&quot;. Ce vocabulaire de la liberté et de l&#x27;esclavage, particulièrement significatif pour un ancien esclave comme Épictète, redéfinit radicalement ces notions : la vraie liberté est intérieure et dépend uniquement de notre usage de nos représentations.</p><p id="1d6b2280-a891-8074-9472-ffaf87a1d234" class="">Le philosophe décrit ensuite les conséquences pratiques de cette distinction. Confondre les deux domaines conduit au trouble et à l&#x27;affliction, car c&#x27;est attendre la liberté de ce qui est naturellement contraint. Inversement, reconnaître la limite de notre pouvoir permet d&#x27;accéder à une liberté intérieure inébranlable. On note ici la dimension paradoxale du stoïcisme : c&#x27;est en renonçant au contrôle illusoire sur l&#x27;extérieur qu&#x27;on accède à la véritable maîtrise de soi.</p><p id="1d6b2280-a891-806d-9f38-e305726e49c3" class="">La conclusion introduit un exercice pratique essentiel : l&#x27;examen des représentations. Face à une impression troublante, le stoïcien doit d&#x27;abord la reconnaître comme simple représentation (et non comme réalité) puis déterminer si elle concerne ce qui dépend de lui ou non. Cette discipline de l&#x27;assentiment constitue l&#x27;application quotidienne et concrète du principe théorique énoncé au début.</p></div></figure><h1 id="1d6b2280-a891-80db-9d64-f74d5c7a40ec" class="">L&#x27;usage des représentations</h1><p id="1d6b2280-a891-8019-a166-f54aae1f510c" class="">
+</p><blockquote id="1d6b2280-a891-80a2-90c6-c5a0f66d82bd" class="">Ce qui trouble les hommes, ce ne sont pas les choses, mais les jugements qu&#x27;ils portent sur ces choses. Ainsi, la mort n&#x27;a rien de redoutable, sans quoi elle aurait paru telle à Socrate. Mais c&#x27;est le jugement sur la mort, le fait de la croire redoutable, qui est redoutable. Quand donc nous sommes entravés, troublés ou affligés, n&#x27;accusons jamais autrui, mais nous-mêmes, c&#x27;est-à-dire nos jugements. C&#x27;est le fait d&#x27;un homme sans éducation philosophique d&#x27;accuser les autres de ses propres maux ; celui qui a commencé son éducation s&#x27;accuse lui-même ; celui qui l&#x27;a achevée n&#x27;accuse ni autrui ni lui-même.<br/><br/>Manuel, V, traduction É. Bréhier (modifiée)<br/></blockquote><p id="1d6b2280-a891-80a7-ab0c-f55f6144b491" class="">
+</p><blockquote id="1d6b2280-a891-8021-b7f2-ff5787b31d83" class="">Rappelle-toi que ce n&#x27;est pas celui qui t&#x27;insulte ou te frappe qui t&#x27;offense, mais c&#x27;est le jugement selon lequel ces gens t&#x27;offensent. Quand donc quelqu&#x27;un t&#x27;a irrité, sache que c&#x27;est ton propre jugement qui est responsable de ton irritation. Aussi, essaie avant tout de ne pas te laisser emporter par la représentation : une fois que tu as gagné du temps et du répit, tu te maîtriseras plus facilement.<br/><br/>Manuel, XX, traduction É. Bréhier (modifiée)<br/></blockquote><figure class="block-color-blue callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8082-bb68-cd4f4a7c8f1c"><div style="font-size:1.5em"><span class="icon">📘</span></div><div style="width:100%"><h2 id="1d6b2280-a891-8016-a9a5-ccb94ef3b09b" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-801b-a5bd-c4126da6e74f" class="">Ces deux chapitres développent un principe fondamental du stoïcisme : ce ne sont pas les choses elles-mêmes qui nous troublent, mais nos jugements sur ces choses. Cette distinction, qui remonte à Zénon de Citium, fondateur du stoïcisme, est au cœur de la psychologie morale d&#x27;Épictète.</p><p id="1d6b2280-a891-80db-bfb9-f30004ce497a" class="">Dans le chapitre V, Épictète prend l&#x27;exemple de la mort, montrant que sa nature redoutable n&#x27;est pas objective mais dépend de notre jugement. L&#x27;exemple de Socrate, qui a affronté sa condamnation à mort avec sérénité, illustre que même face à la mort, l&#x27;homme peut conserver sa liberté de jugement. Le philosophe établit ensuite une gradation des niveaux de progrès moral : l&#x27;homme sans éducation philosophique accuse les autres, le progressant s&#x27;accuse lui-même, le sage n&#x27;accuse personne. Cette progression marque le passage d&#x27;une perspective externe (où les troubles viennent du dehors) à une perspective interne (où ils viennent de nos jugements), puis à une sagesse accomplie qui a dépassé même cette opposition.</p><p id="1d6b2280-a891-8006-a000-ea5a84d7cfe8" class="">Le chapitre XX applique ce principe aux offenses. L&#x27;insulte ou le coup ne sont pas en eux-mêmes des offenses ; c&#x27;est notre jugement qui les qualifie ainsi. Cette analyse distingue l&#x27;acte physique de sa signification morale, que nous lui attribuons. Épictète propose alors un exercice spirituel concret : introduire un délai entre la représentation et notre réaction, pour éviter que l&#x27;automatisme du jugement ne produise l&#x27;irritation. Ce simple temps d&#x27;arrêt constitue un espace de liberté où peut s&#x27;exercer notre faculté de choix moral (prohairesis).</p><p id="1d6b2280-a891-80e8-b735-e40a21a58d97" class="">Ces deux chapitres manifestent le caractère profondément thérapeutique du stoïcisme d&#x27;Épictète : en identifiant la véritable source du trouble (nos jugements), il nous donne les moyens de le surmonter par un travail sur nous-mêmes.</p></div></figure><h1 id="1d6b2280-a891-80f9-a712-dda9c41a812f" class="">Accepter ce qui ne dépend pas de nous</h1><p id="1d6b2280-a891-80d0-8def-cd1161714ee7" class="">
+</p><blockquote id="1d6b2280-a891-80ba-af1d-f17be44bc1b9" class="">Ne cherche pas à faire que les événements arrivent comme tu veux, mais veuille les événements comme ils arrivent, et tu seras heureux.<br/><br/>Manuel, VIII, traduction É. Bréhier<br/></blockquote><p id="1d6b2280-a891-80c4-9c9b-f6a4147676b0" class="">
+</p><blockquote id="1d6b2280-a891-80af-a12c-cf64b835fac4" class="">Ne dis jamais de rien : « Je l&#x27;ai perdu », mais dis : « Je l&#x27;ai rendu. » Ton enfant est mort ? Il a été rendu. Ta femme est morte ? Elle a été rendue. « On m&#x27;a pris mon champ. » Eh bien ! celui-ci a été rendu aussi. « Mais c&#x27;est un malhonnête qui me l&#x27;a pris ! » Que t&#x27;importe par qui celui qui te l&#x27;a donné te l&#x27;a redemandé ? Tant que le maître te le laisse, occupes-en toi comme d&#x27;un bien qui t&#x27;est étranger, ainsi que font les voyageurs dans une hôtellerie.<br/><br/>Manuel, XI, traduction É. Bréhier (modifiée)<br/></blockquote><p id="1d6b2280-a891-80af-8f62-e7d1f3ce112e" class="">
+</p><blockquote id="1d6b2280-a891-8013-ba12-e5f7d9d3b440" class="">Souviens-toi que tu es acteur d&#x27;un drame tel que le veut l&#x27;auteur de la pièce : court, s&#x27;il le veut court ; long, s&#x27;il le veut long. S&#x27;il veut que tu joues un rôle de mendiant, joue-le avec talent ; et de même si c&#x27;est un rôle de boiteux, de magistrat, de simple particulier. Car c&#x27;est ton affaire de jouer correctement le personnage qui t&#x27;a été confié ; mais de le choisir, c&#x27;est l&#x27;affaire d&#x27;un autre.<br/><br/>Manuel, XVII, traduction É. Bréhier (modifiée)<br/></blockquote><figure class="block-color-blue callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8069-8c02-c7385976a1a0"><div style="font-size:1.5em"><span class="icon">📘</span></div><div style="width:100%"><h2 id="1d6b2280-a891-80ff-a405-f50f57689c2b" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-80b8-86dd-dd8d5bad6ff8" class="">Ces trois chapitres développent l&#x27;attitude stoïcienne face aux événements qui ne dépendent pas de nous : non pas la résignation passive, mais l&#x27;acceptation active et même l&#x27;amour du destin (amor fati). Ce thème, central dans le stoïcisme, trouve chez Épictète une expression particulièrement concise et frappante.</p><p id="1d6b2280-a891-803a-b87c-e2f16616a4d6" class="">Dans le chapitre VIII, l&#x27;un des plus célèbres du <em>Manuel</em>, Épictète énonce un principe fondamental de l&#x27;éthique stoïcienne : le bonheur ne consiste pas à adapter les événements à nos désirs, mais à adapter nos désirs aux événements. Cette inversion radicale de la perspective commune fonde une liberté intérieure qui ne dépend plus des circonstances extérieures.</p><p id="1d6b2280-a891-8098-b146-e1d5741da985" class="">Le chapitre XI traite de la perte et du deuil à travers une reconfiguration du langage : substituer &quot;rendre&quot; à &quot;perdre&quot;. Cette transformation linguistique reflète un changement profond de perspective : considérer que nous ne possédons rien en propre, mais que tout nous est prêté temporairement. La métaphore finale de l&#x27;hôtellerie souligne le caractère transitoire de notre séjour terrestre, invitant à un détachement serein face aux biens matériels et même aux êtres chers.</p><p id="1d6b2280-a891-80bd-8975-fc61704e2d2e" class="">La métaphore théâtrale du chapitre XVII illustre parfaitement la conception stoïcienne de la liberté au sein du déterminisme : nous ne choisissons pas notre rôle dans la pièce cosmique (notre naissance, notre condition sociale, nos aptitudes naturelles), mais nous sommes libres de la manière dont nous jouons ce rôle. Cette distinction entre le contenu de la vie (qui ne dépend pas de nous) et la manière de la vivre (qui en dépend) est au cœur de l&#x27;éthique d&#x27;Épictète.</p><p id="1d6b2280-a891-802c-8721-e7e6f63a958d" class="">Ces trois chapitres montrent comment le stoïcisme d&#x27;Épictète transforme ce qui pourrait paraître une limitation (ne pas contrôler les événements) en une libération : ne vouloir que ce qui arrive, c&#x27;est ne jamais être déçu ; considérer les biens comme prêtés, c&#x27;est ne jamais souffrir de leur perte ; accepter son rôle dans le drame cosmique, c&#x27;est concentrer son énergie sur ce qu&#x27;on peut réellement choisir.</p></div></figure><h1 id="1d6b2280-a891-80f3-9bb3-e6b0e6e5de0f" class="">La discipline du désir</h1><p id="1d6b2280-a891-80c2-a04b-d2d34d1dc487" class="">
+</p><blockquote id="1d6b2280-a891-809e-975f-db917ba65e01" class="">Rappelle-toi que le désir promet l&#x27;obtention de ce qu&#x27;il désire, l&#x27;aversion promet de ne pas tomber dans ce qu&#x27;elle a en aversion ; et celui qui n&#x27;atteint pas l&#x27;objet de son désir est malheureux, celui qui tombe sur l&#x27;objet de son aversion est misérable. Si donc tu n&#x27;as d&#x27;aversion que pour ce qui est contraire à la nature parmi les choses qui dépendent de toi, tu ne tomberas sur aucun des objets de ton aversion ; mais si tu as de l&#x27;aversion pour la maladie, la mort ou la pauvreté, tu seras misérable.<br/><br/>Détourne donc ton aversion de toutes les choses qui ne dépendent pas de nous, et porte-la sur ce qui, parmi les choses qui dépendent de nous, est contraire à la nature. Quant au désir, supprime-le complètement pour le moment. Car si tu désires l&#x27;une des choses qui ne dépendent pas de nous, tu seras forcément malheureux ; et, parmi les choses qui dépendent de nous, celles qu&#x27;il serait beau de désirer, aucune ne t&#x27;est encore accessible. Mais use seulement de l&#x27;impulsion et de la répulsion, légèrement, avec réserve et sans tension.<br/><br/>Manuel, II, traduction É. Bréhier (modifiée)<br/></blockquote><p id="1d6b2280-a891-80af-94a2-c63684c66183" class="">
+</p><blockquote id="1d6b2280-a891-8097-8238-e3ea66f3f78b" class="">Pour chacune des choses qui t&#x27;attirent, te servent ou te sont chères, n&#x27;omets pas de te dire quelle est sa nature, en commençant par les plus insignifiantes. Si tu aimes une marmite, dis-toi : « J&#x27;aime une marmite » ; car, si elle se brise, tu n&#x27;en seras pas troublé. Si tu embrasses ton enfant ou ta femme, dis-toi que c&#x27;est un être humain que tu embrasses ; car, s&#x27;il meurt, tu n&#x27;en seras pas troublé.<br/><br/>Manuel, III, traduction É. Bréhier (modifiée)<br/></blockquote><figure class="block-color-blue callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8051-bfae-ebb5653e4b10"><div style="font-size:1.5em"><span class="icon">📘</span></div><div style="width:100%"><h2 id="1d6b2280-a891-801c-8312-e32897f0743a" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-8038-8673-e379f8b6976f" class="">Ces deux chapitres explorent la discipline du désir, l&#x27;une des trois disciplines stoïciennes fondamentales avec celle de l&#x27;action et celle de l&#x27;assentiment. Épictète y développe une psychologie morale subtile, distinguant diverses modalités de notre relation aux objets extérieurs.</p><p id="1d6b2280-a891-80bf-9f06-e65706998672" class="">Dans le chapitre II, Épictète analyse les conséquences psychologiques du désir et de l&#x27;aversion mal dirigés. Le désir appliqué à ce qui ne dépend pas de nous conduit nécessairement au malheur, puisque nous ne pouvons garantir son obtention. De même, l&#x27;aversion envers ce qui ne dépend pas de nous (maladie, mort, pauvreté) nous condamne à la misère. La solution est double : réorienter l&#x27;aversion vers ce qui dépend de nous et est contraire à la nature (nos propres jugements erronés), et suspendre provisoirement tout désir jusqu&#x27;à ce que nous soyons capables de le diriger correctement. Cette thérapie des passions, à la fois radicale et progressive, vise à transformer nos réactions automatiques en choix délibérés.</p><p id="1d6b2280-a891-8079-be52-df0aeefeb957" class="">Le chapitre III présente un exercice spirituel concret : se remémorer constamment la nature réelle des choses et des personnes que nous aimons. L&#x27;exemple de la marmite peut sembler trivial, mais il illustre un principe applicable aux attachements plus profonds : reconnaître la fragilité intrinsèque de tout ce qui existe. La formule concernant les êtres chers (&quot;c&#x27;est un être humain que tu embrasses&quot;) rappelle leur condition mortelle. Il ne s&#x27;agit pas de renoncer à l&#x27;affection, mais de l&#x27;accompagner d&#x27;une conscience lucide de la réalité, pour éviter que l&#x27;attachement ne se transforme en dépendance émotionnelle.</p><p id="1d6b2280-a891-8010-9661-edbeb314c3fb" class="">Ces deux chapitres témoignent de la dimension pratique du stoïcisme d&#x27;Épictète : non pas une connaissance théorique, mais un ensemble d&#x27;exercices quotidiens visant à transformer notre relation au monde. La discipline du désir qu&#x27;il propose n&#x27;est pas une suppression de toute affectivité, mais une réorientation vers ce qui dépend réellement de nous.</p></div></figure><h1 id="1d6b2280-a891-8030-bb34-f832ed68fd2b" class="">Les relations humaines</h1><p id="1d6b2280-a891-80bd-8e55-f40a78994976" class="">
+</p><blockquote id="1d6b2280-a891-8030-a4dc-ee1bb85cd56a" class="">Quand tu vois quelqu&#x27;un qui pleure parce qu&#x27;il est en deuil ou que son fils est parti en voyage, ou qu&#x27;il a perdu sa fortune, prends garde que la représentation ne t&#x27;entraîne à croire qu&#x27;il est dans des maux extérieurs à lui. Mais aussitôt fais en toi-même cette distinction : « Ce qui le fait souffrir, ce n&#x27;est pas l&#x27;événement (puisqu&#x27;un autre n&#x27;en souffre pas), c&#x27;est le jugement qu&#x27;il porte sur cet événement. » N&#x27;hésite pas toutefois à t&#x27;accorder avec lui, au moins par tes paroles, et, s&#x27;il le faut, pleure avec lui ; mais prends garde de ne pas pleurer aussi intérieurement.<br/><br/>Manuel, XVI, traduction É. Bréhier (modifiée)<br/></blockquote><p id="1d6b2280-a891-80e5-a79e-cf86344b89bd" class="">
+</p><blockquote id="1d6b2280-a891-80ba-8b5d-e7aed0de6b3a" class="">Les devoirs sont, en général, mesurés par les relations. C&#x27;est ton père : cela t&#x27;impose de prendre soin de lui, de lui céder en tout, de supporter ses réprimandes, ses coups. - « Mais c&#x27;est un mauvais père. » - La nature t&#x27;a-t-elle lié par une relation naturelle à un bon père ? Non, mais simplement à un père. - « Mon frère me fait du tort. » - Conserve donc ton rôle à son égard ; ne considère pas ce qu&#x27;il fait, mais ce que tu dois faire pour que ta volonté soit conforme à la nature. Un autre ne te fera pas de tort si tu ne le veux pas ; tu seras lésé seulement lorsque tu estimeras être lésé. De la même façon, tu trouveras quels sont tes devoirs envers ton voisin, ton concitoyen, ton général, si tu t&#x27;habitues à considérer les relations.<br/><br/>Manuel, XXX, traduction É. Bréhier (modifiée)<br/></blockquote><p id="1d6b2280-a891-8000-a003-c955a5d95681" class="">
+</p><blockquote id="1d6b2280-a891-80df-9487-c30115fcfbba" class="">Quand quelqu&#x27;un te fait du tort ou parle mal de toi, souviens-toi qu&#x27;il agit ou parle ainsi parce qu&#x27;il croit que c&#x27;est son devoir. Il n&#x27;est donc pas possible qu&#x27;il suive ton opinion, mais la sienne ; et si celle-ci est mauvaise, c&#x27;est lui qui se fait du tort puisque c&#x27;est lui qui se trompe. En effet, si un composé complexe est vrai, mais paraît faux à quelqu&#x27;un, ce n&#x27;est pas le composé qui en souffre, mais celui qui se trompe à son sujet. En partant de ce principe, tu seras doux avec celui qui t&#x27;injurie. Dis-toi en effet à chaque fois : « Il a cru bien faire. »<br/><br/>Manuel, XLII, traduction É. Bréhier (modifiée)<br/></blockquote><figure class="block-color-blue callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8086-95d6-d68e44a568c5"><div style="font-size:1.5em"><span class="icon">📘</span></div><div style="width:100%"><h2 id="1d6b2280-a891-80bb-af5f-fd9c7905af34" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-805d-9c08-c071fa63ff54" class="">Ces trois chapitres explorent la dimension sociale de l&#x27;éthique stoïcienne, montrant comment la dichotomie du contrôle s&#x27;applique aux relations humaines. Ils témoignent de la profonde humanité d&#x27;Épictète, souvent méconnue derrière l&#x27;image d&#x27;austérité associée au stoïcisme.</p><p id="1d6b2280-a891-8036-a82c-ca7a3bf74ab2" class="">Dans le chapitre XVI, Épictète aborde la question de l&#x27;empathie. Face à la souffrance d&#x27;autrui, le stoïcien maintient sa conviction théorique (la souffrance vient des jugements, non des événements) tout en manifestant une compassion sincère. Ce dosage subtil montre que le détachement stoïcien n&#x27;est pas insensibilité, mais plutôt une forme d&#x27;empathie lucide, qui compatit sans être submergée. La distinction entre l&#x27;accord extérieur (&quot;au moins par tes paroles&quot;) et la clarté intérieure (&quot;prends garde de ne pas pleurer aussi intérieurement&quot;) illustre la complexité du positionnement social du stoïcien.</p><p id="1d6b2280-a891-802e-91d3-ea8bd9b3b0bf" class="">Le chapitre XXX développe la notion de devoirs (kathèkonta) inhérents aux diverses relations sociales. Épictète montre que ces devoirs ne dépendent pas de la valeur morale de l&#x27;autre personne, mais de la nature même de la relation. Ainsi, nos obligations envers un père, un frère ou un concitoyen ne sont pas conditionnées par leur mérite, mais par notre propre engagement à agir conformément à la nature. Cette approche objective des devoirs, indépendante des émotions ou des jugements sur autrui, fonde une éthique de la responsabilité personnelle.</p><p id="1d6b2280-a891-808a-b84e-f8e5a820f914" class="">Le chapitre XLII prolonge cette réflexion en proposant une attitude compréhensive face aux torts que nous subissons. La clé de cette approche est la reconnaissance que chacun agit selon ce qu&#x27;il croit être juste. Cette perspective cognitive de la méchanceté (vue comme erreur intellectuelle plutôt que comme malveillance) permet à la fois de désamorcer la colère et de maintenir une vision positive de la nature humaine. La conclusion, &quot;Il a cru bien faire&quot;, n&#x27;est pas une simple formule apaisante, mais l&#x27;expression d&#x27;une compréhension profonde des mécanismes de l&#x27;action humaine.</p><p id="1d6b2280-a891-80ae-a5f2-f5f08782be26" class="">Ces trois chapitres montrent comment le stoïcisme d&#x27;Épictète, loin d&#x27;être une philosophie du repli sur soi, propose une éthique relationnelle fondée sur la compréhension et la responsabilité personnelle. Il s&#x27;agit non pas de se couper des autres, mais d&#x27;établir avec eux des relations lucides, bienveillantes et inconditionnelles.</p></div></figure><h1 id="1d6b2280-a891-80a6-8e36-d229bb449689" class="">La progression morale</h1><p id="1d6b2280-a891-8024-a8b4-ccb086a5b720" class="">
+</p><blockquote id="1d6b2280-a891-804f-ba84-c3e765bd9bb1" class="">La position et le caractère du profane sont les suivants : jamais il n&#x27;attend de lui-même son profit ou son dommage, mais des choses extérieures. La position et le caractère du philosophe sont les suivants : il attend tout profit et tout dommage de lui-même.<br/><br/>Voici les signes auxquels on reconnaît celui qui progresse : il ne blâme personne, ne loue personne, ne reproche rien à personne, n&#x27;accuse personne ; il ne dit jamais rien qui tende à faire croire qu&#x27;il sait quelque chose ou qu&#x27;il est quelqu&#x27;un. Quand il est entravé ou empêché, il s&#x27;en prend à lui-même. Si on le loue, il se moque intérieurement de celui qui le loue ; si on le blâme, il ne se défend pas. Il va et vient comme un convalescent, prenant garde de bouger ce qui a été remis en place, avant que cela ait pris consistance. Il a supprimé en lui tout désir ; quant à l&#x27;aversion, il ne l&#x27;a reportée que sur ce qui, parmi les choses qui dépendent de nous, est contraire à la nature. Il n&#x27;a qu&#x27;une impulsion modérée en toutes choses. Qu&#x27;on le tienne pour simple ou ignorant, il n&#x27;en a cure. En un mot, il se surveille lui-même comme on surveille un ennemi qui tend des pièges.<br/><br/>Manuel, XLVIII, traduction É. Bréhier (modifiée)<br/></blockquote><p id="1d6b2280-a891-80b9-a2dd-d6e0367bc148" class="">
+</p><blockquote id="1d6b2280-a891-80c0-b90e-f63d7f31d87b" class="">Lorsque quelqu&#x27;un se vante de pouvoir comprendre et interpréter les livres de Chrysippe, dis-toi : « Si Chrysippe n&#x27;avait pas écrit obscurément, cet homme n&#x27;aurait aucune raison de se vanter. » Quant à moi, qu&#x27;est-ce que je veux ? Connaître la nature et la suivre. Je cherche donc qui l&#x27;interprète ; et, apprenant que c&#x27;est Chrysippe, je vais à lui. Mais je ne comprends pas ses écrits ; je cherche donc quelqu&#x27;un qui me les explique. Jusqu&#x27;ici, rien de glorieux. Quand j&#x27;ai trouvé l&#x27;interprète, il reste à mettre en pratique ses préceptes : c&#x27;est la seule chose glorieuse. Mais si j&#x27;admire uniquement l&#x27;interprétation elle-même, que suis-je devenu, sinon un grammairien au lieu d&#x27;un philosophe ? La seule différence est que j&#x27;interprète Chrysippe au lieu d&#x27;Homère. Ainsi, quand quelqu&#x27;un me dit : « Lis-moi Chrysippe », je rougis plutôt, si je ne peux montrer des actes semblables et accordés à ses paroles.<br/><br/>Manuel, XLIX, traduction É. Bréhier (modifiée)<br/></blockquote><figure class="block-color-blue callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8088-a9aa-f97642ddf6de"><div style="font-size:1.5em"><span class="icon">📘</span></div><div style="width:100%"><h2 id="1d6b2280-a891-80f0-83b3-d0be7d0af86d" class=""><strong>Commentaire</strong></h2><p id="1d6b2280-a891-809f-a5e9-e973c8dc975e" class="">Ces deux derniers chapitres du <em>Manuel</em> constituent un bilan synthétique de la progression morale selon Épictète. Ils opposent différentes attitudes face à la philosophie et offrent une vision concrète du chemin à parcourir pour devenir stoïcien.</p><p id="1d6b2280-a891-80b3-ba9e-e5792a935d2e" class="">Le chapitre XLVIII commence par distinguer radicalement le profane (idiôtès) du philosophe : le premier attend tout de l&#x27;extérieur, le second ne compte que sur lui-même. Épictète décrit ensuite les &quot;signes&quot; du progressant (prokoptôn), terme qui désigne celui qui avance sur le chemin de la sagesse sans l&#x27;avoir encore atteinte. Cette description détaillée montre que le progrès moral se manifeste d&#x27;abord par la maîtrise des réactions aux jugements d&#x27;autrui (ne blâmer ni louer personne, ne pas réagir aux louanges ou aux blâmes) et par l&#x27;application de la dichotomie du contrôle (s&#x27;en prendre à soi-même face aux obstacles). La métaphore de la convalescence suggère que le processus philosophique est une guérison progressive, qui exige patience et attention constante.</p><p id="1d6b2280-a891-8025-91b3-d6c2766dbb9c" class="">Le chapitre XLIX complète cette vision en critiquant l&#x27;approche purement théorique et érudite de la philosophie. Épictète vise ici les commentateurs de textes philosophiques (particulièrement ceux de Chrysippe, grand systématiseur du stoïcisme) qui se contentent de comprendre intellectuellement sans transformer leur vie. Il rappelle que la vraie gloire du philosophe n&#x27;est pas dans l&#x27;interprétation, mais dans la mise en pratique des préceptes. La comparaison avec le grammairien qui interprète Homère souligne la différence entre érudition et philosophie véritable. La conclusion, &quot;je rougis... si je ne peux montrer des actes semblables et accordés à ses paroles&quot;, exprime l&#x27;exigence fondamentale de cohérence entre théorie et pratique, centrale dans tout le stoïcisme.</p><p id="1d6b2280-a891-805a-9b45-eada4cff0b22" class="">Ces deux chapitres finaux résument ainsi parfaitement l&#x27;esprit du <em>Manuel</em> et de toute la philosophie d&#x27;Épictète : un enseignement orienté vers la transformation concrète de l&#x27;existence, et non vers l&#x27;accumulation de connaissances théoriques. Pour Épictète, la philosophie n&#x27;est pas un savoir à acquérir mais une vie à vivre, un exercice constant de la raison face aux défis de l&#x27;existence.</p></div></figure><figure class="block-color-teal callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-80cb-872a-dc38473bd94f"><div style="font-size:1.5em"><span class="icon">♻️</span></div><div style="width:100%"><h1 id="1d6b2280-a891-8046-99c4-c02a15ab1812" class=""><strong>Pertinence contemporaine</strong></h1><p id="1d6b2280-a891-80b8-9c64-e6c6503b366e" class="">Le <em>Manuel</em> d&#x27;Épictète connaît aujourd&#x27;hui un regain d&#x27;intérêt remarquable, tant dans le domaine académique que dans la culture populaire. Sa pertinence contemporaine s&#x27;explique par plusieurs facteurs. D&#x27;abord, sa concision et sa clarté en font un texte accessible, que l&#x27;on peut aisément intégrer à une pratique quotidienne. Ensuite, sa dichotomie du contrôle offre un outil conceptuel puissant pour faire face à l&#x27;anxiété généralisée de nos sociétés modernes, divisées entre surinformation et impuissance.</p><p id="1d6b2280-a891-80e4-9489-d26aa7fba52c" class="">Les thérapies cognitivo-comportementales contemporaines, particulièrement la thérapie d&#x27;acceptation et d&#x27;engagement (ACT), s&#x27;inspirent explicitement des principes stoïciens, notamment de la distinction entre ce qui dépend de nous et ce qui n&#x27;en dépend pas. Dans le domaine du développement personnel, de nombreux auteurs à succès redécouvrent et adaptent les exercices spirituels d&#x27;Épictète.</p><p id="1d6b2280-a891-8075-98ac-e5f2c2a26208" class="">Au-delà de ces applications pratiques, le stoïcisme d&#x27;Épictète offre une alternative philosophique aux dilemmes de la modernité. Face à la société de consommation qui encourage le désir illimité, il propose une discipline du désir orientée vers ce qui dépend réellement de nous. Face à la victimisation et à la déresponsabilisation, il affirme le pouvoir transformateur de notre liberté intérieure. Face à l&#x27;individualisme contemporain, il rappelle l&#x27;importance des devoirs inhérents à nos relations sociales.</p><p id="1d6b2280-a891-80e3-bee7-eae75cd544b1" class="">Enfin, à l&#x27;heure des crises écologiques et sociétales, l&#x27;acceptation active du destin qu&#x27;il prône peut nous aider à trouver un équilibre entre la nécessaire action sur le monde et l&#x27;acceptation de nos limites. Comme le résume simplement la prière finale des <em>Entretiens</em> : &quot;Conduis-moi, ô Zeus, et toi, Destinée, là où vous avez décidé que je dois aller. Je vous suivrai sans hésiter ; et même si je ne le voulais pas, devenu mauvais, je vous suivrais tout de même.&quot;</p></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

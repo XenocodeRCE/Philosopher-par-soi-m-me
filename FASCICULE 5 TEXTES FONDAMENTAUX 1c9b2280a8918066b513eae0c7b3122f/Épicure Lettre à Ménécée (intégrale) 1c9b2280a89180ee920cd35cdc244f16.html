@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Épicure : Lettre à Ménécée (intégrale)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9b2280-a891-80ee-920c-d35cdc244f16" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1603495180101-6880387788f8?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 41.63%"/><h1 class="page-title"><strong>Épicure</strong> : <em>Lettre à Ménécée</em> (intégrale)</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><p id="1d6b2280-a891-80f6-9a0a-ec3acd087ab4" class="">Épicure (341-270 av. J.-C.) est le fondateur de l&#x27;une des grandes écoles philosophiques de l&#x27;Antiquité, l&#x27;épicurisme. Né à Samos mais citoyen athénien, il fonde son école, le &quot;Jardin&quot;, à Athènes en 306 av. J.-C. Sa philosophie, souvent mal comprise et caricaturée comme une simple apologie du plaisir, propose en réalité une sagesse fondée sur la recherche du bonheur à travers l&#x27;absence de trouble (ataraxie) et la limitation des désirs. La <em>Lettre à Ménécée</em>, adressée à l&#x27;un de ses disciples, constitue un véritable bréviaire de sa philosophie morale. Dans ce texte remarquable par sa clarté et sa concision, Épicure expose sa conception du bonheur, sa théorie des désirs, sa vision des dieux et sa réflexion sur la mort. Ce texte est l&#x27;un des rares à nous être parvenu intégralement, la plupart des œuvres d&#x27;Épicure n&#x27;existant plus que sous forme de fragments.</p><h1 id="1d6b2280-a891-80c1-9568-e3b40f3acdb2" class=""><strong>Contexte historique et philosophique</strong></h1><p id="1d6b2280-a891-80e0-89d9-dc5b314b61e4" class="">Épicure vit à une époque troublée, après la mort d&#x27;Alexandre le Grand (323 av. J.-C.), marquée par l&#x27;effondrement de la cité-État grecque traditionnelle et l&#x27;émergence des grands royaumes hellénistiques. Dans ce contexte d&#x27;instabilité politique, les philosophies post-aristotéliciennes (épicurisme, stoïcisme, scepticisme) se tournent vers la recherche du bonheur individuel plutôt que vers la politique. L&#x27;épicurisme se construit en dialogue critique avec les principales écoles philosophiques de l&#x27;époque : contre l&#x27;intellectualisme platonicien, il valorise la sensation ; contre la téléologie aristotélicienne, il défend un matérialisme mécaniste inspiré de Démocrite ; contre le destin stoïcien, il affirme l&#x27;existence du hasard et de la liberté. La <em>Lettre à Ménécée</em>, probablement écrite vers la fin de la vie d&#x27;Épicure, résume sa philosophie pratique destinée à libérer l&#x27;homme des craintes irrationnelles et à lui enseigner l&#x27;art de vivre heureux.</p><figure class="block-color-teal callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8099-8091-d5ee5a34ec0d"><div style="font-size:1.5em"><span class="icon">✅</span></div><div style="width:100%"><h1 id="1d6b2280-a891-800f-a759-c6d8ec39063e" class=""><strong>Les concepts clés de l&#x27;épicurisme</strong></h1><p id="1d6b2280-a891-801b-a4a3-f6fbdf9d9c9a" class="">Pour bien comprendre la <em>Lettre à Ménécée</em>, il est utile de connaître quelques concepts fondamentaux de la philosophie épicurienne :</p><ul id="1d6b2280-a891-80e4-a3bd-e0fb64029506" class="bulleted-list"><li style="list-style-type:disc"><strong>Ataraxie</strong> : Absence de trouble dans l&#x27;âme. C&#x27;est la composante psychique du bonheur suprême.</li></ul><ul id="1d6b2280-a891-80c1-868f-fefbc999c1c0" class="bulleted-list"><li style="list-style-type:disc"><strong>Aponie</strong> : Absence de douleur dans le corps. C&#x27;est la composante physique du bonheur suprême.</li></ul><ul id="1d6b2280-a891-8025-8424-f52cc85cb2c7" class="bulleted-list"><li style="list-style-type:disc"><strong>Tétrapharmakos</strong> (quadruple remède) : Résumé de la doctrine en quatre maximes : &quot;Les dieux ne sont pas à craindre, la mort n&#x27;est pas à redouter, le bien est facile à atteindre, le mal est facile à supporter&quot;. La lettre développe ces points.</li></ul><ul id="1d6b2280-a891-802d-a676-f1c90d8e1ede" class="bulleted-list"><li style="list-style-type:disc"><strong>Plaisir catastématique</strong> : Plaisir stable, en repos, lié à l&#x27;absence de douleur et de trouble (état d&#x27;équilibre atteint). C&#x27;est le plaisir visé par Épicure.</li></ul><ul id="1d6b2280-a891-8010-9da1-d518d6af7845" class="bulleted-list"><li style="list-style-type:disc"><strong>Plaisir cinétique</strong> : Plaisir en mouvement, lié à la satisfaction active d&#x27;un désir (processus de satisfaction, comme manger quand on a faim). Il est subordonné au plaisir catastématique.</li></ul><ul id="1d6b2280-a891-8019-b599-e27b691c4251" class="bulleted-list"><li style="list-style-type:disc"><strong>Classification des désirs</strong> : Distinction cruciale entre désirs naturels et nécessaires (boire, manger simplement, avoir un toit), désirs naturels mais non nécessaires (mets raffinés, luxe), et désirs vains (richesse illimitée, gloire, immortalité). Seuls les premiers sont essentiels au bonheur.</li></ul><ul id="1d6b2280-a891-8026-9402-daccb48e4bad" class="bulleted-list"><li style="list-style-type:disc"><strong>Phronèsis</strong> (Prudence) : Sagesse pratique, capacité de raisonner correctement sur les choix à faire pour atteindre le bonheur. C&#x27;est la vertu fondamentale.</li></ul></div></figure><h1 id="1d6b2280-a891-8007-9575-d635b96092ff" class="">Lettre à Ménécée</h1><h2 id="1d6b2280-a891-8097-bb12-d431520ed5cf" class="">Philosopher à tout âge pour la santé de l&#x27;âme (122)</h2><blockquote id="1d6b2280-a891-80d1-a1c7-e223238680aa" class=""><strong>(122) </strong>Quand on est jeune il ne faut pas remettre à philosopher, et quand on est vieux il ne faut pas se lasser de philosopher. Car jamais il n’est trop tôt ou trop tard pour travailler à la santé de l’âme. Or celui qui dit que l’heure de philosopher n’est pas encore arrivée ou est passée pour lui, ressemble à un homme qui dirait que l’heure d’être heureux n’est pas encore venue pour lui ou qu’elle n’est plus. Le jeune homme et le vieillard doivent donc philosopher l’un et l’autre, celui-ci pour rajeunir au contact du bien, en se remémorant les jours agréables du passé ; celui-là afin d’être, quoique jeune, tranquille comme un ancien en face de l’avenir. Par conséquent il faut méditer sur les causes qui peuvent produire le bonheur puisque, lorsqu’il est à nous, nous avons tout, et que, quand il nous manque, nous faisons tout pour l’avoir.</blockquote><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8067-bff8-d02e3c0cdc34"><div style="font-size:1.5em"><span class="icon">📗</span></div><div style="width:100%"><h3 id="1d6b2280-a891-805f-b025-d6600dcc296b" class=""><strong>Commentaire</strong></h3><p id="1d6b2280-a891-80f5-9568-fc8e6fdb3b70" class="">Épicure commence par affirmer l&#x27;universalité et l&#x27;urgence de la philosophie. Elle n&#x27;est pas une activité réservée à une élite ou à un âge particulier, mais une nécessité vitale pour tous, car elle vise la &quot;santé de l&#x27;âme&quot;, c&#x27;est-à-dire le bonheur.</p><p id="1d6b2280-a891-80a4-a149-f82cc18dcf57" class="">Il établit une équivalence directe entre philosopher et chercher le bonheur. Remettre la philosophie à plus tard, c&#x27;est remettre le bonheur à plus tard. La philosophie est donc présentée d&#x27;emblée comme une pratique thérapeutique et existentielle, dont le but est d&#x27;apprendre à bien vivre.</p><p id="1d6b2280-a891-80d6-9f36-f3426eb71b54" class="">L&#x27;argumentation souligne les bénéfices spécifiques à chaque âge : le vieillard y trouve une forme de &quot;rajeunissement&quot; par la mémoire heureuse, tandis que le jeune y gagne la sérénité face à l&#x27;incertitude de l&#x27;avenir. La philosophie est donc un exercice continu tout au long de la vie.</p></div></figure><h2 id="1d6b2280-a891-80c0-a5da-e064283077b4" class="">Se libérer de la crainte des dieux (123-124)</h2><blockquote id="1d6b2280-a891-80aa-b799-e3e467e95b62" class=""><strong>(123) </strong>Attache-toi donc aux enseignements que je n’ai cessé de te donner et que je vais te répéter ; mets-les en pratique et médite-les, convaincu que ce sont là les principes nécessaires pour bien vivre. Commence par te persuader qu’un dieu est un vivant immortel et bienheureux, te conformant en cela à la notion commune qui en est tracée en nous. N’attribue jamais à un dieu rien qui soit en opposition avec l’immortalité ni en désaccord avec la béatitude ; mais regarde-le toujours comme possédant tout ce que tu trouveras capable d’assurer son immortalité et sa béatitude. Car les dieux existent, attendu que la connaissance qu’on en a est évidente. Mais, quant à leur nature, ils ne sont pas tels que la foule le croit. Et l’impie n’est pas celui qui rejette les dieux de la foule : c’est celui qui attribue aux dieux ce que leur prêtent les opinions de la foule.</blockquote><blockquote id="1d6b2280-a891-80ca-963c-deb0b4e98f43" class=""><strong>(124) </strong>Car les affirmations de la foule sur les dieux ne sont pas des prénotions, mais bien des présomptions fausses. Et ces présomptions fausses font que les dieux sont censés être pour les méchants la source des plus grands maux comme, d’autre part, pour les bons la source des plus grands biens. Mais la multitude, incapable de se déprendre de ce qui est chez elle et à ses yeux le propre de la vertu, n’accepte que des dieux conformes à cet idéal et regarde comme absurde tout ce qui s’en écarte.</blockquote><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-806a-95df-f425a1e17c4d"><div style="font-size:1.5em"><span class="icon">📗</span></div><div style="width:100%"><h3 id="1d6b2280-a891-8054-ba27-e295996ce482" class=""><strong>Commentaire</strong></h3><p id="1d6b2280-a891-808c-8c04-de64c916f96b" class="">Épicure aborde ici le premier point du Tétrapharmakos : la crainte des dieux. Il ne nie pas leur existence (leur connaissance est &quot;évidente&quot;, basée sur une prénotion ou *prolepsis* universelle), mais il redéfinit leur nature.</p><p id="1d6b2280-a891-8094-a43a-ea6413b3dbf8" class="">Les dieux sont &quot;immortels et bienheureux&quot;. Leur perfection implique qu&#x27;ils ne peuvent être sujets aux troubles, aux colères, aux désirs ou aux soucis qui agitent les humains. Par conséquent, ils ne s&#x27;occupent pas des affaires humaines, n&#x27;interviennent pas dans le monde, ne punissent pas les méchants et ne récompensent pas les bons.</p><p id="1d6b2280-a891-8049-a7b3-cefd2f79a7e5" class="">L&#x27;impiété véritable, selon Épicure, n&#x27;est pas l&#x27;athéisme, mais le fait d&#x27;attribuer aux dieux les passions et les comportements humains (colère, favoritisme, interventionnisme) que leur prête la &quot;foule&quot;. Ces &quot;présomptions fausses&quot; sont la source d&#x27;une crainte inutile qui trouble l&#x27;âme. Comprendre la vraie nature des dieux (bienheureux et détachés) libère de cette crainte et contribue à l&#x27;ataraxie.</p></div></figure><h2 id="1d6b2280-a891-8093-9886-f7dd3f1685e0" class="">La mort n&#x27;est rien pour nous (124-126)</h2><blockquote id="1d6b2280-a891-80a4-8461-c22049bb3023" class=""><strong>(125) </strong>Prends l’habitude de penser que la mort n’est rien pour nous. Car tout bien et tout mal résident dans la sensation : or la mort est privation de toute sensibilité. Par conséquent, la connaissance de cette vérité que la mort n’est rien pour nous, nous rend capables de jouir de cette vie mortelle, non pas en y ajoutant la perspective d’une durée infinie, mais en nous enlevant le désir de l’immortalité. Car il ne reste plus rien à redouter dans la vie, pour qui a vraiment compris que hors de la vie il n’y a rien de redoutable. On prononce donc de vaines paroles quand on soutient que la mort est à craindre, non pas parce qu’elle sera douloureuse étant réalisée, mais parce qu’il est douloureux de l’attendre. Ce serait en effet une crainte vaine et sans objet que celle qui serait produite par l’attente d’une chose qui ne cause aucun trouble par sa présence.</blockquote><blockquote id="1d6b2280-a891-8070-910e-c65a60f97961" class=""><strong>(126) </strong>Ainsi celui de tous les maux qui nous donne le plus d’horreur, la mort, n’est rien pour nous, puisque, tant que nous existons nous-mêmes, la mort n’est pas, et que, quand la mort existe, nous ne sommes plus. Donc la mort n’existe ni pour les vivants ni pour les morts, puisqu’elle n’a rien à faire avec les premiers, et que les seconds ne sont plus. Mais la multitude tantôt fuit la mort comme le pire des maux, tantôt l’appelle comme le terme des maux de la vie. Le sage, au contraire, ne fait pas fi de la vie et il n’a pas peur non plus de ne plus vivre : car la vie ne lui est pas à charge, et il n’estime pas non plus qu’il y ait le moindre mal à ne plus vivre. De même que ce n’est pas toujours la nourriture la plus abondante que nous préférons, mais parfois la plus agréable, pareillement ce n’est pas toujours la plus longue durée qu’on veut recueillir, mais la plus agréable. Quant à ceux qui conseillent aux jeunes gens de bien vivre et aux vieillards de bien finir, leur conseil est dépourvu de sens, non seulement parce que la vie a du bon même pour le vieillard, mais parce que le soin de bien vivre et celui de bien mourir ne font qu’un.</blockquote><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-80b1-8de7-e2edbdc3f0bc"><div style="font-size:1.5em"><span class="icon">📗</span></div><div style="width:100%"><h3 id="1d6b2280-a891-8093-9304-c7a8bc0c4ab9" class=""><strong>Commentaire</strong></h3><p id="1d6b2280-a891-8019-8b23-cf86a556a832" class="">C&#x27;est le deuxième point du Tétrapharmakos, et l&#x27;un des arguments les plus célèbres d&#x27;Épicure. L&#x27;argument repose sur sa conception sensualiste : le bien et le mal résident dans la sensation. La mort étant la privation de toute sensation, elle ne peut être ni un bien ni un mal pour celui qui la subit.</p><p id="1d6b2280-a891-80e0-b38b-f10d44374075" class="">L&#x27;argument clé est le suivant : &quot;tant que nous existons nous-mêmes, la mort n’est pas, et que, quand la mort existe, nous ne sommes plus.&quot; Il n&#x27;y a donc jamais de rencontre possible entre &quot;nous&quot; (le sujet sentant) et la mort. La mort n&#x27;est donc &quot;rien pour nous&quot;.</p><p id="1d6b2280-a891-8016-a649-ca7d25de2631" class="">La crainte de la mort est donc irrationnelle. Elle provient soit de la fausse croyance en des tourments post-mortem (réfutée par l&#x27;absence de sensation), soit de la douleur liée à l&#x27;anticipation d&#x27;un événement qui, en lui-même, ne nous affectera pas. Comprendre cela permet de jouir de la vie présente sans être paralysé par la peur de la fin ou le désir vain d&#x27;immortalité.</p><p id="1d6b2280-a891-80e9-a7ae-cbcddb7e7a0d" class="">Épicure critique aussi bien ceux qui craignent la mort que ceux qui la désirent comme une délivrance. Le sage apprécie la vie pour sa qualité (agrément) plutôt que pour sa quantité (durée) et comprend que &quot;bien vivre&quot; et &quot;bien mourir&quot; (c&#x27;est-à-dire mourir sans crainte) sont indissociables.</p></div></figure><h2 id="1d6b2280-a891-80b3-9456-de44baf3ac0a" class="">L&#x27;avenir, les désirs et le but de la vie (127-128)</h2><blockquote id="1d6b2280-a891-8085-82c7-cfece0e7a007" class=""><strong>(127) </strong>On fait pis encore quand on dit qu’il est bien de ne pas naître, ou, « une fois né, de franchir au plus vite les portes de l’Hadès ». Car si l’homme qui tient ce langage est convaincu, comment ne sort-il pas de la vie ? C’est là en effet une chose qui est toujours à sa portée, s’il veut sa mort d’une volonté ferme. Que si cet homme plaisante, il montre de la légèreté en un sujet qui n’en comporte pas. Rappelle-toi que l’avenir n’est ni à nous ni pourtant tout à fait hors de nos prises, de telle sorte que nous ne devons ni compter sur lui comme s’il devait sûrement arriver, ni nous interdire toute espérance, comme s’il était sûr qu’il dût ne pas être.</blockquote><blockquote id="1d6b2280-a891-801d-b04f-e00a68eac144" class=""><strong>(128) </strong>Il faut se rendre compte que parmi nos désirs les uns sont naturels, les autres vains, et que, parmi les désirs naturels, les uns sont nécessaires et les autres naturels seulement. Parmi les désirs nécessaires, les uns sont nécessaires pour le bonheur, les autres pour la tranquillité du corps, les autres pour la vie même. Et en effet une théorie non erronée des désirs doit rapporter tout choix et toute aversion à la santé du corps et à l’ataraxie de l’âme, puisque c’est là la perfection même de la vie heureuse. Car nous faisons tout afin d’éviter la douleur physique et le trouble de l’âme. Lorsqu’une fois nous y avons réussi, toute l’agitation de l’âme tombe, l’être vivant n’ayant plus à s’acheminer vers quelque chose qui lui manque, ni à chercher autre chose pour parfaire le bien-être de l’âme et celui du corps. Nous n’avons en effet besoin du plaisir que quand, par suite de son absence, nous éprouvons de la douleur ; et quand nous n’éprouvons pas de douleur nous n’avons plus besoin du plaisir. C’est pourquoi nous disons que le plaisir est le commencement et la fin de la vie heureuse.</blockquote><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-80ea-aa33-f2f7759888e5"><div style="font-size:1.5em"><span class="icon">📗</span></div><div style="width:100%"><h3 id="1d6b2280-a891-808a-92ae-dc7a97d9b03c" class=""><strong>Commentaire</strong></h3><p id="1d6b2280-a891-80fb-85f4-ef5880ce2c2c" class="">Après avoir critiqué le pessimisme radical (le souhait de ne pas être né), Épicure aborde la question de l&#x27;avenir. Il adopte une position nuancée : l&#x27;avenir n&#x27;est ni totalement déterminé (contre un certain fatalisme) ni totalement contingent. Il dépend en partie de nous, ce qui justifie l&#x27;effort et la prudence, sans tomber dans l&#x27;illusion d&#x27;une maîtrise totale ni dans le désespoir.</p><p id="1d6b2280-a891-80c8-9c36-fcac2691d007" class="">C&#x27;est dans ce cadre qu&#x27;intervient la célèbre classification des désirs, essentielle pour orienter nos choix :</p><ul id="1d6b2280-a891-80b7-a012-fa7f5c786717" class="bulleted-list"><li style="list-style-type:disc"><strong>Naturels et nécessaires :</strong> Liés à la survie (manger, boire, dormir), à la tranquillité du corps (<em>aponie</em>) et au bonheur (<em>ataraxie</em>, ex: amitié, philosophie). Leur satisfaction est aisée et essentielle.</li></ul><ul id="1d6b2280-a891-80b8-94a2-ddc8d7d279d1" class="bulleted-list"><li style="list-style-type:disc"><strong>Naturels mais non nécessaires :</strong> Variations et raffinements des désirs précédents (mets fins, boissons recherchées). Ils procurent un plaisir mais ne sont pas indispensables et peuvent engendrer des troubles si l&#x27;on y est trop attaché.</li></ul><ul id="1d6b2280-a891-80d6-8720-d35129d88464" class="bulleted-list"><li style="list-style-type:disc"><strong>Vains (ni naturels ni nécessaires) :</strong> Désirs illimités et souvent socialement induits (richesse, gloire, pouvoir, immortalité). Ils sont source d&#x27;insatisfaction chronique et de troubles majeurs.</li></ul><p id="1d6b2280-a891-8068-a34f-e5128a192c2a" class="">Le but de cette classification est de nous guider vers le véritable objectif : &quot;la santé du corps (aponie) et l&#x27;ataraxie de l&#x27;âme&quot;. C&#x27;est là le bonheur parfait. Une fois cet état atteint (absence de douleur et de trouble), nous n&#x27;avons plus besoin de chercher autre chose. Le plaisir dont parle Épicure est donc fondamentalement cet état d&#x27;équilibre et de quiétude (plaisir catastématique).</p></div></figure><h2 id="1d6b2280-a891-8057-892a-cb0e9f031579" class="">Le plaisir comme bien suprême et le calcul des plaisirs (129-132)</h2><blockquote id="1d6b2280-a891-80bf-b18b-f0bf916ec5cb" class=""><strong>(129) </strong>En effet, d’une part, le plaisir est reconnu par nous comme le bien primitif et conforme à notre nature, et c’est de lui que nous partons pour déterminer ce qu’il faut choisir et ce qu’il faut éviter ; d’autre part, c’est toujours à lui que nous aboutissons, puisque ce sont nos affections (<em>pathè</em> : plaisir et douleur) qui nous servent de règle pour mesurer et apprécier tout bien quelconque si complexe qu’il soit. Mais, précisément parce que le plaisir est le bien primitif et conforme à notre nature, nous ne recherchons pas tout plaisir, et il y a des cas où nous passons par-dessus beaucoup de plaisirs, savoir lorsqu’ils doivent avoir pour suite des peines qui les surpassent ; et, d’autre part, il y a des douleurs que nous estimons valoir mieux que des plaisirs, savoir lorsque, après avoir longtemps supporté les douleurs, il doit résulter de là pour nous un plaisir qui les surpasse. Tout plaisir, pris en lui-même et dans sa nature propre, est donc un bien, et cependant tout plaisir n’est pas à rechercher ; pareillement, toute douleur est un mal, et pourtant toute douleur ne doit pas être évitée.</blockquote><blockquote id="1d6b2280-a891-8033-acbf-e0b5ea2794a6" class=""><strong>(130) </strong>En tout cas, chaque plaisir et chaque douleur doivent être appréciés par une comparaison des avantages et des inconvénients à attendre. Car le plaisir est toujours le bien, et la douleur le mal ; seulement il y a des cas où nous traitons le bien comme un mal, et le mal, à son tour, comme un bien. C’est un grand bien à notre avis que de se suffire à soi-même, non qu’il faille toujours vivre de peu, mais afin que si l’abondance nous manque, nous sachions nous contenter du peu que nous aurons, bien persuadés que ceux-là jouissent le plus vivement de l’opulence qui ont le moins besoin d’elle, et que tout ce qui est naturel est aisé à se procurer, tandis que ce qui ne répond pas à un désir naturel est malaisé à se procurer. En effet, des mets simples donnent un plaisir égal à celui d’un régime somptueux si toute la douleur causée par le besoin est supprimée,</blockquote><blockquote id="1d6b2280-a891-807a-b49d-ca3ca7757911" class=""><strong>(131) </strong>et, d’autre part, du pain d’orge et de l’eau procurent le plus vif plaisir à celui qui les porte à sa bouche après en avoir senti la privation. L’habitude d’une nourriture simple et non pas celle d’une nourriture luxueuse, convient donc pour donner la pleine santé, pour laisser à l’homme toute liberté de se consacrer aux devoirs nécessaires de la vie, pour nous disposer à mieux goûter les repas luxueux, lorsque nous les faisons après des intervalles de vie frugale, enfin pour nous mettre en état de ne pas craindre la mauvaise fortune. Quand donc nous disons que le plaisir est le but de la vie, nous ne parlons pas des plaisirs des voluptueux inquiets, ni de ceux qui consistent dans les jouissances déréglées, ainsi que l’écrivent des gens qui ignorent notre doctrine, ou qui la combattent et la prennent dans un mauvais sens. Le plaisir dont nous parlons est celui qui consiste, pour le corps, à ne pas souffrir et, pour l’âme, à être sans trouble.</blockquote><blockquote id="1d6b2280-a891-80bd-8c8b-fb11ec120b32" class=""><strong>(132) </strong>Car ce n’est pas une suite ininterrompue de jours passés à boire et à manger, ce n’est pas la jouissance des jeunes garçons et des femmes, ce n’est pas la saveur des poissons et des autres mets que porte une table somptueuse, ce n’est pas tout cela qui engendre la vie heureuse, mais c’est le raisonnement vigilant (<em>nèphôn logismos</em>), capable de trouver en toute circonstance les motifs de ce qu’il faut choisir et de ce qu’il faut éviter, et de rejeter les vaines opinions d’où provient le plus grand trouble des âmes. Or, le principe de tout cela et par conséquent le plus grand des biens, c’est la prudence (<em>phronèsis</em>). Il faut donc la mettre au-dessus de la philosophie même, puisqu’elle est faite pour être la source de toutes les vertus, en nous enseignant qu’il n’y a pas moyen de vivre agréablement si l’on ne vit pas avec prudence, honnêteté et justice, et qu’il est impossible de vivre avec prudence, honnêteté et justice si l’on ne vit pas agréablement. Les vertus en effet, ne sont que des suites naturelles et nécessaires de la vie agréable et, à son tour, la vie agréable ne saurait se réaliser en elle-même et à part des vertus.</blockquote><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-80ca-81e9-e188780649cb"><div style="font-size:1.5em"><span class="icon">📗</span></div><div style="width:100%"><h3 id="1d6b2280-a891-8092-852c-cc9701d172d0" class=""><strong>Commentaire</strong></h3><p id="1d6b2280-a891-8014-8261-e2f6c47fee36" class="">Épicure affirme clairement que le plaisir est le &quot;bien primitif et conforme à notre nature&quot;, le critère ultime de nos choix. Cependant, il introduit immédiatement une nuance capitale : cela ne signifie pas qu&#x27;il faut rechercher *tous* les plaisirs sans discernement.</p><p id="1d6b2280-a891-80fe-a8d8-e7ef051c8a4f" class="">Il faut pratiquer un &quot;calcul des plaisirs&quot; : comparer les avantages et les inconvénients à long terme. Certains plaisirs immédiats peuvent entraîner des douleurs futures plus grandes (ex: excès de table), tandis que certaines douleurs présentes peuvent conduire à un plaisir futur supérieur (ex: effort pour apprendre). Ce calcul rationnel est au cœur de la sagesse épicurienne.</p><p id="1d6b2280-a891-8099-b1e1-c758c57a003d" class="">L&#x27;autosuffisance (<em>autarkeia</em>) est valorisée non comme un ascétisme obligatoire, mais comme une stratégie pour être moins dépendant des circonstances extérieures et de la fortune. Savoir se contenter de peu rend plus résilient face aux aléas de la vie et permet d&#x27;apprécier d&#x27;autant plus l&#x27;abondance lorsqu&#x27;elle se présente.</p><p id="1d6b2280-a891-80b0-a1c9-c2a60d7768ca" class="">Épicure se défend vigoureusement contre les caricatures de sa doctrine. Le plaisir qu&#x27;il prône n&#x27;est pas celui des &quot;voluptueux inquiets&quot; ou de la débauche, mais l&#x27;état stable d&#x27;<em>aponie</em> et d&#x27;<em>ataraxie</em>. Ce ne sont pas les plaisirs cinétiques (boire, manger, plaisirs sexuels) qui constituent le bonheur en soi, même s&#x27;ils peuvent y contribuer lorsqu&#x27;ils sont naturels et modérés.</p><p id="1d6b2280-a891-804a-9db9-d6b630e0ee7c" class="">Le véritable moteur de la vie heureuse est le &quot;raisonnement vigilant&quot; ou la prudence (<em>phronèsis</em>). C&#x27;est elle qui permet d&#x27;effectuer le calcul des plaisirs, de choisir correctement et de rejeter les opinions vaines. La prudence est même qualifiée de &quot;plus grand des biens&quot;, source de toutes les autres vertus (honnêteté, justice). Épicure établit un lien indissoluble : on ne peut vivre agréablement sans être vertueux, et on ne peut être vertueux sans vivre agréablement. Les vertus ne sont pas des fins en soi, mais les moyens nécessaires et naturels pour atteindre et maintenir une vie de plaisir stable.</p></div></figure><h2 id="1d6b2280-a891-80c4-9ba4-dc3a7fe9853b" class="">Le portrait du sage et la liberté face au destin (133-135)</h2><blockquote id="1d6b2280-a891-8098-9a28-fcf6b9b5eb8e" class=""><strong>(133) </strong>Et maintenant y a-t-il quelqu’un que tu mettes au-dessus du sage ? Il s’est fait sur les dieux des opinions pieuses ; il est constamment sans crainte en face de la mort ; il a su comprendre quel est le but de la nature ; il s’est rendu compte que ce souverain bien est facile à atteindre et à réaliser dans son intégrité, qu’en revanche le mal le plus extrême est étroitement limité quant à la durée ou quant à l’intensité ; il se moque du destin, dont certains font le maître absolu des choses. Il dit d’ailleurs que, parmi les événements, les uns relèvent de la nécessité, d’autres de la fortune, les autres enfin de notre propre pouvoir, attendu que la nécessité n’est pas susceptible qu’on lui impute une responsabilité, que la fortune est quelque chose d’instable, tandis que notre pouvoir propre, soustrait à toute domination étrangère, est proprement ce à quoi s’adressent le blâme et son contraire.</blockquote><blockquote id="1d6b2280-a891-8003-beb8-de8d54ca75ac" class=""><strong>(134) </strong>Et certes mieux vaudrait s’incliner devant toutes les opinions mythiques sur les dieux que de se faire les esclaves du destin des physiciens, car la mythologie nous promet que les dieux se laisseront fléchir par les honneurs qui leur seront rendus, tandis que le destin, dans son cours nécessaire, est inflexible ; il n’admet pas, avec la foule, que la fortune soit une divinité - car un dieu ne fait jamais d’actes sans règles -, ni qu’elle soit une cause inefficace : il ne croit pas, en effet, que la fortune distribue aux hommes le bien et le mal, suffisant ainsi à faire leur bonheur et leur malheur, il croit seulement qu’elle leur fournit l’occasion et les éléments de grands biens et de grands maux ;</blockquote><blockquote id="1d6b2280-a891-8048-b1e9-fb53a3ff0d81" class=""><strong>(135) </strong>enfin il pense qu’il vaut mieux échouer par mauvaise fortune, après avoir bien raisonné, que réussir par heureuse fortune, après avoir mal raisonné - ce qui peut nous arriver de plus heureux dans nos actions étant d’obtenir le succès par le concours de la fortune lorsque nous avons agi en vertu de jugements sains. Médite donc tous ces enseignements et tous ceux qui s’y rattachent, médite-les jour et nuit, à part toi et aussi en commun avec ton semblable. Si tu le fais, jamais tu n’éprouveras le moindre trouble en songe ou éveillé, et tu vivras comme un dieu parmi les hommes. Car un homme qui vit au milieu de biens impérissables ne ressemble en rien à un être mortel.</blockquote><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8069-a787-efd667fc09e8"><div style="font-size:1.5em"><span class="icon">📗</span></div><div style="width:100%"><p id="1d6b2280-a891-802b-9568-e9ee1c095829" class=""><strong>Commentaire</strong></p><p id="1d6b2280-a891-80e8-bd80-e3bf4e168d53" class="">Épicure dresse ici le portrait idéal du sage épicurien, celui qui a mis en pratique les enseignements précédents. Le sage se caractérise par :</p><ul id="1d6b2280-a891-8005-9351-c43e80476acf" class="bulleted-list"><li style="list-style-type:disc">Une compréhension correcte des dieux (pieuse au sens épicurien).</li></ul><ul id="1d6b2280-a891-8007-b78b-da740f081fd6" class="bulleted-list"><li style="list-style-type:disc">L&#x27;absence de crainte de la mort.</li></ul><ul id="1d6b2280-a891-8067-8afc-de18362effc5" class="bulleted-list"><li style="list-style-type:disc">La connaissance du but de la nature (le plaisir stable).</li></ul><ul id="1d6b2280-a891-8018-b36d-ff7388abe19b" class="bulleted-list"><li style="list-style-type:disc">La conviction que le bonheur est accessible (3ème point du Tétrapharmakos) et que le mal est limité (4ème point).</li></ul><ul id="1d6b2280-a891-80bd-941e-ed60b94f8ce7" class="bulleted-list"><li style="list-style-type:disc">Une attitude critique envers le destin (fatalisme).</li></ul><p id="1d6b2280-a891-80bd-ba86-fad9bb5a75ba" class="">Épicure rejette le déterminisme strict (&quot;le destin des physiciens&quot;, visant peut-être Démocrite ou les Stoïciens). Il affirme une marge de liberté humaine (&quot;notre propre pouvoir&quot;) aux côtés de la nécessité et de la fortune (hasard, contingence). C&#x27;est cette liberté qui fonde la responsabilité morale (blâme et louange).</p><p id="1d6b2280-a891-8068-8ffc-c63db2cb31be" class="">Il critique également la personnification de la Fortune comme une divinité capricieuse. Pour le sage, la fortune n&#x27;est pas une cause déterminante du bonheur ou du malheur, mais plutôt un ensemble de circonstances extérieures qui peuvent fournir des occasions favorables ou défavorables. L&#x27;essentiel réside dans la manière dont on y réagit, guidé par la prudence.</p><p id="1d6b2280-a891-8023-a4b1-e92d82a7b400" class="">La conclusion est éloquente : mieux vaut échouer en ayant bien raisonné que réussir par chance en ayant mal raisonné. La valeur réside dans la rectitude du jugement et de l&#x27;action, non dans le résultat contingent. La méditation constante de ces principes permet d&#x27;atteindre une sérénité quasi divine, une vie sans trouble, &quot;comme un dieu parmi les hommes&quot;.</p></div></figure><p id="1d6b2280-a891-804d-a1b6-f9efd708addf" class="">
+</p><figure class="block-color-teal callout" style="white-space:pre-wrap;display:flex" id="1d6b2280-a891-8058-8a86-ff1a700efade"><div style="font-size:1.5em"><span class="icon">♻️</span></div><div style="width:100%"><h1 id="1d6b2280-a891-80b7-8882-f9fdd0938b0f" class=""><strong>Pertinence contemporaine de la pensée d&#x27;Épicure</strong></h1><p id="1d6b2280-a891-80a5-9c04-d1c0452ddb85" class="">La philosophie d&#x27;Épicure, bien que vieille de plus de deux millénaires, conserve une étonnante modernité et pertinence. Dans nos sociétés souvent marquées par la consommation effrénée, la recherche de sensations fortes et l&#x27;anxiété face à l&#x27;avenir, l&#x27;appel épicurien à la modération, à la distinction des désirs et à la recherche d&#x27;une tranquillité intérieure offre un contrepoint salutaire.</p><p id="1d6b2280-a891-80d1-af58-f8c9d9733835" class="">Sa réflexion sur la mort comme &quot;rien pour nous&quot; reste l&#x27;une des tentatives philosophiques les plus marquantes pour désamorcer l&#x27;angoisse existentielle. Sa conception du bonheur comme absence de trouble (ataraxie) et de douleur (aponie), axée sur les plaisirs simples et l&#x27;amitié, propose une alternative aux quêtes illusoires de richesse ou de gloire.</p><p id="1d6b2280-a891-806a-9116-ceaa6e8e40d3" class="">L&#x27;accent mis sur la prudence (phronèsis) comme outil essentiel pour naviguer dans la vie et faire des choix éclairés résonne avec les approches contemporaines de la prise de décision et de la gestion du stress. Enfin, sa défense d&#x27;une forme de liberté humaine face aux déterminismes (qu&#x27;ils soient divins, naturels ou sociaux) continue d&#x27;alimenter les débats sur le libre arbitre et la responsabilité.</p><p id="1d6b2280-a891-8064-8557-c2818031abd1" class="">Si l&#x27;épicurisme a souvent été caricaturé, une lecture attentive de textes comme la <em>Lettre à Ménécée</em> révèle une sagesse profonde et pratique, visant à équiper l&#x27;individu pour vivre une vie sereine et épanouie dans les limites de la condition humaine.</p></div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

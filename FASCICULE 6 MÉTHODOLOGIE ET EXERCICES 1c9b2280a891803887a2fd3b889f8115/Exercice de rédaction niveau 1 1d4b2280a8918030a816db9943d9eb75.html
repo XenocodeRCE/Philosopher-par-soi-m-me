@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Exercice de rédaction niveau 1</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1d4b2280-a891-8030-a816-db9943d9eb75" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1589901507248-a8fb564e3641?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 29.45%"/><h1 class="page-title">Exercice de rédaction niveau 1</h1><p class="page-description"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><h2 id="1d4b2280-a891-8020-9f42-cbb7f80c02e6" class=""><strong>Exercice 1 : Améliorer un Paragraphe Argumentatif</strong></h2><p id="1d4b2280-a891-80d3-9327-fc18815c7e3a" class=""><strong>Objectif :</strong> Renforcer la structure logique, la clarté et la précision d&#x27;un paragraphe argumentatif.</p><h3 id="1d4b2280-a891-8005-ad3e-c334ca3d10d5" class=""><strong>Le paragraphe à améliorer :</strong></h3><blockquote id="1d4b2280-a891-80ed-b9ba-cd6ba41024cf" class="">&quot;L&#x27;art c&#x27;est bien mais ça sert pas à grand-chose dans la vie de tous les jours. Les artistes ils font des trucs que personne comprend et ça coûte cher. On ferait mieux de mettre l&#x27;argent ailleurs. C&#x27;est juste beau, c&#x27;est tout. La science au moins, ça fait avancer les choses.&quot;</blockquote><h3 id="1d4b2280-a891-80db-8e4b-c0105004a89c" class=""><strong>Consignes :</strong></h3><ol type="1" id="1d4b2280-a891-8061-9b7b-eff8864eb597" class="numbered-list" start="1"><li><strong>Analysez le paragraphe :</strong><ul id="1d4b2280-a891-80ce-aa58-edda7676de47" class="bulleted-list"><li style="list-style-type:disc">Quelle est l&#x27;idée principale (la thèse) défendue, même maladroitement ?</li></ul><ul id="1d4b2280-a891-8091-bda3-f5581ba11a96" class="bulleted-list"><li style="list-style-type:disc">Quels sont les arguments ou justifications donnés ? Sont-ils développés ?</li></ul><ul id="1d4b2280-a891-80bf-8b7a-db9b7286918f" class="bulleted-list"><li style="list-style-type:disc">Le vocabulaire est-il précis et philosophique ?</li></ul><ul id="1d4b2280-a891-80e2-9282-d249cda08e5c" class="bulleted-list"><li style="list-style-type:disc">La structure logique est-elle claire ? Y a-t-il des liens entre les phrases ?</li></ul></li></ol><ol type="1" id="1d4b2280-a891-8090-ad01-dec038c0f86d" class="numbered-list" start="2"><li><strong>Réécrivez le paragraphe :</strong><ul id="1d4b2280-a891-80d7-b2fa-caffb1705689" class="bulleted-list"><li style="list-style-type:disc">Reformulez la thèse de manière plus nuancée et philosophique (par exemple, en questionnant l&#x27;utilité de l&#x27;art ou sa valeur).</li></ul><ul id="1d4b2280-a891-8068-a738-ed685ad3e6e8" class="bulleted-list"><li style="list-style-type:disc">Développez au moins un argument de manière structurée (affirmation, explication, exemple éventuel).</li></ul><ul id="1d4b2280-a891-802a-b086-dc4e5cf812e1" class="bulleted-list"><li style="list-style-type:disc">Utilisez un vocabulaire plus précis (ex : &quot;utilité&quot;, &quot;fonction&quot;, &quot;valeur&quot;, &quot;subjectivité&quot;, &quot;critère&quot;, &quot;œuvre&quot;, &quot;contemplation&quot;, &quot;progrès technique&quot;...).</li></ul><ul id="1d4b2280-a891-806e-8a59-e08b02b064be" class="bulleted-list"><li style="list-style-type:disc">Intégrez des connecteurs logiques pour marquer les articulations de la pensée.</li></ul><ul id="1d4b2280-a891-8098-bdcd-fd030ffbfe4c" class="bulleted-list"><li style="list-style-type:disc">Veillez à la correction de la langue et à la fluidité du style.</li></ul></li></ol><p id="1d4b2280-a891-80e4-86b2-eba98942e410" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d4b2280-a891-8040-8b6d-df0bf03948da"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h3 id="1d4b2280-a891-8079-b442-d7d2af3496c6" class=""><strong>Boîte à Outils - Connecteurs Logiques Utiles :</strong></h3><ul id="1d4b2280-a891-809e-af93-f3088d16609e" class="bulleted-list"><li style="list-style-type:disc"><strong>Cause :</strong> car, en effet, parce que, puisque, étant donné que...</li></ul><ul id="1d4b2280-a891-8081-84f1-feb78f05ed1f" class="bulleted-list"><li style="list-style-type:disc"><strong>Conséquence :</strong> donc, ainsi, par conséquent, c&#x27;est pourquoi, de sorte que...</li></ul><ul id="1d4b2280-a891-8044-a7d1-c2293e51fd7e" class="bulleted-list"><li style="list-style-type:disc"><strong>Opposition/Concession :</strong> mais, cependant, néanmoins, toutefois, pourtant, bien que, même si, alors que, au contraire...</li></ul><ul id="1d4b2280-a891-8091-ba63-ef7cd9c26ce5" class="bulleted-list"><li style="list-style-type:disc"><strong>Addition/Gradation :</strong> et, de plus, en outre, par ailleurs, non seulement... mais encore, voire...</li></ul><ul id="1d4b2280-a891-80de-b4a4-f45ff6c308a0" class="bulleted-list"><li style="list-style-type:disc"><strong>Illustration/Exemple :</strong> par exemple, ainsi, notamment, comme l&#x27;illustre...</li></ul><ul id="1d4b2280-a891-8004-b7b0-c7ce35696894" class="bulleted-list"><li style="list-style-type:disc"><strong>Reformulation/Précision :</strong> c&#x27;est-à-dire, en d&#x27;autres termes, autrement dit...</li></ul><ul id="1d4b2280-a891-8005-ad5d-ef3edd1767ea" class="bulleted-list"><li style="list-style-type:disc"><strong>But :</strong> pour que, afin que, dans le but de...</li></ul></div></figure><p id="1d4b2280-a891-8049-b886-e0d7b1773c79" class="">
+</p><ul id="1d4b2280-a891-8023-9781-c196796e3c64" class="toggle"><li><details open=""><summary><strong>Exemple de début de réécriture possible (à continuer par l&#x27;élève) :</strong></summary><blockquote id="1d4b2280-a891-8051-92b5-ff605d894875" class="">&quot;Si l&#x27;on s&#x27;interroge sur la valeur de l&#x27;art, on pourrait être tenté de le juger selon un critère d&#x27;utilité immédiate. En effet, contrairement à la science ou à la technique dont les applications transforment notre quotidien, l&#x27;art ne semble pas posséder de fonction pratique évidente. Certaines œuvres peuvent même paraître hermétiques ou déconnectées des préoccupations communes...&quot;</blockquote></details></li></ul><h2 id="1d4b2280-a891-80de-9a1b-cd2e36bbd7b4" class=""><strong>Exercice 2 : Identifier la Structure d&#x27;une Argumentation</strong></h2><p id="1d4b2280-a891-8077-9a98-f08bd6f52987" class=""><strong>Objectif :</strong> Savoir repérer les différents éléments d&#x27;un raisonnement philosophique.</p><h3 id="1d4b2280-a891-805b-bfdc-f504cfb642ad" class=""><strong>Texte :</strong></h3><blockquote id="1d4b2280-a891-805e-8238-cc3945d6f77b" class="">&quot;Il est essentiel de distinguer la liberté de la licence. La licence consisterait à pouvoir faire absolument tout ce qui nous passe par la tête, sans aucune limite. Or, une telle absence de contraintes mènerait rapidement au chaos et à la destruction mutuelle : la &quot;liberté&quot; de l&#x27;un empiéterait constamment sur celle de l&#x27;autre. La vraie liberté, au contraire, suppose des règles et des lois. Celles-ci ne sont pas des obstacles à la liberté, mais ses conditions de possibilité. Par exemple, le code de la route, en imposant des règles, permet à chacun de circuler plus librement et sûrement qu&#x27;en leur absence. Ainsi, la liberté authentique ne réside pas dans l&#x27;absence de toute règle, mais dans l&#x27;obéissance à des lois que l&#x27;on s&#x27;est soi-même données ou que l&#x27;on reconnaît comme justes.&quot;</blockquote><h3 id="1d4b2280-a891-80a5-81ae-dc5f68e70a29" class=""><strong>Consignes :</strong></h3><p id="1d4b2280-a891-802f-aa1f-f925ac805b3f" class="">Identifiez dans ce texte :</p><ol type="1" id="1d4b2280-a891-805a-8cfb-e64b61944e9b" class="numbered-list" start="1"><li>La thèse principale défendue par l&#x27;auteur.</li></ol><ol type="1" id="1d4b2280-a891-8038-885e-e574ad2f6ec3" class="numbered-list" start="2"><li>L&#x27;idée ou la définition qui est rejetée (l&#x27;antithèse implicite ou explicite).</li></ol><ol type="1" id="1d4b2280-a891-80fb-8bd5-da06eec73995" class="numbered-list" start="3"><li>Les arguments utilisés pour soutenir la thèse.</li></ol><ol type="1" id="1d4b2280-a891-80cd-aa17-fba8d1a2892c" class="numbered-list" start="4"><li>L&#x27;exemple qui illustre l&#x27;argumentation.</li></ol><ol type="1" id="1d4b2280-a891-8062-bed2-ca73083cac9a" class="numbered-list" start="5"><li>La conclusion ou la reformulation finale de la thèse.</li></ol><h2 id="1d4b2280-a891-806b-bcd4-df584a4434b9" class=""><strong>Exercice 3 : Formuler une Problématique</strong></h2><p id="1d4b2280-a891-80e1-baf8-c2e8efdacc74" class=""><strong>Objectif :</strong> Transformer un sujet de dissertation en une question complexe et orientée (la problématique).</p><h3 id="1d4b2280-a891-8002-a34b-d45228afded4" class=""><strong>Sujets :</strong></h3><ol type="1" id="1d4b2280-a891-8084-b4aa-f72b13fb1959" class="numbered-list" start="1"><li>Le langage nous permet-il seulement de communiquer ?</li></ol><ol type="1" id="1d4b2280-a891-80cb-9223-ebc074bb998f" class="numbered-list" start="2"><li>Suis-je ce que mon passé a fait de moi ?</li></ol><ol type="1" id="1d4b2280-a891-809c-9444-ce224b28ccdb" class="numbered-list" start="3"><li>Une œuvre d&#x27;art est-elle nécessairement belle ?</li></ol><h3 id="1d4b2280-a891-8087-944d-e239c0c0c123" class=""><strong>Consignes :</strong></h3><p id="1d4b2280-a891-80f9-8777-de3ec91467ac" class="">Pour chaque sujet :</p><ol type="1" id="1d4b2280-a891-80a9-8c5d-d2532edd7d53" class="numbered-list" start="1"><li><strong>Analysez les termes clés :</strong> Définissez-les précisément (ex : langage, communiquer, passé, identité, œuvre d&#x27;art, beau).</li></ol><ol type="1" id="1d4b2280-a891-80be-b5d5-d597f981a116" class="numbered-list" start="2"><li><strong>Repérez la tension ou le paradoxe :</strong> Quelle est l&#x27;opposition ou la difficulté soulevée par la question ? (ex : le langage sert à communiquer MAIS aussi à penser, à tromper... ; le passé m&#x27;influence MAIS je peux aussi m&#x27;en détacher...).</li></ol><ol type="1" id="1d4b2280-a891-802d-a012-f2ec181367c2" class="numbered-list" start="3"><li><strong>Formulez la problématique :</strong> Rédigez une ou deux questions liées qui montrent l&#x27;enjeu du sujet et orientent la réflexion. La problématique doit montrer pourquoi la réponse n&#x27;est pas évidente.</li></ol><ul id="1d4b2280-a891-80ee-82ce-d5f7c47c7c9c" class="toggle"><li><details open=""><summary><strong>Exemple pour le sujet 1 :</strong></summary><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d4b2280-a891-80d7-87e5-c60af67e8de5"><div style="font-size:1.5em"><span class="icon">🍀</span></div><div style="width:100%"><ul id="1d4b2280-a891-80a1-b7f1-e2fe85b6b097" class="bulleted-list"><li style="list-style-type:disc"><em>Analyse :</em> Langage = système de signes ; Communiquer = transmettre une information. &quot;Seulement&quot; = uniquement, exclusivement.</li></ul><ul id="1d4b2280-a891-8096-974b-d179f71d2a6c" class="bulleted-list"><li style="list-style-type:disc"><em>Tension :</em> Le langage sert évidemment à communiquer, mais n&#x27;a-t-il pas d&#x27;autres fonctions essentielles (penser, exprimer, créer du lien social, mentir...) ? La communication est-elle même sa fonction première ou la plus importante ?</li></ul><ul id="1d4b2280-a891-8039-b0b4-d6e4116f379d" class="bulleted-list"><li style="list-style-type:disc"><em>Problématique possible :</em> Si le langage est un outil privilégié de communication, faut-il réduire son rôle à cette seule fonction ? Ou bien ses autres usages, comme l&#x27;expression de la pensée ou la structuration de notre rapport au monde, ne sont-ils pas tout aussi, voire plus fondamentaux ?</li></ul></div></figure></details></li></ul><p id="1d4b2280-a891-807a-8d2a-f1aa9a20d2fe" class="">
+</p><h2 id="1d4b2280-a891-808d-bc58-e6dcfb164564" class=""><strong>Exercice 4 : Développer un Argument avec Exemple</strong></h2><p id="1d4b2280-a891-809a-ad38-d9032d16e030" class=""><strong>Objectif :</strong> Construire un argument complet et l&#x27;illustrer par un exemple pertinent.</p><h3 id="1d4b2280-a891-8040-8f7e-ebf7a856ae21" class=""><strong>Thèse donnée :</strong></h3><p id="1d4b2280-a891-809c-bf24-fe1c505d86ce" class="">&quot;Le travail est une source d&#x27;aliénation pour l&#x27;homme.&quot;</p><h3 id="1d4b2280-a891-804f-9596-f14cebb095d9" class=""><strong>Consignes :</strong></h3><ol type="1" id="1d4b2280-a891-807e-a75e-f0bc75460403" class="numbered-list" start="1"><li>Trouvez un argument qui soutient cette thèse.</li></ol><ol type="1" id="1d4b2280-a891-80c8-885c-e539edd73258" class="numbered-list" start="2"><li>Développez cet argument en l&#x27;expliquant clairement.</li></ol><ol type="1" id="1d4b2280-a891-8061-99b2-cab12eeae6b8" class="numbered-list" start="3"><li>Trouvez un exemple précis (historique, littéraire, philosophique, issu de l&#x27;observation du monde contemporain...) qui illustre votre argument.</li></ol><ol type="1" id="1d4b2280-a891-8053-8c5d-f616720dee8c" class="numbered-list" start="4"><li>Rédigez un paragraphe complet intégrant l&#x27;affirmation de l&#x27;argument, son explication et l&#x27;exemple.</li></ol><ul id="1d4b2280-a891-809b-a37a-ff46809d4d4e" class="toggle"><li><details open=""><summary><strong>Exemple de structure d&#x27;argument :</strong></summary><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d4b2280-a891-803a-814a-e9220668017f"><div style="font-size:1.5em"><span class="icon">🍀</span></div><div style="width:100%"><ul id="1d4b2280-a891-808d-85fb-cfabaab07290" class="bulleted-list"><li style="list-style-type:disc"><em>Argument :</em> Le travail peut être aliénant lorsqu&#x27;il dépossède l&#x27;individu du sens et du produit de son activité.</li></ul><ul id="1d4b2280-a891-804d-ac10-d0d14e73418e" class="bulleted-list"><li style="list-style-type:disc"><em>Explication :</em> Dans certaines formes d&#x27;organisation du travail, notamment le travail à la chaîne (taylorisme/fordisme), l&#x27;ouvrier exécute des tâches répétitives et parcellisées sans comprendre le processus global ni voir le produit fini. Il devient un simple rouage, perdant son autonomie et sa créativité. Le travail n&#x27;est plus l&#x27;expression de soi, mais une contrainte extérieure vidée de sens.</li></ul><ul id="1d4b2280-a891-8035-b1bb-e7e43037740d" class="bulleted-list"><li style="list-style-type:disc"><em>Exemple :</em> On peut penser à l&#x27;analyse de Marx du travail aliéné dans les usines du XIXe siècle, ou encore à la description satirique du travail à la chaîne dans le film &quot;Les Temps Modernes&quot; de Chaplin, où Charlot devient lui-même une partie de la machine.</li></ul></div></figure></details></li></ul><p id="1d4b2280-a891-805b-9699-c173afc2c73f" class="">
+</p><h2 id="1d4b2280-a891-8013-8630-cd6579760930" class=""><strong>Exercice 5 : Utiliser une Référence Philosophique</strong></h2><p id="1d4b2280-a891-8099-a1fe-e34ad4022906" class=""><strong>Objectif :</strong> Intégrer une référence philosophique de manière pertinente et non plaquée.</p><h3 id="1d4b2280-a891-80e0-ad47-cc54a930cf37" class=""><strong>Contexte :</strong></h3><p id="1d4b2280-a891-8001-bd8a-f4a4359cea95" class="">Vous rédigez une partie de dissertation sur le sujet &quot;Peut-on désirer sans souffrir ?&quot; et vous voulez utiliser la pensée de Schopenhauer.</p><h3 id="1d4b2280-a891-80bf-a51d-c1f8fa3307c9" class=""><strong>Consignes :</strong></h3><ol type="1" id="1d4b2280-a891-80dc-b12f-ee5434462782" class="numbered-list" start="1"><li><strong>Rappelez brièvement l&#x27;idée clé de Schopenhauer pertinente ici :</strong> (Le désir comme expression d&#x27;un manque, source de souffrance ; la satisfaction n&#x27;est qu&#x27;une suspension temporaire avant un nouveau désir ou l&#x27;ennui).</li></ol><ol type="1" id="1d4b2280-a891-8058-974f-cc637d6f0e9e" class="numbered-list" start="2"><li><strong>Intégrez cette idée dans votre argumentation :</strong> Ne vous contentez pas de citer ou de résumer. Montrez comment cette pensée éclaire le problème. Expliquez *pourquoi* selon Schopenhauer, le désir est intrinsèquement lié à la souffrance.</li></ol><ol type="1" id="1d4b2280-a891-80c4-bf94-f70cfbe0f911" class="numbered-list" start="3"><li><strong>Nuancez ou critiquez éventuellement (si pertinent pour votre plan) :</strong> La perspective de Schopenhauer est-elle la seule possible ? N&#x27;y a-t-il pas aussi une forme de plaisir ou de moteur vital dans le désir ?</li></ol><ul id="1d4b2280-a891-80e6-b5b4-faeaf87a1baa" class="toggle"><li><details open=""><summary><strong>Exemple d&#x27;intégration :</strong></summary><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1d4b2280-a891-804e-8d4d-fd57e0f5ec7e"><div style="font-size:1.5em"><span class="icon">🍀</span></div><div style="width:100%"><p id="1d4b2280-a891-806b-b456-f9ab3c195aed" class="">&quot;Certains philosophes ont même avancé que le désir est par nature source de souffrance. Arthur Schopenhauer, par exemple, voit dans le désir l&#x27;expression fondamentale d&#x27;un manque, d&#x27;une tension douloureuse vers un objet qui nous fait défaut. Pour lui, la satisfaction, lorsqu&#x27;elle advient, n&#x27;est qu&#x27;une brève et négative cessation de la douleur, rapidement remplacée soit par l&#x27;ennui, soit par l&#x27;émergence d&#x27;un nouveau désir, relançant ainsi le cycle de la souffrance. Dans cette perspective pessimiste, désirer, c&#x27;est essentiellement souffrir, car l&#x27;état de manque est permanent et la satisfaction toujours éphémère.&quot;</p></div></figure></details></li></ul><p id="1d4b2280-a891-80cd-8afa-e8c3a2fcb288" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
